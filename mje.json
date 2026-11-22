@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-22T12:54:00+01:00",
+ "stand": "2026-11-22T23:09:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "liga": "Regionsliga MJE VR-4 (OS)",
@@ -9,15 +9,15 @@
   {
    "platz": 1,
    "team": "SV Eversburg",
-   "spiele": 4,
-   "s": 4,
+   "spiele": 5,
+   "s": 5,
    "u": 0,
    "n": 0,
-   "punkte": "8:0"
+   "punkte": "10:0"
   },
   {
    "platz": 2,
-   "team": "SSC Dodesheide",
+   "team": "TV Wellingholzhausen",
    "spiele": 5,
    "s": 4,
    "u": 0,
@@ -26,12 +26,12 @@
   },
   {
    "platz": 3,
-   "team": "TV Wellingholzhausen",
-   "spiele": 4,
-   "s": 3,
+   "team": "SSC Dodesheide",
+   "spiele": 5,
+   "s": 4,
    "u": 0,
    "n": 1,
-   "punkte": "6:2"
+   "punkte": "8:2"
   },
   {
    "platz": 4,
@@ -44,16 +44,16 @@
   },
   {
    "platz": 5,
-   "team": "JSG Eicken-Buer-Oldendorf",
-   "spiele": 4,
+   "team": "TSG 07 Burg Gretesch",
+   "spiele": 5,
    "s": 1,
    "u": 0,
-   "n": 3,
-   "punkte": "2:6"
+   "n": 4,
+   "punkte": "2:8"
   },
   {
    "platz": 6,
-   "team": "TSG 07 Burg Gretesch",
+   "team": "JSG Eicken-Buer-Oldendorf",
    "spiele": 5,
    "s": 1,
    "u": 0,
@@ -63,11 +63,11 @@
   {
    "platz": 7,
    "team": "TV Bissendorf-Holte II",
-   "spiele": 4,
+   "spiele": 5,
    "s": 0,
    "u": 0,
-   "n": 4,
-   "punkte": "0:8"
+   "n": 5,
+   "punkte": "0:10"
   }
  ],
  "spiele": [
@@ -79,6 +79,7 @@
    "heim": "SG Teuto Handball II",
    "gast": "TV Wellingholzhausen",
    "ergebnis": "0:2",
+   "meeting": 8266118,
    "bericht": {
     "meeting": 8266118,
     "tore": "7:25",
@@ -153,6 +154,7 @@
    "heim": "SSC Dodesheide",
    "gast": "JSG Eicken-Buer-Oldendorf",
    "ergebnis": "2:0",
+   "meeting": 8266130,
    "bericht": {
     "meeting": 8266130,
     "tore": "22:8",
@@ -225,6 +227,7 @@
    "heim": "TV Bissendorf-Holte II",
    "gast": "TSG 07 Burg Gretesch",
    "ergebnis": "0:2",
+   "meeting": 8266133,
    "bericht": {
     "meeting": 8266133,
     "tore": "12:14",
@@ -308,6 +311,7 @@
    "heim": "TSG 07 Burg Gretesch",
    "gast": "SSC Dodesheide",
    "ergebnis": "0:2",
+   "meeting": 8266129,
    "bericht": {
     "meeting": 8266129,
     "tore": "11:18",
@@ -394,6 +398,7 @@
    "heim": "SG Teuto Handball II",
    "gast": "TSG 07 Burg Gretesch",
    "ergebnis": "2:0",
+   "meeting": 8266113,
    "bericht": {
     "meeting": 8266113,
     "tore": "21:17",
@@ -463,6 +468,7 @@
    "heim": "TV Wellingholzhausen",
    "gast": "JSG Eicken-Buer-Oldendorf",
    "ergebnis": "2:0",
+   "meeting": 8266121,
    "bericht": {
     "meeting": 8266121,
     "tore": "25:8",
@@ -527,6 +533,7 @@
    "heim": "SSC Dodesheide",
    "gast": "SV Eversburg",
    "ergebnis": "0:2",
+   "meeting": 8266134,
    "bericht": {
     "meeting": 8266134,
     "tore": "19:33",
@@ -621,6 +628,7 @@
    "heim": "JSG Eicken-Buer-Oldendorf",
    "gast": "SG Teuto Handball II",
    "ergebnis": "0:2",
+   "meeting": 8266109,
    "verlegt": true,
    "bericht": {
     "meeting": 8266109,
@@ -691,6 +699,7 @@
    "heim": "SV Eversburg",
    "gast": "TV Bissendorf-Holte II",
    "ergebnis": "2:0",
+   "meeting": 8266114,
    "verlegt": true,
    "bericht": {
     "meeting": 8266114,
@@ -773,6 +782,7 @@
    "heim": "TSG 07 Burg Gretesch",
    "gast": "TV Wellingholzhausen",
    "ergebnis": "0:2",
+   "meeting": 8266122,
    "bericht": {
     "meeting": 8266122,
     "tore": "9:39",
@@ -852,6 +862,7 @@
    "heim": "SV Eversburg",
    "gast": "SG Teuto Handball II",
    "ergebnis": "2:0",
+   "meeting": 8266124,
    "bericht": {
     "meeting": 8266124,
     "tore": "31:9",
@@ -923,6 +934,7 @@
    "heim": "SG Teuto Handball II",
    "gast": "TV Bissendorf-Holte II",
    "ergebnis": "2:0",
+   "meeting": 8266117,
    "bericht": {
     "meeting": 8266117,
     "tore": "22:5",
@@ -987,6 +999,7 @@
    "heim": "TV Wellingholzhausen",
    "gast": "SV Eversburg",
    "ergebnis": "0:2",
+   "meeting": 8266125,
    "bericht": {
     "meeting": 8266125,
     "tore": "15:17",
@@ -1071,7 +1084,7 @@
    "heim": "JSG Eicken-Buer-Oldendorf",
    "gast": "TSG 07 Burg Gretesch",
    "ergebnis": "2:0",
-   "verlegt": true,
+   "meeting": 8266115,
    "bericht": {
     "meeting": 8266115,
     "tore": "22:15",
@@ -1140,6 +1153,7 @@
    "heim": "TV Bissendorf-Holte II",
    "gast": "SSC Dodesheide",
    "ergebnis": "0:2",
+   "meeting": 8266111,
    "bericht": {
     "meeting": 8266111,
     "tore": "18:30",
@@ -1240,6 +1254,7 @@
    "heim": "SSC Dodesheide",
    "gast": "SG Teuto Handball II",
    "ergebnis": "2:0",
+   "meeting": 8266108,
    "bericht": {
     "meeting": 8266108,
     "tore": "28:26",
@@ -1330,7 +1345,76 @@
    "halle": "808121",
    "heim": "TV Bissendorf-Holte II",
    "gast": "TV Wellingholzhausen",
-   "ergebnis": ""
+   "ergebnis": "0:2",
+   "meeting": 8266112,
+   "bericht": {
+    "tore": "9:26",
+    "halbzeit": "6:9",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     10,
+     11
+    ],
+    "verlauf": [
+     "00:05H",
+     "01:58G",
+     "04:10G",
+     "05:50G",
+     "06:25G",
+     "08:22H",
+     "08:42G",
+     "09:42G",
+     "10:17H",
+     "11:05H",
+     "12:55G",
+     "13:35G",
+     "17:34G",
+     "17:50H",
+     "18:56H",
+     "20:25G",
+     "21:19G",
+     "21:33G",
+     "22:36G",
+     "23:03G",
+     "24:02H",
+     "25:14G",
+     "28:14G",
+     "30:14H",
+     "30:39G",
+     "32:22G",
+     "32:45G",
+     "34:09G",
+     "34:46G",
+     "35:37G",
+     "36:01G",
+     "36:57G",
+     "37:45H",
+     "38:09G",
+     "39:17G"
+    ],
+    "ereignisse": [
+     [
+      "20:33",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "25:17",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8266112
+   }
   },
   {
    "nr": 18,
@@ -1339,7 +1423,69 @@
    "halle": "808113",
    "heim": "SV Eversburg",
    "gast": "JSG Eicken-Buer-Oldendorf",
-   "ergebnis": ""
+   "ergebnis": "2:0",
+   "meeting": 8266126,
+   "bericht": {
+    "tore": "30:9",
+    "halbzeit": "15:7",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     11
+    ],
+    "verlauf": [
+     "00:49G",
+     "01:06H",
+     "02:18G",
+     "02:38H",
+     "03:17H",
+     "05:42G",
+     "06:32H",
+     "07:03G",
+     "07:10H",
+     "08:02G",
+     "09:04H",
+     "09:27H",
+     "09:44H",
+     "10:50G",
+     "11:04H",
+     "12:33H",
+     "15:52H",
+     "16:46H",
+     "17:28H",
+     "18:36H",
+     "19:53G",
+     "20:00H",
+     "20:55G",
+     "21:14H",
+     "21:21H",
+     "23:05H",
+     "25:20H",
+     "27:41H",
+     "28:15H",
+     "30:16H",
+     "31:29H",
+     "32:55H",
+     "33:57H",
+     "35:37H",
+     "35:53H",
+     "37:00G",
+     "37:11H",
+     "37:56H",
+     "39:43H"
+    ],
+    "ereignisse": [],
+    "meeting": 8266126
+   }
   },
   {
    "nr": 19,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-22T14:57:00+01:00",
+ "stand": "2026-11-22T23:09:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "altersklasse": "Weibliche C-Jugend",
@@ -22,13 +22,13 @@
   {
    "platz": 2,
    "team": "SSC Dodesheide",
-   "spiele": 4,
-   "s": 3,
+   "spiele": 5,
+   "s": 4,
    "u": 0,
    "n": 1,
-   "tore": "90:59",
-   "diff": 31,
-   "punkte": "6:2"
+   "tore": "114:67",
+   "diff": 47,
+   "punkte": "8:2"
   },
   {
    "platz": 3,
@@ -66,35 +66,35 @@
   {
    "platz": 6,
    "team": "VfL Bad Iburg",
-   "spiele": 3,
+   "spiele": 4,
    "s": 1,
    "u": 0,
-   "n": 2,
-   "tore": "37:65",
-   "diff": -28,
-   "punkte": "2:4"
+   "n": 3,
+   "tore": "58:88",
+   "diff": -30,
+   "punkte": "2:6"
   },
   {
    "platz": 7,
    "team": "JSG Eicken-Buer-Oldendorf",
-   "spiele": 4,
-   "s": 0,
+   "spiele": 5,
+   "s": 1,
    "u": 0,
    "n": 4,
-   "tore": "89:105",
-   "diff": -16,
-   "punkte": "0:8"
+   "tore": "112:126",
+   "diff": -14,
+   "punkte": "2:8"
   },
   {
    "platz": 8,
    "team": "TSV Wallenhorst",
-   "spiele": 4,
+   "spiele": 5,
    "s": 0,
    "u": 0,
-   "n": 4,
-   "tore": "64:87",
-   "diff": -23,
-   "punkte": "0:8"
+   "n": 5,
+   "tore": "72:111",
+   "diff": -39,
+   "punkte": "0:10"
   }
  ],
  "spiele": [
@@ -106,6 +106,7 @@
    "heim": "TSG 07 Burg Gretesch II",
    "gast": "SV Quitt Ankum",
    "ergebnis": "18:23",
+   "meeting": 8267627,
    "bericht": {
     "meeting": 8267627,
     "tore": "18:23",
@@ -244,6 +245,7 @@
    "heim": "SG Teuto Handball II",
    "gast": "TSV Wallenhorst",
    "ergebnis": "22:19",
+   "meeting": 8267645,
    "bericht": {
     "meeting": 8267645,
     "tore": "22:19",
@@ -357,6 +359,7 @@
    "heim": "SV Quitt Ankum",
    "gast": "SSC Dodesheide",
    "ergebnis": "20:16",
+   "meeting": 8267687,
    "bericht": {
     "meeting": 8267687,
     "tore": "20:16",
@@ -470,6 +473,7 @@
    "heim": "JSG Eicken-Buer-Oldendorf",
    "gast": "SG Teuto Handball II",
    "ergebnis": "22:30",
+   "meeting": 8267626,
    "bericht": {
     "meeting": 8267626,
     "tore": "22:30",
@@ -604,6 +608,7 @@
    "heim": "VfL Bad Iburg",
    "gast": "TSV Wallenhorst",
    "ergebnis": "12:11",
+   "meeting": 8267644,
    "bericht": {
     "meeting": 8267644,
     "tore": "12:11",
@@ -689,6 +694,7 @@
    "heim": "SSC Dodesheide",
    "gast": "HSG Osnabrück",
    "ergebnis": "24:9",
+   "meeting": 8267681,
    "bericht": {
     "meeting": 8267681,
     "tore": "24:9",
@@ -779,6 +785,7 @@
    "heim": "TSG 07 Burg Gretesch II",
    "gast": "TSV Wallenhorst",
    "ergebnis": "29:21",
+   "meeting": 8267694,
    "bericht": {
     "meeting": 8267694,
     "tore": "29:21",
@@ -871,6 +878,7 @@
    "heim": "SV Quitt Ankum",
    "gast": "VfL Bad Iburg",
    "ergebnis": "25:12",
+   "meeting": 8267667,
    "bericht": {
     "meeting": 8267667,
     "tore": "25:12",
@@ -975,6 +983,7 @@
    "heim": "HSG Osnabrück",
    "gast": "JSG Eicken-Buer-Oldendorf",
    "ergebnis": "29:28",
+   "meeting": 8267654,
    "verlegt": true,
    "bericht": {
     "meeting": 8267654,
@@ -1110,6 +1119,7 @@
    "heim": "HSG Osnabrück",
    "gast": "SG Teuto Handball II",
    "ergebnis": "32:26",
+   "meeting": 8267679,
    "bericht": {
     "meeting": 8267679,
     "tore": "32:26",
@@ -1240,6 +1250,7 @@
    "heim": "JSG Eicken-Buer-Oldendorf",
    "gast": "TSG 07 Burg Gretesch II",
    "ergebnis": "16:17",
+   "meeting": 8267622,
    "bericht": {
     "meeting": 8267622,
     "tore": "16:17",
@@ -1340,6 +1351,7 @@
    "heim": "TSV Wallenhorst",
    "gast": "SV Quitt Ankum",
    "ergebnis": "13:24",
+   "meeting": 8267682,
    "bericht": {
     "meeting": 8267682,
     "tore": "13:24",
@@ -1449,6 +1461,7 @@
    "heim": "VfL Bad Iburg",
    "gast": "SSC Dodesheide",
    "ergebnis": "13:29",
+   "meeting": 8267638,
    "bericht": {
     "meeting": 8267638,
     "tore": "13:29",
@@ -1543,6 +1556,7 @@
    "heim": "SV Quitt Ankum",
    "gast": "JSG Eicken-Buer-Oldendorf",
    "ergebnis": "29:23",
+   "meeting": 8267655,
    "bericht": {
     "meeting": 8267655,
     "tore": "29:23",
@@ -1667,6 +1681,7 @@
    "heim": "SSC Dodesheide",
    "gast": "SG Teuto Handball II",
    "ergebnis": "21:17",
+   "meeting": 8267657,
    "bericht": {
     "meeting": 8267657,
     "tore": "21:17",
@@ -1792,6 +1807,7 @@
    "heim": "HSG Osnabrück",
    "gast": "TSG 07 Burg Gretesch II",
    "ergebnis": "25:23",
+   "meeting": 8267650,
    "bericht": {
     "meeting": 8267650,
     "tore": "25:23",
@@ -1886,7 +1902,83 @@
    "halle": "808151",
    "heim": "TSV Wallenhorst",
    "gast": "SSC Dodesheide",
-   "ergebnis": ""
+   "ergebnis": "8:24",
+   "meeting": 8267699,
+   "bericht": {
+    "tore": "8:24",
+    "halbzeit": "3:11",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     13,
+     11
+    ],
+    "verlauf": [
+     "01:38G",
+     "02:39G",
+     "04:21G",
+     "05:52G",
+     "08:36G",
+     "10:48G",
+     "11:13H",
+     "11:42G",
+     "12:18G",
+     "14:21G",
+     "16:20G",
+     "18:28H",
+     "18:55G",
+     "20:07H",
+     "26:13G",
+     "27:04H",
+     "30:51G",
+     "32:00G",
+     "32:17H",
+     "32:33G",
+     "33:06H",
+     "33:44G",
+     "37:02G",
+     "37:37G",
+     "38:00H",
+     "38:19G",
+     "41:01G",
+     "42:03H",
+     "42:19G",
+     "44:35G",
+     "49:13G",
+     "49:48G"
+    ],
+    "ereignisse": [
+     [
+      "05:19",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "15:49",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "19:52",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "40:21",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8267699
+   }
   },
   {
    "nr": 19,
@@ -1895,7 +1987,120 @@
    "halle": "808146",
    "heim": "JSG Eicken-Buer-Oldendorf",
    "gast": "VfL Bad Iburg",
-   "ergebnis": ""
+   "ergebnis": "23:21",
+   "meeting": 8267647,
+   "bericht": {
+    "tore": "23:21",
+    "halbzeit": "13:9",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     9
+    ],
+    "verlauf": [
+     "01:36G",
+     "02:34G",
+     "02:51H",
+     "03:44G",
+     "05:36G",
+     "06:28H",
+     "07:18H",
+     "09:27H",
+     "12:07G",
+     "13:41H",
+     "14:00G",
+     "14:29H",
+     "15:10H",
+     "15:50H",
+     "17:50H",
+     "20:11G",
+     "20:29H",
+     "21:02H",
+     "21:27G",
+     "22:18G",
+     "23:14H",
+     "24:27H",
+     "27:04H",
+     "28:10G",
+     "29:30H",
+     "30:00G",
+     "30:27H",
+     "33:46H",
+     "34:28G",
+     "34:47H",
+     "35:22H",
+     "35:59G",
+     "36:23H",
+     "36:48H",
+     "38:45H",
+     "41:14G",
+     "43:41G",
+     "44:02G",
+     "44:59G",
+     "46:14G",
+     "47:20H",
+     "47:35G",
+     "47:56G",
+     "48:39G"
+    ],
+    "ereignisse": [
+     [
+      "06:13",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "09:35",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "16:15",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "23:14",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "31:08",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "31:12",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "34:14",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "36:31",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "46:21",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8267647
+   }
   },
   {
    "nr": 20,

@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-22T14:57:00+01:00",
+ "stand": "2026-11-22T23:09:00+01:00",
  "saison": "2026/27",
  "team": "Eickener SpVg",
  "kurz": "ESV",
@@ -12,6 +12,17 @@
  "tabelle": [
   {
    "platz": 1,
+   "team": "TuS Bramsche",
+   "spiele": 8,
+   "s": 7,
+   "u": 0,
+   "n": 1,
+   "tore": "257:202",
+   "diff": 55,
+   "punkte": "14:2"
+  },
+  {
+   "platz": 2,
    "team": "Eickener SpVg",
    "spiele": 8,
    "s": 6,
@@ -22,26 +33,15 @@
    "punkte": "13:3"
   },
   {
-   "platz": 2,
-   "team": "TuS Bramsche",
-   "spiele": 7,
-   "s": 6,
-   "u": 0,
-   "n": 1,
-   "tore": "222:176",
-   "diff": 46,
-   "punkte": "12:2"
-  },
-  {
    "platz": 3,
    "team": "TV 01 Bohmte",
-   "spiele": 8,
+   "spiele": 9,
    "s": 5,
    "u": 0,
-   "n": 3,
-   "tore": "250:244",
-   "diff": 6,
-   "punkte": "10:6"
+   "n": 4,
+   "tore": "276:279",
+   "diff": -3,
+   "punkte": "10:8"
   },
   {
    "platz": 4,
@@ -1562,8 +1562,7 @@
    "heim": "TSG 07 Burg Gretesch",
    "gast": "TV Georgsmarienhütte",
    "ergebnis": "36:25",
-   "meeting": 8280419,
-   "vorlaeufig": true
+   "meeting": 8280419
   },
   {
    "nr": 105050,
@@ -1574,7 +1573,6 @@
    "gast": "HSG Nordhorn e.V. II",
    "ergebnis": "34:35",
    "meeting": 8280439,
-   "vorlaeufig": true,
    "bericht": {
     "tore": "34:35",
     "halbzeit": "16:21",
@@ -1756,8 +1754,7 @@
    "heim": "SG Teuto Handball",
    "gast": "HSG Schaumburg II",
    "ergebnis": "34:38",
-   "meeting": 8280416,
-   "vorlaeufig": true
+   "meeting": 8280416
   },
   {
    "nr": 105053,
@@ -1766,7 +1763,8 @@
    "halle": "808128",
    "heim": "TuS Bramsche",
    "gast": "TV 01 Bohmte",
-   "ergebnis": ""
+   "ergebnis": "35:26",
+   "meeting": 8280418
   },
   {
    "nr": 105054,
