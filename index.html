@@ -77,6 +77,8 @@ main{max-width:760px;margin:0 auto;padding:12px 12px 40px}
 .crest.me{background:var(--acc);color:var(--accInk);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
 .crest.l{width:52px;height:52px;font-size:15px}
 .crest.s{width:20px;height:20px;font-size:8px}
+.crest.img{background:none;box-shadow:none;overflow:hidden}
+.crest.img img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
 .hero{padding:14px 16px 12px}
 .hero .top{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:600;flex-wrap:wrap}
 .pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:3px 10px;font-size:12px;font-weight:700;white-space:nowrap}
@@ -239,7 +241,7 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
 <header class="bar">
  <div class="barin">
   <div class="brand">
-   <span class="crest l me">ESV</span>
+   <span class="crest l img"><img src="esv-rund.png" alt="Wappen der Eickener SpVg"></span>
    <div class="grow"><h1>Handball Eicken</h1><p>Eickener SpVg · JSG Eicken-Buer-Oldendorf · Saison 2026/27</p></div>
    <button class="icon-btn" id="infobtn" type="button" data-view="infos" aria-label="Infos und Links"><svg aria-hidden="true"><use href="#ic-info"/></svg></button>
    <button class="icon-btn" id="share" type="button" aria-label="Seite teilen"><svg aria-hidden="true"><use href="#ic-share"/></svg></button>
@@ -325,7 +327,9 @@ const ort = h => { const m = /\d{5}\s+(.+)$/.exec(h.adresse || ''); return m ? m
 const route = h => 'https://maps.apple.com/?daddr=' + encodeURIComponent(h.adresse || h.name) + '&dirflg=d';
 const mapAt = h => 'https://maps.apple.com/?q=' + encodeURIComponent(h.name) + '&address=' + encodeURIComponent(h.adresse || '');
 const tpill = t => '<span class="tpill"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</span>';
+const LOGOS = {'Eickener SpVg': 'esv-rund.png'};
 function crest(n, size) {
+  if (LOGOS[n]) return '<span class="crest img ' + (size || '') + '"><img src="' + LOGOS[n] + '" alt="" loading="lazy"></span>';
   if (n === D.team) return '<span class="crest me ' + (size || '') + '">' + esc(D.kurz || 'WIR') + '</span>';
   const w = n.split(/[\s-]+/).filter(x => !/^(II|III|IV|\d+|e\.V\.)$/.test(x));
   const rest = /^[A-ZÄÖÜ]{2,4}$/.test(w[0]) && w.length > 1 ? w.slice(1) : w;
