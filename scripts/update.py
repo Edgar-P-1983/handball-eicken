@@ -37,7 +37,14 @@ def soup_of(html):
     try:
         from bs4 import BeautifulSoup
     except ImportError:
-        subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'beautifulsoup4'], check=True)
+        # erst bei Bedarf installieren, damit die kurzen 15-Minuten-Läufe schnell bleiben
+        import importlib, site
+        subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '--user', '--break-system-packages',
+                        'beautifulsoup4'], check=True)
+        for d in [site.getusersitepackages()]:
+            if d not in sys.path:
+                sys.path.append(d)
+        importlib.invalidate_caches()
         from bs4 import BeautifulSoup
     return BeautifulSoup(html, 'html.parser')
 
