@@ -1,0 +1,2318 @@
+{
+ "stand": "2026-11-22T14:57:00+01:00",
+ "saison": "2026/27",
+ "team": "JSG Eicken-Buer-Oldendorf",
+ "altersklasse": "Weibliche C-Jugend",
+ "liga": "Regionsliga Süd",
+ "region": "HR West Niedersachsen",
+ "halbzeitMin": 25,
+ "hinweis": "Sortiert nach Punkten; nach Abschluss aller Spiele entscheidet der direkte Vergleich. SV Holdorf II hat seine Mannschaft am 22.06.2026 zurückgezogen.",
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "SV Quitt Ankum",
+   "spiele": 5,
+   "s": 5,
+   "u": 0,
+   "n": 0,
+   "tore": "121:82",
+   "diff": 39,
+   "punkte": "10:0"
+  },
+  {
+   "platz": 2,
+   "team": "SSC Dodesheide",
+   "spiele": 4,
+   "s": 3,
+   "u": 0,
+   "n": 1,
+   "tore": "90:59",
+   "diff": 31,
+   "punkte": "6:2"
+  },
+  {
+   "platz": 3,
+   "team": "HSG Osnabrück",
+   "spiele": 4,
+   "s": 3,
+   "u": 0,
+   "n": 1,
+   "tore": "95:101",
+   "diff": -6,
+   "punkte": "6:2"
+  },
+  {
+   "platz": 4,
+   "team": "TSG 07 Burg Gretesch II",
+   "spiele": 4,
+   "s": 2,
+   "u": 0,
+   "n": 2,
+   "tore": "87:85",
+   "diff": 2,
+   "punkte": "4:4"
+  },
+  {
+   "platz": 5,
+   "team": "SG Teuto Handball II",
+   "spiele": 4,
+   "s": 2,
+   "u": 0,
+   "n": 2,
+   "tore": "95:94",
+   "diff": 1,
+   "punkte": "4:4"
+  },
+  {
+   "platz": 6,
+   "team": "VfL Bad Iburg",
+   "spiele": 3,
+   "s": 1,
+   "u": 0,
+   "n": 2,
+   "tore": "37:65",
+   "diff": -28,
+   "punkte": "2:4"
+  },
+  {
+   "platz": 7,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 4,
+   "s": 0,
+   "u": 0,
+   "n": 4,
+   "tore": "89:105",
+   "diff": -16,
+   "punkte": "0:8"
+  },
+  {
+   "platz": 8,
+   "team": "TSV Wallenhorst",
+   "spiele": 4,
+   "s": 0,
+   "u": 0,
+   "n": 4,
+   "tore": "64:87",
+   "diff": -23,
+   "punkte": "0:8"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 2,
+   "datum": "2026-09-06",
+   "zeit": "11:15",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": "18:23",
+   "bericht": {
+    "meeting": 8267627,
+    "tore": "18:23",
+    "halbzeit": "10:10",
+    "siebenm": [
+     [
+      7,
+      4
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "kader": [
+     10,
+     11
+    ],
+    "verlauf": [
+     "01:29G",
+     "02:08H",
+     "02:23G",
+     "04:56G",
+     "08:30H",
+     "09:08G",
+     "09:31G",
+     "10:51H",
+     "12:40H",
+     "13:20H",
+     "16:21G",
+     "17:08H",
+     "17:23G",
+     "18:00H",
+     "19:06H",
+     "19:43G",
+     "20:59H",
+     "21:18G",
+     "21:55H",
+     "24:56G",
+     "25:17H",
+     "25:34G",
+     "28:20G",
+     "29:17G",
+     "30:21H",
+     "30:46G",
+     "31:46G",
+     "32:17H",
+     "34:12H",
+     "34:28G",
+     "37:39H",
+     "37:39G",
+     "37:39H",
+     "37:39G",
+     "39:46H",
+     "40:59G",
+     "42:35G",
+     "45:26G",
+     "45:42G",
+     "47:21H",
+     "48:10G"
+    ],
+    "ereignisse": [
+     [
+      "03:09",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "06:53",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "07:04",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "13:20",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "15:30",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "21:02",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "23:27",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "35:07",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "37:37",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "37:39",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "43:09",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "43:16",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "45:13",
+      "7m verworfen",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-06",
+   "zeit": "12:30",
+   "halle": "808135",
+   "heim": "SG Teuto Handball II",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": "22:19",
+   "bericht": {
+    "meeting": 8267645,
+    "tore": "22:19",
+    "halbzeit": "9:9",
+    "siebenm": [
+     [
+      2,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "kader": [
+     15,
+     12
+    ],
+    "verlauf": [
+     "02:23H",
+     "03:01H",
+     "03:34H",
+     "06:00G",
+     "08:58G",
+     "09:18H",
+     "12:26H",
+     "13:03G",
+     "13:43G",
+     "14:00H",
+     "15:29G",
+     "17:39H",
+     "19:14H",
+     "20:52G",
+     "21:23G",
+     "24:04H",
+     "24:33G",
+     "24:58G",
+     "26:28H",
+     "27:30G",
+     "28:03H",
+     "29:47H",
+     "30:32H",
+     "31:54H",
+     "32:13G",
+     "33:18H",
+     "35:21G",
+     "35:37H",
+     "36:52G",
+     "39:07G",
+     "39:54H",
+     "41:18G",
+     "41:39H",
+     "43:35H",
+     "43:50G",
+     "44:18G",
+     "44:35H",
+     "46:48H",
+     "47:59H",
+     "49:04G",
+     "49:30G"
+    ],
+    "ereignisse": [
+     [
+      "12:11",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "15:13",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "20:31",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "22:39",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "33:48",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "35:08",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "36:01",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "36:43",
+      "2 Minuten",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-12",
+   "zeit": "13:30",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "20:16",
+   "bericht": {
+    "meeting": 8267687,
+    "tore": "20:16",
+    "halbzeit": "10:10",
+    "siebenm": [
+     [
+      3,
+      3
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    "kader": [
+     12,
+     10
+    ],
+    "verlauf": [
+     "01:28G",
+     "02:02G",
+     "02:40H",
+     "03:03G",
+     "03:57H",
+     "06:14H",
+     "07:07G",
+     "07:29H",
+     "09:57G",
+     "11:42G",
+     "12:20H",
+     "13:25H",
+     "14:25G",
+     "14:43H",
+     "15:07G",
+     "18:21H",
+     "20:21G",
+     "22:30H",
+     "23:36G",
+     "24:21H",
+     "27:08G",
+     "27:57H",
+     "28:22G",
+     "30:01H",
+     "30:46G",
+     "35:54G",
+     "36:28H",
+     "38:00H",
+     "39:38H",
+     "40:56H",
+     "44:31H",
+     "45:12G",
+     "45:47G",
+     "46:07H",
+     "47:31H",
+     "49:00H"
+    ],
+    "ereignisse": [
+     [
+      "10:18",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "22:21",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "30:46",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "33:08",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "33:10",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "38:53",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "41:32",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "46:32",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "47:30",
+      "2 Minuten",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-13",
+   "zeit": "14:20",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "22:30",
+   "bericht": {
+    "meeting": 8267626,
+    "tore": "22:30",
+    "halbzeit": "11:17",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    "kader": [
+     9,
+     14
+    ],
+    "verlauf": [
+     "01:34H",
+     "01:56G",
+     "03:01G",
+     "03:21H",
+     "04:03G",
+     "04:34G",
+     "07:28H",
+     "08:08G",
+     "08:35H",
+     "09:25H",
+     "10:28G",
+     "11:14G",
+     "11:53H",
+     "12:15G",
+     "12:42H",
+     "13:00G",
+     "14:44G",
+     "16:24G",
+     "17:03G",
+     "17:37H",
+     "18:37G",
+     "18:51H",
+     "20:46G",
+     "21:20G",
+     "21:54H",
+     "22:53G",
+     "24:11G",
+     "24:54H",
+     "25:11G",
+     "26:22G",
+     "27:40H",
+     "28:05H",
+     "28:32G",
+     "29:49H",
+     "30:52G",
+     "33:03H",
+     "33:21G",
+     "34:19G",
+     "36:05H",
+     "37:30H",
+     "37:46G",
+     "39:38G",
+     "40:30G",
+     "41:13G",
+     "42:22H",
+     "44:08H",
+     "46:11G",
+     "46:41G",
+     "47:03H",
+     "48:41H",
+     "49:03G",
+     "49:26H"
+    ],
+    "ereignisse": [
+     [
+      "00:53",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "01:00",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "04:06",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "05:57",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "18:42",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "35:20",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "38:55",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "40:45",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "42:20",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "43:03",
+      "Verwarnung",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-20",
+   "zeit": "12:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": "12:11",
+   "bericht": {
+    "meeting": 8267644,
+    "tore": "12:11",
+    "halbzeit": "5:4",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     12
+    ],
+    "verlauf": [
+     "00:12G",
+     "04:54H",
+     "07:29H",
+     "08:41H",
+     "09:03G",
+     "12:25H",
+     "15:22G",
+     "16:35G",
+     "17:12H",
+     "25:51H",
+     "27:08G",
+     "27:55H",
+     "28:21G",
+     "28:40H",
+     "32:00G",
+     "32:34G",
+     "35:12H",
+     "38:56H",
+     "41:25H",
+     "41:41G",
+     "42:05H",
+     "45:06G",
+     "45:40G"
+    ],
+    "ereignisse": [
+     [
+      "15:20",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "21:43",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "34:02",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "39:00",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "41:14",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "44:57",
+      "7m verworfen",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-27",
+   "zeit": "12:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "HSG Osnabrück",
+   "ergebnis": "24:9",
+   "bericht": {
+    "meeting": 8267681,
+    "tore": "24:9",
+    "halbzeit": "9:7",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "kader": [
+     11,
+     11
+    ],
+    "verlauf": [
+     "00:19H",
+     "02:46H",
+     "03:57H",
+     "04:32H",
+     "06:08G",
+     "09:06G",
+     "10:00G",
+     "11:04G",
+     "11:23H",
+     "11:42G",
+     "12:46H",
+     "14:09G",
+     "16:28G",
+     "19:04H",
+     "20:03H",
+     "23:26H",
+     "25:36H",
+     "26:57H",
+     "27:56H",
+     "29:00G",
+     "29:32H",
+     "31:14H",
+     "33:28H",
+     "34:20H",
+     "35:00H",
+     "35:29H",
+     "39:26H",
+     "41:32H",
+     "42:06H",
+     "43:36H",
+     "44:24G",
+     "46:21H",
+     "49:40H"
+    ],
+    "ereignisse": [
+     [
+      "15:37",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "20:07",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "36:20",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "36:23",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "36:47",
+      "Auszeit",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 9,
+   "datum": "2026-09-27",
+   "zeit": "13:15",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": "29:21",
+   "bericht": {
+    "meeting": 8267694,
+    "tore": "29:21",
+    "halbzeit": "12:8",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     9,
+     13
+    ],
+    "verlauf": [
+     "00:23G",
+     "04:00H",
+     "04:58G",
+     "06:19H",
+     "06:54H",
+     "07:49H",
+     "08:51H",
+     "09:04G",
+     "09:32G",
+     "10:48H",
+     "11:34H",
+     "12:41H",
+     "13:18G",
+     "13:49H",
+     "14:45H",
+     "15:09G",
+     "15:46G",
+     "17:03H",
+     "18:46H",
+     "22:35G",
+     "25:17H",
+     "26:47G",
+     "27:04H",
+     "28:31H",
+     "29:11G",
+     "29:25H",
+     "30:18G",
+     "30:48H",
+     "32:52H",
+     "33:31G",
+     "33:31H",
+     "33:31G",
+     "33:31H",
+     "33:31G",
+     "33:31H",
+     "33:31H",
+     "33:31G",
+     "33:31H",
+     "33:36G",
+     "34:57G",
+     "35:20G",
+     "35:41H",
+     "36:42H",
+     "37:08G",
+     "37:41H",
+     "39:20H",
+     "41:22G",
+     "41:36H",
+     "42:53H",
+     "43:24G"
+    ],
+    "ereignisse": [
+     [
+      "11:36",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "33:43",
+      "2 Minuten",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 10,
+   "datum": "2026-09-27",
+   "zeit": "16:30",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "25:12",
+   "bericht": {
+    "meeting": 8267667,
+    "tore": "25:12",
+    "halbzeit": "9:7",
+    "siebenm": [
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     11
+    ],
+    "verlauf": [
+     "05:42H",
+     "07:21G",
+     "08:54H",
+     "09:51H",
+     "12:01G",
+     "12:40H",
+     "13:33H",
+     "14:53H",
+     "15:27H",
+     "15:49H",
+     "16:43G",
+     "16:55H",
+     "18:28G",
+     "19:27G",
+     "23:55G",
+     "24:48G",
+     "28:18H",
+     "29:50H",
+     "32:20H",
+     "33:19G",
+     "33:35H",
+     "34:16G",
+     "34:39H",
+     "35:35G",
+     "36:18H",
+     "38:14H",
+     "38:54H",
+     "39:40H",
+     "41:10H",
+     "42:46H",
+     "43:56G",
+     "44:21H",
+     "45:11H",
+     "45:39H",
+     "46:34H",
+     "47:34G",
+     "47:48H"
+    ],
+    "ereignisse": [
+     [
+      "15:02",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "24:52",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "33:35",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "35:36",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "39:02",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "42:14",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "46:21",
+      "7m verworfen",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 1,
+   "datum": "2026-10-04",
+   "zeit": "11:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "29:28",
+   "verlegt": true,
+   "bericht": {
+    "meeting": 8267654,
+    "tore": "29:28",
+    "halbzeit": "14:11",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "kader": [
+     11,
+     9
+    ],
+    "verlauf": [
+     "00:42G",
+     "01:46H",
+     "03:17H",
+     "04:05H",
+     "05:40G",
+     "06:57H",
+     "07:58H",
+     "08:14G",
+     "08:51G",
+     "09:51G",
+     "10:31G",
+     "10:46H",
+     "12:35H",
+     "13:03H",
+     "13:14G",
+     "14:54H",
+     "15:44H",
+     "17:21G",
+     "17:35H",
+     "18:41H",
+     "20:49G",
+     "21:25G",
+     "22:17H",
+     "23:19G",
+     "24:21H",
+     "26:17H",
+     "26:35G",
+     "27:16H",
+     "27:33G",
+     "27:49H",
+     "28:04G",
+     "29:28G",
+     "30:04G",
+     "31:27G",
+     "31:42H",
+     "35:18H",
+     "36:37G",
+     "37:45H",
+     "38:15H",
+     "38:31G",
+     "39:06G",
+     "40:03G",
+     "40:25H",
+     "41:14G",
+     "41:37H",
+     "41:58G",
+     "42:15H",
+     "42:52H",
+     "43:38H",
+     "44:27G",
+     "45:05G",
+     "45:29H",
+     "46:50H",
+     "47:07G",
+     "47:55H",
+     "48:18G",
+     "49:02G"
+    ],
+    "ereignisse": [
+     [
+      "06:54",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "07:28",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "08:03",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "22:06",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "25:00",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "31:53",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "44:17",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "48:32",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "48:38",
+      "7m verworfen",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 11,
+   "datum": "2026-10-31",
+   "zeit": "13:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "32:26",
+   "bericht": {
+    "meeting": 8267679,
+    "tore": "32:26",
+    "halbzeit": "16:16",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "kader": [
+     13,
+     13
+    ],
+    "verlauf": [
+     "01:13H",
+     "01:22G",
+     "02:04H",
+     "02:54H",
+     "03:22H",
+     "04:05G",
+     "04:20H",
+     "04:46G",
+     "06:42H",
+     "06:58G",
+     "07:18H",
+     "08:30G",
+     "09:00H",
+     "09:49H",
+     "10:12G",
+     "11:03G",
+     "11:20H",
+     "11:37G",
+     "15:27G",
+     "16:58G",
+     "17:18G",
+     "17:22H",
+     "18:00G",
+     "19:28H",
+     "19:51G",
+     "22:08H",
+     "22:36H",
+     "22:54G",
+     "23:14H",
+     "23:43G",
+     "24:15H",
+     "24:36G",
+     "25:21H",
+     "26:51H",
+     "27:37H",
+     "29:12G",
+     "29:28H",
+     "29:52G",
+     "30:47G",
+     "32:35H",
+     "32:49G",
+     "33:54H",
+     "35:34H",
+     "37:06H",
+     "37:53G",
+     "38:35H",
+     "39:25G",
+     "40:12G",
+     "41:20H",
+     "41:59G",
+     "43:41H",
+     "43:54G",
+     "44:14H",
+     "45:20H",
+     "45:53H",
+     "46:58G",
+     "48:12H",
+     "49:24H"
+    ],
+    "ereignisse": [
+     [
+      "05:00",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "05:04",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "11:07",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "20:12",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "20:40",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "37:50",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "46:09",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "49:42",
+      "2 Minuten",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 12,
+   "datum": "2026-10-31",
+   "zeit": "15:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": "16:17",
+   "bericht": {
+    "meeting": 8267622,
+    "tore": "16:17",
+    "halbzeit": "12:14",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "kader": [
+     11,
+     8
+    ],
+    "verlauf": [
+     "02:38H",
+     "03:07G",
+     "04:21H",
+     "07:23G",
+     "08:48H",
+     "09:03G",
+     "09:36H",
+     "09:50G",
+     "10:22G",
+     "10:52H",
+     "11:15G",
+     "12:56G",
+     "13:21H",
+     "14:29G",
+     "16:18H",
+     "17:28H",
+     "17:46G",
+     "18:09H",
+     "18:35G",
+     "18:56H",
+     "20:05G",
+     "20:44G",
+     "21:00H",
+     "21:16G",
+     "22:03H",
+     "24:11G",
+     "27:29H",
+     "28:46G",
+     "32:29G",
+     "34:01H",
+     "35:59H",
+     "41:02H",
+     "48:49G"
+    ],
+    "ereignisse": [
+     [
+      "14:20",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "19:18",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "20:49",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "26:35",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "33:18",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "47:31",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "48:58",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-01",
+   "zeit": "10:40",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": "13:24",
+   "bericht": {
+    "meeting": 8267682,
+    "tore": "13:24",
+    "halbzeit": "4:12",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "kader": [
+     13,
+     10
+    ],
+    "verlauf": [
+     "01:41G",
+     "02:19G",
+     "02:37G",
+     "03:16G",
+     "05:48G",
+     "07:48G",
+     "08:00G",
+     "10:17G",
+     "13:43G",
+     "14:12H",
+     "14:47G",
+     "14:54H",
+     "19:21H",
+     "19:41G",
+     "21:41H",
+     "22:18G",
+     "25:13G",
+     "27:55G",
+     "29:31H",
+     "30:51G",
+     "31:17H",
+     "31:48H",
+     "32:14G",
+     "33:59H",
+     "34:29G",
+     "35:00H",
+     "35:13G",
+     "36:25H",
+     "38:39H",
+     "38:54G",
+     "41:15G",
+     "42:43G",
+     "44:40G",
+     "45:07G",
+     "47:55H",
+     "49:19G",
+     "50:00H"
+    ],
+    "ereignisse": [
+     [
+      "06:39",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "06:54",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "07:48",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "10:48",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "10:48",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "22:05",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "42:07",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "43:21",
+      "2 Minuten",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 14,
+   "datum": "2026-11-01",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "13:29",
+   "bericht": {
+    "meeting": 8267638,
+    "tore": "13:29",
+    "halbzeit": "6:14",
+    "siebenm": [
+     [
+      2,
+      2
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     10,
+     11
+    ],
+    "verlauf": [
+     "00:24G",
+     "02:56G",
+     "03:17G",
+     "04:06H",
+     "04:21G",
+     "05:40G",
+     "09:20G",
+     "10:34G",
+     "12:35G",
+     "13:54G",
+     "14:48H",
+     "18:07H",
+     "19:59H",
+     "20:21G",
+     "20:49G",
+     "21:19H",
+     "22:29G",
+     "22:53G",
+     "23:32G",
+     "24:05H",
+     "27:02G",
+     "27:50G",
+     "31:29H",
+     "32:19H",
+     "33:00G",
+     "33:09H",
+     "33:28G",
+     "34:42G",
+     "35:11H",
+     "35:30G",
+     "36:06H",
+     "36:06G",
+     "36:06H",
+     "39:20G",
+     "39:56G",
+     "42:04H",
+     "42:27G",
+     "43:38G",
+     "45:24G",
+     "47:46G",
+     "48:53G",
+     "50:00G"
+    ],
+    "ereignisse": [
+     [
+      "09:26",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "35:18",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "36:06",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "39:23",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 15,
+   "datum": "2026-11-14",
+   "zeit": "10:15",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "29:23",
+   "bericht": {
+    "meeting": 8267655,
+    "tore": "29:23",
+    "halbzeit": "12:8",
+    "siebenm": [
+     [
+      4,
+      3
+     ],
+     [
+      8,
+      7
+     ]
+    ],
+    "kader": [
+     11,
+     10
+    ],
+    "verlauf": [
+     "01:27G",
+     "01:49H",
+     "03:21G",
+     "03:51H",
+     "04:46H",
+     "05:13G",
+     "06:23H",
+     "07:24H",
+     "08:38H",
+     "10:05H",
+     "13:38H",
+     "15:24G",
+     "16:24H",
+     "17:26G",
+     "18:18G",
+     "20:23H",
+     "21:23H",
+     "22:58G",
+     "23:22H",
+     "24:03G",
+     "26:27H",
+     "26:43G",
+     "27:01H",
+     "27:01G",
+     "27:01H",
+     "27:01H",
+     "27:01H",
+     "30:01H",
+     "30:57G",
+     "31:32G",
+     "32:04H",
+     "33:54G",
+     "35:23G",
+     "35:52H",
+     "36:59H",
+     "38:05G",
+     "38:47G",
+     "39:26H",
+     "39:53H",
+     "39:55G",
+     "43:03G",
+     "43:47H",
+     "44:14H",
+     "45:01G",
+     "45:42G",
+     "46:02H",
+     "46:22G",
+     "47:36H",
+     "48:02G",
+     "48:42H",
+     "49:19G",
+     "49:35H"
+    ],
+    "ereignisse": [
+     [
+      "09:35",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "12:11",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "13:01",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "27:01",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "30:48",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "36:55",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "39:53",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "50:00",
+      "7m verworfen",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 16,
+   "datum": "2026-11-15",
+   "zeit": "14:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "21:17",
+   "bericht": {
+    "meeting": 8267657,
+    "tore": "21:17",
+    "halbzeit": "10:10",
+    "siebenm": [
+     [
+      3,
+      2
+     ],
+     [
+      4,
+      3
+     ]
+    ],
+    "kader": [
+     10,
+     13
+    ],
+    "verlauf": [
+     "01:54G",
+     "03:11G",
+     "07:14G",
+     "07:41H",
+     "10:21H",
+     "12:18H",
+     "14:55G",
+     "15:36G",
+     "15:54H",
+     "16:17G",
+     "16:56H",
+     "19:01G",
+     "19:51G",
+     "20:12H",
+     "20:12H",
+     "20:12G",
+     "20:29H",
+     "22:50H",
+     "23:17G",
+     "23:33H",
+     "25:29H",
+     "26:36G",
+     "27:26H",
+     "27:44H",
+     "28:53G",
+     "29:39G",
+     "30:26H",
+     "31:06H",
+     "31:48G",
+     "33:31H",
+     "34:05H",
+     "35:52G",
+     "36:22H",
+     "39:48H",
+     "46:49H",
+     "47:49G",
+     "48:01H",
+     "49:37G"
+    ],
+    "ereignisse": [
+     [
+      "03:20",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "10:58",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "16:31",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "18:54",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "18:59",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "19:51",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "20:39",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "23:39",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "36:39",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "47:49",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "48:38",
+      "7m verworfen",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 17,
+   "datum": "2026-11-21",
+   "zeit": "14:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": "25:23",
+   "bericht": {
+    "meeting": 8267650,
+    "tore": "25:23",
+    "halbzeit": "11:9",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "kader": [
+     11,
+     9
+    ],
+    "verlauf": [
+     "00:40H",
+     "03:38G",
+     "03:54H",
+     "04:17G",
+     "04:45H",
+     "05:19H",
+     "07:03H",
+     "07:57G",
+     "10:09H",
+     "10:49H",
+     "14:17G",
+     "14:33H",
+     "15:31G",
+     "16:55G",
+     "17:26H",
+     "17:46G",
+     "18:05H",
+     "18:23G",
+     "18:58H",
+     "23:24G",
+     "27:58G",
+     "29:02G",
+     "29:55G",
+     "30:15H",
+     "31:01H",
+     "33:00H",
+     "33:42G",
+     "34:10H",
+     "34:35G",
+     "36:36G",
+     "37:10H",
+     "37:27G",
+     "38:05H",
+     "39:34G",
+     "40:34H",
+     "41:39G",
+     "41:58H",
+     "42:13G",
+     "42:33H",
+     "42:55H",
+     "44:10H",
+     "46:09G",
+     "46:52G",
+     "47:09H",
+     "47:50G",
+     "48:20H",
+     "48:40H",
+     "49:50G"
+    ],
+    "ereignisse": [
+     [
+      "10:14",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "27:24",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "43:56",
+      "2 Minuten",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-22",
+   "zeit": "13:40",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-22",
+   "zeit": "14:15",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-28",
+   "zeit": "13:15",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "HSG Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-29",
+   "zeit": "14:30",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 22,
+   "datum": "2026-11-29",
+   "zeit": "14:45",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 23,
+   "datum": "2026-12-12",
+   "zeit": "15:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 24,
+   "datum": "2026-12-12",
+   "zeit": "17:00",
+   "halle": "808104",
+   "heim": "HSG Osnabrück",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 25,
+   "datum": "2026-12-13",
+   "zeit": "13:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": ""
+  },
+  {
+   "nr": 6,
+   "datum": "2026-12-13",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": "",
+   "verlegt": true
+  },
+  {
+   "nr": 26,
+   "datum": "2026-12-19",
+   "zeit": "13:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 27,
+   "datum": "2026-12-20",
+   "zeit": "09:15",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "HSG Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 28,
+   "datum": "2026-12-20",
+   "zeit": "13:15",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 29,
+   "datum": "2027-01-23",
+   "zeit": "15:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "HSG Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 30,
+   "datum": "2027-01-24",
+   "zeit": "13:30",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 31,
+   "datum": "2027-01-24",
+   "zeit": "15:00",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 32,
+   "datum": "2027-02-06",
+   "zeit": "16:45",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": ""
+  },
+  {
+   "nr": 33,
+   "datum": "2027-02-07",
+   "zeit": "13:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 34,
+   "datum": "2027-02-07",
+   "zeit": "14:30",
+   "halle": "808135",
+   "heim": "SG Teuto Handball II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 35,
+   "datum": "2027-02-13",
+   "zeit": "14:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 36,
+   "datum": "2027-02-14",
+   "zeit": "10:15",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 37,
+   "datum": "2027-02-14",
+   "zeit": "13:15",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": ""
+  },
+  {
+   "nr": 38,
+   "datum": "2027-02-27",
+   "zeit": "11:00",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": ""
+  },
+  {
+   "nr": 39,
+   "datum": "2027-02-27",
+   "zeit": "14:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 40,
+   "datum": "2027-02-27",
+   "zeit": "14:30",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "HSG Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 41,
+   "datum": "2027-02-27",
+   "zeit": "16:45",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 42,
+   "datum": "2027-03-07",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": ""
+  },
+  {
+   "nr": 43,
+   "datum": "2027-03-07",
+   "zeit": "15:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 44,
+   "datum": "2027-03-07",
+   "zeit": "15:15",
+   "halle": "808151",
+   "heim": "TSV Wallenhorst",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 45,
+   "datum": "2027-03-13",
+   "zeit": "14:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "HSG Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 46,
+   "datum": "2027-03-13",
+   "zeit": "15:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": ""
+  },
+  {
+   "nr": 47,
+   "datum": "2027-03-14",
+   "zeit": "13:15",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 48,
+   "datum": "2027-04-10",
+   "zeit": "14:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "SV Quitt Ankum",
+   "ergebnis": ""
+  },
+  {
+   "nr": 49,
+   "datum": "2027-04-11",
+   "zeit": "14:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 50,
+   "datum": "2027-04-11",
+   "zeit": "14:20",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": ""
+  },
+  {
+   "nr": 51,
+   "datum": "2027-04-17",
+   "zeit": "13:15",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "HSG Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 52,
+   "datum": "2027-04-18",
+   "zeit": "15:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 53,
+   "datum": "2027-04-18",
+   "zeit": "15:15",
+   "halle": "808154",
+   "heim": "SV Quitt Ankum",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 54,
+   "datum": "2027-04-24",
+   "zeit": "11:30",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "TSV Wallenhorst",
+   "ergebnis": ""
+  },
+  {
+   "nr": 55,
+   "datum": "2027-04-24",
+   "zeit": "15:15",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 56,
+   "datum": "2027-04-25",
+   "zeit": "14:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "808104": {
+   "name": "Vereinssporthalle OSC",
+   "adresse": "Hiärm-Grupe-Straße 8, 49080 Osnabrück"
+  },
+  "808107": {
+   "name": "SZ Sonnenhügel",
+   "adresse": "Knollstraße 143, 49088 Osnabrück"
+  },
+  "808129": {
+   "name": "Schulzentrum Bad Iburg, Halle 1",
+   "adresse": "Bielefelder Str. 15, 49186 Bad Iburg"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  },
+  "808135": {
+   "name": "Sporthalle Alt Hasbergen",
+   "adresse": "Schulstraße, 49205 Hasbergen"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808151": {
+   "name": "Alexanderschule Wallenhorst",
+   "adresse": "Maria-Montessori-Straße 3-6, 49134 Wallenhorst"
+  },
+  "808154": {
+   "name": "Ballsporthalle Ankum",
+   "adresse": "Am Kattenboll, 49577 Ankum"
+  },
+  "808158": {
+   "name": "Ballsporthalle Große Schulstraße",
+   "adresse": "Große Schulstr. 83 A, 49078 Osnabrück"
+  },
+  "808183": {
+   "name": "Sporthalle Lüstringen",
+   "adresse": "Am Hallenbad 5, 49086 Osnabrück"
+  }
+ },
+ "links": [
+  {
+   "titel": "Tabelle & aktuelle Spiele",
+   "info": "nuLiga · Weibliche C-Jugend Regionsliga Süd",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?championship=HRWN+26%2F27&group=505361"
+  },
+  {
+   "titel": "Kompletter Spielplan",
+   "info": "nuLiga · alle 56 Spiele der Staffel",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=HRWN+26%2F27&group=505361"
+  },
+  {
+   "titel": "Alle Mannschaften der JSG",
+   "info": "nuLiga · JSG Eicken-Buer-Oldendorf",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32655"
+  },
+  {
+   "titel": "Handball beim ESV",
+   "info": "eickener-sv.de · Mannschaften und Training",
+   "url": "https://www.eickener-sv.de/index.php/abteilungen/handball"
+  }
+ ],
+ "archiv": [],
+ "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=505361&meeting=",
+ "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
+ "kurz": "JSG",
+ "mannschaft": "Weibliche C-Jugend",
+ "verein": "JSG Eicken-Buer-Oldendorf"
+}

@@ -1,0 +1,2445 @@
+{
+ "stand": "2026-11-22T14:57:00+01:00",
+ "saison": "2026/27",
+ "team": "Eickener SpVg",
+ "kurz": "ESV",
+ "mannschaft": "1. Herren",
+ "verein": "Eickener SpVg",
+ "liga": "Verbandsliga Männer West",
+ "region": "HVNB",
+ "halbzeitMin": 30,
+ "hinweis": "Sortiert nach Punkten; nach Abschluss aller Spiele entscheidet der direkte Vergleich. TuS Haren hat am 24.08.2026 zurückgezogen. Ergebnisse vom 21.11. sind noch nicht vom Verband bestätigt.",
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "Eickener SpVg",
+   "spiele": 8,
+   "s": 6,
+   "u": 1,
+   "n": 1,
+   "tore": "286:242",
+   "diff": 44,
+   "punkte": "13:3"
+  },
+  {
+   "platz": 2,
+   "team": "TuS Bramsche",
+   "spiele": 7,
+   "s": 6,
+   "u": 0,
+   "n": 1,
+   "tore": "222:176",
+   "diff": 46,
+   "punkte": "12:2"
+  },
+  {
+   "platz": 3,
+   "team": "TV 01 Bohmte",
+   "spiele": 8,
+   "s": 5,
+   "u": 0,
+   "n": 3,
+   "tore": "250:244",
+   "diff": 6,
+   "punkte": "10:6"
+  },
+  {
+   "platz": 4,
+   "team": "SFN Vechta",
+   "spiele": 7,
+   "s": 4,
+   "u": 0,
+   "n": 3,
+   "tore": "197:189",
+   "diff": 8,
+   "punkte": "8:6"
+  },
+  {
+   "platz": 5,
+   "team": "HSG Schaumburg II",
+   "spiele": 8,
+   "s": 4,
+   "u": 0,
+   "n": 4,
+   "tore": "286:267",
+   "diff": 19,
+   "punkte": "8:8"
+  },
+  {
+   "platz": 6,
+   "team": "HSG Hunte-Aue Löwen",
+   "spiele": 8,
+   "s": 4,
+   "u": 0,
+   "n": 4,
+   "tore": "253:244",
+   "diff": 9,
+   "punkte": "8:8"
+  },
+  {
+   "platz": 7,
+   "team": "SG Teuto Handball",
+   "spiele": 8,
+   "s": 3,
+   "u": 1,
+   "n": 4,
+   "tore": "237:251",
+   "diff": -14,
+   "punkte": "7:9"
+  },
+  {
+   "platz": 8,
+   "team": "TSG 07 Burg Gretesch",
+   "spiele": 8,
+   "s": 3,
+   "u": 0,
+   "n": 5,
+   "tore": "226:244",
+   "diff": -18,
+   "punkte": "6:10"
+  },
+  {
+   "platz": 9,
+   "team": "HSG Nordhorn e.V. II",
+   "spiele": 8,
+   "s": 2,
+   "u": 1,
+   "n": 5,
+   "tore": "248:271",
+   "diff": -23,
+   "punkte": "5:11"
+  },
+  {
+   "platz": 10,
+   "team": "FC Schüttorf 09",
+   "spiele": 7,
+   "s": 2,
+   "u": 0,
+   "n": 5,
+   "tore": "208:241",
+   "diff": -33,
+   "punkte": "4:10"
+  },
+  {
+   "platz": 11,
+   "team": "TV Georgsmarienhütte",
+   "spiele": 7,
+   "s": 1,
+   "u": 1,
+   "n": 5,
+   "tore": "194:238",
+   "diff": -44,
+   "punkte": "3:11"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 105002,
+   "datum": "2026-09-11",
+   "zeit": "20:00",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "SG Teuto Handball",
+   "ergebnis": "29:29",
+   "meeting": 8280421
+  },
+  {
+   "nr": 105003,
+   "datum": "2026-09-11",
+   "zeit": "20:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": "22:33",
+   "meeting": 8280424
+  },
+  {
+   "nr": 105005,
+   "datum": "2026-09-12",
+   "zeit": "18:00",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": "39:34",
+   "meeting": 8280452
+  },
+  {
+   "nr": 105006,
+   "datum": "2026-09-12",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "29:18",
+   "meeting": 8280361,
+   "bericht": {
+    "tore": "29:18",
+    "halbzeit": "12:11",
+    "siebenm": [
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "kader": [
+     13,
+     14
+    ],
+    "verlauf": [
+     "03:00H",
+     "05:43H",
+     "06:26H",
+     "06:54G",
+     "08:00G",
+     "09:23H",
+     "11:14H",
+     "12:23H",
+     "16:23G",
+     "16:41G",
+     "17:10H",
+     "17:47G",
+     "18:11H",
+     "18:58G",
+     "20:25H",
+     "21:14H",
+     "22:03G",
+     "23:33G",
+     "24:40H",
+     "27:28G",
+     "28:20G",
+     "28:39H",
+     "29:11G",
+     "30:35H",
+     "32:04H",
+     "32:30G",
+     "32:53H",
+     "35:06H",
+     "35:33G",
+     "36:26H",
+     "36:59G",
+     "37:12H",
+     "38:10H",
+     "39:16H",
+     "42:41G",
+     "43:28H",
+     "46:13H",
+     "48:37H",
+     "49:04G",
+     "49:13H",
+     "50:09H",
+     "52:55G",
+     "53:31H",
+     "56:04H",
+     "58:07H",
+     "59:07G",
+     "59:44H"
+    ],
+    "ereignisse": [
+     [
+      "13:29",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "15:43",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "23:44",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "26:47",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "37:11",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "44:28",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "46:40",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "48:36",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "55:48",
+      "2 Minuten",
+      "G"
+     ]
+    ],
+    "meeting": 8280361
+   }
+  },
+  {
+   "nr": 105007,
+   "datum": "2026-09-13",
+   "zeit": "17:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "SFN Vechta",
+   "ergebnis": "27:21",
+   "meeting": 8280472
+  },
+  {
+   "nr": 105008,
+   "datum": "2026-09-18",
+   "zeit": "20:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "TuS Bramsche",
+   "ergebnis": "22:34",
+   "meeting": 8280437
+  },
+  {
+   "nr": 105009,
+   "datum": "2026-09-19",
+   "zeit": "16:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": "35:26",
+   "meeting": 8280380
+  },
+  {
+   "nr": 105010,
+   "datum": "2026-09-19",
+   "zeit": "18:30",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "Eickener SpVg",
+   "ergebnis": "26:29",
+   "meeting": 8280383,
+   "bericht": {
+    "tore": "26:29",
+    "halbzeit": "14:14",
+    "siebenm": [
+     [
+      6,
+      2
+     ],
+     [
+      4,
+      3
+     ]
+    ],
+    "kader": [
+     14,
+     12
+    ],
+    "verlauf": [
+     "00:49G",
+     "01:10G",
+     "02:05H",
+     "02:31G",
+     "04:24H",
+     "05:55G",
+     "08:10H",
+     "09:33H",
+     "11:36G",
+     "12:07H",
+     "13:41H",
+     "14:24G",
+     "14:48H",
+     "15:06G",
+     "15:52G",
+     "16:55G",
+     "17:24H",
+     "18:39H",
+     "19:36H",
+     "20:22G",
+     "22:29H",
+     "24:32G",
+     "25:39H",
+     "25:49G",
+     "26:21H",
+     "27:07G",
+     "28:04H",
+     "29:34G",
+     "32:29G",
+     "33:20H",
+     "33:32G",
+     "34:52H",
+     "35:29G",
+     "36:10H",
+     "38:50G",
+     "39:33H",
+     "40:06G",
+     "41:41H",
+     "42:46H",
+     "44:21H",
+     "45:02G",
+     "46:20G",
+     "47:05H",
+     "47:42G",
+     "49:52H",
+     "51:17G",
+     "51:40H",
+     "51:59G",
+     "53:24H",
+     "53:50G",
+     "56:44G",
+     "57:29H",
+     "58:08G",
+     "58:58G",
+     "59:52G"
+    ],
+    "ereignisse": [
+     [
+      "05:35",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "06:52",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "07:24",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "07:29",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "09:28",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "10:23",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "22:46",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "26:17",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "29:38",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "39:27",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "51:04",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "54:40",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8280383
+   }
+  },
+  {
+   "nr": 105011,
+   "datum": "2026-09-19",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": "35:30",
+   "meeting": 8280417
+  },
+  {
+   "nr": 105012,
+   "datum": "2026-09-20",
+   "zeit": "14:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "27:37",
+   "meeting": 8280377
+  },
+  {
+   "nr": 105014,
+   "datum": "2026-09-25",
+   "zeit": "20:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": "35:40",
+   "meeting": 8280390
+  },
+  {
+   "nr": 105015,
+   "datum": "2026-09-26",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SFN Vechta",
+   "ergebnis": "28:29",
+   "meeting": 8280448
+  },
+  {
+   "nr": 105016,
+   "datum": "2026-09-26",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "SG Teuto Handball",
+   "ergebnis": "46:33",
+   "meeting": 8280386,
+   "bericht": {
+    "tore": "46:33",
+    "halbzeit": "20:16",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "kader": [
+     13,
+     13
+    ],
+    "verlauf": [
+     "00:32H",
+     "00:43G",
+     "01:05G",
+     "02:46G",
+     "03:11H",
+     "03:47G",
+     "03:59H",
+     "04:34G",
+     "04:44H",
+     "05:48H",
+     "06:40G",
+     "06:58H",
+     "07:49G",
+     "07:57H",
+     "09:36H",
+     "10:11H",
+     "12:32H",
+     "13:40G",
+     "14:30G",
+     "17:08H",
+     "17:52H",
+     "18:26G",
+     "19:00G",
+     "19:14H",
+     "19:44H",
+     "21:33H",
+     "22:00G",
+     "22:42H",
+     "23:05G",
+     "24:02H",
+     "24:51H",
+     "25:43G",
+     "26:05G",
+     "27:01H",
+     "29:20H",
+     "29:50G",
+     "30:56H",
+     "31:37H",
+     "31:53G",
+     "32:23H",
+     "33:21H",
+     "34:27H",
+     "34:34G",
+     "35:05H",
+     "35:19G",
+     "36:07H",
+     "36:46G",
+     "38:01H",
+     "39:20H",
+     "40:39H",
+     "41:10G",
+     "41:32H",
+     "42:34G",
+     "42:39H",
+     "43:30G",
+     "44:08H",
+     "45:13G",
+     "45:45H",
+     "46:26H",
+     "47:05G",
+     "47:50H",
+     "48:43G",
+     "50:09G",
+     "50:47G",
+     "51:28H",
+     "52:03H",
+     "52:54G",
+     "53:03H",
+     "54:42G",
+     "55:09H",
+     "55:18G",
+     "55:26H",
+     "56:04H",
+     "56:58H",
+     "58:05H",
+     "58:22G",
+     "59:19H",
+     "59:46G",
+     "59:53H"
+    ],
+    "ereignisse": [
+     [
+      "05:34",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "14:30",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "25:31",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "27:16",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "36:46",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "42:31",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "45:25",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "48:21",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "50:57",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "56:10",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "57:07",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "57:07",
+      "Verwarnung",
+      "H"
+     ]
+    ],
+    "meeting": 8280386
+   }
+  },
+  {
+   "nr": 105017,
+   "datum": "2026-09-26",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": "37:31",
+   "meeting": 8280388
+  },
+  {
+   "nr": 105018,
+   "datum": "2026-09-27",
+   "zeit": "17:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": "32:31",
+   "meeting": 8280464
+  },
+  {
+   "nr": 105019,
+   "datum": "2026-10-02",
+   "zeit": "20:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "23:15",
+   "meeting": 8280420
+  },
+  {
+   "nr": 105020,
+   "datum": "2026-10-03",
+   "zeit": "16:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": "47:24",
+   "meeting": 8280441
+  },
+  {
+   "nr": 105021,
+   "datum": "2026-10-03",
+   "zeit": "18:30",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "34:25",
+   "meeting": 8280469
+  },
+  {
+   "nr": 105022,
+   "datum": "2026-10-03",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "Eickener SpVg",
+   "ergebnis": "36:38",
+   "meeting": 8280473,
+   "bericht": {
+    "tore": "36:38",
+    "halbzeit": "18:23",
+    "siebenm": [
+     [
+      4,
+      1
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "kader": [
+     13,
+     14
+    ],
+    "verlauf": [
+     "00:37G",
+     "01:05H",
+     "02:10H",
+     "03:05G",
+     "03:54H",
+     "04:08G",
+     "05:06G",
+     "05:15H",
+     "05:29G",
+     "07:20G",
+     "07:32H",
+     "08:05G",
+     "08:42H",
+     "08:48G",
+     "09:54G",
+     "11:14G",
+     "11:48H",
+     "12:43G",
+     "13:09H",
+     "13:16G",
+     "14:02G",
+     "14:10H",
+     "16:03G",
+     "16:35H",
+     "17:22G",
+     "17:46H",
+     "18:40H",
+     "18:49G",
+     "19:16H",
+     "20:11G",
+     "20:59H",
+     "21:23G",
+     "22:14G",
+     "23:10G",
+     "23:54H",
+     "24:45G",
+     "27:38H",
+     "28:06G",
+     "28:59H",
+     "29:39H",
+     "29:55G",
+     "30:37H",
+     "31:52H",
+     "32:23G",
+     "33:48H",
+     "35:48G",
+     "37:22H",
+     "38:07G",
+     "39:50H",
+     "40:59G",
+     "43:18H",
+     "43:31G",
+     "44:41G",
+     "44:52H",
+     "46:36H",
+     "46:46G",
+     "47:58H",
+     "48:44H",
+     "49:22G",
+     "50:05H",
+     "51:42G",
+     "52:14H",
+     "53:02G",
+     "53:46H",
+     "55:05H",
+     "55:44G",
+     "56:08H",
+     "56:21G",
+     "56:59G",
+     "57:58G",
+     "58:16H",
+     "58:44H",
+     "59:32G",
+     "59:44H"
+    ],
+    "ereignisse": [
+     [
+      "04:51",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "05:32",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "11:16",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "15:51",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "20:11",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "29:41",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "31:31",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "34:03",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "42:42",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "46:07",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "47:07",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "49:00",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "52:09",
+      "2 Minuten",
+      "G"
+     ]
+    ],
+    "meeting": 8280473
+   }
+  },
+  {
+   "nr": 105024,
+   "datum": "2026-10-10",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": "30:27",
+   "meeting": 8280465
+  },
+  {
+   "nr": 105025,
+   "datum": "2026-10-10",
+   "zeit": "18:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": "30:22",
+   "meeting": 8280408
+  },
+  {
+   "nr": 105027,
+   "datum": "2026-10-10",
+   "zeit": "19:30",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": "35:24",
+   "meeting": 8280355,
+   "verlegt": true
+  },
+  {
+   "nr": 105028,
+   "datum": "2026-10-23",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "SG Teuto Handball",
+   "ergebnis": "30:25",
+   "meeting": 8280450
+  },
+  {
+   "nr": 105030,
+   "datum": "2026-10-31",
+   "zeit": "18:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": "38:37",
+   "meeting": 8280479
+  },
+  {
+   "nr": 105032,
+   "datum": "2026-10-31",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "SFN Vechta",
+   "ergebnis": "32:31",
+   "meeting": 8280415
+  },
+  {
+   "nr": 105033,
+   "datum": "2026-10-31",
+   "zeit": "19:15",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "32:28",
+   "meeting": 8280459
+  },
+  {
+   "nr": 105034,
+   "datum": "2026-10-31",
+   "zeit": "20:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "TuS Bramsche",
+   "ergebnis": "34:33",
+   "meeting": 8280393
+  },
+  {
+   "nr": 105035,
+   "datum": "2026-11-01",
+   "zeit": "17:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "Eickener SpVg",
+   "ergebnis": "37:41",
+   "meeting": 8280402,
+   "bericht": {
+    "tore": "37:41",
+    "halbzeit": "16:21",
+    "siebenm": [
+     [
+      4,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "kader": [
+     16,
+     13
+    ],
+    "verlauf": [
+     "01:14H",
+     "02:32G",
+     "02:57H",
+     "03:54G",
+     "05:12G",
+     "05:36H",
+     "07:56G",
+     "08:05H",
+     "08:27G",
+     "08:57H",
+     "09:12H",
+     "10:58G",
+     "11:26G",
+     "12:06G",
+     "12:50H",
+     "13:04G",
+     "13:40H",
+     "14:09H",
+     "14:39G",
+     "16:02G",
+     "18:05H",
+     "19:03G",
+     "19:52G",
+     "21:18H",
+     "22:12G",
+     "22:54H",
+     "23:05G",
+     "24:32H",
+     "25:28G",
+     "25:42G",
+     "26:01G",
+     "27:13G",
+     "27:32H",
+     "27:57G",
+     "28:40G",
+     "29:11H",
+     "30:00H",
+     "31:41G",
+     "32:49H",
+     "33:01G",
+     "33:23H",
+     "34:25G",
+     "35:55H",
+     "36:29G",
+     "37:10H",
+     "38:06G",
+     "39:03G",
+     "40:27H",
+     "40:44H",
+     "42:06H",
+     "42:20H",
+     "43:00G",
+     "43:39G",
+     "44:58G",
+     "45:50H",
+     "46:15G",
+     "46:53H",
+     "47:06G",
+     "47:45H",
+     "48:15G",
+     "50:11H",
+     "50:21G",
+     "51:21G",
+     "52:02H",
+     "52:32G",
+     "53:14H",
+     "55:03G",
+     "55:45H",
+     "56:10G",
+     "56:44G",
+     "56:59H",
+     "57:23G",
+     "57:30H",
+     "58:07H",
+     "58:29G",
+     "58:36H",
+     "59:35H",
+     "59:57H"
+    ],
+    "ereignisse": [
+     [
+      "06:29",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "23:11",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "26:01",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "28:50",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "29:25",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "29:58",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "31:25",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "32:13",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "51:32",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "59:43",
+      "2 Minuten",
+      "G"
+     ]
+    ],
+    "meeting": 8280402
+   }
+  },
+  {
+   "nr": 105037,
+   "datum": "2026-11-07",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": "38:33",
+   "meeting": 8280454
+  },
+  {
+   "nr": 105038,
+   "datum": "2026-11-07",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": "41:29",
+   "meeting": 8280367,
+   "bericht": {
+    "tore": "41:29",
+    "halbzeit": "20:14",
+    "siebenm": [
+     [
+      3,
+      3
+     ],
+     [
+      5,
+      3
+     ]
+    ],
+    "kader": [
+     13,
+     14
+    ],
+    "verlauf": [
+     "00:47H",
+     "01:32G",
+     "01:40H",
+     "02:16H",
+     "02:30G",
+     "04:32H",
+     "05:11G",
+     "06:07H",
+     "06:48H",
+     "07:48G",
+     "08:16H",
+     "09:08G",
+     "09:44H",
+     "10:05G",
+     "11:36G",
+     "12:00H",
+     "13:41H",
+     "14:27H",
+     "16:10H",
+     "16:46G",
+     "17:53H",
+     "18:29G",
+     "18:41H",
+     "20:45H",
+     "21:49H",
+     "23:34H",
+     "24:26G",
+     "24:33H",
+     "25:10G",
+     "26:28G",
+     "27:19H",
+     "28:04G",
+     "29:16H",
+     "29:41G",
+     "30:29G",
+     "31:06H",
+     "32:36H",
+     "33:04G",
+     "33:23G",
+     "33:50H",
+     "35:49H",
+     "36:31H",
+     "36:40G",
+     "37:35H",
+     "38:28G",
+     "39:49G",
+     "40:21H",
+     "41:17H",
+     "41:54H",
+     "42:26G",
+     "43:00H",
+     "44:46H",
+     "45:45G",
+     "46:21G",
+     "48:02H",
+     "48:41H",
+     "49:09G",
+     "49:47H",
+     "50:16G",
+     "50:46H",
+     "51:06G",
+     "52:05H",
+     "54:02G",
+     "54:32H",
+     "55:20H",
+     "56:03G",
+     "56:36H",
+     "57:11H",
+     "57:34G",
+     "57:41H"
+    ],
+    "ereignisse": [
+     [
+      "08:55",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "13:39",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "14:42",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "29:09",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "34:19",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "43:17",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "49:08",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "50:04",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "53:11",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "57:45",
+      "2 Minuten",
+      "G"
+     ]
+    ],
+    "meeting": 8280367
+   }
+  },
+  {
+   "nr": 105039,
+   "datum": "2026-11-07",
+   "zeit": "19:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": "39:31",
+   "meeting": 8280382
+  },
+  {
+   "nr": 105040,
+   "datum": "2026-11-07",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": "32:29",
+   "meeting": 8280456
+  },
+  {
+   "nr": 105041,
+   "datum": "2026-11-08",
+   "zeit": "17:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "34:17",
+   "meeting": 8280379
+  },
+  {
+   "nr": 105029,
+   "datum": "2026-11-12",
+   "zeit": "19:45",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "30:29",
+   "meeting": 8280385,
+   "verlegt": true
+  },
+  {
+   "nr": 105043,
+   "datum": "2026-11-14",
+   "zeit": "17:30",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "41:34",
+   "meeting": 8280461
+  },
+  {
+   "nr": 105044,
+   "datum": "2026-11-14",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "28:22",
+   "meeting": 8280403
+  },
+  {
+   "nr": 105045,
+   "datum": "2026-11-14",
+   "zeit": "19:30",
+   "halle": "803137",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "TuS Bramsche",
+   "ergebnis": "29:32",
+   "meeting": 8280445
+  },
+  {
+   "nr": 105046,
+   "datum": "",
+   "zeit": "",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105047,
+   "datum": "2026-11-15",
+   "zeit": "17:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "Eickener SpVg",
+   "ergebnis": "28:28",
+   "meeting": 8280412,
+   "bericht": {
+    "tore": "28:28",
+    "halbzeit": "15:15",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "kader": [
+     15,
+     14
+    ],
+    "verlauf": [
+     "00:31H",
+     "01:31H",
+     "01:39G",
+     "02:21G",
+     "03:04H",
+     "05:51H",
+     "06:48G",
+     "07:42G",
+     "08:20H",
+     "08:31G",
+     "10:35G",
+     "11:26H",
+     "11:37G",
+     "12:42H",
+     "14:01H",
+     "14:21G",
+     "14:51H",
+     "15:02G",
+     "15:14H",
+     "17:46H",
+     "18:40H",
+     "18:53G",
+     "19:47G",
+     "20:47H",
+     "20:57G",
+     "22:12H",
+     "24:12G",
+     "25:16G",
+     "25:44H",
+     "26:44G",
+     "32:05H",
+     "35:16H",
+     "37:44G",
+     "37:53H",
+     "38:23G",
+     "38:39H",
+     "39:35H",
+     "40:12G",
+     "40:33G",
+     "41:17G",
+     "43:08H",
+     "44:28H",
+     "46:02G",
+     "46:28H",
+     "46:37G",
+     "47:58H",
+     "49:33G",
+     "52:36H",
+     "53:37G",
+     "54:11G",
+     "55:26H",
+     "56:10G",
+     "56:37H",
+     "56:49G",
+     "57:41H",
+     "59:57G"
+    ],
+    "ereignisse": [
+     [
+      "12:14",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "20:20",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "22:27",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "22:56",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "26:46",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "33:37",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "36:30",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "41:21",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "44:36",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "51:37",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "56:49",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "57:30",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "59:29",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "59:42",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8280412
+   }
+  },
+  {
+   "nr": 105048,
+   "datum": "2026-11-20",
+   "zeit": "20:30",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": "26:23",
+   "meeting": 8280394
+  },
+  {
+   "nr": 105049,
+   "datum": "2026-11-21",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "36:25",
+   "meeting": 8280419,
+   "vorlaeufig": true
+  },
+  {
+   "nr": 105050,
+   "datum": "2026-11-21",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": "34:35",
+   "meeting": 8280439,
+   "vorlaeufig": true,
+   "bericht": {
+    "tore": "34:35",
+    "halbzeit": "16:21",
+    "siebenm": [
+     [
+      8,
+      4
+     ],
+     [
+      4,
+      2
+     ]
+    ],
+    "kader": [
+     12,
+     14
+    ],
+    "verlauf": [
+     "00:30H",
+     "02:00G",
+     "02:17G",
+     "02:50G",
+     "04:21G",
+     "04:56H",
+     "06:42H",
+     "07:23H",
+     "07:54G",
+     "08:04H",
+     "08:16G",
+     "09:49G",
+     "10:35G",
+     "12:06G",
+     "13:14G",
+     "14:46H",
+     "15:12G",
+     "16:01G",
+     "16:11H",
+     "17:27G",
+     "17:59G",
+     "18:19G",
+     "19:10H",
+     "19:53G",
+     "21:06G",
+     "21:56H",
+     "23:24H",
+     "24:12H",
+     "24:38H",
+     "25:03G",
+     "25:12H",
+     "25:46H",
+     "26:23G",
+     "27:15H",
+     "28:32H",
+     "29:08G",
+     "29:55G",
+     "32:51H",
+     "34:10H",
+     "34:49G",
+     "35:09H",
+     "37:03G",
+     "37:50H",
+     "38:35H",
+     "38:48G",
+     "39:48G",
+     "42:49H",
+     "43:53H",
+     "44:03G",
+     "44:31H",
+     "45:15G",
+     "46:59H",
+     "47:36H",
+     "48:14H",
+     "49:03H",
+     "49:46H",
+     "50:40G",
+     "50:55G",
+     "51:37G",
+     "53:19H",
+     "53:54G",
+     "57:05H",
+     "57:15G",
+     "57:40H",
+     "59:04G",
+     "59:14H",
+     "59:47G",
+     "59:56H",
+     "60:00G"
+    ],
+    "ereignisse": [
+     [
+      "02:22",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "04:05",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "13:37",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "17:07",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "20:15",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "25:16",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "40:54",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "41:29",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "43:01",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "46:21",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "49:51",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "52:37",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "52:39",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "55:08",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "57:28",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "59:47",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8280439
+   }
+  },
+  {
+   "nr": 105051,
+   "datum": "2026-11-21",
+   "zeit": "19:15",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": "34:38",
+   "meeting": 8280416,
+   "vorlaeufig": true
+  },
+  {
+   "nr": 105053,
+   "datum": "2026-11-22",
+   "zeit": "17:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105054,
+   "datum": "2026-11-28",
+   "zeit": "20:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105055,
+   "datum": "2026-12-04",
+   "zeit": "20:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105056,
+   "datum": "2026-12-05",
+   "zeit": "14:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105057,
+   "datum": "2026-12-05",
+   "zeit": "18:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "Eickener SpVg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105058,
+   "datum": "2026-12-05",
+   "zeit": "19:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105059,
+   "datum": "2026-12-05",
+   "zeit": "19:30",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105061,
+   "datum": "2026-12-11",
+   "zeit": "20:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105062,
+   "datum": "2026-12-12",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105063,
+   "datum": "2026-12-12",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105064,
+   "datum": "2026-12-12",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105065,
+   "datum": "2026-12-12",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105067,
+   "datum": "2027-01-29",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105069,
+   "datum": "2027-01-29",
+   "zeit": "20:30",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105070,
+   "datum": "2027-01-30",
+   "zeit": "16:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105071,
+   "datum": "2027-01-30",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "Eickener SpVg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105072,
+   "datum": "2027-01-30",
+   "zeit": "18:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105074,
+   "datum": "2027-02-06",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105075,
+   "datum": "2027-02-06",
+   "zeit": "19:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105076,
+   "datum": "2027-02-06",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105077,
+   "datum": "2027-02-06",
+   "zeit": "19:30",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105078,
+   "datum": "2027-02-07",
+   "zeit": "17:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105080,
+   "datum": "2027-02-13",
+   "zeit": "19:15",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "Eickener SpVg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105081,
+   "datum": "2027-02-13",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105082,
+   "datum": "2027-02-13",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105083,
+   "datum": "2027-02-13",
+   "zeit": "20:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105084,
+   "datum": "2027-02-20",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105085,
+   "datum": "2027-02-20",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105086,
+   "datum": "2027-02-20",
+   "zeit": "19:30",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105087,
+   "datum": "2027-02-20",
+   "zeit": "19:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105088,
+   "datum": "2027-02-21",
+   "zeit": "14:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105089,
+   "datum": "2027-02-27",
+   "zeit": "16:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105090,
+   "datum": "2027-02-27",
+   "zeit": "18:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105092,
+   "datum": "2027-03-04",
+   "zeit": "20:15",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105093,
+   "datum": "2027-03-06",
+   "zeit": "14:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105095,
+   "datum": "2027-03-06",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105096,
+   "datum": "2027-03-06",
+   "zeit": "19:15",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105097,
+   "datum": "2027-03-06",
+   "zeit": "20:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105099,
+   "datum": "2027-03-13",
+   "zeit": "18:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105100,
+   "datum": "2027-03-13",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105101,
+   "datum": "2027-03-13",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105102,
+   "datum": "2027-03-13",
+   "zeit": "19:30",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105103,
+   "datum": "2027-03-13",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105104,
+   "datum": "2027-03-19",
+   "zeit": "20:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105106,
+   "datum": "2027-03-20",
+   "zeit": "14:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105107,
+   "datum": "2027-03-20",
+   "zeit": "17:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "Eickener SpVg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105108,
+   "datum": "2027-03-20",
+   "zeit": "19:15",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105109,
+   "datum": "2027-03-20",
+   "zeit": "19:30",
+   "halle": "803138",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105111,
+   "datum": "2027-04-10",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105112,
+   "datum": "2027-04-10",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105113,
+   "datum": "2027-04-10",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105114,
+   "datum": "2027-04-11",
+   "zeit": "17:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105115,
+   "datum": "2027-04-16",
+   "zeit": "20:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105116,
+   "datum": "2027-04-17",
+   "zeit": "14:00",
+   "halle": "406131",
+   "heim": "HSG Schaumburg II",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105118,
+   "datum": "2027-04-17",
+   "zeit": "19:30",
+   "halle": "803137",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "Eickener SpVg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105119,
+   "datum": "2027-04-17",
+   "zeit": "19:30",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105120,
+   "datum": "2027-04-17",
+   "zeit": "20:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105121,
+   "datum": "2027-04-23",
+   "zeit": "20:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball",
+   "gast": "FC Schüttorf 09",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105123,
+   "datum": "2027-04-24",
+   "zeit": "16:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "HSG Nordhorn e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105124,
+   "datum": "2027-04-24",
+   "zeit": "17:00",
+   "halle": "809137",
+   "heim": "HSG Hunte-Aue Löwen",
+   "gast": "HSG Schaumburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105125,
+   "datum": "2027-04-24",
+   "zeit": "18:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg",
+   "gast": "TuS Bramsche",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105126,
+   "datum": "2027-04-24",
+   "zeit": "20:00",
+   "halle": "809140",
+   "heim": "SFN Vechta",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105127,
+   "datum": "2027-04-30",
+   "zeit": "19:00",
+   "halle": "808128",
+   "heim": "TuS Bramsche",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105128,
+   "datum": "2027-04-30",
+   "zeit": "20:00",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "Eickener SpVg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105129,
+   "datum": "2027-04-30",
+   "zeit": "20:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105130,
+   "datum": "2027-04-30",
+   "zeit": "20:15",
+   "halle": "803137",
+   "heim": "HSG Nordhorn e.V. II",
+   "gast": "SFN Vechta",
+   "ergebnis": ""
+  },
+  {
+   "nr": 105132,
+   "datum": "2027-05-01",
+   "zeit": "19:00",
+   "halle": "803150",
+   "heim": "FC Schüttorf 09",
+   "gast": "HSG Hunte-Aue Löwen",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "803137": {
+   "name": "Euregium Sporthalle 3",
+   "adresse": "Wilhelm-Raabe-Straße 15, 48527 Nordhorn"
+  },
+  "803138": {
+   "name": "Euregium Sporthalle 1",
+   "adresse": "Wilhelm-Raabe-Straße 15, 48527 Nordhorn"
+  },
+  "803150": {
+   "name": "Jahnhalle Schüttorf",
+   "adresse": "Jahnstraße, 48465 Schüttorf"
+  },
+  "406131": {
+   "name": "Sporthalle Waltringhausen",
+   "adresse": "Sportplatzweg, 31542 Bad Nenndorf"
+  },
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "808125": {
+   "name": "Schulzentrum Bohmte",
+   "adresse": "Jahnstraße, 49163 Bohmte"
+  },
+  "808128": {
+   "name": "Sporthalle IGS Bramsche",
+   "adresse": "Malgartener Straße 58, 49565 Bramsche"
+  },
+  "808132": {
+   "name": "Schulzentrum Georgsmarienhütte",
+   "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808183": {
+   "name": "Sporthalle Lüstringen",
+   "adresse": "Am Hallenbad 5, 49086 Osnabrück"
+  },
+  "809137": {
+   "name": "Sporthalle Mühlenkamp",
+   "adresse": "Moorstraße 39, 49356 Diepholz"
+  },
+  "809140": {
+   "name": "Sporthalle Vechta-West",
+   "adresse": "Brüsseler Str. 37, 49377 Vechta"
+  }
+ },
+ "links": [
+  {
+   "titel": "Tabelle & aktuelle Spiele",
+   "info": "nuLiga · Verbandsliga Männer West",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?championship=HVNB+26%2F27&group=489364"
+  },
+  {
+   "titel": "Kompletter Spielplan",
+   "info": "nuLiga · alle 110 Spiele der Staffel",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=HVNB+26%2F27&group=489364"
+  },
+  {
+   "titel": "Mannschaften der Eickener SpVg",
+   "info": "nuLiga · Eickener SpVg",
+   "url": "https://hvn-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32392"
+  },
+  {
+   "titel": "1. Herren beim ESV",
+   "info": "eickener-sv.de",
+   "url": "https://www.eickener-sv.de/index.php/abteilungen/handball/1-herren"
+  }
+ ],
+ "archiv": [],
+ "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HVNB+26%2F27&group=489364&meeting=",
+ "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting="
+}

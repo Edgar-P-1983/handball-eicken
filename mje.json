@@ -1,0 +1,1440 @@
+{
+ "stand": "2026-11-22T12:54:00+01:00",
+ "saison": "2026/27",
+ "team": "JSG Eicken-Buer-Oldendorf",
+ "liga": "Regionsliga MJE VR-4 (OS)",
+ "region": "HR West Niedersachsen",
+ "hinweis": "Sortiert nach Punkten. In dieser Altersklasse zeigt nuLiga nur Punkte (2:0 = Sieg), keine Tore. Nach der Vorrunde teilt der Staffelleiter die Mannschaften neu in Regionsoberliga, Regionsliga und Regionsklasse ein.",
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "SV Eversburg",
+   "spiele": 4,
+   "s": 4,
+   "u": 0,
+   "n": 0,
+   "punkte": "8:0"
+  },
+  {
+   "platz": 2,
+   "team": "SSC Dodesheide",
+   "spiele": 5,
+   "s": 4,
+   "u": 0,
+   "n": 1,
+   "punkte": "8:2"
+  },
+  {
+   "platz": 3,
+   "team": "TV Wellingholzhausen",
+   "spiele": 4,
+   "s": 3,
+   "u": 0,
+   "n": 1,
+   "punkte": "6:2"
+  },
+  {
+   "platz": 4,
+   "team": "SG Teuto Handball II",
+   "spiele": 6,
+   "s": 3,
+   "u": 0,
+   "n": 3,
+   "punkte": "6:6"
+  },
+  {
+   "platz": 5,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 4,
+   "s": 1,
+   "u": 0,
+   "n": 3,
+   "punkte": "2:6"
+  },
+  {
+   "platz": 6,
+   "team": "TSG 07 Burg Gretesch",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "punkte": "2:8"
+  },
+  {
+   "platz": 7,
+   "team": "TV Bissendorf-Holte II",
+   "spiele": 4,
+   "s": 0,
+   "u": 0,
+   "n": 4,
+   "punkte": "0:8"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 1,
+   "datum": "2026-09-05",
+   "zeit": "14:30",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266118,
+    "tore": "7:25",
+    "halbzeit": "3:12",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     9
+    ],
+    "verlauf": [
+     "03:24G",
+     "04:38G",
+     "05:17G",
+     "06:57G",
+     "09:59G",
+     "11:29G",
+     "12:22H",
+     "13:30G",
+     "14:17H",
+     "14:45G",
+     "15:16G",
+     "17:25G",
+     "18:17G",
+     "18:32H",
+     "19:22G",
+     "20:15G",
+     "22:40G",
+     "25:18H",
+     "25:52G",
+     "26:21G",
+     "27:07G",
+     "28:38H",
+     "30:46G",
+     "31:27G",
+     "32:47G",
+     "34:39H",
+     "35:22G",
+     "35:46G",
+     "37:15G",
+     "38:49G",
+     "39:19H",
+     "39:39G"
+    ],
+    "ereignisse": [
+     [
+      "08:43",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "15:30",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 2,
+   "datum": "2026-09-05",
+   "zeit": "15:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "2:0",
+   "bericht": {
+    "meeting": 8266130,
+    "tore": "22:8",
+    "halbzeit": "9:2",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     10,
+     9
+    ],
+    "verlauf": [
+     "01:16H",
+     "02:09G",
+     "02:46H",
+     "04:13H",
+     "04:46H",
+     "08:41H",
+     "10:10H",
+     "10:43G",
+     "12:46H",
+     "13:19H",
+     "16:38H",
+     "22:58G",
+     "27:23H",
+     "28:09H",
+     "28:27H",
+     "28:53H",
+     "29:18G",
+     "30:07G",
+     "30:23H",
+     "30:41G",
+     "30:59H",
+     "33:26H",
+     "35:33H",
+     "36:18G",
+     "37:21H",
+     "37:42G",
+     "37:59H",
+     "38:23H",
+     "38:56H",
+     "39:42H"
+    ],
+    "ereignisse": [
+     [
+      "05:39",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "33:53",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-06",
+   "zeit": "09:00",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte II",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266133,
+    "tore": "12:14",
+    "halbzeit": "4:9",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     13,
+     11
+    ],
+    "verlauf": [
+     "00:41G",
+     "01:07G",
+     "02:01H",
+     "04:20G",
+     "05:01G",
+     "07:39G",
+     "09:45H",
+     "11:50G",
+     "13:58G",
+     "14:22H",
+     "16:00G",
+     "18:31G",
+     "19:25H",
+     "20:22G",
+     "23:41G",
+     "25:34H",
+     "26:06H",
+     "27:49H",
+     "30:39H",
+     "31:01G",
+     "32:01H",
+     "32:45H",
+     "33:13H",
+     "35:38H",
+     "39:13G",
+     "39:59G"
+    ],
+    "ereignisse": [
+     [
+      "07:43",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "12:45",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "26:32",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "29:24",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "39:13",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-13",
+   "zeit": "11:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266129,
+    "tore": "11:18",
+    "halbzeit": "7:10",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     8
+    ],
+    "verlauf": [
+     "04:04G",
+     "04:46G",
+     "05:48H",
+     "07:14H",
+     "07:40G",
+     "08:00H",
+     "08:38H",
+     "09:53G",
+     "10:55G",
+     "11:58H",
+     "12:23G",
+     "13:37G",
+     "14:00G",
+     "15:21H",
+     "15:49G",
+     "16:58G",
+     "19:14H",
+     "22:31H",
+     "28:16H",
+     "33:06G",
+     "34:05G",
+     "35:19G",
+     "36:01G",
+     "36:21G",
+     "37:10G",
+     "37:26H",
+     "38:10G",
+     "38:26H",
+     "39:05G"
+    ],
+    "ereignisse": [
+     [
+      "06:15",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "09:57",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "18:03",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "22:00",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "24:07",
+      "Auszeit",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-26",
+   "zeit": "13:45",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "2:0",
+   "bericht": {
+    "meeting": 8266113,
+    "tore": "21:17",
+    "halbzeit": "12:9",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     8,
+     14
+    ],
+    "verlauf": [
+     "01:23G",
+     "01:41G",
+     "02:41H",
+     "03:58G",
+     "04:45G",
+     "04:58H",
+     "05:23G",
+     "06:13G",
+     "06:43G",
+     "07:12G",
+     "07:38H",
+     "07:49H",
+     "10:39H",
+     "11:29H",
+     "11:57H",
+     "12:38H",
+     "15:00H",
+     "15:45H",
+     "18:51H",
+     "19:26G",
+     "19:41H",
+     "20:45H",
+     "21:13G",
+     "22:23H",
+     "23:14G",
+     "27:13H",
+     "28:35H",
+     "29:14H",
+     "29:44H",
+     "33:31H",
+     "34:22G",
+     "35:21G",
+     "35:47H",
+     "36:08G",
+     "37:20G",
+     "38:37G",
+     "39:40H",
+     "39:58G"
+    ],
+    "ereignisse": []
+   }
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-27",
+   "zeit": "10:00",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "2:0",
+   "bericht": {
+    "meeting": 8266121,
+    "tore": "25:8",
+    "halbzeit": "11:2",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     12
+    ],
+    "verlauf": [
+     "00:25H",
+     "02:49H",
+     "03:31G",
+     "04:51H",
+     "05:19H",
+     "06:22H",
+     "06:45G",
+     "10:42H",
+     "11:33H",
+     "12:11H",
+     "12:55H",
+     "18:55H",
+     "19:41H",
+     "20:41H",
+     "21:27H",
+     "22:11H",
+     "23:04H",
+     "23:30H",
+     "23:54G",
+     "24:24H",
+     "26:10H",
+     "26:44H",
+     "27:42H",
+     "27:55G",
+     "28:48G",
+     "29:08G",
+     "30:15H",
+     "31:01H",
+     "31:59H",
+     "34:48H",
+     "35:20G",
+     "35:48H",
+     "36:20G"
+    ],
+    "ereignisse": []
+   }
+  },
+  {
+   "nr": 9,
+   "datum": "2026-09-27",
+   "zeit": "10:30",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SV Eversburg",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266134,
+    "tore": "19:33",
+    "halbzeit": "9:15",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     10,
+     8
+    ],
+    "verlauf": [
+     "00:48G",
+     "01:16H",
+     "01:27G",
+     "02:49G",
+     "03:31G",
+     "03:47H",
+     "05:14G",
+     "05:42G",
+     "09:34H",
+     "10:20H",
+     "11:15H",
+     "11:19H",
+     "11:28G",
+     "12:21G",
+     "12:58G",
+     "13:24G",
+     "15:23H",
+     "15:40G",
+     "16:15H",
+     "17:12G",
+     "17:57G",
+     "19:11H",
+     "19:23G",
+     "19:43G",
+     "20:33H",
+     "21:29H",
+     "21:49G",
+     "22:18G",
+     "22:44G",
+     "23:11G",
+     "23:32H",
+     "23:49G",
+     "24:20G",
+     "25:23G",
+     "26:05G",
+     "27:21G",
+     "28:01G",
+     "28:35G",
+     "28:53H",
+     "30:13H",
+     "31:17G",
+     "31:38G",
+     "32:08H",
+     "33:18G",
+     "33:36H",
+     "34:42H",
+     "35:07G",
+     "35:57H",
+     "36:46G",
+     "37:21H",
+     "37:50G",
+     "39:43G"
+    ],
+    "ereignisse": [
+     [
+      "20:00",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "30:48",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 5,
+   "datum": "2026-10-02",
+   "zeit": "17:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "0:2",
+   "verlegt": true,
+   "bericht": {
+    "meeting": 8266109,
+    "tore": "4:13",
+    "halbzeit": "2:6",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     15,
+     8
+    ],
+    "verlauf": [
+     "00:24G",
+     "04:24G",
+     "05:51G",
+     "14:40G",
+     "16:14G",
+     "16:42H",
+     "17:31H",
+     "19:40G",
+     "21:23G",
+     "21:48H",
+     "25:27H",
+     "26:20G",
+     "33:35G",
+     "35:41G",
+     "36:28G",
+     "37:45G",
+     "39:31G"
+    ],
+    "ereignisse": [
+     [
+      "07:36",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "24:36",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "31:21",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "36:14",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 4,
+   "datum": "2026-10-04",
+   "zeit": "12:00",
+   "halle": "808102",
+   "heim": "SV Eversburg",
+   "gast": "TV Bissendorf-Holte II",
+   "ergebnis": "2:0",
+   "verlegt": true,
+   "bericht": {
+    "meeting": 8266114,
+    "tore": "33:11",
+    "halbzeit": "13:2",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     9,
+     11
+    ],
+    "verlauf": [
+     "00:31H",
+     "00:52G",
+     "01:49H",
+     "02:18H",
+     "04:16H",
+     "04:34H",
+     "04:47H",
+     "09:17H",
+     "10:21H",
+     "11:18H",
+     "12:41G",
+     "13:48H",
+     "14:28H",
+     "18:10H",
+     "19:54H",
+     "20:31H",
+     "21:18H",
+     "21:39G",
+     "23:09G",
+     "23:35H",
+     "24:17H",
+     "24:45G",
+     "25:03H",
+     "25:26H",
+     "25:52H",
+     "26:52G",
+     "27:19H",
+     "28:25G",
+     "28:53H",
+     "29:32G",
+     "30:36H",
+     "31:08H",
+     "31:32H",
+     "32:21G",
+     "32:44H",
+     "33:21G",
+     "33:39H",
+     "34:24H",
+     "36:00G",
+     "36:18H",
+     "37:48H",
+     "38:49H",
+     "39:13H",
+     "39:36H"
+    ],
+    "ereignisse": [
+     [
+      "10:31",
+      "Auszeit",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 10,
+   "datum": "2026-11-01",
+   "zeit": "10:00",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266122,
+    "tore": "9:39",
+    "halbzeit": "4:18",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     10
+    ],
+    "verlauf": [
+     "01:05G",
+     "01:23H",
+     "02:19G",
+     "03:21G",
+     "03:36G",
+     "04:00G",
+     "05:29G",
+     "07:34G",
+     "08:51G",
+     "09:29G",
+     "09:43G",
+     "10:12G",
+     "10:32G",
+     "11:09G",
+     "11:30H",
+     "11:51G",
+     "12:21G",
+     "13:55H",
+     "15:10G",
+     "15:53H",
+     "16:06G",
+     "19:27G",
+     "20:17G",
+     "21:53G",
+     "22:10H",
+     "22:43G",
+     "23:02G",
+     "23:36G",
+     "24:55G",
+     "25:11H",
+     "25:38G",
+     "26:11G",
+     "26:41G",
+     "27:18G",
+     "27:52G",
+     "28:23G",
+     "29:23G",
+     "29:52G",
+     "33:02G",
+     "33:28G",
+     "34:21G",
+     "34:56G",
+     "36:02G",
+     "37:41H",
+     "39:00G",
+     "39:20H",
+     "39:36G",
+     "39:50H"
+    ],
+    "ereignisse": []
+   }
+  },
+  {
+   "nr": 11,
+   "datum": "2026-11-01",
+   "zeit": "12:30",
+   "halle": "808102",
+   "heim": "SV Eversburg",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "2:0",
+   "bericht": {
+    "meeting": 8266124,
+    "tore": "31:9",
+    "halbzeit": "18:5",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     9
+    ],
+    "verlauf": [
+     "00:14H",
+     "00:33H",
+     "00:55G",
+     "01:39H",
+     "03:14G",
+     "03:41G",
+     "05:03H",
+     "05:33G",
+     "06:47H",
+     "07:49H",
+     "09:06H",
+     "09:35H",
+     "10:06H",
+     "10:57H",
+     "13:56H",
+     "14:50G",
+     "15:09H",
+     "15:47H",
+     "15:58H",
+     "16:19H",
+     "17:02H",
+     "17:28H",
+     "19:48H",
+     "21:53H",
+     "23:20H",
+     "23:40H",
+     "24:32H",
+     "25:21H",
+     "26:08H",
+     "27:35G",
+     "27:59H",
+     "28:25G",
+     "29:37H",
+     "30:35G",
+     "32:19G",
+     "33:23H",
+     "34:19H",
+     "34:59H",
+     "36:57H",
+     "38:33H"
+    ],
+    "ereignisse": []
+   }
+  },
+  {
+   "nr": 12,
+   "datum": "2026-11-07",
+   "zeit": "14:15",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TV Bissendorf-Holte II",
+   "ergebnis": "2:0",
+   "bericht": {
+    "meeting": 8266117,
+    "tore": "22:5",
+    "halbzeit": "12:3",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     10
+    ],
+    "verlauf": [
+     "01:02H",
+     "01:46G",
+     "02:41H",
+     "05:18H",
+     "06:16H",
+     "08:26H",
+     "09:35H",
+     "10:45H",
+     "12:03G",
+     "12:44H",
+     "13:07H",
+     "16:41H",
+     "17:47G",
+     "18:22H",
+     "19:25H",
+     "20:49H",
+     "22:34H",
+     "27:24H",
+     "27:34H",
+     "28:20G",
+     "28:50H",
+     "31:11G",
+     "31:57H",
+     "35:44H",
+     "36:06H",
+     "36:49H",
+     "39:18H"
+    ],
+    "ereignisse": [
+     [
+      "34:29",
+      "7m verworfen",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-08",
+   "zeit": "10:00",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "SV Eversburg",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266125,
+    "tore": "15:17",
+    "halbzeit": "7:12",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     8
+    ],
+    "verlauf": [
+     "01:22G",
+     "01:43G",
+     "02:03H",
+     "02:13G",
+     "02:52H",
+     "04:29G",
+     "06:01G",
+     "06:34H",
+     "07:13H",
+     "09:21G",
+     "09:40G",
+     "10:03G",
+     "10:30H",
+     "14:52H",
+     "15:17G",
+     "15:45G",
+     "16:44G",
+     "17:24G",
+     "17:31H",
+     "21:35H",
+     "23:15G",
+     "24:20G",
+     "26:46H",
+     "27:09G",
+     "31:31H",
+     "33:40H",
+     "34:14H",
+     "34:32G",
+     "34:56H",
+     "35:30H",
+     "37:04H",
+     "39:06G"
+    ],
+    "ereignisse": [
+     [
+      "18:29",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "30:37",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "34:40",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "37:12",
+      "Auszeit",
+      "G"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 14,
+   "datum": "2026-11-08",
+   "zeit": "10:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "2:0",
+   "verlegt": true,
+   "bericht": {
+    "meeting": 8266115,
+    "tore": "22:15",
+    "halbzeit": "13:8",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     13,
+     9
+    ],
+    "verlauf": [
+     "00:59H",
+     "01:52H",
+     "02:05G",
+     "03:48H",
+     "04:17H",
+     "04:43H",
+     "05:22G",
+     "05:42H",
+     "06:53G",
+     "08:04H",
+     "08:51H",
+     "09:38G",
+     "10:21G",
+     "11:08G",
+     "12:41G",
+     "15:21H",
+     "16:45H",
+     "17:45H",
+     "18:04G",
+     "18:34H",
+     "19:36H",
+     "20:11G",
+     "22:27H",
+     "26:54G",
+     "28:31H",
+     "29:47G",
+     "29:54H",
+     "31:19H",
+     "31:35G",
+     "32:32G",
+     "35:06H",
+     "36:24G",
+     "36:41H",
+     "37:02G",
+     "37:19H",
+     "39:51H",
+     "40:00H"
+    ],
+    "ereignisse": []
+   }
+  },
+  {
+   "nr": 15,
+   "datum": "2026-11-15",
+   "zeit": "12:00",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "0:2",
+   "bericht": {
+    "meeting": 8266111,
+    "tore": "18:30",
+    "halbzeit": "7:15",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     10
+    ],
+    "verlauf": [
+     "00:44G",
+     "02:37G",
+     "03:33H",
+     "03:53H",
+     "04:36H",
+     "04:56G",
+     "05:00G",
+     "06:41G",
+     "07:28G",
+     "10:17G",
+     "11:15G",
+     "11:36G",
+     "13:39G",
+     "14:48H",
+     "15:07G",
+     "15:50G",
+     "16:01G",
+     "16:15H",
+     "17:41G",
+     "17:52H",
+     "19:13H",
+     "19:38G",
+     "20:10G",
+     "20:24H",
+     "20:57G",
+     "21:23H",
+     "21:38G",
+     "23:16H",
+     "23:25G",
+     "25:35H",
+     "25:51G",
+     "26:15H",
+     "26:55H",
+     "27:23H",
+     "27:40G",
+     "28:51G",
+     "29:11G",
+     "29:39G",
+     "30:00G",
+     "33:35G",
+     "34:02H",
+     "34:30G",
+     "34:58G",
+     "35:43H",
+     "36:18H",
+     "37:26H",
+     "39:35G",
+     "39:59G"
+    ],
+    "ereignisse": [
+     [
+      "14:25",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "17:01",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "30:59",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "36:35",
+      "Verwarnung",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 16,
+   "datum": "2026-11-21",
+   "zeit": "15:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "2:0",
+   "bericht": {
+    "meeting": 8266108,
+    "tore": "28:26",
+    "halbzeit": "16:17",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     11,
+     9
+    ],
+    "verlauf": [
+     "00:18H",
+     "00:40G",
+     "00:58H",
+     "01:11H",
+     "01:44G",
+     "02:22H",
+     "03:31H",
+     "04:18G",
+     "04:44H",
+     "05:08G",
+     "05:29H",
+     "05:46G",
+     "06:19H",
+     "06:40G",
+     "06:52G",
+     "07:14H",
+     "08:37H",
+     "09:42G",
+     "10:53G",
+     "11:40G",
+     "12:04H",
+     "12:48G",
+     "13:09H",
+     "13:19H",
+     "13:47G",
+     "14:38G",
+     "15:12H",
+     "15:37G",
+     "17:08H",
+     "17:27G",
+     "18:10G",
+     "19:00G",
+     "19:17H",
+     "20:11G",
+     "20:29H",
+     "21:52H",
+     "22:32H",
+     "24:15G",
+     "25:13G",
+     "26:51H",
+     "27:40G",
+     "28:00H",
+     "29:33H",
+     "30:02G",
+     "30:23H",
+     "31:37H",
+     "32:23G",
+     "32:53H",
+     "35:26G",
+     "35:48H",
+     "36:12G",
+     "36:39H",
+     "37:39H",
+     "39:22G"
+    ],
+    "ereignisse": [
+     [
+      "30:13",
+      "Auszeit",
+      "H"
+     ]
+    ]
+   }
+  },
+  {
+   "nr": 17,
+   "datum": "2026-11-22",
+   "zeit": "12:30",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte II",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-22",
+   "zeit": "13:15",
+   "halle": "808113",
+   "heim": "SV Eversburg",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-28",
+   "zeit": "16:15",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SV Eversburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-29",
+   "zeit": "10:00",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-29",
+   "zeit": "11:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Bissendorf-Holte II",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808102": {
+   "name": "Möser-Realschule (ehem. Emma)",
+   "adresse": "Arndtstraße 1, 49078 Osnabrück"
+  },
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "808107": {
+   "name": "SZ Sonnenhügel",
+   "adresse": "Knollstraße 143, 49088 Osnabrück"
+  },
+  "808113": {
+   "name": "Sporthalle Überörtlich (Schölerberg)",
+   "adresse": "Iburger Straße 159, 49082 Osnabrück"
+  },
+  "808121": {
+   "name": "Sporthalle Bissendorf",
+   "adresse": "Werscher Straße 24, 49143 Bissendorf"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808149": {
+   "name": "Sportzentrum Wellingholzhausen",
+   "adresse": "Uhlandstraße 28, 49326 Melle"
+  },
+  "808183": {
+   "name": "Sporthalle Lüstringen",
+   "adresse": "Am Hallenbad 5, 49086 Osnabrück"
+  }
+ },
+ "links": [
+  {
+   "titel": "Tabelle & aktuelle Spiele",
+   "info": "nuLiga · Regionsliga MJE VR-4 (OS)",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?championship=HRWN+26%2F27&group=506735"
+  },
+  {
+   "titel": "Kompletter Spielplan",
+   "info": "nuLiga · alle Spiele der Staffel",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=HRWN+26%2F27&group=506735"
+  },
+  {
+   "titel": "Alle Mannschaften der JSG",
+   "info": "nuLiga · JSG Eicken-Buer-Oldendorf",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32655"
+  },
+  {
+   "titel": "E-Jugend beim ESV",
+   "info": "eickener-sv.de · Training und Ansprechpartner",
+   "url": "https://www.eickener-sv.de/index.php/abteilungen/handball/e-jugend"
+  }
+ ],
+ "archiv": [],
+ "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=506735&meeting=",
+ "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
+ "kurz": "JSG",
+ "mannschaft": "Männliche E-Jugend",
+ "verein": "JSG Eicken-Buer-Oldendorf",
+ "altersklasse": "Männliche E-Jugend",
+ "halbzeitMin": 20
+}
