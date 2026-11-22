@@ -190,7 +190,7 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
 .dl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .dl a{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:10px;background:var(--card);font-weight:600;font-size:14px;text-decoration:none;box-shadow:inset 0 0 0 1px var(--line)}
 .dl a.route{background:var(--ink);color:#fff;box-shadow:none}
-@media(max-width:420px){.nou th.u,.nou td.u,.wide th.d,.wide td.d,.wide th.f,.wide td.f{display:none}td,th{padding-inline:4px}.m{grid-template-columns:44px minmax(0,1fr) auto 24px;gap:2px 8px;padding-inline:10px}.vs .c b{font-size:26px}.dsc .big{font-size:34px}}
+@media(max-width:420px){.nou th.u,.nou td.u,.wide th.d,.wide td.d{display:none}td,th{padding-inline:4px}.m{grid-template-columns:44px minmax(0,1fr) auto 24px;gap:2px 8px;padding-inline:10px}.vs .c b{font-size:26px}.dsc .big{font-size:34px}}
 @media(min-width:700px){
  .barin,.teamsin,main{max-width:1180px}
  .barin{padding:16px 24px 6px}
@@ -535,10 +535,10 @@ function renderTeam(now) {
   $('tabtitle').innerHTML = '<span>' + esc(D.liga) + '</span>' + tpill(t);
   $('thead').closest('table').classList.toggle('wide', goals);
   $('thead').closest('table').classList.toggle('nou', !tb.some(r => +r.u > 0));
-  $('thead').innerHTML = '<tr><th class="c">#</th><th class="l">Mannschaft</th><th>Sp</th><th>S</th><th class="u">U</th><th>N</th>' + (goals ? '<th>Tore</th><th class="d">+/-</th>' : '') + '<th>Pkt</th><th class="f">Form</th></tr>';
+  $('thead').innerHTML = '<tr><th class="c">#</th><th class="l">Mannschaft</th><th>Sp</th><th>S</th><th class="u">U</th><th>N</th>' + (goals ? '<th>Tore</th><th class="d">+/-</th>' : '') + '<th>Pkt</th></tr>';
   $('tab').innerHTML = tb.map(r => '<tr class="' + (r.team === D.team ? 'me' : '') + '"><td class="pl">' + esc(r.platz) + '</td><td class="tm"><div>' + crest(r.team, 's') + '<span>' + esc(r.team) + '</span></div></td><td>' + esc(r.spiele) + '</td><td>' + esc(r.s) + '</td><td class="u">' + esc(r.u) + '</td><td>' + esc(r.n) + '</td>' +
-    (goals ? '<td>' + esc(r.tore || '') + '</td><td class="d">' + (r.diff != null ? esc(sgn(r.diff)) : '') + '</td>' : '') + '<td class="pk">' + esc(r.punkte) + '</td><td class="f"><span class="dots">' + form(r.team) + '</span></td></tr>').join('') || '<tr><td class="l" colspan="10">Noch keine Tabelle veröffentlicht.</td></tr>';
-  $('tabnote').textContent = (D.hinweis || '') + ' Form: grün = Sieg, rot = Niederlage, rechts das neueste Spiel.';
+    (goals ? '<td>' + esc(r.tore || '') + '</td><td class="d">' + (r.diff != null ? esc(sgn(r.diff)) : '') + '</td>' : '') + '<td class="pk">' + esc(r.punkte) + '</td></tr>').join('') || '<tr><td class="l" colspan="10">Noch keine Tabelle veröffentlicht.</td></tr>';
+  $('tabnote').textContent = D.hinweis || '';
 }
 
 function renderInfos() {
