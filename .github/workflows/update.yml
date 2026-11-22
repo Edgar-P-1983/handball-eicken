@@ -1,0 +1,83 @@
+name: Daten aktualisieren und Seite veröffentlichen
+
+# Automatik:
+#  - alle 15 Minuten: kurzer Blick, ob ein Spiel gerade vorbei ist und Ergebnis oder Spielbericht
+#    noch fehlen (nur dann wird nuLiga abgefragt, höchstens 6 Stunden nach Spielende)
+#  - täglich früh morgens: Komplettabgleich
+#  - bei jeder Änderung im Repository (z. B. manuell aus dem Claude-Chat): sofortiger Komplettabgleich
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+    - cron: '23 3 * * *'
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      changed: ${{ steps.upd.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: nuLiga abfragen
+        id: upd
+        continue-on-error: true
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          if [ "$EVENT" = "push" ]; then MODE=force
+          elif [ "$SCHEDULE" = "23 3 * * *" ]; then MODE=daily
+          else MODE=auto; fi
+          echo "Modus: $MODE"
+          python3 scripts/update.py --mode "$MODE"
+
+      - name: Neue Daten speichern
+        if: steps.upd.outputs.changed == 'true'
+        env:
+          MSG: ${{ steps.upd.outputs.message }}
+          DETAILS: ${{ steps.upd.outputs.details }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add herren.json wjc.json mje.json
+          if git diff --cached --quiet; then exit 0; fi
+          printf '%s\n\n%s\n' "$MSG" "$DETAILS" | git commit -q -F -
+          for i in 1 2 3; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            sleep 5
+          done
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Seite zusammenstellen
+        run: |
+          mkdir _site
+          cp index.html herren.json wjc.json mje.json manifest.webmanifest apple-touch-icon.png icon-192.png icon-512.png .nojekyll _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

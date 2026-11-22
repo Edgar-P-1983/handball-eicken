@@ -1,6 +1,7 @@
 {
   "name": "Handball Eicken",
   "short_name": "Handball Eicken",
+  "description": "Spielplan, Ergebnisse und Tabellen der Eickener SpVg: 1. Herren, weibliche C-Jugend und männliche E-Jugend.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
