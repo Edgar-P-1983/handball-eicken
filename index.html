@@ -142,6 +142,11 @@ tr.me td.tm{font-weight:700}
 .dots i{width:8px;height:8px;border-radius:50%;background:var(--draw)}
 .dots i.S{background:var(--win)}.dots i.N{background:var(--loss)}
 .note{font-size:13px;color:var(--muted);margin:10px 4px 0}
+.offi{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;margin-top:12px;padding:0 16px;border-radius:14px;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.05),inset 0 0 0 1px var(--line);font-weight:700;font-size:15px;color:var(--ink);text-decoration:none;text-align:center}
+.offi small{font-size:13px;font-weight:600;color:var(--muted)}
+.offi[hidden]{display:none}
+.offs{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.offs .offi{margin-top:0}
 .lrow{display:flex;align-items:center;gap:12px;padding:13px 14px;border-top:1px solid var(--line);text-decoration:none}
 .lrow:first-child{border-top:0}
 .lrow div{flex:1}
@@ -246,7 +251,7 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
  <section id="v-uebersicht" hidden>
   <div class="ov-a"><div class="sec">Nächste Spiele</div><div id="ov-next" class="ovnext"></div></div>
   <div class="ov-b"><div class="sec">Letzte Ergebnisse <small>Tippen für den Spielbericht</small></div><div class="card" id="ov-last"></div></div>
-  <div class="ov-c"><div class="sec">Tabellenplätze</div><div class="ovt" id="ov-tab"></div></div>
+  <div class="ov-c"><div class="sec">Tabellenplätze</div><div class="ovt" id="ov-tab"></div><div class="sec">Offizielle Seiten</div><div class="offs" id="ov-off"></div></div>
  </section>
  <section id="v-team" hidden>
   <div class="card banner" id="banner"></div>
@@ -259,10 +264,12 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
     <div><div class="sec">Kommende Spiele</div><div class="card" id="upcoming"></div></div>
     <div><div class="sec">Ergebnisse <small>Tippen für den Spielbericht</small></div><div class="card" id="results"></div></div>
    </div>
+   <a class="offi" id="off-spiele" target="_blank" rel="noopener" hidden></a>
   </div>
   <div id="p-tabelle">
    <div class="sec" id="tabtitle">Tabelle</div>
    <div class="card" style="overflow-x:auto"><table><thead id="thead"></thead><tbody id="tab"></tbody></table></div>
+   <a class="offi" id="off-tab" target="_blank" rel="noopener" hidden></a>
    <p class="note" id="tabnote"></p>
   </div>
  </section>
@@ -511,11 +518,24 @@ function renderOverview(now) {
   $('ov-next').innerHTML = nexts.map(([, id, g]) => { use(id); return heroCard(g, now, true); }).join('') || '<div class="card empty">Zurzeit sind keine Spiele angesetzt.</div>';
   $('ov-last').innerHTML = lasts.map(([, id, g]) => { use(id); return matchRow(g, now, true); }).join('') || '<div class="empty">Noch keine Ergebnisse.</div>';
   $('ov-tab').innerHTML = cards.join('');
+  $('ov-off').innerHTML = TEAMS.filter(t => TD[t.id]).map(t => { const l = nuLinks(TD[t.id]).tab; return l ? '<a class="offi" href="' + esc(l.url) + '" target="_blank" rel="noopener"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + ' <small>auf nuLiga ↗</small></a>' : ''; }).join('');
 }
 
+// Offizielle nuLiga-Seiten einer Mannschaft: Tabelle und kompletter Spielplan
+function nuLinks(d) {
+  const lk = (d && d.links) || [];
+  const tab = lk.find(l => /groupPage/.test(l.url) && !/displayDetail=meetings/.test(l.url)) || null;
+  return {tab: tab, plan: lk.find(l => /displayDetail=meetings/.test(l.url)) || tab};
+}
+function offi(id, l, label) {
+  const a = $(id); a.hidden = !l;
+  if (l) { a.href = l.url; a.innerHTML = esc(label) + ' <small>auf nuLiga ↗</small>'; }
+}
 function renderTeam(now) {
   const t = TBY[view]; use(view);
   if (!D) { $('banner').innerHTML = '<div class="empty">Daten werden geladen …</div>'; return; }
+  const nl = nuLinks(D);
+  offi('off-spiele', nl.plan, 'Offizieller Spielplan'); offi('off-tab', nl.tab, 'Offizielle Tabelle');
   const tb = D.tabelle || [], me = tb.find(r => r.team === D.team), s = teamStats(D.team);
   $('banner').innerHTML = '<h2><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</h2><p class="sub2">' + esc(D.verein + ' · ' + D.liga + ' · Saison ' + D.saison) + '</p>' +
     '<div class="facts">' + (me ? '<span>Platz <b>' + esc(me.platz) + '</b> von ' + tb.length + '</span><span><b>' + esc(me.punkte) + '</b> Punkte</span>' : '') + (s.n ? '<span><b>' + s.f + ':' + s.a + '</b> Tore</span>' : '') + '<span>Stand ' + esc(standTxt(D, true)) + '</span></div>';
