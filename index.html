@@ -327,7 +327,7 @@ const ort = h => { const m = /\d{5}\s+(.+)$/.exec(h.adresse || ''); return m ? m
 const route = h => 'https://maps.apple.com/?daddr=' + encodeURIComponent(h.adresse || h.name) + '&dirflg=d';
 const mapAt = h => 'https://maps.apple.com/?q=' + encodeURIComponent(h.name) + '&address=' + encodeURIComponent(h.adresse || '');
 const tpill = t => '<span class="tpill"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</span>';
-const LOGOS = {'Eickener SpVg': 'esv-rund.png'};
+const LOGOS = {'Eickener SpVg': 'esv-rund.png', 'JSG Eicken-Buer-Oldendorf': 'esv-rund.png'};
 function crest(n, size) {
   if (LOGOS[n]) return '<span class="crest img ' + (size || '') + '"><img src="' + LOGOS[n] + '" alt="" loading="lazy"></span>';
   if (n === D.team) return '<span class="crest me ' + (size || '') + '">' + esc(D.kurz || 'WIR') + '</span>';
