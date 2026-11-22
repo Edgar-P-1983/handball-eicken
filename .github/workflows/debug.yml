@@ -1,0 +1,25 @@
+name: nuLiga-Test (einmalig)
+
+on:
+  push:
+    branches: [debug-run]
+
+permissions:
+  contents: write
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install beautifulsoup4
+      - run: python3 scripts/debug_dump.py /tmp/debug
+      - name: Ergebnis in Zweig debug-out speichern
+        run: |
+          cd /tmp/debug
+          git init -q -b debug-out
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "nuLiga-Test $(date -u +%FT%TZ)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" debug-out
