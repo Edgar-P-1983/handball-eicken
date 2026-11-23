@@ -1,0 +1,40 @@
+{
+ "stand": "2026-11-23T14:48:00+01:00",
+ "saison": "2026/27",
+ "team": "",
+ "kurz": "JSG",
+ "mannschaft": "Weibliche E-Jugend",
+ "verein": "JSG Eicken-Buer-Oldendorf",
+ "altersklasse": "Weibliche E-Jugend",
+ "liga": "Regionsklasse WJE VR-4 (VEC,DH,OS)",
+ "region": "HR West Niedersachsen",
+ "halbzeitMin": 20,
+ "hinweis": "Sortiert nach Punkten.",
+ "links": [
+  {
+   "titel": "Tabelle & aktuelle Spiele",
+   "info": "nuLiga · Regionsklasse WJE VR-4 (VEC,DH,OS)",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?championship=HRWN+26%2F27&group=489946"
+  },
+  {
+   "titel": "Kompletter Spielplan",
+   "info": "nuLiga · alle Spiele der Staffel",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?displayTyp=vorrunde&displayDetail=meetings&championship=HRWN+26%2F27&group=489946"
+  },
+  {
+   "titel": "Alle Mannschaften: JSG Eicken-Buer-Oldendorf",
+   "info": "nuLiga",
+   "url": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32655"
+  },
+  {
+   "titel": "Handball beim ESV",
+   "info": "eickener-sv.de · Mannschaften und Training",
+   "url": "https://www.eickener-sv.de/index.php/abteilungen/handball"
+  }
+ ],
+ "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=489946&meeting=",
+ "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
+ "tabelle": [],
+ "spiele": [],
+ "hallen": {}
+}

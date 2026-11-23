@@ -1,8 +1,8 @@
-# Handball Eicken
+# ESV Handball
 
-Spielplan, Ergebnisse und Tabellen der Eickener SpVg (Melle): 1. Herren, weibliche C-Jugend und männliche E-Jugend (JSG).
+Spielplan, Ergebnisse und Tabellen aller Handball-Mannschaften der Eickener SpVg (Melle) und der JSG Eicken-Buer-Oldendorf, mit Favoriten.
 
-Die Daten stammen von nuLiga (HVNB/HRWN) und stehen in `herren.json`, `wjc.json` und `mje.json`.
+Die Daten stammen von nuLiga (HVNB/HRWN) und stehen im Ordner `data/`: `teams.json` ist das Verzeichnis aller Mannschaften (wird täglich aus den Vereinsseiten auf nuLiga ermittelt), dazu eine Datei je Mannschaft.
 
 ## Automatische Aktualisierung
 

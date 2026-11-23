@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Handball Eicken</title>
+<title>ESV Handball</title>
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="canonical" href="https://edgar-p-1983.github.io/handball-eicken/">
-<meta name="description" content="Spielplan, Ergebnisse und Tabellen der Eickener SpVg: 1. Herren, weibliche C-Jugend und männliche E-Jugend.">
+<meta name="description" content="Spielplan, Ergebnisse und Tabellen aller Handball-Mannschaften der Eickener SpVg und der JSG Eicken-Buer-Oldendorf.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Handball Eicken">
-<meta property="og:description" content="Spielplan, Ergebnisse und Tabellen der Eickener SpVg: 1. Herren, weibliche C-Jugend und männliche E-Jugend.">
+<meta property="og:title" content="ESV Handball">
+<meta property="og:description" content="Spielplan, Ergebnisse und Tabellen aller Handball-Mannschaften der Eickener SpVg und der JSG Eicken-Buer-Oldendorf.">
 <meta property="og:url" content="https://edgar-p-1983.github.io/handball-eicken/">
 <meta property="og:image" content="https://edgar-p-1983.github.io/handball-eicken/icon-512.png">
 <meta property="og:image:width" content="512">
@@ -21,7 +21,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#ffffff">
-<meta name="apple-mobile-web-app-title" content="Handball Eicken">
+<meta name="apple-mobile-web-app-title" content="ESV Handball">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -49,10 +49,18 @@ svg.i{width:16px;height:16px;flex:none}
 .icon-btn svg{width:22px;height:22px}
 .icon-btn:disabled{opacity:.5;cursor:wait}
 .teams{position:sticky;top:0;z-index:4;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 10px rgba(0,0,0,.04)}
-.teamsin{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px 10px 10px}
-.tbtn{all:unset;box-sizing:border-box;cursor:pointer;display:grid;justify-items:center;align-content:center;gap:1px;min-height:52px;padding:6px 4px;border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);background:#fff;text-align:center}
-.tbtn b{display:flex;align-items:center;gap:5px;font-size:14px;font-weight:800;line-height:1.15;white-space:nowrap}
-.tbtn small{font-size:11px;color:var(--muted);line-height:1.2;white-space:nowrap}
+.teamsin{max-width:760px;margin:0 auto;display:flex;gap:5px;padding:8px 10px 10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.teamsin::-webkit-scrollbar{display:none}
+.tbtn{all:unset;box-sizing:border-box;cursor:pointer;flex:0 0 calc((100% - 84px - 20px) / 3);min-width:0;display:grid;justify-items:center;align-content:center;gap:1px;min-height:52px;padding:6px 3px;border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);background:#fff;text-align:center}
+.tbtn b{display:flex;align-items:center;gap:4px;max-width:100%;font-size:13px;letter-spacing:-.1px;font-weight:800;line-height:1.15;white-space:nowrap;overflow:hidden}
+.tbtn small{max-width:100%;font-size:11px;color:var(--muted);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbtn b .dot{width:8px;height:8px;flex:none}
+.tbtn.ic{flex:0 0 42px;padding:0}
+@media(max-width:380px){.tbtn b{font-size:12.5px}.tbtn b .dot{display:none}.tbtn small{font-size:10.5px}}
+.tbtn.ic svg{width:23px;height:23px}
+.tbtn.ic.fav svg{color:#f5b800}
+.tbtn.ic.fav[aria-selected=true] svg{color:var(--acc)}
+.tbtn.extra{box-shadow:inset 0 0 0 1.5px var(--line);border:1px dashed #c3c8cf}
 .tbtn[aria-selected=true]{background:var(--ink);color:#fff;box-shadow:none}
 .tbtn[aria-selected=true] small{color:#c9ced4}
 @media(max-width:360px){.tbtn b{font-size:13px}.tbtn small{font-size:10px}}
@@ -144,6 +152,33 @@ tr.me td.tm{font-weight:700}
 .dots i{width:8px;height:8px;border-radius:50%;background:var(--draw)}
 .dots i.S{background:var(--win)}.dots i.N{background:var(--loss)}
 .note{font-size:13px;color:var(--muted);margin:10px 4px 0}
+.grp{margin:16px 4px 6px;font-size:12.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.trow2{display:flex;align-items:center;border-top:1px solid var(--line)}
+.trow2:first-child{border-top:0}
+.tsel{all:unset;box-sizing:border-box;cursor:pointer;flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:12px 6px 12px 14px}
+.tsel .nm{min-width:0}.tsel .nm b{display:block;font-size:15px}.tsel .nm small{display:block;color:var(--muted);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.star{all:unset;cursor:pointer;flex:none;width:52px;height:52px;display:grid;place-items:center;color:#b9c0c8}
+.star svg{width:26px;height:26px}
+.star.on{color:#f5b800}
+body.has-a2hs .btn.done{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
+.btn.done{display:flex;width:100%;justify-content:center;margin:16px 0 8px;min-height:50px;font-size:16px;position:sticky;bottom:max(10px,env(safe-area-inset-bottom));box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.hintbox{margin:4px 0 4px;padding:12px 14px;border-radius:14px;background:#fff6d6;color:#5c4800;font-size:14px;line-height:1.45}
+.hintbox h3{margin:0 0 4px;font-size:16px;color:var(--ink)}
+.hintbox svg{width:17px;height:17px;vertical-align:-3px;color:#f5b800}
+.favbtn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:7px;margin-top:12px;min-height:40px;padding:0 14px;border-radius:10px;font-weight:700;font-size:14px;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink)}
+.favbtn svg{width:19px;height:19px;color:#b9c0c8}
+.favbtn.on{background:var(--accSoft);box-shadow:inset 0 0 0 1px var(--accLine)}
+.favbtn.on svg{color:#f5b800}
+.upd{position:fixed;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:5;width:min(520px,calc(100% - 16px));display:flex;align-items:center;gap:10px;padding:10px 10px 10px 12px;border-radius:16px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 0 0 1.5px var(--accLine)}
+.upd[hidden]{display:none}
+.upd .ui{flex:none;width:38px;height:38px;border-radius:50%;background:var(--acc);color:var(--accInk);display:grid;place-items:center}
+.upd .ui svg{width:22px;height:22px}
+.upd .tx{flex:1;min-width:0;line-height:1.3}
+.upd .tx b{display:block;font-size:14.5px}
+.upd .tx small{display:block;font-size:12.5px;color:var(--muted)}
+.upd .go{all:unset;cursor:pointer;flex:none;min-height:40px;padding:0 14px;border-radius:10px;background:var(--ink);color:#fff;font-weight:800;font-size:14px;display:inline-flex;align-items:center}
+body.has-a2hs .upd{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
+body.has-upd main{padding-bottom:84px}
 .offi{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;margin-top:12px;padding:0 16px;border-radius:14px;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.05),inset 0 0 0 1px var(--line);font-weight:700;font-size:15px;color:var(--ink);text-decoration:none;text-align:center}
 .offi small{font-size:13px;font-weight:600;color:var(--muted)}
 .offi[hidden]{display:none}
@@ -249,11 +284,13 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 @media(min-width:700px){
  .barin,.teamsin,main{max-width:1180px}
  .barin{padding:16px 24px 6px}
- .teamsin{padding:8px 24px 10px;grid-template-columns:repeat(4,minmax(0,210px));gap:10px}
+ .teamsin{padding:8px 24px 10px;gap:10px}
+ .tbtn{flex:0 0 150px}
+ .tbtn.ic{flex:0 0 56px}
  main{padding:16px 24px 48px}
  .lists{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px;align-items:start}
  #v-uebersicht{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 24px;align-items:start}
- .ov-a{grid-column:1/-1}
+ .ov-a,.ov-e{grid-column:1/-1}
  .ovnext{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;align-items:stretch}
  .ovnext .hero+.hero{margin-top:0}
  .ovnext .hero{display:flex;flex-direction:column}
@@ -283,6 +320,10 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  <symbol id="ic-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20h-6.5v-5.5h-5V20H3z" fill="currentColor"/></symbol>
  <symbol id="ic-away" viewBox="0 0 24 24"><path d="M4 12h14M12.5 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
  <symbol id="ic-share" viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 8 12 3.5 16.5 8M8 11H6.5A1.5 1.5 0 0 0 5 12.5v6A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5v-6a1.5 1.5 0 0 0-1.5-1.5H16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="ic-star" viewBox="0 0 24 24"><path d="m12 3.2 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+ <symbol id="ic-star-o" viewBox="0 0 24 24"><path d="m12 3.2 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+ <symbol id="ic-list" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+ <symbol id="ic-up" viewBox="0 0 24 24"><path d="M12 19V6M6.5 11.5 12 6l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
  <symbol id="ic-addhome" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
  <symbol id="ic-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></symbol>
  <symbol id="ic-kebab" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></symbol>
@@ -293,7 +334,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  <div class="barin">
   <div class="brand">
    <span class="crest l img"><img src="esv-rund.png" alt="Wappen der Eickener SpVg"></span>
-   <div class="grow"><h1>Handball Eicken</h1><p>Eickener SpVg · JSG Eicken-Buer-Oldendorf · Saison 2026/27</p></div>
+   <div class="grow"><h1>ESV Handball</h1><p>Eickener SpVg · JSG Eicken-Buer-Oldendorf · Saison 2026/27</p></div>
    <button class="icon-btn" id="infobtn" type="button" data-view="infos" aria-label="Infos und Links"><svg aria-hidden="true"><use href="#ic-info"/></svg></button>
    <button class="icon-btn" id="share" type="button" aria-label="Teilen oder als App speichern"><svg aria-hidden="true"><use href="#ic-share"/></svg></button>
   </div>
@@ -302,9 +343,15 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 <nav class="teams" aria-label="Mannschaft wählen"><div class="teamsin" role="tablist" id="teambar"></div></nav>
 <main>
  <section id="v-uebersicht" hidden>
-  <div class="ov-a"><div class="sec">Nächste Spiele</div><div id="ov-next" class="ovnext"></div></div>
+  <div class="ov-e" id="ov-empty" hidden></div>
+  <div class="ov-a"><div class="sec">Nächste Spiele <small>deiner Favoriten</small></div><div id="ov-next" class="ovnext"></div></div>
   <div class="ov-b"><div class="sec">Letzte Ergebnisse <small>Tippen für den Spielbericht</small></div><div class="card" id="ov-last"></div></div>
   <div class="ov-c"><div class="sec">Tabellenplätze</div><div class="ovt" id="ov-tab"></div><div class="sec">Offizielle Seiten</div><div class="offs" id="ov-off"></div></div>
+ </section>
+ <section id="v-alle" hidden>
+  <div class="sec">Alle Mannschaften</div>
+  <div class="hintbox">Tippe auf <svg aria-hidden="true"><use href="#ic-star-o"/></svg>, um eine Mannschaft zu deinen Favoriten hinzuzufügen. Favoriten stehen oben in der Leiste und bleiben auch nach Updates erhalten.</div>
+  <div id="alle-list"></div>
  </section>
  <section id="v-team" hidden>
   <div class="card banner" id="banner"></div>
@@ -338,6 +385,11 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  </section>
 </main>
 <div class="toast" id="toast" role="status" hidden></div>
+<div class="upd" id="upd" hidden role="status">
+ <div class="ui"><svg aria-hidden="true"><use href="#ic-up"/></svg></div>
+ <div class="tx"><b>Neue Version verfügbar</b><small>Deine Favoriten bleiben erhalten</small></div>
+ <button class="go" id="upd-go" type="button">Aktualisieren</button>
+</div>
 <div class="a2hs" id="a2hs" hidden role="region" aria-label="Als App speichern">
  <img src="apple-touch-icon.png" alt="">
  <div class="tx"><b>Als App speichern</b><small>ESV-Symbol auf den Home-Bildschirm</small></div>
@@ -346,7 +398,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 </div>
 <dialog id="sdlg" aria-labelledby="s-title">
  <div class="rs">
-  <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="s-title">Handball Eicken</b><small>Teilen oder als App speichern</small></div></div>
+  <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="s-title">ESV Handball</b><small>Teilen oder als App speichern</small></div></div>
   <div class="rbtns">
    <button class="rbtn dark" id="s-share" type="button"><svg aria-hidden="true"><use href="#ic-share"/></svg>Link teilen</button>
    <button class="rbtn dark" id="s-home" type="button"><svg aria-hidden="true"><use href="#ic-addhome"/></svg>Zum Home-Bildschirm hinzufügen</button>
@@ -384,12 +436,13 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const TEAMS = [
-  {id: 'herren', file: 'herren.json', label: '1. Herren', bar: 'Herren', barSub: '1. Mannschaft', dot: '#343a40', hz: 30},
-  {id: 'wjc', file: 'wjc.json', label: 'Weibliche C-Jugend', bar: 'C-Jugend', barSub: 'weiblich', dot: '#c2255c', hz: 25},
-  {id: 'mje', file: 'mje.json', label: 'Männliche E-Jugend', bar: 'E-Jugend', barSub: 'männlich', dot: '#6741d9', hz: 20},
-];
-const TBY = Object.fromEntries(TEAMS.map(t => [t.id, t]));
+const BUILD = '20261123145450';
+let TEAMS = [], TBY = {}, IDX = null;
+let FAV = [];
+try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
+const isFav = id => FAV.includes(id);
+let picking = !FAV.length;  // Erstauswahl: Liste bleibt offen, bis „Fertig“ getippt wird
+
 const WT = ['So','Mo','Di','Mi','Do','Fr','Sa'];
 const LANG = {S:'Sieg', N:'Niederlage', U:'Unentschieden'};
 const NODATE = 8.64e15;
@@ -595,9 +648,29 @@ function heroCard(g, now, showTeam) {
 }
 const standTxt = (d, kurz) => { const x = new Date(d.stand); return isNaN(x) ? '–' : kurz ? x.toLocaleString('de-DE', {day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'}) + ' Uhr' : x.toLocaleString('de-DE', {dateStyle: 'medium', timeStyle: 'short'}) + ' Uhr'; };
 
+const favTeams = () => FAV.filter(id => TBY[id]).map(id => TBY[id]);
+const starSvg = on => '<svg aria-hidden="true"><use href="#ic-star' + (on ? '' : '-o') + '"/></svg>';
+function teamList() {
+  const groups = [];
+  for (const t of TEAMS) { let g = groups.find(x => x[0] === t.gruppe); if (!g) groups.push(g = [t.gruppe, []]); g[1].push(t); }
+  return groups.map(([name, ts]) => '<div class="grp">' + esc(name) + '</div><div class="card">' + ts.map(t => {
+    const f = isFav(t.id), info = t.liga + (t.platz ? ' · Platz ' + t.platz + ' von ' + t.von : '');
+    return '<div class="trow2"><button type="button" class="tsel" data-view="' + t.id + '"><span class="dot" style="background:' + t.dot + '"></span><span class="nm"><b>' + esc(t.label) + '</b><small>' + esc(info) + '</small></span></button>' +
+      '<button type="button" class="star' + (f ? ' on' : '') + '" data-fav="' + t.id + '" aria-pressed="' + f + '" aria-label="' + esc(t.label) + (f ? ' aus den Favoriten entfernen' : ' zu den Favoriten hinzufügen') + '">' + starSvg(f) + '</button></div>';
+  }).join('') + '</div>').join('') || '<div class="card empty">Mannschaften werden geladen …</div>';
+}
+function renderAlle() { $('alle-list').innerHTML = teamList(); }
 function renderOverview(now) {
-  const nexts = [], lasts = [], cards = [];
-  for (const t of TEAMS) {
+  const nexts = [], lasts = [], cards = [], fav = favTeams();
+  const empty = !fav.length || picking;
+  $('ov-empty').hidden = !empty;
+  for (const c of ['.ov-a', '.ov-b', '.ov-c']) document.querySelector(c).hidden = empty;
+  if (empty) {
+    $('ov-empty').innerHTML = '<div class="hintbox"><h3>Willkommen bei ESV Handball!</h3>Wähle deine Mannschaften mit <svg aria-hidden="true"><use href="#ic-star-o"/></svg> aus. Sie stehen dann oben in der Leiste, und hier siehst du ihre nächsten Spiele und Ergebnisse auf einen Blick.</div>' + teamList() +
+      (fav.length ? '<button class="btn done" type="button" id="pick-done">Fertig – ' + (fav.length === 1 ? '1 Favorit' : fav.length + ' Favoriten') + ' anzeigen</button>' : '');
+    return;
+  }
+  for (const t of fav) {
     if (!TD[t.id]) continue;
     use(t.id);
     const gs = sorted(), n = gs.find(g => isMe(g) && offen(g, now) && g.datum), l = gs.filter(g => isMe(g) && has(g)).pop();
@@ -611,7 +684,7 @@ function renderOverview(now) {
   $('ov-next').innerHTML = nexts.map(([, id, g]) => { use(id); return heroCard(g, now, true); }).join('') || '<div class="card empty">Zurzeit sind keine Spiele angesetzt.</div>';
   $('ov-last').innerHTML = lasts.map(([, id, g]) => { use(id); return matchRow(g, now, true); }).join('') || '<div class="empty">Noch keine Ergebnisse.</div>';
   $('ov-tab').innerHTML = cards.join('');
-  $('ov-off').innerHTML = TEAMS.filter(t => TD[t.id]).map(t => { const l = nuLinks(TD[t.id]).tab; return l ? '<a class="offi" href="' + esc(l.url) + '" target="_blank" rel="noopener"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + ' <small>auf nuLiga ↗</small></a>' : ''; }).join('');
+  $('ov-off').innerHTML = fav.filter(t => TD[t.id]).map(t => { const l = nuLinks(TD[t.id]).tab; return l ? '<a class="offi" href="' + esc(l.url) + '" target="_blank" rel="noopener"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + ' <small>auf nuLiga ↗</small></a>' : ''; }).join('');
 }
 
 // Offizielle nuLiga-Seiten einer Mannschaft: Tabelle und kompletter Spielplan
@@ -626,12 +699,12 @@ function offi(id, l, label) {
 }
 function renderTeam(now) {
   const t = TBY[view]; use(view);
-  if (!D) { $('banner').innerHTML = '<div class="empty">Daten werden geladen …</div>'; return; }
+  if (!D) { $('banner').innerHTML = '<div class="empty">Daten werden geladen …</div>'; $('p-spiele').hidden = true; $('p-tabelle').hidden = true; ensure(view); return; }
   const nl = nuLinks(D);
   offi('off-spiele', nl.plan, 'Offizieller Spielplan'); offi('off-tab', nl.tab, 'Offizielle Tabelle');
   const tb = D.tabelle || [], me = tb.find(r => r.team === D.team), s = teamStats(D.team);
   $('banner').innerHTML = '<h2><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</h2><p class="sub2">' + esc(D.verein + ' · ' + D.liga + ' · Saison ' + D.saison) + '</p>' +
-    '<div class="facts">' + (me ? '<span>Platz <b>' + esc(me.platz) + '</b> von ' + tb.length + '</span><span><b>' + esc(me.punkte) + '</b> Punkte</span>' : '') + (s.n ? '<span><b>' + s.f + ':' + s.a + '</b> Tore</span>' : '') + '<span>Stand ' + esc(standTxt(D, true)) + '</span></div>';
+    favBtn(t.id) + '<div class="facts">' + (me ? '<span>Platz <b>' + esc(me.platz) + '</b> von ' + tb.length + '</span><span><b>' + esc(me.punkte) + '</b> Punkte</span>' : '') + (s.n ? '<span><b>' + s.f + ':' + s.a + '</b> Tore</span>' : '') + '<span>Stand ' + esc(standTxt(D, true)) + '</span></div>';
   $('s-spiele').setAttribute('aria-selected', String(sub === 'spiele')); $('s-tabelle').setAttribute('aria-selected', String(sub === 'tabelle'));
   $('p-spiele').hidden = sub !== 'spiele'; $('p-tabelle').hidden = sub !== 'tabelle';
   const gs = sorted(), next = gs.find(g => isMe(g) && offen(g, now) && g.datum);
@@ -654,64 +727,116 @@ function renderTeam(now) {
   $('tabnote').textContent = D.hinweis || '';
 }
 
+const favBtn = id => { const f = isFav(id); return '<button type="button" class="favbtn' + (f ? ' on' : '') + '" data-fav="' + id + '" aria-pressed="' + f + '">' + starSvg(f) + (f ? 'Favorit' : 'Als Favorit merken') + '</button>'; };
 function renderInfos() {
-  $('links').innerHTML = TEAMS.filter(t => TD[t.id]).map(t => { use(t.id); return '<div class="sec"><span style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</span><small>' + esc(D.verein) + '</small></div><div class="card">' +
+  const general = '<div class="sec">Vereine</div><div class="card">' + [['Alle Mannschaften der Eickener SpVg', 'nuLiga', 'https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32392'], ['Alle Mannschaften der JSG Eicken-Buer-Oldendorf', 'nuLiga', 'https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32655'], ['Handball beim ESV', 'eickener-sv.de · Mannschaften und Training', 'https://www.eickener-sv.de/index.php/abteilungen/handball']].map(([a, b, u]) => '<a class="lrow" href="' + esc(u) + '" target="_blank" rel="noopener"><div><b>' + esc(a) + '</b><small>' + esc(b) + '</small></div><span class="chev">↗</span></a>').join('') + '</div>';
+  $('links').innerHTML = general + favTeams().filter(t => TD[t.id]).map(t => { use(t.id); return '<div class="sec"><span style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</span><small>' + esc(D.verein) + '</small></div><div class="card">' +
     (D.links || []).map(l => '<a class="lrow" href="' + esc(l.url) + '" target="_blank" rel="noopener"><div><b>' + esc(l.titel) + '</b><small>' + esc(l.info || '') + '</small></div><span class="chev">↗</span></a>').join('') + '</div>'; }).join('');
-  $('stand').innerHTML = TEAMS.filter(t => TD[t.id]).map(t => '<p style="margin:0 0 4px;display:flex;align-items:center;gap:8px"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + ': <b>' + esc(standTxt(TD[t.id], false)) + '</b>' + (SRC[t.id] === 'kopie' ? ' <small>(Kopie)</small>' : '') + '</p>').join('');
+  $('stand').innerHTML = (IDX ? '<p style="margin:0 0 6px">Zuletzt geprüft: <b>' + esc(standTxt(IDX, false)) + '</b></p>' : '') + favTeams().filter(t => TD[t.id]).map(t => '<p style="margin:0 0 4px;display:flex;align-items:center;gap:8px"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + ': <b>' + esc(standTxt(TD[t.id], false)) + '</b></p>').join('');
 }
 
 function renderBar() {
-  const items = [['uebersicht', 'Alle', 'Übersicht', null, 'Übersicht aller Mannschaften']].concat(TEAMS.map(t => [t.id, t.bar, t.barSub, t.dot, t.label]));
-  $('teambar').innerHTML = items.map(([id, l, sl, dot, aria]) => '<button class="tbtn" role="tab" type="button" data-view="' + id + '" aria-selected="' + (id === view) + '" aria-label="' + esc(aria) + '"><b>' + (dot ? '<span class="dot" style="background:' + dot + '"></span>' : '') + esc(l) + '</b><small>' + esc(sl) + '</small></button>').join('');
+  const fav = FAV.filter(id => TBY[id]);
+  const ids = fav.concat(TBY[view] && !fav.includes(view) ? [view] : []);
+  const chip = id => { const t = TBY[id]; return '<button class="tbtn' + (fav.includes(id) ? '' : ' extra') + '" role="tab" type="button" data-view="' + id + '" aria-selected="' + (id === view) + '" aria-label="' + esc(t.label) + '"><b><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.bar) + '</b><small>' + esc(t.barSub) + '</small></button>'; };
+  $('teambar').innerHTML = '<button class="tbtn ic fav" role="tab" type="button" data-view="uebersicht" aria-selected="' + (view === 'uebersicht') + '" aria-label="Übersicht deiner Favoriten"><svg aria-hidden="true"><use href="#ic-star"/></svg></button>' +
+    ids.map(chip).join('') +
+    '<button class="tbtn ic" role="tab" type="button" data-view="alle" aria-selected="' + (view === 'alle') + '" aria-label="Alle Mannschaften"><svg aria-hidden="true"><use href="#ic-list"/></svg></button>';
+  const sel = $('teambar').querySelector('.tbtn[aria-selected=true]:not(.ic)');
+  if (sel) { const bar = $('teambar'); const l = sel.offsetLeft - bar.offsetLeft, r = l + sel.offsetWidth; if (l < bar.scrollLeft || r > bar.scrollLeft + bar.clientWidth) bar.scrollLeft = l - 56; }
   $('infobtn').style.background = view === 'infos' ? 'var(--soft)' : '';
 }
 
 function render() {
   const now = Date.now();
-  if (!['uebersicht', 'infos'].concat(TEAMS.map(t => t.id)).includes(view)) view = 'uebersicht';
+  if (IDX && !['uebersicht', 'alle', 'infos'].includes(view) && !TBY[view]) view = 'uebersicht';
   renderBar();
-  $('v-uebersicht').hidden = view !== 'uebersicht'; $('v-team').hidden = !TBY[view]; $('v-infos').hidden = view !== 'infos';
+  $('v-uebersicht').hidden = view !== 'uebersicht'; $('v-alle').hidden = view !== 'alle'; $('v-team').hidden = !TBY[view]; $('v-infos').hidden = view !== 'infos';
   if (view === 'uebersicht') renderOverview(now);
+  else if (view === 'alle') renderAlle();
   else if (view === 'infos') renderInfos();
-  else renderTeam(now);
+  else if (TBY[view]) renderTeam(now);
 }
 
 function go(v) {
+  if (v !== 'uebersicht' && FAV.length) picking = false;
   view = v; try { localStorage.setItem('hb-view', v); } catch (e) {}
+  if (TBY[v]) ensure(v);
   render(); window.scrollTo(0, 0);
 }
 let loading = false, lastLoad = 0;
+const PENDING = {};
+async function loadIndex() {
+  const r = await fetch('data/teams.json?v=' + Date.now(), {cache: 'no-store'});
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  IDX = await r.json();
+  TEAMS = IDX.teams || []; TBY = Object.fromEntries(TEAMS.map(t => [t.id, t]));
+}
+async function loadTeam(id) {
+  const t = TBY[id]; if (!t) return;
+  const r = await fetch(t.file + '?v=' + Date.now(), {cache: 'no-store'});
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  TD[id] = await r.json(); SRC[id] = 'live';
+}
+function ensure(id) {
+  if (TD[id] || PENDING[id] || !TBY[id]) return;
+  PENDING[id] = loadTeam(id).catch(() => {}).then(() => { delete PENDING[id]; if (!$('dlg').open) render(); newResults(); });
+}
 async function load() {
   if (loading) return;
   loading = true;
-  const before = JSON.stringify(TEAMS.map(t => TD[t.id] ? TD[t.id].stand : ''));
-  await Promise.all(TEAMS.map(async t => {
-    try { const r = await fetch(t.file + '?v=' + Date.now(), {cache: 'no-store'}); if (!r.ok) throw new Error('HTTP ' + r.status); TD[t.id] = await r.json(); SRC[t.id] = 'live'; }
-    catch (e) { if (!TD[t.id]) { try { TD[t.id] = JSON.parse($('fb-' + t.id).textContent); SRC[t.id] = 'kopie'; } catch (_) {} } }
-  }));
+  checkVersion();
+  const before = JSON.stringify([IDX && IDX.stand, Object.keys(TD).map(id => TD[id].stand)]);
+  try { await loadIndex(); } catch (e) {}
+  const ids = [...new Set(FAV.filter(id => TBY[id]).concat(TBY[view] ? [view] : []).concat(Object.keys(TD).filter(id => TBY[id])))];
+  await Promise.all(ids.map(id => loadTeam(id).catch(() => {})));
   loading = false; lastLoad = Date.now();
-  const changed = before !== JSON.stringify(TEAMS.map(t => TD[t.id] ? TD[t.id].stand : ''));
+  const changed = before !== JSON.stringify([IDX && IDX.stand, Object.keys(TD).map(id => TD[id].stand)]);
   if (changed && !$('dlg').open) render();
   if (changed) newResults();
 }
-// Neue Ergebnisse seit dem letzten Besuch bzw. dem letzten Abruf melden
+function setFav(id, on) {
+  const t = TBY[id]; if (!t) return;
+  FAV = FAV.filter(x => x !== id); if (on) FAV.push(id);
+  try { localStorage.setItem('hb-fav', JSON.stringify(FAV)); } catch (e) {}
+  toast('<p style="margin:0">' + (on ? '★ ' + esc(t.label) + ' ist jetzt ein Favorit.' : esc(t.label) + ' aus den Favoriten entfernt.') + '</p>', 2200);
+  if (on) ensure(id);
+  render();
+}
+// Neue Ergebnisse der Favoriten seit dem letzten Besuch bzw. dem letzten Abruf melden
 function newResults() {
-  if (TEAMS.some(t => SRC[t.id] !== 'live')) return;
-  const all = [];
-  TEAMS.forEach(t => (TD[t.id].spiele || []).forEach(g => { if (g.ergebnis) all.push([t, g]); }));
-  let seen = null;
-  try { seen = JSON.parse(localStorage.getItem('hb-seen') || 'null'); } catch (e) {}
-  const keys = all.map(([t, g]) => t.id + ':' + g.nr + ':' + g.ergebnis);
-  try { localStorage.setItem('hb-seen', JSON.stringify(keys)); } catch (e) {}
-  if (!Array.isArray(seen)) return;
-  const old = new Set(seen);
-  const fresh = all.filter(([t, g], i) => !old.has(keys[i]) && (g.heim === TD[t.id].team || g.gast === TD[t.id].team));
+  let seen = {};
+  try { seen = JSON.parse(localStorage.getItem('hb-seen2') || '{}') || {}; } catch (e) {}
+  const fresh = [];
+  for (const id of FAV) {
+    const t = TBY[id], d = TD[id];
+    if (!t || !d || SRC[id] !== 'live') continue;
+    const games = (d.spiele || []).filter(g => g.ergebnis && (g.heim === d.team || g.gast === d.team));
+    const keys = games.map(g => g.nr + ':' + g.ergebnis);
+    if (Array.isArray(seen[id])) { const old = new Set(seen[id]); games.forEach((g, i) => { if (!old.has(keys[i])) fresh.push([t, g]); }); }
+    seen[id] = keys;
+  }
+  try { localStorage.setItem('hb-seen2', JSON.stringify(seen)); } catch (e) {}
   if (!fresh.length) return;
   fresh.sort((p, q) => (q[1].datum + q[1].zeit).localeCompare(p[1].datum + p[1].zeit));
   const rows = fresh.slice(0, 3).map(([t, g]) => '<button class="trow" type="button" data-team="' + t.id + '" data-nr="' + esc(g.nr) + '"><span class="dot" style="background:' + t.dot + '"></span><span><small>' + esc(t.label) + '</small><b>' + esc(g.heim) + ' – ' + esc(g.gast) + ' ' + esc(g.ergebnis) + '</b></span></button>').join('');
   toast('<p>' + (fresh.length === 1 ? 'Neues Ergebnis' : fresh.length + ' neue Ergebnisse') + '</p>' + rows, 9000);
 }
-// Routenwahl: Apple Karten, Google Maps oder Adresse kopieren
+// Neue Version der App erkennen
+async function checkVersion() {
+  if (BUILD.indexOf('__') === 0) return;
+  try {
+    const r = await fetch('version.json?v=' + Date.now(), {cache: 'no-store'});
+    if (!r.ok) return;
+    const v = await r.json();
+    if (v.build && v.build !== BUILD) { $('upd').hidden = false; document.body.classList.add('has-upd'); }
+  } catch (e) {}
+}
+async function applyUpdate() {
+  $('upd-go').textContent = 'Lädt …';
+  try { const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration(); if (reg) await reg.update(); } catch (e) {}
+  location.reload();
+}
 let rAddr = '';
 function openRoute(teamId, hallId) {
   if (!TD[teamId]) return;
@@ -823,7 +948,7 @@ function shareMenu() {
   openDlg('sdlg');
 }
 async function share() {
-  const data = {title: 'Handball Eicken', text: 'Spielplan, Ergebnisse und Tabellen der Eickener SpVg: 1. Herren, weibliche C-Jugend und männliche E-Jugend', url: SHARE_URL};
+  const data = {title: 'ESV Handball', text: 'Spielplan, Ergebnisse und Tabellen aller Handball-Mannschaften der Eickener SpVg und der JSG Eicken-Buer-Oldendorf', url: SHARE_URL};
   if (navigator.share) {
     try { await navigator.share(data); return; } catch (e) { if (e && e.name === 'AbortError') return; }
   }
@@ -839,6 +964,9 @@ function setFilter(v) {
 document.addEventListener('click', e => {
   const rt = e.target.closest('[data-rhall]');
   if (rt) { openRoute(rt.dataset.rteam, rt.dataset.rhall); return; }
+  if (e.target.closest('#pick-done')) { picking = false; render(); window.scrollTo(0, 0); return; }
+  const fv = e.target.closest('[data-fav]');
+  if (fv) { setFav(fv.dataset.fav, !isFav(fv.dataset.fav)); return; }
   const mo = e.target.closest('[data-more]');
   if (mo) { const k = view + mo.dataset.more; EXP[k] = !EXP[k]; render(); if (!EXP[k]) { const c = mo.dataset.more === 'up' ? $('upcoming') : $('results'); c.scrollIntoView({block: 'start'}); window.scrollBy(0, -120); } return; }
   const v = e.target.closest('[data-view]'); if (v) { go(v.dataset.view); return; }
@@ -848,6 +976,7 @@ document.addEventListener('click', e => {
 $('s-spiele').addEventListener('click', () => { sub = 'spiele'; try { localStorage.setItem('hb-sub', sub); } catch (e) {} render(); });
 $('s-tabelle').addEventListener('click', () => { sub = 'tabelle'; try { localStorage.setItem('hb-sub', sub); } catch (e) {} render(); });
 $('dlg-x').addEventListener('click', closeDlg);
+$('upd-go').addEventListener('click', applyUpdate);
 $('r-x').addEventListener('click', closeRoute);
 $('r-copy').addEventListener('click', copyAddr);
 $('r-apple').addEventListener('click', () => setTimeout(closeRoute, 300));

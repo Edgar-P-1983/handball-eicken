@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Holt Tabellen, Spielpläne und Spielberichte von nuLiga und schreibt herren.json, wjc.json, mje.json.
+"""Holt Tabellen, Spielpläne und Spielberichte aller Handball-Mannschaften der Eickener SpVg
+und der JSG Eicken-Buer-Oldendorf von nuLiga und schreibt data/teams.json und data/<id>.json.
 
 Aufruf:
   update.py --mode auto    alle 15 Minuten: nur abrufen, wenn ein Spiel gerade vorbei ist und
                            Ergebnis oder Spielbericht noch fehlen (höchstens 6 Stunden lang)
-  update.py --mode daily   täglicher Komplettabgleich
-  update.py --mode force   sofortiger Komplettabgleich (manuell aus dem Chat angestoßen)
+  update.py --mode daily   täglicher Komplettabgleich inkl. Suche nach neuen Mannschaften
+  update.py --mode force   sofortiger Komplettabgleich (manuell aus dem Claude-Chat angestoßen)
 
 Spielernamen werden nie gespeichert: Aus den Spielberichten werden nur Spielstände, Zeiten,
 Ereignisse, 7-Meter-Zahlen und die Anzahl der eingesetzten Spieler übernommen.
@@ -14,17 +15,26 @@ import argparse, datetime as dt, json, os, re, subprocess, sys, time, urllib.req
 from zoneinfo import ZoneInfo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(ROOT, 'data')
+INDEX = os.path.join(DATA, 'teams.json')
 BERLIN = ZoneInfo('Europe/Berlin')
 HOST = 'https://hvnb-handball.liga.nu'
 BASE = HOST + '/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/'
-TEAMS = [
-    {'id': 'herren', 'file': 'herren.json', 'ch': 'HVNB+26%2F27', 'group': '489364', 'reports': 'own'},
-    {'id': 'wjc', 'file': 'wjc.json', 'ch': 'HRWN+26%2F27', 'group': '505361', 'reports': 'all'},
-    {'id': 'mje', 'file': 'mje.json', 'ch': 'HRWN+26%2F27', 'group': '506735', 'reports': 'all'},
+PDF = HOST + '/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting='
+WEB = 'https://www.eickener-sv.de/index.php/abteilungen/handball'
+CLUBS = [
+    {'club': '32392', 'name': 'Eickener SpVg', 'kurz': 'ESV'},
+    {'club': '32655', 'name': 'JSG Eicken-Buer-Oldendorf', 'kurz': 'JSG'},
 ]
+# Farben der Mannschaften (Punkt vor dem Namen)
+DOTS = {'herren1': '#343a40', 'herren2': '#5c6670', 'herren3': '#8b95a1', 'damen1': '#e8590c', 'damen2': '#f08c00',
+        'mA': '#1864ab', 'mB': '#1971c2', 'mC': '#1098ad', 'mD': '#7048e8', 'mE': '#6741d9', 'mF': '#4263eb',
+        'wA': '#a61e4d', 'wB': '#d6336c', 'wC': '#c2255c', 'wD': '#e64980', 'wE': '#f06595', 'wF': '#f783ac',
+        'gE': '#2b8a3e', 'gF': '#37b24d'}
+HZ_DEFAULT = {'A': 30, 'B': 30, 'C': 25, 'D': 20, 'E': 20, 'F': 15}
 WINDOW_H = 6            # so lange nach Spielende wird alle 15 Minuten nachgesehen
 REPORT_DAYS = 14        # fehlende Spielberichte werden so lange nach dem Spiel noch gesucht
-MAX_REPORTS = 40        # höchstens so viele Spielberichte pro Lauf abrufen
+MAX_REPORTS = 80        # höchstens so viele Spielberichte pro Lauf abrufen
 
 LOG = []
 def log(msg):
@@ -49,7 +59,17 @@ def soup_of(html):
     return BeautifulSoup(html, 'html.parser')
 
 
+_CACHE = {}
+
+
 def fetch(url):
+    if url in _CACHE:
+        return _CACHE[url]
+    _CACHE[url] = _fetch(url)
+    return _CACHE[url]
+
+
+def _fetch(url):
     last = None
     for attempt in range(3):
         try:
@@ -272,6 +292,107 @@ def parse_report(html, halbzeit_min):
     return {'tore': end, 'halbzeit': hz, 'siebenm': siebenm, 'kader': kader, 'verlauf': verlauf, 'ereignisse': ev}
 
 
+# ---------------------------------------------------------------- Mannschaften finden
+ROMAN = {'I': 1, 'II': 2, 'III': 3, 'IV': 4, 'V': 5}
+
+
+def classify(label):
+    """'Männer II' -> herren2, 'weibliche C-Jugend' -> wC usw."""
+    t = label.strip()
+    m = re.fullmatch(r'(Männer|Frauen)(?:\s+([IVX]+|\d+))?', t, re.I)
+    if m:
+        n = ROMAN.get((m.group(2) or 'I').upper(), int(m.group(2)) if (m.group(2) or '').isdigit() else 1)
+        herren = m.group(1).lower() == 'männer'
+        return {'id': ('herren' if herren else 'damen') + str(n), 'label': f'{n}. ' + ('Herren' if herren else 'Damen'),
+                'bar': 'Herren' if herren else 'Damen', 'barSub': f'{n}. Mannschaft', 'gruppe': 'Erwachsene',
+                'klasse': 'Männer' if herren else 'Frauen', 'alter': 'A', 'nr': n, 'sort': (0, 0 if herren else 1, n)}
+    m = re.fullmatch(r'(männliche|weibliche|gemischte)\s+([A-F])-Jugend(?:\s+([IVX]+|\d+))?', t, re.I)
+    if m:
+        g, a = m.group(1).lower(), m.group(2).upper()
+        n = ROMAN.get((m.group(3) or 'I').upper(), int(m.group(3)) if (m.group(3) or '').isdigit() else 1)
+        gk = {'männliche': 'm', 'weibliche': 'w', 'gemischte': 'g'}[g]
+        gw = {'m': 'männlich', 'w': 'weiblich', 'g': 'gemischt'}[gk]
+        suf = '' if n == 1 else f' {n}'
+        return {'id': gk + a + ('' if n == 1 else str(n)), 'label': f'{g.capitalize()} {a}-Jugend' + ('' if n == 1 else f' {n}'),
+                'bar': f'{a}-Jugend', 'barSub': gw + suf, 'gruppe': {'m': 'Männliche Jugend', 'w': 'Weibliche Jugend', 'g': 'Gemischte Jugend'}[gk],
+                'klasse': f'{g.capitalize()} {a}-Jugend', 'alter': a, 'nr': n, 'sort': ({'w': 1, 'm': 2, 'g': 3}[gk], 'ABCDEF'.index(a), n)}
+    return None
+
+
+def discover():
+    """Liest die Mannschaftslisten beider Vereine auf nuLiga."""
+    found = {}
+    for club in CLUBS:
+        s = soup_of(fetch(f'{BASE}clubTeams?club={club["club"]}'))
+        region = saison = ''
+        for t in s.find_all('table', class_='result-set'):
+            for tr in own_rows(t):
+                h2 = tr.find('h2')
+                if h2:
+                    m = re.match(r'(.+?)\s+(\d{4}/\d\d)$', txt(h2))
+                    region, saison = (m.group(1), m.group(2)) if m else (txt(h2), '')
+                    continue
+                tds = tr.find_all('td', recursive=False)
+                a = tr.find('a', href=re.compile('groupPage'))
+                if len(tds) < 2 or not a:
+                    continue
+                info = classify(txt(tds[0]))
+                if not info:
+                    log(f'  unbekannte Mannschaft übersprungen: {txt(tds[0])}')
+                    continue
+                m = re.search(r'championship=([^&]+)&group=(\d+)', a['href'])
+                if not m:
+                    continue
+                liga = txt(a)
+                if info['id'] in found and 'pokal' in liga.lower():
+                    continue
+                if info['id'] in found and 'pokal' not in found[info['id']]['liga'].lower():
+                    continue
+                found[info['id']] = dict(info, club=club['club'], verein=club['name'], kurz=club['kurz'], liga=liga,
+                                         region=region, saison=saison, ch=m.group(1), group=m.group(2))
+    if not found:
+        raise ValueError('keine Mannschaften gefunden')
+    return sorted(found.values(), key=lambda c: c['sort'])
+
+
+def team_links(c):
+    q = f'championship={c["ch"]}&group={c["group"]}'
+    return [
+        {'titel': 'Tabelle & aktuelle Spiele', 'info': 'nuLiga · ' + c['liga'], 'url': f'{BASE}groupPage?{q}'},
+        {'titel': 'Kompletter Spielplan', 'info': 'nuLiga · alle Spiele der Staffel', 'url': f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&{q}'},
+        {'titel': 'Alle Mannschaften: ' + c['verein'], 'info': 'nuLiga', 'url': f'{BASE}clubTeams?club={c["club"]}'},
+        {'titel': 'Handball beim ESV', 'info': 'eickener-sv.de · Mannschaften und Training', 'url': WEB},
+    ]
+
+
+def skeleton(c):
+    return {'stand': '', 'saison': c['saison'], 'team': '', 'kurz': c['kurz'], 'mannschaft': c['label'], 'verein': c['verein'],
+            'altersklasse': c['klasse'], 'liga': c['liga'], 'region': c['region'], 'halbzeitMin': HZ_DEFAULT.get(c['alter'], 30),
+            'hinweis': 'Sortiert nach Punkten.', 'links': team_links(c),
+            'berichtUrl': f'{BASE}groupMeetingReport?championship={c["ch"]}&group={c["group"]}&meeting=',
+            'berichtPdf': PDF, 'tabelle': [], 'spiele': [], 'hallen': {}}
+
+
+def pick_team(names, c):
+    """Name der eigenen Mannschaft in Tabelle/Spielplan, z. B. 'Eickener SpVg II'."""
+    base = c['verein']
+    roman = {v: k for k, v in ROMAN.items()}.get(c['nr'], str(c['nr']))
+    want = [base] if c['nr'] == 1 else [f'{base} {roman}', f'{base} {c["nr"]}']
+    for w in want:
+        if w in names:
+            return w
+    cands = sorted(n for n in names if n.startswith(base) or 'Eicken' in n)
+    if c['nr'] == 1:
+        plain = [n for n in cands if not re.search(r'\s(II|III|IV|\d)$', n)]
+        if plain:
+            return plain[0]
+    else:
+        suf = [n for n in cands if n.endswith(' ' + roman) or n.endswith(' ' + str(c['nr']))]
+        if suf:
+            return suf[0]
+    return cands[0] if cands else ''
+
+
 # ---------------------------------------------------------------- Ablauf
 def now_berlin():
     return dt.datetime.now(BERLIN)
@@ -283,11 +404,11 @@ def kickoff(g):
     return dt.datetime.strptime(g['datum'] + ' ' + g['zeit'], '%Y-%m-%d %H:%M').replace(tzinfo=BERLIN)
 
 
-def wants_report(team, D, g):
-    return team['reports'] == 'all' or D['team'] in (g['heim'], g['gast'])
+def wants_report(D, g):
+    return D.get('team') in (g['heim'], g['gast'])
 
 
-def needs_check(team, D, now):
+def needs_check(D, now):
     """Gibt es ein Spiel, das gerade vorbei ist und bei dem Ergebnis oder Bericht noch fehlen?"""
     hz = D.get('halbzeitMin', 30)
     for g in D.get('spiele', []):
@@ -296,32 +417,56 @@ def needs_check(team, D, now):
             continue
         start = k + dt.timedelta(minutes=2 * hz + 10)
         if start <= now <= start + dt.timedelta(hours=WINDOW_H):
-            if not g.get('ergebnis') or (wants_report(team, D, g) and not g.get('bericht')):
+            if not g.get('ergebnis') or (wants_report(D, g) and not g.get('bericht')):
                 return f'Spiel {g["nr"]} {g["heim"]} – {g["gast"]}'
     return None
 
 
-def update_team(team, D, now):
-    url_q = f'championship={team["ch"]}&group={team["group"]}'
+def infer_hz(D, default):
+    """Halbzeitdauer aus den Spielverläufen ableiten (falls länger gespielt wird als angenommen)."""
+    last = 0
+    for g in D.get('spiele', []):
+        b = g.get('bericht')
+        if b and b.get('verlauf'):
+            m, s_ = b['verlauf'][-1][:5].split(':')
+            last = max(last, int(m) * 60 + int(s_))
+    hz = default
+    while hz < 30 and last > 2 * hz * 60:
+        hz += 5
+    return hz
+
+
+def update_team(c, D, now, pool):
+    url_q = f'championship={c["ch"]}&group={c["group"]}'
     games = parse_meetings(fetch(f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&{url_q}'))
     tabelle = parse_table(fetch(f'{BASE}groupPage?{url_q}'))
     old = {str(g['nr']): g for g in D.get('spiele', [])}
-    if len(games) < 0.8 * len(old):
+    if old and len(games) < 0.8 * len(old):
         raise ValueError(f'nur {len(games)} statt {len(old)} Spiele gefunden – Abbruch')
-    names = {r['team'] for r in tabelle}
+    names = {r['team'] for r in tabelle} | {g['heim'] for g in games} | {g['gast'] for g in games}
+    team = pick_team(names, c)
+    if not team:
+        raise ValueError('eigene Mannschaft in Tabelle/Spielplan nicht gefunden')
+    points_only = not any('tore' in r for r in tabelle)
+    N = dict(D)
+    N['team'] = team
     hallen = dict(D.get('hallen', {}))
     fetched = 0
     neu_erg, neu_ber = [], []
     for g in games:
         court = g.pop('_court', None)
-        if g['halle'] and g['halle'] not in hallen and court:
-            try:
-                hallen[g['halle']] = parse_court(fetch(court if court.startswith('http') else HOST + court))
-                log(f'  neue Halle {g["halle"]}: {hallen[g["halle"]]["name"]}')
-            except Exception as e:  # noqa: BLE001
-                log(f'  Halle {g["halle"]} nicht lesbar: {e}')
+        if g['halle'] and g['halle'] not in hallen:
+            if g['halle'] in pool:
+                hallen[g['halle']] = pool[g['halle']]
+            elif court:
+                try:
+                    hallen[g['halle']] = parse_court(fetch(court if court.startswith('http') else HOST + court))
+                    pool[g['halle']] = hallen[g['halle']]
+                    log(f'  neue Halle {g["halle"]}: {hallen[g["halle"]]["name"]}')
+                except Exception as e:  # noqa: BLE001
+                    log(f'  Halle {g["halle"]} nicht lesbar: {e}')
         o = old.get(str(g['nr']), {})
-        if g['ergebnis'] and g['ergebnis'] != o.get('ergebnis'):
+        if g['ergebnis'] and g['ergebnis'] != o.get('ergebnis') and old:
             neu_erg.append(g)
         if not g['ergebnis']:
             continue
@@ -329,7 +474,7 @@ def update_team(team, D, now):
         if ob and o.get('ergebnis') == g['ergebnis'] and ob.get('meeting') == g.get('meeting'):
             g['bericht'] = ob
             continue
-        if not wants_report(team, D, g) or not g.get('meeting'):
+        if not wants_report(N, g) or not g.get('meeting'):
             continue
         k = kickoff(g)
         if k and now - k > dt.timedelta(days=REPORT_DAYS) and not ob and o.get('ergebnis') == g['ergebnis']:
@@ -339,23 +484,47 @@ def update_team(team, D, now):
         fetched += 1
         try:
             b = parse_report(fetch(f'{BASE}groupMeetingReport?meeting={g["meeting"]}&{url_q}'), D.get('halbzeitMin', 30))
-            if team['id'] != 'mje' and b['tore'] != g['ergebnis']:
+            if not points_only and b['tore'] != g['ergebnis']:
                 raise ValueError(f'Bericht {b["tore"]} passt nicht zum Ergebnis {g["ergebnis"]}')
             b['meeting'] = g['meeting']
             g['bericht'] = b
-            neu_ber.append(g)
+            if old:
+                neu_ber.append(g)
         except Exception as e:  # noqa: BLE001
             log(f'  Spielbericht {g["nr"]} (meeting {g["meeting"]}) übersprungen: {e}')
             if ob:
                 g['bericht'] = ob
-    unknown = {g['heim'] for g in games} | {g['gast'] for g in games}
-    if not names & unknown:
-        raise ValueError('Tabelle und Spielplan passen nicht zusammen')
-    N = dict(D)
     N['tabelle'] = tabelle
     N['spiele'] = games
     N['hallen'] = hallen
+    N['halbzeitMin'] = infer_hz(N, HZ_DEFAULT.get(c.get('alter', 'A'), 30))
+    if points_only and 'nur Punkte' not in N.get('hinweis', ''):
+        N['hinweis'] = (N.get('hinweis', '') + ' In dieser Altersklasse zeigt nuLiga nur Punkte (2:0 = Sieg), keine Tore.').strip()
     return N, neu_erg, neu_ber
+
+
+def index_entry(c, D):
+    me = next((r for r in D.get('tabelle', []) if r['team'] == D.get('team')), None)
+    e = {k: c[k] for k in ('id', 'label', 'bar', 'barSub', 'gruppe', 'kurz', 'verein', 'liga', 'ch', 'group', 'club',
+                           'klasse', 'alter', 'nr', 'region', 'saison')}
+    e.update({'file': f'data/{c["id"]}.json', 'dot': DOTS.get(c['id'], '#868e96'), 'hz': D.get('halbzeitMin', 30),
+              'team': D.get('team', ''), 'platz': me['platz'] if me else None, 'von': len(D.get('tabelle', [])),
+              'punkte': me['punkte'] if me else ''})
+    return e
+
+
+def load_json(path, default=None):
+    try:
+        with open(path, encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return default
+
+
+def write_json(path, data):
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=1)
+        f.write('\n')
 
 
 def main():
@@ -364,34 +533,68 @@ def main():
     args = ap.parse_args()
     now = now_berlin()
     stamp = now.replace(second=0, microsecond=0).isoformat()
-    changed_files, summary, errors = [], [], []
-    for team in TEAMS:
-        path = os.path.join(ROOT, team['file'])
-        D = json.load(open(path, encoding='utf-8'))
-        if args.mode == 'auto':
-            why = needs_check(team, D, now)
-            if not why:
-                continue
-            log(f'{team["id"]}: Abruf wegen {why}')
-        else:
-            log(f'{team["id"]}: Komplettabgleich ({args.mode})')
+    os.makedirs(DATA, exist_ok=True)
+    index = load_json(INDEX, {'stand': '', 'teams': []})
+    cfgs = index['teams']
+    if args.mode != 'auto':
         try:
-            N, neu_erg, neu_ber = update_team(team, D, now)
+            found = discover()
+            known = {c['id']: c for c in cfgs}
+            for c in found:
+                k = known.get(c['id'])
+                if k and (k['group'] != c['group']):
+                    log(f'{c["id"]}: neue Staffel {c["liga"]} (bisher {k["liga"]})')
+            if {c['id'] for c in found} != set(known):
+                log('Mannschaften: ' + ', '.join(c['id'] for c in found))
+            cfgs = found
         except Exception as e:  # noqa: BLE001
-            errors.append(f'{team["id"]}: {e}')
+            log(f'Mannschaftsliste nicht lesbar, nutze bekannte: {e}')
+    pool = {}
+    for c in cfgs:
+        pool.update(load_json(os.path.join(DATA, c['id'] + '.json'), {}).get('hallen', {}))
+    changed_files, summary, errors, entries = [], [], [], []
+    for c in cfgs:
+        path = os.path.join(DATA, c['id'] + '.json')
+        D = load_json(path)
+        if D is None or D.get('links', [{}])[0].get('url', '').find(c['group']) < 0 and args.mode != 'auto':
+            fresh = skeleton(c)
+            if D is not None:  # neue Staffel: Hallen behalten
+                fresh['hallen'] = D.get('hallen', {})
+            D = fresh
+        if args.mode == 'auto':
+            why = needs_check(D, now)
+            if not why:
+                entries.append(index_entry(c, D))
+                continue
+            log(f'{c["id"]}: Abruf wegen {why}')
+        else:
+            log(f'{c["id"]}: Komplettabgleich ({args.mode})')
+        try:
+            N, neu_erg, neu_ber = update_team(c, D, now, pool)
+        except Exception as e:  # noqa: BLE001
+            errors.append(f'{c["id"]}: {e}')
             log(f'  FEHLER: {e}')
+            if not os.path.exists(path):  # neue Mannschaft: leere Datei, damit die App sie anzeigen kann
+                D['stand'] = stamp
+                write_json(path, D)
+                changed_files.append(path)
+            entries.append(index_entry(c, D))
             continue
         strip = lambda x: {k: v for k, v in x.items() if k != 'stand'}
         if strip(N) != strip(D) or args.mode != 'auto':
             N['stand'] = stamp
-            with open(path, 'w', encoding='utf-8') as f:
-                json.dump(N, f, ensure_ascii=False, indent=1)
-                f.write('\n')
-            changed_files.append(team['file'])
+            write_json(path, N)
+            changed_files.append(path)
+        entries.append(index_entry(c, N))
         for g in neu_erg:
-            summary.append(f'{team["id"]}: Ergebnis {g["heim"]} – {g["gast"]} {g["ergebnis"]}')
+            summary.append(f'{c["label"]}: Ergebnis {g["heim"]} – {g["gast"]} {g["ergebnis"]}')
         for g in neu_ber:
-            summary.append(f'{team["id"]}: Spielbericht {g["heim"]} – {g["gast"]}')
+            summary.append(f'{c["label"]}: Spielbericht {g["heim"]} – {g["gast"]}')
+    new_index = {'stand': index.get('stand', ''), 'teams': entries}
+    if new_index['teams'] != index.get('teams') or changed_files:
+        new_index['stand'] = stamp
+        write_json(INDEX, new_index)
+        changed_files.append(INDEX)
     if not changed_files and not errors:
         log('Nichts zu tun.' if args.mode == 'auto' else 'Keine Änderungen.')
     msg = 'Daten aktualisiert' if not summary else ('Neu: ' + summary[0] if len(summary) == 1 else f'{len(summary)} Neuigkeiten')
