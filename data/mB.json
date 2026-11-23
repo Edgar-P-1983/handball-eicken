@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T14:56:00+01:00",
+ "stand": "2026-11-23T15:00:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -8,7 +8,7 @@
  "altersklasse": "Männliche B-Jugend",
  "liga": "Männl. B-Jugend Regionsoberliga",
  "region": "HR West Niedersachsen",
- "halbzeitMin": 30,
+ "halbzeitMin": 25,
  "hinweis": "Sortiert nach Punkten.",
  "links": [
   {

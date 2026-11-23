@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T14:56:00+01:00",
+ "stand": "2026-11-23T15:00:00+01:00",
  "teams": [
   {
    "id": "herren1",
@@ -170,7 +170,7 @@
    "saison": "2026/27",
    "file": "data/mB.json",
    "dot": "#1971c2",
-   "hz": 30,
+   "hz": 25,
    "team": "JSG Eicken-Buer-Oldendorf",
    "platz": 7,
    "von": 8,
