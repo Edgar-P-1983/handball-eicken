@@ -90,40 +90,26 @@ def save(name, data, ct, anon=False):
 
 
 log = []
-court = None
-for key, (ch, grp, meetings) in TEAMS.items():
-    urls = {
-        'tabelle': f'{BASE}groupPage?championship={ch}&group={grp}',
-        'vorrunde': f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&championship={ch}&group={grp}',
-        'gesamt': f'{BASE}groupPage?displayTyp=gesamt&displayDetail=meetings&championship={ch}&group={grp}',
-    }
-    for kind, url in urls.items():
+clubs = {'esv': '32392', 'jsg': '32655'}
+for key, club in clubs.items():
+    for kind, url in {
+        'clubteams': f'{BASE}clubTeams?club={club}',
+        'clubinfo': f'{BASE}clubInfoDisplay?club={club}',
+    }.items():
         try:
             data, ct = get(url)
             soup = save(f'{key}_{kind}', data, ct)
             log.append(f'OK {key}_{kind} {len(data)} {ct}')
-            if court is None:
-                a = soup.find('a', href=re.compile('courtInfo'))
-                if a:
-                    court = a['href']
+            if kind == 'clubteams':
+                links = sorted({a['href'] for a in soup.find_all('a', href=True) if 'teamPortrait' in a['href'] or 'groupPage' in a['href']})
+                open(f'{OUT}/{key}_links.txt', 'w').write('\n'.join(links))
+                tp = [l for l in links if 'teamPortrait' in l][:1]
+                for i, l in enumerate(tp):
+                    u = l if l.startswith('http') else 'https://hvnb-handball.liga.nu' + l
+                    d2, c2 = get(u)
+                    save(f'{key}_teamportrait{i}', d2, c2, anon=True)
+                    log.append(f'OK {key}_teamportrait{i} {u}')
         except Exception as e:
             log.append(f'FEHLER {key}_{kind}: {e!r}')
-    for m in meetings:
-        url = f'{BASE}groupMeetingReport?championship={ch}&group={grp}&meeting={m}'
-        try:
-            data, ct = get(url)
-            save(f'{key}_bericht_{m}', data, ct, anon=True)
-            log.append(f'OK {key}_bericht_{m} {len(data)} {ct}')
-        except Exception as e:
-            log.append(f'FEHLER {key}_bericht_{m}: {e!r}')
-
-if court:
-    url = court if court.startswith('http') else 'https://hvnb-handball.liga.nu' + court
-    try:
-        data, ct = get(url)
-        save('court', data, ct)
-        log.append(f'OK court {url}')
-    except Exception as e:
-        log.append(f'FEHLER court {url}: {e!r}')
 open(f'{OUT}/log.txt', 'w').write('\n'.join(log) + '\n')
 print('\n'.join(log))
