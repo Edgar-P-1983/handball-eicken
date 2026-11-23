@@ -106,6 +106,9 @@ main{max-width:760px;margin:0 auto;padding:20px 12px 40px}
 .hero .foot a,.hero .foot button{all:unset;cursor:pointer;font-weight:700;color:var(--ink);min-height:36px;display:inline-flex;align-items:center}
 .hero.home{box-shadow:inset 0 0 0 2px var(--accLine)}
 .hero+.hero{margin-top:10px}
+.hero.tap{cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .08s ease,box-shadow .15s ease}
+.hero.tap:active{transform:scale(.985)}
+.hero.tap:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 .chips{display:flex;gap:8px;margin:16px 0 0}
 .chip{all:unset;cursor:pointer;padding:0 14px;min-height:36px;display:inline-flex;align-items:center;border-radius:99px;background:var(--card);font-weight:600;font-size:14px;box-shadow:inset 0 0 0 1px var(--line)}
 .chip[aria-pressed=true]{background:var(--ink);color:#fff;box-shadow:none}
@@ -435,7 +438,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261123164310';
+const BUILD = '20261123191148';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -641,7 +644,7 @@ function grouped(list, now) {
 function heroCard(g, now, showTeam) {
   const d = when(g), h = hall(g.halle), home = g.heim === D.team, live = g.datum && d.getTime() <= now;
   const side = n => '<div class="t' + (n === D.team ? ' me' : '') + '">' + crest(n, 'l') + esc(n) + '</div>';
-  return '<div class="card hero' + (home ? ' home' : '') + '"><div class="top">' + (showTeam ? tpill(T) : '') + '<span>' + esc(longDate(d)) + '</span>' + (live ? '<span class="pill live">Live</span>' : '') + '</div>' +
+  return '<div class="card hero tap' + (home ? ' home' : '') + '" role="button" tabindex="0" data-team="' + T.id + '" data-nr="' + esc(g.nr) + '" aria-label="Details: ' + esc(g.heim + ' gegen ' + g.gast) + '"><div class="top">' + (showTeam ? tpill(T) : '') + '<span>' + esc(longDate(d)) + '</span>' + (live ? '<span class="pill live">Live</span>' : '') + '</div>' +
     '<div class="vs">' + side(g.heim) + '<div class="c"><b>' + esc(g.zeit || '–') + '</b><span>Anwurf</span></div>' + side(g.gast) + '</div>' +
     '<div class="foot">' + venue(home) + '<span style="flex:1 1 160px">' + esc(h.name) + ', ' + esc(ort(h)) + '</span><button type="button" data-rteam="' + T.id + '" data-rhall="' + esc(g.halle) + '">' + icon('route') + '&nbsp;Route</button><button type="button" data-team="' + T.id + '" data-nr="' + esc(g.nr) + '">Details ›</button></div></div>';
 }
@@ -977,6 +980,10 @@ $('s-spiele').addEventListener('click', () => { sub = 'spiele'; try { localStora
 $('s-tabelle').addEventListener('click', () => { sub = 'tabelle'; try { localStorage.setItem('hb-sub', sub); } catch (e) {} render(); });
 $('dlg-x').addEventListener('click', closeDlg);
 $('upd-go').addEventListener('click', applyUpdate);
+document.addEventListener('keydown', e => {
+  const k = e.target.closest && e.target.closest('.hero.tap');
+  if (k && e.target === k && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); if (TD[k.dataset.team]) openGame(k.dataset.team, k.dataset.nr); }
+});
 $('r-x').addEventListener('click', closeRoute);
 $('r-copy').addEventListener('click', copyAddr);
 $('r-apple').addEventListener('click', () => setTimeout(closeRoute, 300));
