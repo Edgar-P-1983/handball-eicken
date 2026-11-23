@@ -129,6 +129,13 @@ main{max-width:760px;margin:0 auto;padding:20px 12px 40px}
 .m .sc b{color:var(--ink);font-weight:800}
 .wl{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:800;color:#fff}
 .wl.S{background:var(--win)}.wl.N{background:var(--loss)}.wl.U{background:var(--draw)}
+.lastf{display:inline-flex;gap:4px;vertical-align:middle}
+.cmp .v.r .lastf{justify-content:flex-end}
+.cmp .v small{font-weight:500;color:var(--muted);font-size:12px}
+.h2h{list-style:none;margin:0;padding:0}
+.h2h li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.h2h li:first-child{border-top:0}
+.h2h li b{white-space:nowrap}
 .chev{color:#b3b9bf;font-size:20px;text-align:center}
 .more-btn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:center;align-items:center;gap:6px;min-height:46px;border-top:1px solid var(--line);font-weight:700;font-size:14px;background:var(--soft)}
 .more-btn:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
@@ -438,7 +445,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261123191148';
+const BUILD = '20261123200851';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -563,6 +570,38 @@ function teamStats(t) {
   return {n: gs.length, f, a};
 }
 
+// Erweiterte Statistik einer Mannschaft in der Liga des aktuellen Datensatzes D
+function teamForm(n) {
+  const pts = !((D.tabelle || [])[0] && 'tore' in D.tabelle[0]);  // E-/F-Jugend: Ergebnis = Punkte
+  const gs = (D.spiele || []).filter(g => (g.heim === n || g.gast === n) && has(g)).sort((x, y) => when(x) - when(y));
+  const res = gs.map(g => {
+    const home = g.heim === n, t = (g.bericht || !pts) ? tore(g) : null;
+    return {g, home, o: outcome(g, n), f: t ? (home ? t[0] : t[1]) : null, a: t ? (home ? t[1] : t[0]) : null};
+  });
+  const bil = list => { const c = {S: 0, U: 0, N: 0}; list.forEach(r => c[r.o]++); return list.length ? c.S + '–' + c.U + '–' + c.N : '–'; };
+  const known = res.filter(r => r.f !== null), full = res.length > 0 && known.length === res.length;
+  const sum = k => known.reduce((x, r) => x + r[k], 0);
+  const row = (D.tabelle || []).find(r => r.team === n);
+  let F = null, A = null, N = 0;
+  if (row && row.tore) { [F, A] = row.tore.split(':').map(Number); N = row.spiele; } else if (full) { F = sum('f'); A = sum('a'); N = known.length; }
+  const big = sign => known.filter(r => sign * (r.f - r.a) > 0).sort((x, y) => sign * ((y.f - y.a) - (x.f - x.a)))[0];
+  const rp = res.filter(r => r.g.bericht);
+  const R = rp.length ? (() => {
+    let h1 = 0, h2 = 0, lead = 0, m7 = 0, w7 = 0, two = 0;
+    for (const r of rp) {
+      const b = r.g.bericht, i = r.home ? 0 : 1, sd = r.home ? 'H' : 'G';
+      const ht = (b.halbzeit || '0:0').split(':').map(Number), ft = b.tore.split(':').map(Number);
+      h1 += ht[i]; h2 += ft[i] - ht[i]; if (ht[i] > ht[1 - i]) lead++;
+      const sm = (b.siebenm || [[0, 0], [0, 0]])[i] || [0, 0]; w7 += sm[0]; m7 += sm[1];
+      two += (b.ereignisse || []).filter(e => e[1] === '2 Minuten' && e[2] === sd).length;
+    }
+    return {n: rp.length, h1: h1 / rp.length, h2: h2 / rp.length, lead, m7, w7, two: two / rp.length};
+  })() : null;
+  return {n: res.length, heim: bil(res.filter(r => r.home)), ausw: bil(res.filter(r => !r.home)), last: res.slice(-3),
+    F, A, N, best: big(1), worst: big(-1), R};
+}
+const dez = x => x.toFixed(1).replace('.', ',');
+
 function dlgTitle(g) {
   const d = when(g);
   $('dlg-title').innerHTML = '<div class="tt"><span class="dot" style="background:' + T.dot + '"></span>' + esc(T.label) + '</div><small>' + esc((D.liga || '') + ' · ' + longDate(d) + (g.zeit ? ' · ' + g.zeit + ' Uhr' : '')) + '</small>';
@@ -610,11 +649,36 @@ function openGame(teamId, nr) {
       '<div class="card full">' + tag + '<p class="fazit" style="color:var(--muted)">Für dieses Spiel gibt es hier keine Zusammenfassung. Den offiziellen Bericht findest du auf nuLiga.</p>' + vorl + '</div>' + links;
   } else {
     const tb = D.tabelle || [], pos = n => tb.find(r => r.team === n);
-    const col = n => { const r = pos(n), s = teamStats(n); return {pl: r ? r.platz + '.' : '–', pk: r ? r.punkte : '–', sp: r ? r.s + '–' + r.u + '–' + r.n : '–', tore: s.n ? s.f + ':' + s.a : '–', avg: s.n ? (s.f / s.n).toFixed(1).replace('.', ',') : '–'}; };
-    const Lc = col(g.heim), Rc = col(g.gast), row = (k, l, r) => '<div class="v">' + l + '</div><div class="k">' + k + '</div><div class="v r">' + r + '</div>';
+    const row = (k, l, r) => '<div class="v">' + l + '</div><div class="k">' + k + '</div><div class="v r">' + r + '</div>';
+    const L = teamForm(g.heim), R = teamForm(g.gast);
+    const pl = n => { const r = pos(n); return r ? r.platz + '.' : '–'; }, pk = n => { const r = pos(n); return r ? esc(r.punkte) : '–'; };
+    const sun = n => { const r = pos(n); return r ? r.s + '–' + r.u + '–' + r.n : '–'; };
+    const last = f => f.last.length ? '<span class="lastf">' + f.last.map(r => '<span class="wl ' + r.o + '" title="' + esc(r.g.heim + ' – ' + r.g.gast + ' ' + r.g.ergebnis) + '">' + r.o + '</span>').join('') + '</span>' : '–';
+    const per = (f, k) => f.N ? dez(f[k] / f.N) : '–';
+    const diff = f => f.N ? (f.F - f.A > 0 ? '+' : '') + (f.F - f.A) : '–';
+    const top = r => r ? (r.f - r.a > 0 ? '+' : '') + (r.f - r.a) + ' <small>' + (r.home ? r.f + ':' + r.a : r.a + ':' + r.f) + '</small>' : '–';
+    const hd = '<div class="v hd">' + esc(short(g.heim)) + '</div><div class="k hd"></div><div class="v r hd">' + esc(short(g.gast)) + '</div>';
     html = '<div class="card full"><div class="dsc">' + side(g.heim) + '<div class="big">' + esc(g.zeit || '–') + '<small>' + (g.datum ? 'Anwurf' : 'Termin offen') + '</small></div>' + side(g.gast) + '</div>' + where + '</div>' +
-      '<div class="card full"><h3>Formcheck</h3><div class="cmp"><div class="v hd">' + esc(short(g.heim)) + '</div><div class="k hd"></div><div class="v r hd">' + esc(short(g.gast)) + '</div>' +
-      row('Tabellenplatz', Lc.pl, Rc.pl) + row('Punkte', Lc.pk, Rc.pk) + row('Siege–Unent.–Niederl.', Lc.sp, Rc.sp) + row('Tore bisher', Lc.tore, Rc.tore) + row('Tore pro Spiel', Lc.avg, Rc.avg) + '</div>' +
+      '<div class="card full"><h3>Formcheck</h3><div class="cmp">' + hd +
+      row('Tabellenplatz', pl(g.heim), pl(g.gast)) + row('Punkte', pk(g.heim), pk(g.gast)) + row('Siege–Unent.–Niederl.', sun(g.heim), sun(g.gast)) +
+      row('Heimspiele', L.heim, R.heim) + row('Auswärtsspiele', L.ausw, R.ausw) + row('Letzte 3 Spiele', last(L), last(R)) + '</div>' +
+      '<p class="note" style="margin:8px 0 0">Bilanzen als Siege–Unentschieden–Niederlagen; bei den letzten Spielen steht das neueste rechts.</p></div>' +
+      '<div class="card"><h3>Tore</h3><div class="cmp">' + hd +
+      row('Tore gesamt', L.N ? L.F + ':' + L.A : '–', R.N ? R.F + ':' + R.A : '–') + row('Tordifferenz', diff(L), diff(R)) +
+      row('Tore pro Spiel', per(L, 'F'), per(R, 'F')) + row('Gegentore pro Spiel', per(L, 'A'), per(R, 'A')) +
+      row('Höchster Sieg', top(L.best), top(R.best)) + row('Höchste Niederlage', top(L.worst), top(R.worst)) + '</div></div>';
+    if (L.R || R.R) {
+      const rv = (f, fn) => f.R ? fn(f.R) : '–';
+      html += '<div class="card"><h3>Aus den Spielberichten</h3><div class="cmp">' + hd +
+        row('Ausgewertete Spiele', rv(L, r => r.n), rv(R, r => r.n)) +
+        row('Tore 1. Halbzeit (Ø)', rv(L, r => dez(r.h1)), rv(R, r => dez(r.h1))) + row('Tore 2. Halbzeit (Ø)', rv(L, r => dez(r.h2)), rv(R, r => dez(r.h2))) +
+        row('Zur Pause vorn', rv(L, r => r.lead + ' von ' + r.n), rv(R, r => r.lead + ' von ' + r.n)) +
+        row('7-Meter (Tore/Würfe)', rv(L, r => r.m7 + '/' + r.w7 + (r.w7 ? ' <small>' + Math.round(100 * r.m7 / r.w7) + ' %</small>' : '')), rv(R, r => r.m7 + '/' + r.w7 + (r.w7 ? ' <small>' + Math.round(100 * r.m7 / r.w7) + ' %</small>' : ''))) +
+        row('2-Minuten pro Spiel', rv(L, r => dez(r.two)), rv(R, r => dez(r.two))) + '</div>' +
+        '<p class="note" style="margin:8px 0 0">Nur aus Spielen, für die ein Spielbericht mit Verlauf vorliegt.</p></div>';
+    }
+    const h2h = (D.spiele || []).filter(x => x !== g && has(x) && ((x.heim === g.heim && x.gast === g.gast) || (x.heim === g.gast && x.gast === g.heim)));
+    html += '<div class="card full"><h3>Direkter Vergleich</h3>' + (h2h.length ? '<ul class="h2h">' + h2h.map(x => '<li><span>' + esc(new Date(when(x)).toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: '2-digit'})) + ' · ' + esc(short(x.heim)) + ' – ' + esc(short(x.gast)) + '</span><b>' + esc(x.bericht ? x.bericht.tore : x.ergebnis) + '</b></li>').join('') + '</ul>' : '<p class="note" style="margin:0">In dieser Saison noch kein Spiel gegeneinander.</p>') +
       '<p class="note" style="margin:10px 0 0">Ergebnis und Spielbericht erscheinen hier nach dem Spiel.</p></div>' + links;
   }
   $('dlg-body').innerHTML = html;
