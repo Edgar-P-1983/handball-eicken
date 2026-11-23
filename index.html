@@ -54,13 +54,13 @@ svg.i{width:16px;height:16px;flex:none}
 .tbtn{all:unset;box-sizing:border-box;cursor:pointer;flex:0 0 calc((100% - 84px - 20px) / 3);min-width:0;display:grid;justify-items:center;align-content:center;gap:1px;min-height:52px;padding:6px 3px;border-radius:12px;box-shadow:inset 0 0 0 1px var(--line);background:#fff;text-align:center}
 .tbtn b{display:flex;align-items:center;gap:4px;max-width:100%;font-size:13px;letter-spacing:-.1px;font-weight:800;line-height:1.15;white-space:nowrap;overflow:hidden}
 .tbtn small{max-width:100%;font-size:11px;color:var(--muted);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.tbtn b .dot{width:8px;height:8px;flex:none}
+.tbtn .cb{display:block;width:22px;height:3px;border-radius:3px;margin-top:3px}
+.tbtn[aria-selected=true] .cb{box-shadow:0 0 0 1px rgba(255,255,255,.5)}
 .tbtn.ic{flex:0 0 42px;padding:0}
-@media(max-width:380px){.tbtn b{font-size:12.5px}.tbtn b .dot{display:none}.tbtn small{font-size:10.5px}}
+@media(max-width:380px){.tbtn b{font-size:12.5px}.tbtn small{font-size:10.5px}}
 .tbtn.ic svg{width:23px;height:23px}
 .tbtn.ic.fav svg{color:#f5b800}
 .tbtn.ic.fav[aria-selected=true] svg{color:var(--acc)}
-.tbtn.extra{box-shadow:inset 0 0 0 1.5px var(--line);border:1px dashed #c3c8cf}
 .tbtn[aria-selected=true]{background:var(--ink);color:#fff;box-shadow:none}
 .tbtn[aria-selected=true] small{color:#c9ced4}
 @media(max-width:360px){.tbtn b{font-size:13px}.tbtn small{font-size:10px}}
@@ -75,6 +75,9 @@ main{max-width:760px;margin:0 auto;padding:12px 12px 40px}
 .banner{padding:14px 16px}
 .banner h2{font-size:22px;line-height:1.15;margin:0;font-weight:800;display:flex;align-items:center;gap:10px}
 .banner h2 .dot{width:14px;height:14px}
+.banner h2 .hstar{all:unset;cursor:pointer;flex:none;width:40px;height:40px;margin:-8px -6px -8px -4px;display:grid;place-items:center;color:#b9c0c8}
+.banner h2 .hstar svg{width:26px;height:26px}
+.banner h2 .hstar.on{color:#f5b800}
 .banner .sub2{color:var(--muted);font-size:13px;margin:4px 0 0}
 .facts{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin-top:10px}
 .facts b{color:var(--ink);font-weight:700}
@@ -165,10 +168,6 @@ body.has-a2hs .btn.done{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px
 .hintbox{margin:4px 0 4px;padding:12px 14px;border-radius:14px;background:#fff6d6;color:#5c4800;font-size:14px;line-height:1.45}
 .hintbox h3{margin:0 0 4px;font-size:16px;color:var(--ink)}
 .hintbox svg{width:17px;height:17px;vertical-align:-3px;color:#f5b800}
-.favbtn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:7px;margin-top:12px;min-height:40px;padding:0 14px;border-radius:10px;font-weight:700;font-size:14px;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink)}
-.favbtn svg{width:19px;height:19px;color:#b9c0c8}
-.favbtn.on{background:var(--accSoft);box-shadow:inset 0 0 0 1px var(--accLine)}
-.favbtn.on svg{color:#f5b800}
 .upd{position:fixed;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:5;width:min(520px,calc(100% - 16px));display:flex;align-items:center;gap:10px;padding:10px 10px 10px 12px;border-radius:16px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 0 0 1.5px var(--accLine)}
 .upd[hidden]{display:none}
 .upd .ui{flex:none;width:38px;height:38px;border-radius:50%;background:var(--acc);color:var(--accInk);display:grid;place-items:center}
@@ -436,7 +435,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261123145450';
+const BUILD = '20261123151125';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -703,8 +702,9 @@ function renderTeam(now) {
   const nl = nuLinks(D);
   offi('off-spiele', nl.plan, 'Offizieller Spielplan'); offi('off-tab', nl.tab, 'Offizielle Tabelle');
   const tb = D.tabelle || [], me = tb.find(r => r.team === D.team), s = teamStats(D.team);
-  $('banner').innerHTML = '<h2><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</h2><p class="sub2">' + esc(D.verein + ' · ' + D.liga + ' · Saison ' + D.saison) + '</p>' +
-    favBtn(t.id) + '<div class="facts">' + (me ? '<span>Platz <b>' + esc(me.platz) + '</b> von ' + tb.length + '</span><span><b>' + esc(me.punkte) + '</b> Punkte</span>' : '') + (s.n ? '<span><b>' + s.f + ':' + s.a + '</b> Tore</span>' : '') + '<span>Stand ' + esc(standTxt(D, true)) + '</span></div>';
+  const fv = isFav(t.id);
+  $('banner').innerHTML = '<h2><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '<button type="button" class="hstar' + (fv ? ' on' : '') + '" data-fav="' + t.id + '" aria-pressed="' + fv + '" aria-label="' + (fv ? 'Aus den Favoriten entfernen' : 'Zu den Favoriten hinzufügen') + '">' + starSvg(fv) + '</button></h2><p class="sub2">' + esc(D.verein + ' · ' + D.liga + ' · Saison ' + D.saison) + '</p>' +
+    '<div class="facts">' + (me ? '<span>Platz <b>' + esc(me.platz) + '</b> von ' + tb.length + '</span><span><b>' + esc(me.punkte) + '</b> Punkte</span>' : '') + (s.n ? '<span><b>' + s.f + ':' + s.a + '</b> Tore</span>' : '') + '<span>Stand ' + esc(standTxt(D, true)) + '</span></div>';
   $('s-spiele').setAttribute('aria-selected', String(sub === 'spiele')); $('s-tabelle').setAttribute('aria-selected', String(sub === 'tabelle'));
   $('p-spiele').hidden = sub !== 'spiele'; $('p-tabelle').hidden = sub !== 'tabelle';
   const gs = sorted(), next = gs.find(g => isMe(g) && offen(g, now) && g.datum);
@@ -727,7 +727,6 @@ function renderTeam(now) {
   $('tabnote').textContent = D.hinweis || '';
 }
 
-const favBtn = id => { const f = isFav(id); return '<button type="button" class="favbtn' + (f ? ' on' : '') + '" data-fav="' + id + '" aria-pressed="' + f + '">' + starSvg(f) + (f ? 'Favorit' : 'Als Favorit merken') + '</button>'; };
 function renderInfos() {
   const general = '<div class="sec">Vereine</div><div class="card">' + [['Alle Mannschaften der Eickener SpVg', 'nuLiga', 'https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32392'], ['Alle Mannschaften der JSG Eicken-Buer-Oldendorf', 'nuLiga', 'https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubTeams?club=32655'], ['Handball beim ESV', 'eickener-sv.de · Mannschaften und Training', 'https://www.eickener-sv.de/index.php/abteilungen/handball']].map(([a, b, u]) => '<a class="lrow" href="' + esc(u) + '" target="_blank" rel="noopener"><div><b>' + esc(a) + '</b><small>' + esc(b) + '</small></div><span class="chev">↗</span></a>').join('') + '</div>';
   $('links').innerHTML = general + favTeams().filter(t => TD[t.id]).map(t => { use(t.id); return '<div class="sec"><span style="display:flex;align-items:center;gap:8px"><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.label) + '</span><small>' + esc(D.verein) + '</small></div><div class="card">' +
@@ -737,11 +736,12 @@ function renderInfos() {
 
 function renderBar() {
   const fav = FAV.filter(id => TBY[id]);
-  const ids = fav.concat(TBY[view] && !fav.includes(view) ? [view] : []);
-  const chip = id => { const t = TBY[id]; return '<button class="tbtn' + (fav.includes(id) ? '' : ' extra') + '" role="tab" type="button" data-view="' + id + '" aria-selected="' + (id === view) + '" aria-label="' + esc(t.label) + '"><b><span class="dot" style="background:' + t.dot + '"></span>' + esc(t.bar) + '</b><small>' + esc(t.barSub) + '</small></button>'; };
+  const ids = fav;
+  const inList = view === 'alle' || (TBY[view] && !fav.includes(view));  // Mannschaft ohne Stern: über „Alle“ geöffnet
+  const chip = id => { const t = TBY[id]; return '<button class="tbtn" role="tab" type="button" data-view="' + id + '" aria-selected="' + (id === view) + '" aria-label="' + esc(t.label) + '"><b>' + esc(t.bar) + '</b><small>' + esc(t.barSub) + '</small><i class="cb" style="background:' + t.dot + '"></i></button>'; };
   $('teambar').innerHTML = '<button class="tbtn ic fav" role="tab" type="button" data-view="uebersicht" aria-selected="' + (view === 'uebersicht') + '" aria-label="Übersicht deiner Favoriten"><svg aria-hidden="true"><use href="#ic-star"/></svg></button>' +
     ids.map(chip).join('') +
-    '<button class="tbtn ic" role="tab" type="button" data-view="alle" aria-selected="' + (view === 'alle') + '" aria-label="Alle Mannschaften"><svg aria-hidden="true"><use href="#ic-list"/></svg></button>';
+    '<button class="tbtn ic" role="tab" type="button" data-view="alle" aria-selected="' + !!inList + '" aria-label="Alle Mannschaften"><svg aria-hidden="true"><use href="#ic-list"/></svg></button>';
   const sel = $('teambar').querySelector('.tbtn[aria-selected=true]:not(.ic)');
   if (sel) { const bar = $('teambar'); const l = sel.offsetLeft - bar.offsetLeft, r = l + sel.offsetWidth; if (l < bar.scrollLeft || r > bar.scrollLeft + bar.clientWidth) bar.scrollLeft = l - 56; }
   $('infobtn').style.background = view === 'infos' ? 'var(--soft)' : '';
