@@ -1,7 +1,7 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
  "mannschaft": "Männliche B-Jugend",
  "verein": "JSG Eicken-Buer-Oldendorf",
@@ -34,7 +34,1295 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=489951&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "TuS Haren II",
+   "spiele": 5,
+   "s": 5,
+   "u": 0,
+   "n": 0,
+   "tore": "199:133",
+   "diff": 66,
+   "punkte": "10:0"
+  },
+  {
+   "platz": 2,
+   "team": "SSC Dodesheide",
+   "spiele": 4,
+   "s": 4,
+   "u": 0,
+   "n": 0,
+   "tore": "150:103",
+   "diff": 47,
+   "punkte": "8:0"
+  },
+  {
+   "platz": 3,
+   "team": "TV Bissendorf-Holte III",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "175:156",
+   "diff": 19,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 4,
+   "team": "JMSG Teuto Osnabrück",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "173:168",
+   "diff": 5,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 5,
+   "team": "THC Westerkappeln",
+   "spiele": 6,
+   "s": 3,
+   "u": 0,
+   "n": 3,
+   "tore": "185:170",
+   "diff": 15,
+   "punkte": "6:6"
+  },
+  {
+   "platz": 6,
+   "team": "HSG Haselünne/Herzlake",
+   "spiele": 6,
+   "s": 3,
+   "u": 0,
+   "n": 3,
+   "tore": "174:175",
+   "diff": -1,
+   "punkte": "6:6"
+  },
+  {
+   "platz": 7,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 5,
+   "s": 0,
+   "u": 0,
+   "n": 5,
+   "tore": "126:192",
+   "diff": -66,
+   "punkte": "0:10"
+  },
+  {
+   "platz": 8,
+   "team": "SG Neuenhaus/Uelsen II",
+   "spiele": 6,
+   "s": 0,
+   "u": 0,
+   "n": 6,
+   "tore": "174:259",
+   "diff": -85,
+   "punkte": "0:12"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 2,
+   "datum": "2026-09-06",
+   "zeit": "12:30",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "TuS Haren II",
+   "ergebnis": "26:31",
+   "meeting": 8283983
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-06",
+   "zeit": "14:15",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": "32:40",
+   "meeting": 8284010,
+   "bericht": {
+    "tore": "32:40",
+    "halbzeit": "17:19",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "kader": [
+     10,
+     9
+    ],
+    "verlauf": [
+     "00:37G",
+     "01:07G",
+     "02:14G",
+     "03:14G",
+     "03:32H",
+     "03:53G",
+     "04:16G",
+     "04:42H",
+     "04:58G",
+     "05:20H",
+     "06:02H",
+     "06:25G",
+     "07:20G",
+     "08:06H",
+     "08:32H",
+     "09:40H",
+     "10:27H",
+     "11:12H",
+     "11:35G",
+     "11:58H",
+     "12:15G",
+     "14:17H",
+     "14:24G",
+     "14:43H",
+     "15:15G",
+     "16:05G",
+     "16:50H",
+     "17:02G",
+     "17:41G",
+     "18:08H",
+     "18:28H",
+     "19:01H",
+     "20:35G",
+     "21:41G",
+     "23:45H",
+     "24:56G",
+     "25:53G",
+     "26:12H",
+     "26:29G",
+     "26:40H",
+     "28:05G",
+     "28:41H",
+     "29:06G",
+     "29:25G",
+     "29:47H",
+     "30:00G",
+     "30:27H",
+     "30:46G",
+     "32:23G",
+     "34:27H",
+     "35:01G",
+     "35:57G",
+     "36:12H",
+     "36:25G",
+     "37:06G",
+     "38:27H",
+     "39:55H",
+     "40:37G",
+     "42:41G",
+     "43:11H",
+     "43:37H",
+     "44:36H",
+     "45:05G",
+     "45:28H",
+     "45:47G",
+     "46:33G",
+     "47:00G",
+     "47:23H",
+     "47:38G",
+     "48:56G",
+     "49:42G",
+     "49:57H"
+    ],
+    "ereignisse": [
+     [
+      "00:19",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "09:15",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "13:36",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "17:04",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "30:23",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "38:09",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "38:21",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "44:46",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8284010
+   }
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-13",
+   "zeit": "14:15",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "THC Westerkappeln",
+   "ergebnis": "24:22",
+   "meeting": 8283993
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-19",
+   "zeit": "16:45",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "40:28",
+   "meeting": 8283963,
+   "verlegt": true,
+   "bericht": {
+    "tore": "40:28",
+    "halbzeit": "18:15",
+    "siebenm": [
+     [
+      2,
+      2
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     11,
+     7
+    ],
+    "verlauf": [
+     "02:03H",
+     "02:39H",
+     "03:11G",
+     "03:21H",
+     "04:57H",
+     "05:45G",
+     "05:56H",
+     "06:41H",
+     "07:00G",
+     "07:25H",
+     "08:04G",
+     "08:30H",
+     "08:55H",
+     "09:09G",
+     "09:49G",
+     "10:19H",
+     "12:14H",
+     "12:31G",
+     "12:52H",
+     "13:56G",
+     "14:35H",
+     "14:56G",
+     "16:47G",
+     "18:03H",
+     "18:14G",
+     "19:13G",
+     "19:23H",
+     "21:14G",
+     "22:11H",
+     "22:48H",
+     "23:39G",
+     "24:51G",
+     "24:59H",
+     "25:26H",
+     "26:16G",
+     "26:24H",
+     "27:03H",
+     "28:09G",
+     "28:41H",
+     "29:40G",
+     "30:42H",
+     "31:08H",
+     "32:38H",
+     "33:20H",
+     "33:40G",
+     "33:48H",
+     "34:22G",
+     "35:42G",
+     "36:38G",
+     "37:04H",
+     "37:26H",
+     "38:43G",
+     "40:11H",
+     "41:07H",
+     "41:31G",
+     "42:01H",
+     "42:22H",
+     "42:45G",
+     "43:52H",
+     "45:26H",
+     "46:15H",
+     "46:37G",
+     "47:07H",
+     "48:19G",
+     "48:33H",
+     "48:58G",
+     "49:05H",
+     "49:53H"
+    ],
+    "ereignisse": [
+     [
+      "13:08",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "14:42",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "26:00",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "26:52",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "34:05",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "44:44",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8283963
+   }
+  },
+  {
+   "nr": 9,
+   "datum": "2026-09-20",
+   "zeit": "14:00",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": "34:47",
+   "meeting": 8283894
+  },
+  {
+   "nr": 10,
+   "datum": "2026-09-20",
+   "zeit": "14:00",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "TuS Haren II",
+   "ergebnis": "25:35",
+   "meeting": 8284005
+  },
+  {
+   "nr": 12,
+   "datum": "2026-09-25",
+   "zeit": "19:00",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": "49:34",
+   "meeting": 8283921
+  },
+  {
+   "nr": 14,
+   "datum": "2026-10-03",
+   "zeit": "16:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "TuS Haren II",
+   "ergebnis": "30:35",
+   "meeting": 8283918
+  },
+  {
+   "nr": 15,
+   "datum": "",
+   "zeit": "",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 16,
+   "datum": "2026-10-04",
+   "zeit": "10:30",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": "37:28",
+   "meeting": 8283891
+  },
+  {
+   "nr": 7,
+   "datum": "2026-10-11",
+   "zeit": "14:30",
+   "halle": "808136",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": "24:26",
+   "meeting": 8283944,
+   "verlegt": true
+  },
+  {
+   "nr": 17,
+   "datum": "2026-10-31",
+   "zeit": "11:30",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": "38:21",
+   "meeting": 8283961
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-01",
+   "zeit": "16:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": "38:26",
+   "meeting": 8283951
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-01",
+   "zeit": "16:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "THC Westerkappeln",
+   "ergebnis": "24:32",
+   "meeting": 8283887,
+   "verlegt": true,
+   "bericht": {
+    "tore": "24:32",
+    "halbzeit": "15:17",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     9
+    ],
+    "verlauf": [
+     "00:58H",
+     "01:41G",
+     "02:14H",
+     "03:01H",
+     "03:17G",
+     "03:27H",
+     "03:47G",
+     "04:11G",
+     "04:54G",
+     "05:47H",
+     "06:53H",
+     "07:19G",
+     "08:44G",
+     "09:38H",
+     "09:51G",
+     "10:02H",
+     "10:39G",
+     "11:21G",
+     "11:46H",
+     "13:16G",
+     "14:40H",
+     "15:00G",
+     "15:32G",
+     "16:05G",
+     "16:48G",
+     "17:11H",
+     "18:45H",
+     "19:10H",
+     "20:50G",
+     "21:21H",
+     "21:56G",
+     "22:23H",
+     "26:11G",
+     "29:25G",
+     "30:25G",
+     "32:35H",
+     "33:07G",
+     "33:30H",
+     "34:16G",
+     "34:32H",
+     "34:55G",
+     "35:23H",
+     "35:57G",
+     "36:13H",
+     "37:48G",
+     "38:52G",
+     "39:26G",
+     "42:17G",
+     "42:41H",
+     "43:04G",
+     "43:51H",
+     "44:17G",
+     "44:41H",
+     "44:56G",
+     "46:18H",
+     "49:16G"
+    ],
+    "ereignisse": [
+     [
+      "13:58",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "13:58",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "15:45",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "18:32",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "29:28",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "44:47",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "46:50",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8283887
+   }
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-07",
+   "zeit": "17:00",
+   "halle": "808135",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "THC Westerkappeln",
+   "ergebnis": "33:30",
+   "meeting": 8283901,
+   "verlegt": true
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-07",
+   "zeit": "19:00",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "26:42",
+   "meeting": 8283935,
+   "verlegt": true
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-08",
+   "zeit": "17:15",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": "24:31",
+   "meeting": 8283985,
+   "verlegt": true,
+   "bericht": {
+    "tore": "24:31",
+    "halbzeit": "10:14",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     8,
+     14
+    ],
+    "verlauf": [
+     "02:42G",
+     "02:45H",
+     "03:57H",
+     "04:10G",
+     "04:28H",
+     "05:44G",
+     "06:11H",
+     "06:20G",
+     "07:37H",
+     "08:02G",
+     "09:04G",
+     "09:57G",
+     "10:24H",
+     "11:47G",
+     "13:55G",
+     "16:39H",
+     "16:53G",
+     "18:02H",
+     "18:12G",
+     "18:42H",
+     "19:56G",
+     "20:27H",
+     "20:59G",
+     "23:39G",
+     "25:29H",
+     "26:24G",
+     "26:53G",
+     "27:19H",
+     "28:34G",
+     "29:23H",
+     "31:21H",
+     "31:51H",
+     "32:22H",
+     "33:22G",
+     "34:04H",
+     "34:15G",
+     "34:58H",
+     "35:12G",
+     "35:38H",
+     "35:48G",
+     "36:10H",
+     "36:25G",
+     "37:25G",
+     "41:42G",
+     "42:01H",
+     "42:36G",
+     "43:58G",
+     "44:29G",
+     "44:50H",
+     "45:10G",
+     "45:33G",
+     "45:59G",
+     "46:39G",
+     "47:38H",
+     "49:07H"
+    ],
+    "ereignisse": [
+     [
+      "11:52",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "13:51",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "23:18",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "24:44",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "30:41",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "33:45",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "37:05",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "41:17",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "41:33",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "43:39",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "50:02",
+      "2 Minuten",
+      "G"
+     ]
+    ],
+    "meeting": 8283985
+   }
+  },
+  {
+   "nr": 22,
+   "datum": "2026-11-14",
+   "zeit": "13:00",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": "46:31",
+   "meeting": 8283990
+  },
+  {
+   "nr": 5,
+   "datum": "2026-11-15",
+   "zeit": "12:30",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "49:18",
+   "meeting": 8283989,
+   "verlegt": true,
+   "bericht": {
+    "tore": "49:18",
+    "halbzeit": "22:6",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     8
+    ],
+    "verlauf": [
+     "00:10H",
+     "01:26H",
+     "03:58H",
+     "05:19H",
+     "06:02H",
+     "07:12H",
+     "08:16G",
+     "08:28H",
+     "09:49H",
+     "11:23H",
+     "12:19H",
+     "13:05H",
+     "13:58G",
+     "14:26H",
+     "14:51H",
+     "15:25G",
+     "16:05G",
+     "16:13H",
+     "17:44H",
+     "18:15G",
+     "18:24H",
+     "19:25H",
+     "20:00H",
+     "21:03H",
+     "21:25H",
+     "22:46H",
+     "24:47G",
+     "24:58H",
+     "25:55H",
+     "26:33H",
+     "27:07H",
+     "27:50H",
+     "29:02G",
+     "31:15H",
+     "32:34H",
+     "33:35G",
+     "34:10H",
+     "34:24G",
+     "34:33H",
+     "34:49G",
+     "35:49H",
+     "36:50H",
+     "37:38H",
+     "38:29H",
+     "38:47G",
+     "38:59H",
+     "39:31H",
+     "40:30H",
+     "41:22H",
+     "41:38G",
+     "41:58H",
+     "42:24G",
+     "42:38G",
+     "42:57H",
+     "43:47H",
+     "44:19G",
+     "44:56H",
+     "45:23H",
+     "46:17H",
+     "46:43G",
+     "46:56H",
+     "47:35H",
+     "47:53G",
+     "48:03H",
+     "48:48H",
+     "49:46H",
+     "50:00G"
+    ],
+    "ereignisse": [
+     [
+      "08:33",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "12:25",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "33:40",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "41:01",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "41:26",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "43:28",
+      "2 Minuten",
+      "H"
+     ]
+    ],
+    "meeting": 8283989
+   }
+  },
+  {
+   "nr": 24,
+   "datum": "2026-11-15",
+   "zeit": "17:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": "34:26",
+   "meeting": 8284008
+  },
+  {
+   "nr": 25,
+   "datum": "2026-11-22",
+   "zeit": "13:15",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "THC Westerkappeln",
+   "ergebnis": "28:37",
+   "meeting": 8283884
+  },
+  {
+   "nr": 27,
+   "datum": "2026-11-22",
+   "zeit": "15:00",
+   "halle": "808134",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "29:46",
+   "meeting": 8283914
+  },
+  {
+   "nr": 29,
+   "datum": "2026-11-28",
+   "zeit": "15:30",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 30,
+   "datum": "2026-11-29",
+   "zeit": "14:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TuS Haren II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 31,
+   "datum": "2026-12-05",
+   "zeit": "12:30",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 33,
+   "datum": "2026-12-06",
+   "zeit": "15:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 35,
+   "datum": "2026-12-12",
+   "zeit": "17:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": ""
+  },
+  {
+   "nr": 36,
+   "datum": "2026-12-13",
+   "zeit": "15:00",
+   "halle": "808134",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "TuS Haren II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 37,
+   "datum": "2026-12-19",
+   "zeit": "13:00",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 39,
+   "datum": "2026-12-20",
+   "zeit": "15:00",
+   "halle": "808134",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 40,
+   "datum": "2026-12-20",
+   "zeit": "16:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 42,
+   "datum": "2027-01-10",
+   "zeit": "15:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 43,
+   "datum": "2027-01-10",
+   "zeit": "15:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TuS Haren II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 44,
+   "datum": "2027-01-10",
+   "zeit": "16:00",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 45,
+   "datum": "2027-01-23",
+   "zeit": "14:00",
+   "halle": "808134",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 46,
+   "datum": "2027-01-23",
+   "zeit": "15:15",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": ""
+  },
+  {
+   "nr": 47,
+   "datum": "2027-01-23",
+   "zeit": "17:15",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 49,
+   "datum": "2027-02-07",
+   "zeit": "13:45",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "TuS Haren II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 50,
+   "datum": "2027-02-07",
+   "zeit": "15:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 51,
+   "datum": "2027-02-13",
+   "zeit": "15:30",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 52,
+   "datum": "2027-02-13",
+   "zeit": "15:45",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "THC Westerkappeln",
+   "ergebnis": ""
+  },
+  {
+   "nr": 53,
+   "datum": "2027-02-14",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 54,
+   "datum": "2027-02-20",
+   "zeit": "17:00",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "",
+   "verlegt": true
+  },
+  {
+   "nr": 55,
+   "datum": "2027-02-27",
+   "zeit": "15:45",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "HSG Haselünne/Herzlake",
+   "ergebnis": ""
+  },
+  {
+   "nr": 56,
+   "datum": "2027-02-28",
+   "zeit": "10:30",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 57,
+   "datum": "2027-02-28",
+   "zeit": "13:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 58,
+   "datum": "2027-03-06",
+   "zeit": "13:30",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "THC Westerkappeln",
+   "ergebnis": ""
+  },
+  {
+   "nr": 60,
+   "datum": "2027-03-07",
+   "zeit": "15:15",
+   "halle": "803178",
+   "heim": "SG Neuenhaus/Uelsen II",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 62,
+   "datum": "2027-03-14",
+   "zeit": "15:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "SG Neuenhaus/Uelsen II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 63,
+   "datum": "2027-03-14",
+   "zeit": "16:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 64,
+   "datum": "2027-04-04",
+   "zeit": "15:30",
+   "halle": "803119",
+   "heim": "HSG Haselünne/Herzlake",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "",
+   "verlegt": true
+  },
+  {
+   "nr": 66,
+   "datum": "2027-04-10",
+   "zeit": "15:30",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 67,
+   "datum": "2027-04-10",
+   "zeit": "15:45",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte III",
+   "gast": "THC Westerkappeln",
+   "ergebnis": ""
+  },
+  {
+   "nr": 68,
+   "datum": "2027-04-17",
+   "zeit": "13:15",
+   "halle": "808134",
+   "heim": "JMSG Teuto Osnabrück",
+   "gast": "TV Bissendorf-Holte III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 69,
+   "datum": "2027-04-17",
+   "zeit": "16:30",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 72,
+   "datum": "2027-04-24",
+   "zeit": "16:30",
+   "halle": "803117",
+   "heim": "TuS Haren II",
+   "gast": "JMSG Teuto Osnabrück",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808121": {
+   "name": "Sporthalle Bissendorf",
+   "adresse": "Werscher Straße 24, 49143 Bissendorf"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808107": {
+   "name": "SZ Sonnenhügel",
+   "adresse": "Knollstraße 143, 49088 Osnabrück"
+  },
+  "803178": {
+   "name": "Sportzentrum DinkelDuo Neuenhaus",
+   "adresse": "Schulstraße 6, 49828 Neuenhaus"
+  },
+  "803119": {
+   "name": "Herzlake, SZ",
+   "adresse": "Bookhofer Straße, 49770 Herzlake"
+  },
+  "803117": {
+   "name": "Haren, SZ Jahnstraße",
+   "adresse": "Jahnstraße 1, 49733 Haren"
+  },
+  "808177": {
+   "name": "Westerkappeln, SH",
+   "adresse": "Osnabrücker Straße, 49492 Westerkappeln"
+  },
+  "808136": {
+   "name": "Hasbergen, SH Neu",
+   "adresse": "Schulstraße, 49205 Hasbergen"
+  },
+  "808135": {
+   "name": "Sporthalle Alt Hasbergen",
+   "adresse": "Schulstraße, 49205 Hasbergen"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  }
+ }
 }

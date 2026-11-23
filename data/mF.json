@@ -1,7 +1,7 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
  "mannschaft": "Männliche F-Jugend",
  "verein": "JSG Eicken-Buer-Oldendorf",
@@ -9,7 +9,7 @@
  "liga": "MJF Vorrunde-6 (OS)",
  "region": "HR West Niedersachsen",
  "halbzeitMin": 15,
- "hinweis": "Sortiert nach Punkten.",
+ "hinweis": "Sortiert nach Punkten. In dieser Altersklasse zeigt nuLiga nur Punkte (2:0 = Sieg), keine Tore.",
  "links": [
   {
    "titel": "Tabelle & aktuelle Spiele",
@@ -34,7 +34,740 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=506478&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "TV Bissendorf-Holte",
+   "spiele": 8,
+   "s": 6,
+   "u": 2,
+   "n": 0,
+   "punkte": "14:2"
+  },
+  {
+   "platz": 2,
+   "team": "HSG Grönegau-Melle",
+   "spiele": 8,
+   "s": 5,
+   "u": 2,
+   "n": 1,
+   "punkte": "12:4"
+  },
+  {
+   "platz": 3,
+   "team": "HSG Grönegau-Melle II",
+   "spiele": 6,
+   "s": 5,
+   "u": 1,
+   "n": 0,
+   "punkte": "11:1"
+  },
+  {
+   "platz": 4,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 6,
+   "s": 4,
+   "u": 0,
+   "n": 2,
+   "punkte": "8:4"
+  },
+  {
+   "platz": 5,
+   "team": "TV Wellingholzhausen",
+   "spiele": 8,
+   "s": 4,
+   "u": 0,
+   "n": 4,
+   "punkte": "8:8"
+  },
+  {
+   "platz": 6,
+   "team": "SG Teuto Handball",
+   "spiele": 6,
+   "s": 3,
+   "u": 1,
+   "n": 2,
+   "punkte": "7:5"
+  },
+  {
+   "platz": 7,
+   "team": "VfL Bad Iburg",
+   "spiele": 8,
+   "s": 2,
+   "u": 0,
+   "n": 6,
+   "punkte": "4:12"
+  },
+  {
+   "platz": 8,
+   "team": "TV Georgsmarienhütte",
+   "spiele": 8,
+   "s": 1,
+   "u": 0,
+   "n": 7,
+   "punkte": "2:14"
+  },
+  {
+   "platz": 9,
+   "team": "HSG Grönegau-Melle III",
+   "spiele": 8,
+   "s": 0,
+   "u": 0,
+   "n": 8,
+   "punkte": "0:16"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 1,
+   "datum": "2026-09-13",
+   "zeit": "09:00",
+   "halle": "808121",
+   "heim": "TV Bissendorf-Holte",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "1:1",
+   "meeting": 8282280
+  },
+  {
+   "nr": 2,
+   "datum": "2026-09-13",
+   "zeit": "09:30",
+   "halle": "808149",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "2:0",
+   "meeting": 8282263,
+   "bericht": {
+    "tore": "12:6",
+    "halbzeit": "6:1",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     15
+    ],
+    "verlauf": [
+     "03:03H",
+     "03:53H",
+     "04:18H",
+     "11:12H",
+     "13:06G",
+     "13:54H",
+     "14:36H",
+     "15:24G",
+     "16:56G",
+     "17:19G",
+     "19:16G",
+     "19:34H",
+     "21:38H",
+     "22:59H",
+     "23:48G",
+     "26:19H",
+     "27:30H",
+     "29:18H"
+    ],
+    "ereignisse": [],
+    "meeting": 8282263
+   }
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-13",
+   "zeit": "10:00",
+   "halle": "808121",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "SG Teuto Handball",
+   "ergebnis": "1:1",
+   "meeting": 8282294
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-13",
+   "zeit": "10:30",
+   "halle": "808149",
+   "heim": "HSG Grönegau-Melle III",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "0:2",
+   "meeting": 8282268,
+   "bericht": {
+    "tore": "2:20",
+    "halbzeit": "2:9",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     9
+    ],
+    "verlauf": [
+     "00:34G",
+     "01:48H",
+     "02:10G",
+     "02:32G",
+     "02:59G",
+     "04:16G",
+     "06:25G",
+     "08:26G",
+     "09:23G",
+     "11:34G",
+     "14:33H",
+     "15:37G",
+     "15:45G",
+     "16:04G",
+     "20:23G",
+     "21:48G",
+     "22:22G",
+     "23:07G",
+     "24:13G",
+     "27:15G",
+     "27:41G",
+     "28:12G"
+    ],
+    "ereignisse": [],
+    "meeting": 8282268
+   }
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-13",
+   "zeit": "11:00",
+   "halle": "808121",
+   "heim": "SG Teuto Handball",
+   "gast": "TV Bissendorf-Holte",
+   "ergebnis": "0:2",
+   "meeting": 8282266
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-13",
+   "zeit": "11:00",
+   "halle": "808144",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": "0:2",
+   "meeting": 8282289
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-13",
+   "zeit": "11:30",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "HSG Grönegau-Melle III",
+   "ergebnis": "2:0",
+   "meeting": 8282278
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-13",
+   "zeit": "12:00",
+   "halle": "808144",
+   "heim": "VfL Bad Iburg",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "2:0",
+   "meeting": 8282293
+  },
+  {
+   "nr": 9,
+   "datum": "2026-09-13",
+   "zeit": "13:00",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "2:0",
+   "meeting": 8282271
+  },
+  {
+   "nr": 10,
+   "datum": "2026-09-26",
+   "zeit": "10:15",
+   "halle": "808144",
+   "heim": "TV Wellingholzhausen",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "0:2",
+   "meeting": 8282283
+  },
+  {
+   "nr": 11,
+   "datum": "2026-09-26",
+   "zeit": "11:15",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "2:0",
+   "meeting": 8282260
+  },
+  {
+   "nr": 12,
+   "datum": "2026-09-26",
+   "zeit": "12:15",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": "0:2",
+   "meeting": 8282276
+  },
+  {
+   "nr": 13,
+   "datum": "2026-09-27",
+   "zeit": "10:00",
+   "halle": "808132",
+   "heim": "TV Bissendorf-Holte",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "2:0",
+   "meeting": 8282265
+  },
+  {
+   "nr": 14,
+   "datum": "2026-09-27",
+   "zeit": "11:00",
+   "halle": "808129",
+   "heim": "SG Teuto Handball",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "2:0",
+   "meeting": 8282290
+  },
+  {
+   "nr": 15,
+   "datum": "2026-09-27",
+   "zeit": "11:00",
+   "halle": "808132",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Bissendorf-Holte",
+   "ergebnis": "0:2",
+   "meeting": 8282292,
+   "bericht": {
+    "tore": "3:11",
+    "halbzeit": "2:10",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "kader": [
+     10,
+     16
+    ],
+    "verlauf": [
+     "00:18H",
+     "04:24G",
+     "05:12G",
+     "06:27G",
+     "07:32G",
+     "07:51G",
+     "09:00G",
+     "10:55G",
+     "13:16H",
+     "14:45G",
+     "15:00G",
+     "15:00G",
+     "18:26H",
+     "20:23G"
+    ],
+    "ereignisse": [
+     [
+      "15:00",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "19:43",
+      "7m verworfen",
+      "H"
+     ]
+    ],
+    "meeting": 8282292
+   }
+  },
+  {
+   "nr": 16,
+   "datum": "2026-09-27",
+   "zeit": "12:00",
+   "halle": "808129",
+   "heim": "HSG Grönegau-Melle III",
+   "gast": "SG Teuto Handball",
+   "ergebnis": "0:2",
+   "meeting": 8282261
+  },
+  {
+   "nr": 17,
+   "datum": "2026-09-27",
+   "zeit": "12:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "0:2",
+   "meeting": 8282284,
+   "bericht": {
+    "tore": "5:14",
+    "halbzeit": "2:5",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     10,
+     10
+    ],
+    "verlauf": [
+     "06:20H",
+     "07:00G",
+     "10:37G",
+     "12:23G",
+     "12:44G",
+     "13:22G",
+     "14:53H",
+     "15:42H",
+     "17:10G",
+     "17:32G",
+     "20:56G",
+     "23:51G",
+     "24:29H",
+     "25:02G",
+     "25:23G",
+     "27:43H",
+     "28:05G",
+     "28:50G",
+     "29:15G"
+    ],
+    "ereignisse": [
+     [
+      "17:56",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8282284
+   }
+  },
+  {
+   "nr": 18,
+   "datum": "2026-09-27",
+   "zeit": "13:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "HSG Grönegau-Melle III",
+   "ergebnis": "2:0",
+   "meeting": 8282270
+  },
+  {
+   "nr": 19,
+   "datum": "2026-10-31",
+   "zeit": "12:00",
+   "halle": "808146",
+   "heim": "VfL Bad Iburg",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "0:2",
+   "meeting": 8282269,
+   "bericht": {
+    "tore": "4:10",
+    "halbzeit": "3:3",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     16
+    ],
+    "verlauf": [
+     "02:15G",
+     "04:53H",
+     "12:19G",
+     "12:33G",
+     "13:35H",
+     "14:45H",
+     "15:47G",
+     "16:38H",
+     "16:57G",
+     "17:23G",
+     "18:01G",
+     "22:00G",
+     "23:32G",
+     "27:56G"
+    ],
+    "ereignisse": [
+     [
+      "12:41",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8282269
+   }
+  },
+  {
+   "nr": 20,
+   "datum": "2026-10-31",
+   "zeit": "12:30",
+   "halle": "808132",
+   "heim": "SG Teuto Handball",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "2:0",
+   "meeting": 8282275
+  },
+  {
+   "nr": 21,
+   "datum": "2026-10-31",
+   "zeit": "13:00",
+   "halle": "808146",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "2:0",
+   "meeting": 8282286
+  },
+  {
+   "nr": 22,
+   "datum": "2026-10-31",
+   "zeit": "13:30",
+   "halle": "808132",
+   "heim": "TV Wellingholzhausen",
+   "gast": "SG Teuto Handball",
+   "ergebnis": "2:0",
+   "meeting": 8282264
+  },
+  {
+   "nr": 23,
+   "datum": "2026-10-31",
+   "zeit": "14:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "0:2",
+   "meeting": 8282277,
+   "bericht": {
+    "tore": "5:7",
+    "halbzeit": "2:4",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     16,
+     10
+    ],
+    "verlauf": [
+     "04:49G",
+     "05:28G",
+     "09:27G",
+     "09:48H",
+     "11:53G",
+     "12:15H",
+     "15:41G",
+     "18:24H",
+     "21:34G",
+     "21:55G",
+     "23:46H",
+     "28:23H"
+    ],
+    "ereignisse": [
+     [
+      "12:45",
+      "Verwarnung",
+      "H"
+     ]
+    ],
+    "meeting": 8282277
+   }
+  },
+  {
+   "nr": 24,
+   "datum": "2026-10-31",
+   "zeit": "14:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "0:2",
+   "meeting": 8282285
+  },
+  {
+   "nr": 25,
+   "datum": "2026-11-01",
+   "zeit": "10:30",
+   "halle": "808139",
+   "heim": "TV Bissendorf-Holte",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": "1:1",
+   "meeting": 8282262
+  },
+  {
+   "nr": 26,
+   "datum": "2026-11-01",
+   "zeit": "11:30",
+   "halle": "808139",
+   "heim": "HSG Grönegau-Melle III",
+   "gast": "TV Bissendorf-Holte",
+   "ergebnis": "0:2",
+   "meeting": 8282282
+  },
+  {
+   "nr": 27,
+   "datum": "2026-11-01",
+   "zeit": "12:30",
+   "halle": "808139",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "HSG Grönegau-Melle III",
+   "ergebnis": "2:0",
+   "meeting": 8282274
+  },
+  {
+   "nr": 28,
+   "datum": "2026-11-15",
+   "zeit": "11:00",
+   "halle": "808129",
+   "heim": "TV Bissendorf-Holte",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "2:0",
+   "meeting": 8282288
+  },
+  {
+   "nr": 29,
+   "datum": "2026-11-15",
+   "zeit": "12:00",
+   "halle": "808129",
+   "heim": "TV Wellingholzhausen",
+   "gast": "TV Bissendorf-Holte",
+   "ergebnis": "0:2",
+   "meeting": 8282295
+  },
+  {
+   "nr": 30,
+   "datum": "2026-11-15",
+   "zeit": "13:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "0:2",
+   "meeting": 8282273
+  },
+  {
+   "nr": 31,
+   "datum": "2026-11-22",
+   "zeit": "11:00",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "2:0",
+   "meeting": 8282281
+  },
+  {
+   "nr": 32,
+   "datum": "2026-11-22",
+   "zeit": "12:00",
+   "halle": "808144",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Grönegau-Melle III",
+   "ergebnis": "2:0",
+   "meeting": 8282291
+  },
+  {
+   "nr": 33,
+   "datum": "2026-11-22",
+   "zeit": "13:00",
+   "halle": "808135",
+   "heim": "SG Teuto Handball",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 34,
+   "datum": "2026-11-22",
+   "zeit": "13:00",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle III",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "0:2",
+   "meeting": 8282287
+  },
+  {
+   "nr": 35,
+   "datum": "2026-11-22",
+   "zeit": "14:00",
+   "halle": "808135",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 36,
+   "datum": "2026-11-22",
+   "zeit": "15:00",
+   "halle": "808135",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SG Teuto Handball",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808121": {
+   "name": "Sporthalle Bissendorf",
+   "adresse": "Werscher Straße 24, 49143 Bissendorf"
+  },
+  "808149": {
+   "name": "Sportzentrum Wellingholzhausen",
+   "adresse": "Uhlandstraße 28, 49326 Melle"
+  },
+  "808144": {
+   "name": "Melle, Sporthalle Schulzentrum Neuenkirchen (neu)",
+   "adresse": "Ottenheider Weg 18, 49326 Melle (OT Neuenkirchen)"
+  },
+  "808132": {
+   "name": "Schulzentrum Georgsmarienhütte",
+   "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte"
+  },
+  "808129": {
+   "name": "Schulzentrum Bad Iburg, Halle 1",
+   "adresse": "Bielefelder Str. 15, 49186 Bad Iburg"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808139": {
+   "name": "Melle, Sporthalle Haferstraße",
+   "adresse": "Haferstr. 60, 49324 Melle (OT Mitte)"
+  },
+  "808135": {
+   "name": "Sporthalle Alt Hasbergen",
+   "adresse": "Schulstraße, 49205 Hasbergen"
+  }
+ }
 }

@@ -1,7 +1,7 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
  "mannschaft": "Männliche C-Jugend",
  "verein": "JSG Eicken-Buer-Oldendorf",
@@ -34,7 +34,946 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=505338&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "SSC Dodesheide",
+   "spiele": 5,
+   "s": 5,
+   "u": 0,
+   "n": 0,
+   "tore": "169:87",
+   "diff": 82,
+   "punkte": "10:0"
+  },
+  {
+   "platz": 2,
+   "team": "TSG 07 Burg Gretesch",
+   "spiele": 5,
+   "s": 4,
+   "u": 0,
+   "n": 1,
+   "tore": "138:125",
+   "diff": 13,
+   "punkte": "8:2"
+  },
+  {
+   "platz": 3,
+   "team": "SV Eversburg",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "136:146",
+   "diff": -10,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 4,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "tore": "130:143",
+   "diff": -13,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 5,
+   "team": "TV Georgsmarienhütte II",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "tore": "112:132",
+   "diff": -20,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 6,
+   "team": "VfL Bad Iburg",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "tore": "123:177",
+   "diff": -54,
+   "punkte": "2:8"
+  },
+  {
+   "platz": 7,
+   "team": "THC Westerkappeln",
+   "spiele": 6,
+   "s": 1,
+   "u": 0,
+   "n": 5,
+   "tore": "126:124",
+   "diff": 2,
+   "punkte": "2:10"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 2,
+   "datum": "2026-09-06",
+   "zeit": "14:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "53:21",
+   "meeting": 8265860
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-13",
+   "zeit": "10:00",
+   "halle": "808180",
+   "heim": "TV Georgsmarienhütte II",
+   "gast": "THC Westerkappeln",
+   "ergebnis": "18:16",
+   "meeting": 8265850
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-13",
+   "zeit": "13:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "SV Eversburg",
+   "ergebnis": "25:35",
+   "meeting": 8265849
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-13",
+   "zeit": "16:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "28:24",
+   "meeting": 8265853,
+   "bericht": {
+    "tore": "28:24",
+    "halbzeit": "13:9",
+    "siebenm": [
+     [
+      4,
+      2
+     ],
+     [
+      6,
+      4
+     ]
+    ],
+    "kader": [
+     10,
+     11
+    ],
+    "verlauf": [
+     "02:12H",
+     "02:36G",
+     "03:32H",
+     "04:03G",
+     "05:24G",
+     "06:09H",
+     "08:02H",
+     "10:08G",
+     "10:20H",
+     "10:58H",
+     "11:39H",
+     "12:55G",
+     "13:17H",
+     "14:46G",
+     "15:20H",
+     "17:30H",
+     "18:02H",
+     "18:31G",
+     "19:06G",
+     "20:04H",
+     "22:08G",
+     "23:10H",
+     "25:10H",
+     "25:51H",
+     "26:06G",
+     "26:29G",
+     "29:21H",
+     "29:42G",
+     "31:15H",
+     "31:35G",
+     "31:58H",
+     "34:10H",
+     "35:09G",
+     "35:37H",
+     "36:18H",
+     "37:39G",
+     "38:05H",
+     "39:22G",
+     "40:22H",
+     "40:46G",
+     "41:54G",
+     "42:22H",
+     "42:34G",
+     "43:12H",
+     "44:04G",
+     "44:16H",
+     "44:50G",
+     "45:14H",
+     "47:36G",
+     "48:36G",
+     "49:16H",
+     "49:59G"
+    ],
+    "ereignisse": [
+     [
+      "05:52",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "11:50",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "15:11",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "15:40",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "17:30",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "18:02",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "24:54",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "27:02",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "32:22",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "34:38",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "38:15",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "38:50",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "38:52",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "40:46",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "47:21",
+      "7m verworfen",
+      "H"
+     ]
+    ],
+    "meeting": 8265853
+   }
+  },
+  {
+   "nr": 1,
+   "datum": "2026-09-20",
+   "zeit": "11:15",
+   "halle": "808102",
+   "heim": "SV Eversburg",
+   "gast": "TV Georgsmarienhütte II",
+   "ergebnis": "26:25",
+   "meeting": 8265867,
+   "verlegt": true
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-27",
+   "zeit": "13:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": "33:19",
+   "meeting": 8265846,
+   "verlegt": true
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-27",
+   "zeit": "15:00",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "TV Georgsmarienhütte II",
+   "ergebnis": "26:21",
+   "meeting": 8265862
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-27",
+   "zeit": "16:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SV Eversburg",
+   "ergebnis": "41:20",
+   "meeting": 8265861
+  },
+  {
+   "nr": 9,
+   "datum": "2026-10-03",
+   "zeit": "13:15",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "25:26",
+   "meeting": 8265848,
+   "verlegt": true,
+   "bericht": {
+    "tore": "25:26",
+    "halbzeit": "11:14",
+    "siebenm": [
+     [
+      4,
+      3
+     ],
+     [
+      6,
+      3
+     ]
+    ],
+    "kader": [
+     9,
+     8
+    ],
+    "verlauf": [
+     "01:03H",
+     "01:21G",
+     "03:08H",
+     "03:55G",
+     "05:39H",
+     "05:57G",
+     "06:53H",
+     "07:18G",
+     "07:53G",
+     "08:29G",
+     "09:15G",
+     "09:30H",
+     "10:26H",
+     "10:48G",
+     "12:52H",
+     "13:21G",
+     "14:29G",
+     "16:14G",
+     "16:18H",
+     "18:01H",
+     "18:39H",
+     "19:33H",
+     "20:54G",
+     "21:50G",
+     "24:37G",
+     "25:22G",
+     "28:03H",
+     "30:12G",
+     "30:29H",
+     "30:50G",
+     "31:05H",
+     "32:15H",
+     "33:26G",
+     "33:48H",
+     "34:49G",
+     "35:08H",
+     "36:16H",
+     "37:06H",
+     "37:27G",
+     "37:43H",
+     "38:39H",
+     "39:01G",
+     "39:28H",
+     "40:11H",
+     "41:15G",
+     "44:12G",
+     "46:05G",
+     "48:11H",
+     "48:32G",
+     "49:07G",
+     "49:27H"
+    ],
+    "ereignisse": [
+     [
+      "07:14",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "07:47",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "08:56",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "12:43",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "14:36",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "27:19",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "31:34",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "37:16",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "42:17",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "45:14",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "45:29",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "46:01",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "46:23",
+      "2 Minuten",
+      "G"
+     ]
+    ],
+    "meeting": 8265848
+   }
+  },
+  {
+   "nr": 10,
+   "datum": "2026-10-31",
+   "zeit": "16:15",
+   "halle": "808102",
+   "heim": "SV Eversburg",
+   "gast": "THC Westerkappeln",
+   "ergebnis": "31:26",
+   "meeting": 8265842
+  },
+  {
+   "nr": 12,
+   "datum": "2026-11-01",
+   "zeit": "14:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "25:35",
+   "meeting": 8265868,
+   "bericht": {
+    "tore": "25:35",
+    "halbzeit": "8:18",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "kader": [
+     9,
+     9
+    ],
+    "verlauf": [
+     "01:26G",
+     "01:58G",
+     "02:30G",
+     "04:41H",
+     "04:59G",
+     "07:15H",
+     "07:29G",
+     "09:07G",
+     "10:26G",
+     "11:57G",
+     "12:28G",
+     "13:05G",
+     "13:32H",
+     "15:09G",
+     "15:52G",
+     "16:34H",
+     "17:05H",
+     "19:23G",
+     "20:36G",
+     "21:15H",
+     "21:34G",
+     "22:30H",
+     "23:01G",
+     "23:41G",
+     "24:35H",
+     "24:44G",
+     "25:56H",
+     "26:43G",
+     "27:29H",
+     "28:21H",
+     "28:31G",
+     "29:02G",
+     "29:43H",
+     "30:39H",
+     "31:17G",
+     "31:37H",
+     "32:08G",
+     "32:43H",
+     "32:56G",
+     "33:15H",
+     "35:48G",
+     "36:45G",
+     "37:55G",
+     "38:53H",
+     "41:05H",
+     "41:19G",
+     "42:20G",
+     "43:08G",
+     "43:39H",
+     "43:55G",
+     "44:51H",
+     "45:04G",
+     "45:46H",
+     "46:08G",
+     "46:26H",
+     "46:48G",
+     "47:14H",
+     "47:26G",
+     "48:57H",
+     "49:31H"
+    ],
+    "ereignisse": [
+     [
+      "04:23",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "11:05",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "15:52",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "31:03",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "39:09",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8265868
+   }
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-07",
+   "zeit": "16:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Georgsmarienhütte II",
+   "ergebnis": "24:27",
+   "meeting": 8265858,
+   "bericht": {
+    "tore": "24:27",
+    "halbzeit": "12:13",
+    "siebenm": [
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "kader": [
+     8,
+     11
+    ],
+    "verlauf": [
+     "00:16H",
+     "01:00H",
+     "01:38G",
+     "02:13H",
+     "03:57H",
+     "04:25G",
+     "05:17G",
+     "06:49G",
+     "07:13H",
+     "07:23G",
+     "08:42G",
+     "10:17H",
+     "10:51G",
+     "11:15G",
+     "14:16H",
+     "15:05G",
+     "15:59G",
+     "16:36G",
+     "16:56H",
+     "17:08G",
+     "17:31H",
+     "18:05G",
+     "18:19H",
+     "19:14H",
+     "20:43H",
+     "27:18H",
+     "27:54G",
+     "28:43G",
+     "29:10H",
+     "29:22G",
+     "30:17G",
+     "30:39G",
+     "31:27H",
+     "33:34H",
+     "35:16G",
+     "35:33H",
+     "36:35G",
+     "37:38G",
+     "38:27G",
+     "38:50H",
+     "39:11G",
+     "39:37H",
+     "40:55H",
+     "41:18G",
+     "43:05H",
+     "43:49G",
+     "44:31H",
+     "46:57G",
+     "47:51H",
+     "49:39G",
+     "50:00H"
+    ],
+    "ereignisse": [
+     [
+      "06:08",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "12:02",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "17:17",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "34:47",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "40:37",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "41:02",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8265858
+   }
+  },
+  {
+   "nr": 14,
+   "datum": "2026-11-08",
+   "zeit": "15:00",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SV Eversburg",
+   "ergebnis": "29:24",
+   "meeting": 8265847
+  },
+  {
+   "nr": 15,
+   "datum": "2026-11-14",
+   "zeit": "15:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 11,
+   "datum": "2026-11-15",
+   "zeit": "13:00",
+   "halle": "808130",
+   "heim": "VfL Bad Iburg",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "26:29",
+   "meeting": 8265864,
+   "verlegt": true
+  },
+  {
+   "nr": 16,
+   "datum": "2026-11-21",
+   "zeit": "17:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "26:30",
+   "meeting": 8265857
+  },
+  {
+   "nr": 17,
+   "datum": "2026-11-21",
+   "zeit": "18:30",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TV Georgsmarienhütte II",
+   "ergebnis": "40:21",
+   "meeting": 8265851
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-22",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "32:27",
+   "meeting": 8265863,
+   "bericht": {
+    "tore": "32:27",
+    "halbzeit": "15:9",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    "kader": [
+     14,
+     11
+    ],
+    "verlauf": [
+     "02:17H",
+     "03:13H",
+     "03:51H",
+     "04:13H",
+     "04:34G",
+     "04:53H",
+     "05:27H",
+     "08:00H",
+     "08:32H",
+     "09:36G",
+     "10:01H",
+     "12:49G",
+     "13:06H",
+     "13:23G",
+     "13:48H",
+     "17:06G",
+     "18:30G",
+     "19:19G",
+     "19:53H",
+     "20:14G",
+     "22:31H",
+     "23:11H",
+     "23:46G",
+     "24:28H",
+     "25:35H",
+     "26:38H",
+     "27:17G",
+     "27:57H",
+     "28:22G",
+     "28:38H",
+     "29:02G",
+     "29:15H",
+     "30:06H",
+     "30:54G",
+     "31:40H",
+     "32:19G",
+     "34:02G",
+     "34:56H",
+     "35:02G",
+     "35:24G",
+     "35:46H",
+     "38:26G",
+     "39:00H",
+     "39:09G",
+     "39:40G",
+     "39:57H",
+     "40:24G",
+     "40:38H",
+     "41:23H",
+     "41:57G",
+     "43:17G",
+     "43:32H",
+     "44:55H",
+     "45:49G",
+     "48:08G",
+     "48:29G",
+     "48:42H",
+     "49:40H",
+     "50:00G"
+    ],
+    "ereignisse": [
+     [
+      "04:19",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "08:57",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "17:12",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "23:32",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "33:44",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "34:56",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8265863
+   }
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-28",
+   "zeit": "13:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte II",
+   "gast": "VfL Bad Iburg",
+   "ergebnis": ""
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-28",
+   "zeit": "18:00",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-29",
+   "zeit": "16:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SV Eversburg",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808107": {
+   "name": "SZ Sonnenhügel",
+   "adresse": "Knollstraße 143, 49088 Osnabrück"
+  },
+  "808180": {
+   "name": "Georgsmarienhütte, SH Oesede-Süd",
+   "adresse": "Südring 60, 49124 Georgsmarienhütte"
+  },
+  "808129": {
+   "name": "Schulzentrum Bad Iburg, Halle 1",
+   "adresse": "Bielefelder Str. 15, 49186 Bad Iburg"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808102": {
+   "name": "Möser-Realschule (ehem. Emma)",
+   "adresse": "Arndtstraße 1, 49078 Osnabrück"
+  },
+  "808177": {
+   "name": "Westerkappeln, SH",
+   "adresse": "Osnabrücker Straße, 49492 Westerkappeln"
+  },
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "808130": {
+   "name": "Bad Iburg Schulzentrum Halle 2",
+   "adresse": "Bielefelder Str. 15, 49186 Bad Iburg"
+  },
+  "808132": {
+   "name": "Schulzentrum Georgsmarienhütte",
+   "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte"
+  }
+ }
 }

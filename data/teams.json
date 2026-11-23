@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "teams": [
   {
    "id": "herren1",
@@ -46,10 +46,10 @@
    "file": "data/herren2.json",
    "dot": "#5c6670",
    "hz": 30,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "Eickener SpVg II",
+   "platz": 1,
+   "von": 10,
+   "punkte": "9:1"
   },
   {
    "id": "herren3",
@@ -71,10 +71,10 @@
    "file": "data/herren3.json",
    "dot": "#8b95a1",
    "hz": 30,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "Eickener SpVg III",
+   "platz": 8,
+   "von": 10,
+   "punkte": "3:9"
   },
   {
    "id": "wC",
@@ -120,11 +120,11 @@
    "saison": "2026/27",
    "file": "data/wD.json",
    "dot": "#e64980",
-   "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "hz": 25,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 6,
+   "von": 7,
+   "punkte": "2:8"
   },
   {
    "id": "wE",
@@ -146,10 +146,10 @@
    "file": "data/wE.json",
    "dot": "#f06595",
    "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 1,
+   "von": 7,
+   "punkte": "10:0"
   },
   {
    "id": "mB",
@@ -171,10 +171,10 @@
    "file": "data/mB.json",
    "dot": "#1971c2",
    "hz": 30,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 7,
+   "von": 8,
+   "punkte": "0:10"
   },
   {
    "id": "mC",
@@ -196,10 +196,10 @@
    "file": "data/mC.json",
    "dot": "#1098ad",
    "hz": 25,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 4,
+   "von": 7,
+   "punkte": "4:6"
   },
   {
    "id": "mD",
@@ -220,11 +220,11 @@
    "saison": "2026/27",
    "file": "data/mD.json",
    "dot": "#7048e8",
-   "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "hz": 25,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 6,
+   "von": 7,
+   "punkte": "2:8"
   },
   {
    "id": "mE",
@@ -271,10 +271,10 @@
    "file": "data/mF.json",
    "dot": "#4263eb",
    "hz": 15,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 4,
+   "von": 9,
+   "punkte": "8:4"
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "Eickener SpVg III",
  "kurz": "ESV",
  "mannschaft": "3. Herren",
  "verein": "Eickener SpVg",
@@ -34,7 +34,1752 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=489729&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "Eickener SpVg II",
+   "spiele": 5,
+   "s": 4,
+   "u": 1,
+   "n": 0,
+   "tore": "157:112",
+   "diff": 45,
+   "punkte": "9:1"
+  },
+  {
+   "platz": 2,
+   "team": "SV 1916 Osnabrück",
+   "spiele": 5,
+   "s": 4,
+   "u": 1,
+   "n": 0,
+   "tore": "158:129",
+   "diff": 29,
+   "punkte": "9:1"
+  },
+  {
+   "platz": 3,
+   "team": "THC Westerkappeln II",
+   "spiele": 6,
+   "s": 4,
+   "u": 1,
+   "n": 1,
+   "tore": "200:152",
+   "diff": 48,
+   "punkte": "9:3"
+  },
+  {
+   "platz": 4,
+   "team": "TV Georgsmarienhütte IV",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "174:156",
+   "diff": 18,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 5,
+   "team": "SG Teuto Handball II",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "130:115",
+   "diff": 15,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 6,
+   "team": "SV Alemannia Salzbergen",
+   "spiele": 6,
+   "s": 3,
+   "u": 0,
+   "n": 3,
+   "tore": "136:170",
+   "diff": -34,
+   "punkte": "6:6"
+  },
+  {
+   "platz": 7,
+   "team": "VfL Bad Iburg II",
+   "spiele": 6,
+   "s": 2,
+   "u": 0,
+   "n": 4,
+   "tore": "165:158",
+   "diff": 7,
+   "punkte": "4:8"
+  },
+  {
+   "platz": 8,
+   "team": "Eickener SpVg III",
+   "spiele": 6,
+   "s": 1,
+   "u": 1,
+   "n": 4,
+   "tore": "149:155",
+   "diff": -6,
+   "punkte": "3:9"
+  },
+  {
+   "platz": 9,
+   "team": "SV Concordia Belm-Powe e.V. II",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "tore": "109:170",
+   "diff": -61,
+   "punkte": "2:8"
+  },
+  {
+   "platz": 10,
+   "team": "TSG 07 Burg Gretesch III",
+   "spiele": 5,
+   "s": 0,
+   "u": 0,
+   "n": 5,
+   "tore": "103:164",
+   "diff": -61,
+   "punkte": "0:10"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 1,
+   "datum": "2026-09-05",
+   "zeit": "13:00",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "Eickener SpVg II",
+   "ergebnis": "26:26",
+   "meeting": 8261064
+  },
+  {
+   "nr": 2,
+   "datum": "2026-09-05",
+   "zeit": "18:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": "35:24",
+   "meeting": 8261114
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-05",
+   "zeit": "19:30",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": "40:18",
+   "meeting": 8261098
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-06",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": "31:13",
+   "meeting": 8261070,
+   "bericht": {
+    "tore": "31:13",
+    "halbzeit": "15:6",
+    "siebenm": [
+     [
+      4,
+      3
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "kader": [
+     15,
+     13
+    ],
+    "verlauf": [
+     "00:44H",
+     "02:06H",
+     "03:08H",
+     "05:34H",
+     "06:01G",
+     "06:21H",
+     "06:59H",
+     "07:42G",
+     "08:57G",
+     "09:25H",
+     "10:11G",
+     "10:43H",
+     "13:26G",
+     "14:06H",
+     "14:47G",
+     "17:56H",
+     "18:37H",
+     "19:11H",
+     "21:54H",
+     "25:15H",
+     "28:44H",
+     "33:08H",
+     "34:09G",
+     "35:21H",
+     "35:43G",
+     "36:25G",
+     "36:49H",
+     "37:40H",
+     "38:23G",
+     "39:18H",
+     "40:52H",
+     "41:27H",
+     "44:09H",
+     "44:28G",
+     "45:15H",
+     "45:34G",
+     "46:27H",
+     "50:25H",
+     "52:18H",
+     "52:56H",
+     "54:20H",
+     "55:01G",
+     "57:01H",
+     "58:08H"
+    ],
+    "ereignisse": [
+     [
+      "16:17",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "16:24",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "18:41",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "19:55",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "20:18",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "21:31",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "24:08",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "40:50",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "45:37",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "51:48",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8261070
+   }
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-06",
+   "zeit": "15:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": "44:32",
+   "meeting": 8261107
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-12",
+   "zeit": "16:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": "16:32",
+   "meeting": 8261062
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-13",
+   "zeit": "15:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 10,
+   "datum": "2026-09-20",
+   "zeit": "14:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": "23:26",
+   "meeting": 8261088
+  },
+  {
+   "nr": 11,
+   "datum": "2026-09-26",
+   "zeit": "17:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": "37:31",
+   "meeting": 8261060
+  },
+  {
+   "nr": 14,
+   "datum": "2026-09-27",
+   "zeit": "17:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": "50:26",
+   "meeting": 8261102
+  },
+  {
+   "nr": 15,
+   "datum": "2026-10-10",
+   "zeit": "16:45",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "Eickener SpVg III",
+   "ergebnis": "24:18",
+   "meeting": 8261119,
+   "bericht": {
+    "tore": "24:18",
+    "halbzeit": "10:10",
+    "siebenm": [
+     [
+      3,
+      3
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     11,
+     12
+    ],
+    "verlauf": [
+     "04:51H",
+     "05:46H",
+     "06:25G",
+     "07:33H",
+     "09:21H",
+     "09:55G",
+     "10:32H",
+     "12:27G",
+     "12:44H",
+     "14:20G",
+     "16:07G",
+     "17:08G",
+     "18:07G",
+     "18:43H",
+     "19:26G",
+     "21:32H",
+     "22:07G",
+     "24:56H",
+     "25:27G",
+     "27:02H",
+     "30:48G",
+     "31:15H",
+     "32:36H",
+     "33:40H",
+     "34:03G",
+     "34:54H",
+     "35:44H",
+     "37:03H",
+     "37:43G",
+     "38:14H",
+     "39:00G",
+     "40:06G",
+     "42:26G",
+     "46:15H",
+     "47:54H",
+     "52:09G",
+     "53:14H",
+     "54:04H",
+     "55:31H",
+     "57:15H",
+     "59:29G",
+     "59:37H"
+    ],
+    "ereignisse": [
+     [
+      "07:03",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "08:01",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "10:11",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "16:44",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "39:39",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "50:55",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "56:10",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8261119
+   }
+  },
+  {
+   "nr": 12,
+   "datum": "2026-10-15",
+   "zeit": "20:20",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "Eickener SpVg III",
+   "ergebnis": "27:22",
+   "meeting": 8261113,
+   "verlegt": true,
+   "bericht": {
+    "tore": "27:22",
+    "halbzeit": "16:13",
+    "siebenm": [
+     [
+      5,
+      5
+     ],
+     [
+      5,
+      3
+     ]
+    ],
+    "kader": [
+     12,
+     14
+    ],
+    "verlauf": [
+     "00:31G",
+     "00:44H",
+     "02:30H",
+     "03:14G",
+     "04:40H",
+     "05:50G",
+     "07:07H",
+     "07:33G",
+     "08:27H",
+     "09:54G",
+     "10:50H",
+     "11:09G",
+     "12:00H",
+     "15:33G",
+     "16:01H",
+     "17:19H",
+     "17:49G",
+     "19:20G",
+     "19:30H",
+     "21:32G",
+     "22:00H",
+     "22:36G",
+     "22:47H",
+     "24:21H",
+     "26:26G",
+     "27:05H",
+     "28:11G",
+     "28:22H",
+     "30:00H",
+     "33:54H",
+     "34:07H",
+     "34:29G",
+     "37:27G",
+     "41:23H",
+     "42:44G",
+     "43:58G",
+     "44:33G",
+     "46:10G",
+     "46:51H",
+     "47:38H",
+     "48:50H",
+     "49:56H",
+     "50:56G",
+     "52:50H",
+     "54:17G",
+     "55:20H",
+     "56:16H",
+     "57:15H",
+     "58:42G"
+    ],
+    "ereignisse": [
+     [
+      "04:10",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "28:22",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "30:45",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "38:00",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "48:21",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "50:01",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "59:38",
+      "7m verworfen",
+      "G"
+     ]
+    ],
+    "meeting": 8261113
+   }
+  },
+  {
+   "nr": 16,
+   "datum": "2026-10-24",
+   "zeit": "18:15",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": "21:17",
+   "meeting": 8261118
+  },
+  {
+   "nr": 8,
+   "datum": "2026-10-25",
+   "zeit": "11:00",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "Eickener SpVg III",
+   "ergebnis": "25:18",
+   "meeting": 8261030,
+   "verlegt": true,
+   "bericht": {
+    "tore": "25:18",
+    "halbzeit": "13:7",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ]
+    ],
+    "kader": [
+     16,
+     16
+    ],
+    "verlauf": [
+     "01:33G",
+     "04:15H",
+     "04:42G",
+     "04:56H",
+     "07:29H",
+     "07:54G",
+     "08:02H",
+     "08:58H",
+     "09:32H",
+     "13:25H",
+     "14:43G",
+     "16:10H",
+     "17:59H",
+     "22:06H",
+     "23:58H",
+     "24:18G",
+     "25:30H",
+     "26:58H",
+     "28:10G",
+     "29:57G",
+     "30:38G",
+     "34:52G",
+     "36:10H",
+     "38:48H",
+     "40:13G",
+     "41:08H",
+     "41:29G",
+     "43:01H",
+     "45:07H",
+     "46:04G",
+     "47:25H",
+     "49:13H",
+     "50:18H",
+     "51:03G",
+     "53:48G",
+     "54:10G",
+     "56:07H",
+     "56:24G",
+     "56:45H",
+     "57:29G",
+     "58:18H",
+     "59:13H",
+     "60:00G"
+    ],
+    "ereignisse": [
+     [
+      "04:50",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "09:02",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "15:40",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "20:32",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "27:17",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "34:13",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "40:23",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "42:35",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "51:36",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "52:53",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "53:53",
+      "2 Minuten",
+      "H"
+     ]
+    ],
+    "meeting": 8261030
+   }
+  },
+  {
+   "nr": 17,
+   "datum": "2026-10-31",
+   "zeit": "16:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": "24:35",
+   "meeting": 8261068
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-01",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "34:25",
+   "meeting": 8261044
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-01",
+   "zeit": "17:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": "25:31",
+   "meeting": 8261034
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-01",
+   "zeit": "17:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": "27:31",
+   "meeting": 8261079
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-08",
+   "zeit": "15:15",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": "34:40",
+   "meeting": 8261117,
+   "verlegt": true,
+   "bericht": {
+    "tore": "34:40",
+    "halbzeit": "15:20",
+    "siebenm": [
+     [
+      2,
+      2
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "kader": [
+     14,
+     14
+    ],
+    "verlauf": [
+     "00:58G",
+     "01:30H",
+     "02:05H",
+     "02:31G",
+     "02:56H",
+     "04:22H",
+     "06:24G",
+     "07:08G",
+     "08:10G",
+     "09:07G",
+     "09:45G",
+     "10:43G",
+     "11:08H",
+     "12:46G",
+     "13:57G",
+     "14:42H",
+     "14:53G",
+     "15:02H",
+     "15:20H",
+     "15:35G",
+     "16:15G",
+     "16:42H",
+     "17:16G",
+     "17:45G",
+     "18:29G",
+     "19:24G",
+     "19:49H",
+     "20:09G",
+     "21:17H",
+     "23:46G",
+     "25:47H",
+     "26:35G",
+     "27:02H",
+     "28:43H",
+     "29:47H",
+     "32:53H",
+     "33:34H",
+     "33:51G",
+     "35:20H",
+     "36:19H",
+     "36:38G",
+     "36:46G",
+     "37:00H",
+     "37:31G",
+     "39:19G",
+     "39:51H",
+     "40:05G",
+     "40:16H",
+     "40:53G",
+     "41:50G",
+     "42:36H",
+     "43:40G",
+     "44:33G",
+     "47:28H",
+     "48:21H",
+     "48:34G",
+     "49:01G",
+     "49:34H",
+     "50:14G",
+     "50:48H",
+     "51:52H",
+     "52:13G",
+     "52:25H",
+     "53:37G",
+     "53:48H",
+     "54:46H",
+     "55:56H",
+     "56:58G",
+     "57:26H",
+     "57:42G",
+     "58:56G",
+     "59:09H",
+     "59:35G",
+     "60:00G"
+    ],
+    "ereignisse": [
+     [
+      "06:13",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "15:00",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "17:00",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "20:46",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "22:14",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "25:35",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "32:17",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "35:10",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "37:31",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "43:40",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "47:37",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "56:03",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8261117
+   }
+  },
+  {
+   "nr": 9,
+   "datum": "2026-11-08",
+   "zeit": "19:00",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": "22:33",
+   "meeting": 8261039,
+   "verlegt": true
+  },
+  {
+   "nr": 22,
+   "datum": "2026-11-14",
+   "zeit": "17:30",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "Eickener SpVg II",
+   "ergebnis": "23:35",
+   "meeting": 8261033
+  },
+  {
+   "nr": 23,
+   "datum": "2026-11-14",
+   "zeit": "17:45",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": "41:32",
+   "meeting": 8261086
+  },
+  {
+   "nr": 24,
+   "datum": "2026-11-15",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": "45:26",
+   "meeting": 8261038
+  },
+  {
+   "nr": 25,
+   "datum": "2026-11-21",
+   "zeit": "16:00",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": "37:20",
+   "meeting": 8261082
+  },
+  {
+   "nr": 26,
+   "datum": "2026-11-21",
+   "zeit": "16:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "26:33",
+   "meeting": 8261069
+  },
+  {
+   "nr": 27,
+   "datum": "2026-11-22",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": "26:26",
+   "meeting": 8261091,
+   "bericht": {
+    "tore": "26:26",
+    "halbzeit": "15:15",
+    "siebenm": [
+     [
+      4,
+      3
+     ],
+     [
+      5,
+      4
+     ]
+    ],
+    "kader": [
+     13,
+     12
+    ],
+    "verlauf": [
+     "00:30H",
+     "01:15H",
+     "03:04G",
+     "06:53H",
+     "07:12G",
+     "08:21H",
+     "10:00H",
+     "12:10G",
+     "12:38H",
+     "13:35H",
+     "13:46G",
+     "14:14H",
+     "14:45G",
+     "15:26H",
+     "15:58G",
+     "16:44G",
+     "17:42G",
+     "18:44G",
+     "19:56G",
+     "20:24H",
+     "22:10H",
+     "23:11G",
+     "25:07H",
+     "25:29G",
+     "27:04G",
+     "27:11H",
+     "27:30G",
+     "28:32H",
+     "29:05G",
+     "29:58H",
+     "31:01H",
+     "31:31G",
+     "32:53G",
+     "33:23H",
+     "34:21G",
+     "36:16H",
+     "39:35H",
+     "40:00G",
+     "40:41G",
+     "41:11H",
+     "43:20G",
+     "45:30G",
+     "46:31H",
+     "47:37H",
+     "48:00G",
+     "48:59G",
+     "51:27H",
+     "55:07H",
+     "55:43G",
+     "58:59H",
+     "59:50G",
+     "60:00H"
+    ],
+    "ereignisse": [
+     [
+      "07:27",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "15:26",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "17:16",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "18:56",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "27:30",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "29:05",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "29:05",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "39:23",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "44:18",
+      "2 Minuten",
+      "H"
+     ],
+     [
+      "47:12",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "54:02",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "57:53",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8261091
+   }
+  },
+  {
+   "nr": 28,
+   "datum": "2026-11-22",
+   "zeit": "15:10",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": "19:29",
+   "meeting": 8261076
+  },
+  {
+   "nr": 29,
+   "datum": "2026-11-23",
+   "zeit": "20:30",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": "",
+   "verlegt": true
+  },
+  {
+   "nr": 30,
+   "datum": "2026-11-28",
+   "zeit": "17:30",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": ""
+  },
+  {
+   "nr": 31,
+   "datum": "2026-11-28",
+   "zeit": "18:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 32,
+   "datum": "2026-11-28",
+   "zeit": "19:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 33,
+   "datum": "2026-11-29",
+   "zeit": "13:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "Eickener SpVg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 13,
+   "datum": "2026-12-05",
+   "zeit": "16:30",
+   "halle": "808186",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "Eickener SpVg II",
+   "ergebnis": "",
+   "verlegt": true
+  },
+  {
+   "nr": 34,
+   "datum": "2026-12-05",
+   "zeit": "16:45",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 35,
+   "datum": "2026-12-05",
+   "zeit": "17:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "Eickener SpVg III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 36,
+   "datum": "2026-12-12",
+   "zeit": "16:00",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 38,
+   "datum": "2026-12-12",
+   "zeit": "17:45",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 39,
+   "datum": "2026-12-12",
+   "zeit": "18:00",
+   "halle": "808180",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 37,
+   "datum": "2026-12-13",
+   "zeit": "11:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": "",
+   "verlegt": true
+  },
+  {
+   "nr": 40,
+   "datum": "2026-12-13",
+   "zeit": "16:00",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 41,
+   "datum": "2026-12-19",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": ""
+  },
+  {
+   "nr": 42,
+   "datum": "2026-12-19",
+   "zeit": "16:45",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 43,
+   "datum": "2026-12-20",
+   "zeit": "15:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 44,
+   "datum": "2026-12-20",
+   "zeit": "15:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "Eickener SpVg III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 45,
+   "datum": "2026-12-20",
+   "zeit": "17:00",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "Eickener SpVg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 46,
+   "datum": "2027-01-23",
+   "zeit": "14:00",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 47,
+   "datum": "2027-01-23",
+   "zeit": "16:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "Eickener SpVg III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 48,
+   "datum": "2027-01-24",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 49,
+   "datum": "2027-01-24",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 50,
+   "datum": "2027-01-24",
+   "zeit": "15:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": ""
+  },
+  {
+   "nr": 51,
+   "datum": "2027-02-06",
+   "zeit": "17:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 52,
+   "datum": "2027-02-06",
+   "zeit": "17:45",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 53,
+   "datum": "2027-02-06",
+   "zeit": "19:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 54,
+   "datum": "2027-02-07",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "Eickener SpVg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 55,
+   "datum": "2027-02-07",
+   "zeit": "17:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 56,
+   "datum": "2027-02-13",
+   "zeit": "16:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 57,
+   "datum": "2027-02-14",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 58,
+   "datum": "2027-02-14",
+   "zeit": "14:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": ""
+  },
+  {
+   "nr": 59,
+   "datum": "2027-02-14",
+   "zeit": "15:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 60,
+   "datum": "2027-02-14",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 61,
+   "datum": "2027-02-27",
+   "zeit": "16:45",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 62,
+   "datum": "2027-02-27",
+   "zeit": "17:45",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 63,
+   "datum": "2027-02-27",
+   "zeit": "18:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "Eickener SpVg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 64,
+   "datum": "2027-02-28",
+   "zeit": "15:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 65,
+   "datum": "2027-02-28",
+   "zeit": "17:00",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "Eickener SpVg III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 66,
+   "datum": "2027-03-06",
+   "zeit": "16:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 67,
+   "datum": "2027-03-06",
+   "zeit": "17:30",
+   "halle": "808149",
+   "heim": "Eickener SpVg II",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 68,
+   "datum": "2027-03-06",
+   "zeit": "17:30",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 69,
+   "datum": "2027-03-06",
+   "zeit": "19:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 70,
+   "datum": "2027-03-07",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 71,
+   "datum": "2027-03-13",
+   "zeit": "16:45",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "Eickener SpVg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 72,
+   "datum": "2027-03-13",
+   "zeit": "17:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": ""
+  },
+  {
+   "nr": 73,
+   "datum": "2027-03-13",
+   "zeit": "17:45",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 74,
+   "datum": "2027-03-14",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 75,
+   "datum": "2027-03-14",
+   "zeit": "17:00",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "Eickener SpVg III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 76,
+   "datum": "2027-04-10",
+   "zeit": "17:45",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 77,
+   "datum": "2027-04-10",
+   "zeit": "18:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 78,
+   "datum": "2027-04-10",
+   "zeit": "19:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 79,
+   "datum": "2027-04-11",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 80,
+   "datum": "2027-04-11",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 81,
+   "datum": "2027-04-17",
+   "zeit": "15:00",
+   "halle": "808129",
+   "heim": "VfL Bad Iburg II",
+   "gast": "Eickener SpVg III",
+   "ergebnis": ""
+  },
+  {
+   "nr": 82,
+   "datum": "2027-04-17",
+   "zeit": "16:30",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch III",
+   "gast": "SV 1916 Osnabrück",
+   "ergebnis": ""
+  },
+  {
+   "nr": 83,
+   "datum": "2027-04-17",
+   "zeit": "16:45",
+   "halle": "803159",
+   "heim": "SV Alemannia Salzbergen",
+   "gast": "TV Georgsmarienhütte IV",
+   "ergebnis": ""
+  },
+  {
+   "nr": 84,
+   "datum": "2027-04-17",
+   "zeit": "17:30",
+   "halle": "808177",
+   "heim": "THC Westerkappeln II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 85,
+   "datum": "2027-04-18",
+   "zeit": "16:00",
+   "halle": "808122",
+   "heim": "SV Concordia Belm-Powe e.V. II",
+   "gast": "Eickener SpVg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 86,
+   "datum": "2027-04-24",
+   "zeit": "17:00",
+   "halle": "808102",
+   "heim": "SV 1916 Osnabrück",
+   "gast": "THC Westerkappeln II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 87,
+   "datum": "2027-04-24",
+   "zeit": "17:00",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "SV Alemannia Salzbergen",
+   "ergebnis": ""
+  },
+  {
+   "nr": 88,
+   "datum": "2027-04-24",
+   "zeit": "18:30",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte IV",
+   "gast": "VfL Bad Iburg II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 89,
+   "datum": "2027-04-25",
+   "zeit": "10:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg III",
+   "gast": "SV Concordia Belm-Powe e.V. II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 90,
+   "datum": "2027-04-25",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "Eickener SpVg II",
+   "gast": "TSG 07 Burg Gretesch III",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808102": {
+   "name": "Möser-Realschule (ehem. Emma)",
+   "adresse": "Arndtstraße 1, 49078 Osnabrück"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  },
+  "808177": {
+   "name": "Westerkappeln, SH",
+   "adresse": "Osnabrücker Straße, 49492 Westerkappeln"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808132": {
+   "name": "Schulzentrum Georgsmarienhütte",
+   "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte"
+  },
+  "808183": {
+   "name": "Sporthalle Lüstringen",
+   "adresse": "Am Hallenbad 5, 49086 Osnabrück"
+  },
+  "808122": {
+   "name": "Belm, Sportzentrum Belm",
+   "adresse": "Heideweg 25, 49191 Belm"
+  },
+  "808129": {
+   "name": "Schulzentrum Bad Iburg, Halle 1",
+   "adresse": "Bielefelder Str. 15, 49186 Bad Iburg"
+  },
+  "803159": {
+   "name": "Salzbergen, Dreifachsporthalle am Bruchweg",
+   "adresse": "Bruchweg, 48499 Salzbergen"
+  },
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "808186": {
+   "name": "Georgsmarienhütte, SH zur Waldbühne",
+   "adresse": "zur Waldbühne 7, 49124 Georgsmarienhütte"
+  },
+  "808180": {
+   "name": "Georgsmarienhütte, SH Oesede-Süd",
+   "adresse": "Südring 60, 49124 Georgsmarienhütte"
+  },
+  "808149": {
+   "name": "Sportzentrum Wellingholzhausen",
+   "adresse": "Uhlandstraße 28, 49326 Melle"
+  }
+ }
 }

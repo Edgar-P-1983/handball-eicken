@@ -1,14 +1,14 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
  "mannschaft": "Weibliche D-Jugend",
  "verein": "JSG Eicken-Buer-Oldendorf",
  "altersklasse": "Weibliche D-Jugend",
  "liga": "Regionsliga WJD VR-4 (VEC,DH,OS)",
  "region": "HR West Niedersachsen",
- "halbzeitMin": 20,
+ "halbzeitMin": 25,
  "hinweis": "Sortiert nach Punkten.",
  "links": [
   {
@@ -34,7 +34,764 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=505367&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "TSG 07 Burg Gretesch",
+   "spiele": 5,
+   "s": 5,
+   "u": 0,
+   "n": 0,
+   "tore": "154:89",
+   "diff": 65,
+   "punkte": "10:0"
+  },
+  {
+   "platz": 2,
+   "team": "TuS Lemförde",
+   "spiele": 5,
+   "s": 4,
+   "u": 0,
+   "n": 1,
+   "tore": "171:66",
+   "diff": 105,
+   "punkte": "8:2"
+  },
+  {
+   "platz": 3,
+   "team": "SV SW Osterfeine",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "125:105",
+   "diff": 20,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 4,
+   "team": "SSC Dodesheide",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "92:101",
+   "diff": -9,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 5,
+   "team": "SV Holdorf",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "tore": "98:114",
+   "diff": -16,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 6,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "tore": "83:138",
+   "diff": -55,
+   "punkte": "2:8"
+  },
+  {
+   "platz": 7,
+   "team": "SV Rot-Weiß Damme II",
+   "spiele": 6,
+   "s": 0,
+   "u": 0,
+   "n": 6,
+   "tore": "48:158",
+   "diff": -110,
+   "punkte": "0:12"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 1,
+   "datum": "2026-09-05",
+   "zeit": "16:00",
+   "halle": "809118",
+   "heim": "SV Holdorf",
+   "gast": "TuS Lemförde",
+   "ergebnis": "15:35",
+   "meeting": 8279056
+  },
+  {
+   "nr": 2,
+   "datum": "2026-09-06",
+   "zeit": "15:00",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "31:17",
+   "meeting": 8279039,
+   "bericht": {
+    "tore": "31:17",
+    "halbzeit": "16:10",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     14,
+     11
+    ],
+    "verlauf": [
+     "00:21H",
+     "01:10H",
+     "06:23H",
+     "06:44G",
+     "07:38G",
+     "08:30H",
+     "08:55G",
+     "09:10H",
+     "09:29G",
+     "10:58H",
+     "11:50G",
+     "12:15H",
+     "13:11H",
+     "13:29G",
+     "14:27H",
+     "15:31H",
+     "16:56H",
+     "18:47H",
+     "20:51G",
+     "21:15H",
+     "21:30G",
+     "22:03H",
+     "22:19H",
+     "22:46G",
+     "24:39H",
+     "24:55G",
+     "25:47H",
+     "30:26H",
+     "30:57H",
+     "32:02G",
+     "32:39H",
+     "33:16G",
+     "34:58H",
+     "36:29H",
+     "36:48G",
+     "37:10H",
+     "37:48G",
+     "38:08H",
+     "39:54H",
+     "41:55G",
+     "42:54H",
+     "43:09G",
+     "43:50H",
+     "45:31H",
+     "46:15H",
+     "46:32G",
+     "46:51H",
+     "49:51H"
+    ],
+    "ereignisse": [
+     [
+      "20:31",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "44:40",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "48:24",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8279039
+   }
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-12",
+   "zeit": "15:00",
+   "halle": "809143",
+   "heim": "TuS Lemförde",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "22:24",
+   "meeting": 8279055
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-13",
+   "zeit": "11:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SV Rot-Weiß Damme II",
+   "ergebnis": "15:10",
+   "meeting": 8279059,
+   "bericht": {
+    "tore": "15:10",
+    "halbzeit": "6:5",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "kader": [
+     13,
+     12
+    ],
+    "verlauf": [
+     "00:09G",
+     "03:59H",
+     "10:50H",
+     "11:13G",
+     "13:38H",
+     "14:10G",
+     "16:03H",
+     "16:32G",
+     "17:21H",
+     "21:19G",
+     "23:23H",
+     "26:45H",
+     "30:52H",
+     "34:07H",
+     "34:54G",
+     "36:37G",
+     "38:51H",
+     "40:42H",
+     "42:27H",
+     "43:35G",
+     "46:33H",
+     "47:49H",
+     "48:53G",
+     "49:23H",
+     "49:58G"
+    ],
+    "ereignisse": [
+     [
+      "13:49",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "20:21",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "22:15",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "23:06",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "49:12",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8279059
+   }
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-13",
+   "zeit": "16:00",
+   "halle": "809133",
+   "heim": "SV SW Osterfeine",
+   "gast": "SV Holdorf",
+   "ergebnis": "18:21",
+   "meeting": 8279062
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-20",
+   "zeit": "10:00",
+   "halle": "809143",
+   "heim": "TuS Lemförde",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "25:7",
+   "meeting": 8279051
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-20",
+   "zeit": "12:30",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SV SW Osterfeine",
+   "ergebnis": "43:23",
+   "meeting": 8279061
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-26",
+   "zeit": "15:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "23:18",
+   "meeting": 8279042,
+   "bericht": {
+    "tore": "23:18",
+    "halbzeit": "11:7",
+    "siebenm": [
+     [
+      4,
+      3
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     14,
+     13
+    ],
+    "verlauf": [
+     "01:01G",
+     "01:17H",
+     "02:05G",
+     "03:14H",
+     "05:30H",
+     "06:51H",
+     "08:07H",
+     "09:26H",
+     "09:46G",
+     "10:52H",
+     "12:11G",
+     "13:58G",
+     "15:17H",
+     "15:35G",
+     "17:13H",
+     "19:37H",
+     "22:30H",
+     "24:45G",
+     "27:14H",
+     "28:11H",
+     "29:02H",
+     "29:24G",
+     "30:51H",
+     "31:08G",
+     "31:58G",
+     "32:47H",
+     "33:38G",
+     "34:43H",
+     "35:34G",
+     "36:09G",
+     "36:24H",
+     "37:14G",
+     "39:07G",
+     "41:11G",
+     "41:31H",
+     "42:22H",
+     "42:50G",
+     "45:48H",
+     "46:40H",
+     "47:06H",
+     "48:59G"
+    ],
+    "ereignisse": [
+     [
+      "07:51",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "22:43",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "23:46",
+      "Verwarnung",
+      "H"
+     ],
+     [
+      "39:13",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "46:30",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "46:54",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8279042
+   }
+  },
+  {
+   "nr": 9,
+   "datum": "2026-09-27",
+   "zeit": "13:00",
+   "halle": "809105",
+   "heim": "SV Rot-Weiß Damme II",
+   "gast": "TuS Lemförde",
+   "ergebnis": "4:42",
+   "meeting": 8279046
+  },
+  {
+   "nr": 10,
+   "datum": "2026-10-04",
+   "zeit": "11:00",
+   "halle": "809105",
+   "heim": "SV Rot-Weiß Damme II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "7:18",
+   "meeting": 8279041
+  },
+  {
+   "nr": 11,
+   "datum": "2026-11-01",
+   "zeit": "14:00",
+   "halle": "809133",
+   "heim": "SV SW Osterfeine",
+   "gast": "SV Rot-Weiß Damme II",
+   "ergebnis": "33:8",
+   "meeting": 8279052
+  },
+  {
+   "nr": 12,
+   "datum": "2026-11-04",
+   "zeit": "17:30",
+   "halle": "809105",
+   "heim": "SV Rot-Weiß Damme II",
+   "gast": "SV Holdorf",
+   "ergebnis": "11:16",
+   "meeting": 8279045,
+   "verlegt": true
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-08",
+   "zeit": "13:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TuS Lemförde",
+   "ergebnis": "16:47",
+   "meeting": 8279058,
+   "bericht": {
+    "tore": "16:47",
+    "halbzeit": "9:29",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     10
+    ],
+    "verlauf": [
+     "00:44G",
+     "01:06H",
+     "01:22G",
+     "01:51G",
+     "02:33G",
+     "03:47G",
+     "04:17H",
+     "05:11G",
+     "06:14G",
+     "08:10G",
+     "08:54G",
+     "09:13H",
+     "09:31H",
+     "09:49G",
+     "11:09G",
+     "11:34H",
+     "11:55G",
+     "12:08H",
+     "12:21G",
+     "12:46G",
+     "13:35G",
+     "14:12H",
+     "14:30G",
+     "14:53H",
+     "15:38G",
+     "17:02G",
+     "17:24G",
+     "18:02G",
+     "18:39G",
+     "19:50G",
+     "20:24G",
+     "21:29G",
+     "22:05G",
+     "22:42G",
+     "22:56H",
+     "23:10G",
+     "24:16G",
+     "24:46G",
+     "26:17H",
+     "26:29G",
+     "26:50G",
+     "27:14H",
+     "28:50G",
+     "29:57H",
+     "30:13G",
+     "30:49H",
+     "32:40G",
+     "33:34G",
+     "34:22G",
+     "35:05H",
+     "35:15G",
+     "36:54G",
+     "37:34G",
+     "37:57G",
+     "39:31G",
+     "39:58H",
+     "41:05G",
+     "42:09G",
+     "42:26H",
+     "45:58G",
+     "47:15G",
+     "47:40G",
+     "48:38G"
+    ],
+    "ereignisse": [
+     [
+      "16:03",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "41:13",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "42:42",
+      "Verwarnung",
+      "H"
+     ]
+    ],
+    "meeting": 8279058
+   }
+  },
+  {
+   "nr": 14,
+   "datum": "2026-11-08",
+   "zeit": "14:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "SV SW Osterfeine",
+   "ergebnis": "16:24",
+   "meeting": 8279064
+  },
+  {
+   "nr": 15,
+   "datum": "2026-11-14",
+   "zeit": "16:00",
+   "halle": "809118",
+   "heim": "SV Holdorf",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": "19:22",
+   "meeting": 8279060
+  },
+  {
+   "nr": 16,
+   "datum": "2026-11-22",
+   "zeit": "10:00",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch",
+   "gast": "SV Rot-Weiß Damme II",
+   "ergebnis": "34:8",
+   "meeting": 8279044
+  },
+  {
+   "nr": 17,
+   "datum": "2026-11-22",
+   "zeit": "14:00",
+   "halle": "809133",
+   "heim": "SV SW Osterfeine",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "27:17",
+   "meeting": 8279049,
+   "bericht": {
+    "tore": "27:17",
+    "halbzeit": "12:9",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "kader": [
+     8,
+     10
+    ],
+    "verlauf": [
+     "02:00G",
+     "04:41H",
+     "05:05G",
+     "05:21H",
+     "06:33H",
+     "08:16G",
+     "08:53H",
+     "09:38H",
+     "10:26G",
+     "11:50G",
+     "12:39G",
+     "12:49H",
+     "13:59H",
+     "14:30H",
+     "14:56H",
+     "16:02H",
+     "18:19H",
+     "19:10G",
+     "21:47G",
+     "23:06G",
+     "23:19H",
+     "25:25G",
+     "32:39H",
+     "34:03H",
+     "35:04H",
+     "35:32G",
+     "35:41H",
+     "36:07G",
+     "36:23H",
+     "36:46G",
+     "37:00H",
+     "37:21G",
+     "37:37H",
+     "38:46H",
+     "39:28H",
+     "40:23H",
+     "42:05G",
+     "43:02G",
+     "44:22H",
+     "46:44H",
+     "47:42G",
+     "47:59H",
+     "48:32H",
+     "49:36H"
+    ],
+    "ereignisse": [
+     [
+      "08:42",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "15:35",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "36:54",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "44:07",
+      "7m verworfen",
+      "G"
+     ]
+    ],
+    "meeting": 8279049
+   }
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-22",
+   "zeit": "16:00",
+   "halle": "809118",
+   "heim": "SV Holdorf",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "27:28",
+   "meeting": 8279043
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-28",
+   "zeit": "17:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TSG 07 Burg Gretesch",
+   "ergebnis": ""
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-29",
+   "zeit": "12:45",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SV Holdorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-29",
+   "zeit": "13:30",
+   "halle": "809143",
+   "heim": "TuS Lemförde",
+   "gast": "SV SW Osterfeine",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "809118": {
+   "name": "Holdorf, SZ",
+   "adresse": "Große Eschstraße, 49451 Holdorf"
+  },
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "809143": {
+   "name": "Lemförde, SZ",
+   "adresse": "Stettiner Str. 35, 49448 Lemförde"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "809133": {
+   "name": "Damme-Osterfeine, VSH SWO",
+   "adresse": "Klünenberg 11, 49401 Damme (OT Osterfeine)"
+  },
+  "808107": {
+   "name": "SZ Sonnenhügel",
+   "adresse": "Knollstraße 143, 49088 Osnabrück"
+  },
+  "809105": {
+   "name": "Damme, HS",
+   "adresse": "Schützenstraße 1, 49401 Damme"
+  }
+ }
 }

@@ -1,7 +1,7 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
  "mannschaft": "Weibliche E-Jugend",
  "verein": "JSG Eicken-Buer-Oldendorf",
@@ -9,7 +9,7 @@
  "liga": "Regionsklasse WJE VR-4 (VEC,DH,OS)",
  "region": "HR West Niedersachsen",
  "halbzeitMin": 20,
- "hinweis": "Sortiert nach Punkten.",
+ "hinweis": "Sortiert nach Punkten. In dieser Altersklasse zeigt nuLiga nur Punkte (2:0 = Sieg), keine Tore.",
  "links": [
   {
    "titel": "Tabelle & aktuelle Spiele",
@@ -34,7 +34,641 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=489946&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 5,
+   "s": 5,
+   "u": 0,
+   "n": 0,
+   "punkte": "10:0"
+  },
+  {
+   "platz": 2,
+   "team": "HSG Grönegau-Melle",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 3,
+   "team": "SV SW Osterfeine II",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 4,
+   "team": "TV Wellingholzhausen",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 5,
+   "team": "SG Teuto Handball III",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 6,
+   "team": "TV 01 Bohmte",
+   "spiele": 6,
+   "s": 2,
+   "u": 0,
+   "n": 4,
+   "punkte": "4:8"
+  },
+  {
+   "platz": 7,
+   "team": "TuS Lemförde II",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "punkte": "2:8"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 1,
+   "datum": "2026-09-06",
+   "zeit": "11:30",
+   "halle": "809143",
+   "heim": "TuS Lemförde II",
+   "gast": "SV SW Osterfeine II",
+   "ergebnis": "0:2",
+   "meeting": 8271014
+  },
+  {
+   "nr": 2,
+   "datum": "2026-09-06",
+   "zeit": "12:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "SG Teuto Handball III",
+   "ergebnis": "2:0",
+   "meeting": 8271011,
+   "bericht": {
+    "tore": "21:17",
+    "halbzeit": "10:6",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     13,
+     9
+    ],
+    "verlauf": [
+     "00:38H",
+     "00:54G",
+     "01:11H",
+     "03:35H",
+     "04:15H",
+     "06:28G",
+     "06:52H",
+     "11:39H",
+     "11:57G",
+     "12:28G",
+     "12:54H",
+     "14:20H",
+     "15:47G",
+     "17:35H",
+     "17:51G",
+     "19:45H",
+     "20:22G",
+     "21:07H",
+     "21:49H",
+     "24:57H",
+     "25:15G",
+     "25:39H",
+     "25:58G",
+     "26:30H",
+     "28:01G",
+     "29:05H",
+     "29:41G",
+     "30:26G",
+     "31:49G",
+     "32:12H",
+     "33:02G",
+     "33:25H",
+     "34:54G",
+     "36:16H",
+     "36:44H",
+     "37:13H",
+     "38:00G",
+     "39:54G"
+    ],
+    "ereignisse": [
+     [
+      "14:31",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "29:47",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "33:32",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8271011
+   }
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-12",
+   "zeit": "11:00",
+   "halle": "809133",
+   "heim": "SV SW Osterfeine II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "0:2",
+   "meeting": 8271004,
+   "bericht": {
+    "tore": "10:17",
+    "halbzeit": "7:7",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     11,
+     13
+    ],
+    "verlauf": [
+     "00:51G",
+     "02:00G",
+     "02:41H",
+     "03:34G",
+     "07:09H",
+     "07:40G",
+     "08:27H",
+     "09:49G",
+     "11:22H",
+     "11:35H",
+     "13:44H",
+     "15:22G",
+     "16:30H",
+     "17:32G",
+     "20:15G",
+     "21:40G",
+     "23:58G",
+     "26:32G",
+     "27:28G",
+     "30:47G",
+     "31:29H",
+     "32:13H",
+     "34:22H",
+     "35:45G",
+     "36:41G",
+     "38:37G",
+     "39:58G"
+    ],
+    "ereignisse": [
+     [
+      "10:46",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "26:30",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "34:32",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8271004
+   }
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-12",
+   "zeit": "13:30",
+   "halle": "808134",
+   "heim": "SG Teuto Handball III",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "2:0",
+   "meeting": 8270999
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-13",
+   "zeit": "13:15",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "TuS Lemförde II",
+   "ergebnis": "0:2",
+   "meeting": 8271015
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-20",
+   "zeit": "13:00",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "SV SW Osterfeine II",
+   "ergebnis": "2:0",
+   "meeting": 8270990,
+   "verlegt": true
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-27",
+   "zeit": "15:30",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "SG Teuto Handball III",
+   "ergebnis": "2:0",
+   "meeting": 8270995
+  },
+  {
+   "nr": 9,
+   "datum": "2026-10-04",
+   "zeit": "11:00",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "0:2",
+   "meeting": 8271002
+  },
+  {
+   "nr": 7,
+   "datum": "2026-10-05",
+   "zeit": "18:00",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "2:0",
+   "meeting": 8270994,
+   "verlegt": true,
+   "bericht": {
+    "tore": "21:8",
+    "halbzeit": "11:2",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "kader": [
+     17,
+     11
+    ],
+    "verlauf": [
+     "00:42H",
+     "02:08H",
+     "02:38H",
+     "03:49H",
+     "04:22H",
+     "06:36H",
+     "07:19H",
+     "09:24G",
+     "10:13H",
+     "11:52H",
+     "12:47G",
+     "17:18H",
+     "18:01H",
+     "20:32H",
+     "21:28H",
+     "24:04H",
+     "25:29H",
+     "27:24H",
+     "27:49G",
+     "28:58H",
+     "31:02G",
+     "31:24H",
+     "31:55G",
+     "34:29G",
+     "35:41G",
+     "36:41H",
+     "37:41H",
+     "38:57H",
+     "39:24G"
+    ],
+    "ereignisse": [
+     [
+      "08:53",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "12:01",
+      "Verwarnung",
+      "G"
+     ]
+    ],
+    "meeting": 8270994
+   }
+  },
+  {
+   "nr": 10,
+   "datum": "2026-10-31",
+   "zeit": "11:00",
+   "halle": "809133",
+   "heim": "SV SW Osterfeine II",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "2:0",
+   "meeting": 8270996
+  },
+  {
+   "nr": 11,
+   "datum": "2026-11-01",
+   "zeit": "10:00",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "2:0",
+   "meeting": 8271016
+  },
+  {
+   "nr": 12,
+   "datum": "2026-11-07",
+   "zeit": "15:15",
+   "halle": "808125",
+   "heim": "TV 01 Bohmte",
+   "gast": "TuS Lemförde II",
+   "ergebnis": "2:0",
+   "meeting": 8271017
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-07",
+   "zeit": "15:45",
+   "halle": "808134",
+   "heim": "SG Teuto Handball III",
+   "gast": "SV SW Osterfeine II",
+   "ergebnis": "0:2",
+   "meeting": 8271001
+  },
+  {
+   "nr": 15,
+   "datum": "2026-11-14",
+   "zeit": "15:00",
+   "halle": "809143",
+   "heim": "TuS Lemförde II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "0:2",
+   "meeting": 8270997,
+   "bericht": {
+    "tore": "3:30",
+    "halbzeit": "0:11",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     10,
+     12
+    ],
+    "verlauf": [
+     "01:20G",
+     "01:28G",
+     "02:22G",
+     "03:23G",
+     "05:57G",
+     "07:38G",
+     "09:31G",
+     "13:02G",
+     "15:44G",
+     "17:19G",
+     "17:56G",
+     "20:26G",
+     "21:15G",
+     "21:30G",
+     "22:56G",
+     "23:52G",
+     "24:17G",
+     "24:35H",
+     "25:40G",
+     "26:15H",
+     "27:05G",
+     "27:32G",
+     "29:15G",
+     "31:51G",
+     "32:42G",
+     "34:37G",
+     "35:23G",
+     "36:40G",
+     "37:05G",
+     "38:00G",
+     "38:17H",
+     "38:29G",
+     "39:59G"
+    ],
+    "ereignisse": [
+     [
+      "38:19",
+      "Verwarnung",
+      "G"
+     ]
+    ],
+    "meeting": 8270997
+   }
+  },
+  {
+   "nr": 14,
+   "datum": "2026-11-15",
+   "zeit": "10:15",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": "0:2",
+   "meeting": 8271005,
+   "verlegt": true
+  },
+  {
+   "nr": 16,
+   "datum": "2026-11-22",
+   "zeit": "10:00",
+   "halle": "808149",
+   "heim": "TV Wellingholzhausen",
+   "gast": "SG Teuto Handball III",
+   "ergebnis": "0:2",
+   "meeting": 8271009
+  },
+  {
+   "nr": 17,
+   "datum": "2026-11-22",
+   "zeit": "12:25",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV 01 Bohmte",
+   "ergebnis": "2:0",
+   "meeting": 8271007,
+   "bericht": {
+    "tore": "26:3",
+    "halbzeit": "14:2",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     14,
+     10
+    ],
+    "verlauf": [
+     "01:40H",
+     "02:17H",
+     "04:02H",
+     "04:45H",
+     "05:08H",
+     "05:57H",
+     "06:27H",
+     "06:45H",
+     "07:10G",
+     "10:17H",
+     "11:17H",
+     "12:41H",
+     "13:38H",
+     "14:12G",
+     "15:02H",
+     "19:35H",
+     "21:21H",
+     "24:07H",
+     "24:43H",
+     "26:33H",
+     "27:25G",
+     "28:16H",
+     "33:14H",
+     "34:28H",
+     "35:09H",
+     "36:42H",
+     "38:19H",
+     "39:27H",
+     "39:58H"
+    ],
+    "ereignisse": [
+     [
+      "17:36",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "31:22",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8271007
+   }
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-22",
+   "zeit": "15:30",
+   "halle": "809143",
+   "heim": "TuS Lemförde II",
+   "gast": "HSG Grönegau-Melle",
+   "ergebnis": "0:2",
+   "meeting": 8271008
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-28",
+   "zeit": "13:00",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": ""
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-29",
+   "zeit": "11:30",
+   "halle": "808135",
+   "heim": "SG Teuto Handball III",
+   "gast": "TuS Lemförde II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-29",
+   "zeit": "14:00",
+   "halle": "809133",
+   "heim": "SV SW Osterfeine II",
+   "gast": "TV Wellingholzhausen",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "809143": {
+   "name": "Lemförde, SZ",
+   "adresse": "Stettiner Str. 35, 49448 Lemförde"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "809133": {
+   "name": "Damme-Osterfeine, VSH SWO",
+   "adresse": "Klünenberg 11, 49401 Damme (OT Osterfeine)"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  },
+  "808149": {
+   "name": "Sportzentrum Wellingholzhausen",
+   "adresse": "Uhlandstraße 28, 49326 Melle"
+  },
+  "808125": {
+   "name": "Schulzentrum Bohmte",
+   "adresse": "Jahnstraße, 49163 Bohmte"
+  },
+  "808144": {
+   "name": "Melle, Sporthalle Schulzentrum Neuenkirchen (neu)",
+   "adresse": "Ottenheider Weg 18, 49326 Melle (OT Neuenkirchen)"
+  },
+  "808135": {
+   "name": "Sporthalle Alt Hasbergen",
+   "adresse": "Schulstraße, 49205 Hasbergen"
+  }
+ }
 }

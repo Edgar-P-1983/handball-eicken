@@ -1,14 +1,14 @@
 {
- "stand": "2026-11-23T14:48:00+01:00",
+ "stand": "2026-11-23T14:56:00+01:00",
  "saison": "2026/27",
- "team": "",
+ "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
  "mannschaft": "Männliche D-Jugend",
  "verein": "JSG Eicken-Buer-Oldendorf",
  "altersklasse": "Männliche D-Jugend",
  "liga": "Regionsliga MJD VR-4 (OS)",
  "region": "HR West Niedersachsen",
- "halbzeitMin": 20,
+ "halbzeitMin": 25,
  "hinweis": "Sortiert nach Punkten.",
  "links": [
   {
@@ -34,7 +34,831 @@
  ],
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HRWN+26%2F27&group=505343&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
- "tabelle": [],
- "spiele": [],
- "hallen": {}
+ "tabelle": [
+  {
+   "platz": 1,
+   "team": "SSC Dodesheide",
+   "spiele": 5,
+   "s": 4,
+   "u": 1,
+   "n": 0,
+   "tore": "198:131",
+   "diff": 67,
+   "punkte": "9:1"
+  },
+  {
+   "platz": 2,
+   "team": "TV Georgsmarienhütte",
+   "spiele": 6,
+   "s": 4,
+   "u": 1,
+   "n": 1,
+   "tore": "234:162",
+   "diff": 72,
+   "punkte": "9:3"
+  },
+  {
+   "platz": 3,
+   "team": "SG Teuto Handball II",
+   "spiele": 5,
+   "s": 3,
+   "u": 0,
+   "n": 2,
+   "tore": "131:121",
+   "diff": 10,
+   "punkte": "6:4"
+  },
+  {
+   "platz": 4,
+   "team": "HSG Osnabrück",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "tore": "109:111",
+   "diff": -2,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 5,
+   "team": "HSG Grönegau-Melle II",
+   "spiele": 5,
+   "s": 2,
+   "u": 0,
+   "n": 3,
+   "tore": "115:166",
+   "diff": -51,
+   "punkte": "4:6"
+  },
+  {
+   "platz": 6,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "tore": "112:146",
+   "diff": -34,
+   "punkte": "2:8"
+  },
+  {
+   "platz": 7,
+   "team": "TSG 07 Burg Gretesch II",
+   "spiele": 5,
+   "s": 1,
+   "u": 0,
+   "n": 4,
+   "tore": "88:150",
+   "diff": -62,
+   "punkte": "2:8"
+  }
+ ],
+ "spiele": [
+  {
+   "nr": 1,
+   "datum": "2026-09-05",
+   "zeit": "16:15",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "HSG Osnabrück",
+   "ergebnis": "15:14",
+   "meeting": 8278694
+  },
+  {
+   "nr": 2,
+   "datum": "2026-09-06",
+   "zeit": "09:30",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "27:23",
+   "meeting": 8278711,
+   "bericht": {
+    "tore": "27:23",
+    "halbzeit": "17:10",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "kader": [
+     9,
+     9
+    ],
+    "verlauf": [
+     "00:13H",
+     "00:38G",
+     "00:52H",
+     "04:47H",
+     "07:04H",
+     "07:17G",
+     "09:26H",
+     "10:59H",
+     "11:34G",
+     "11:49H",
+     "12:48H",
+     "13:24G",
+     "14:13H",
+     "14:32G",
+     "14:56H",
+     "17:39G",
+     "19:00H",
+     "19:34H",
+     "20:03G",
+     "20:23H",
+     "20:42G",
+     "21:16G",
+     "21:33H",
+     "21:57H",
+     "22:21G",
+     "22:34H",
+     "24:12H",
+     "25:46H",
+     "26:52G",
+     "28:08H",
+     "28:45G",
+     "30:33G",
+     "31:42H",
+     "33:03H",
+     "33:21G",
+     "35:03G",
+     "35:29H",
+     "36:14G",
+     "37:41G",
+     "38:50H",
+     "39:24G",
+     "39:48G",
+     "41:42H",
+     "45:02H",
+     "45:28G",
+     "45:45H",
+     "46:00G",
+     "46:46H",
+     "47:19G",
+     "49:07G"
+    ],
+    "ereignisse": [
+     [
+      "09:30",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "21:24",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "37:45",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "44:25",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8278711
+   }
+  },
+  {
+   "nr": 3,
+   "datum": "2026-09-06",
+   "zeit": "11:15",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": "42:17",
+   "meeting": 8278702
+  },
+  {
+   "nr": 4,
+   "datum": "2026-09-13",
+   "zeit": "10:30",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": "39:23",
+   "meeting": 8278688
+  },
+  {
+   "nr": 5,
+   "datum": "2026-09-13",
+   "zeit": "12:40",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "25:37",
+   "meeting": 8278706,
+   "bericht": {
+    "tore": "25:37",
+    "halbzeit": "8:19",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      4,
+      3
+     ]
+    ],
+    "kader": [
+     11,
+     10
+    ],
+    "verlauf": [
+     "03:24G",
+     "03:57H",
+     "04:16G",
+     "06:04H",
+     "06:41G",
+     "07:47G",
+     "08:56H",
+     "09:43G",
+     "10:39H",
+     "10:56G",
+     "11:19H",
+     "12:18G",
+     "13:00G",
+     "13:40H",
+     "13:52G",
+     "14:59G",
+     "16:28H",
+     "18:20G",
+     "19:48G",
+     "20:24G",
+     "21:01G",
+     "21:22G",
+     "22:23G",
+     "23:11G",
+     "23:30H",
+     "24:09G",
+     "24:28G",
+     "26:40G",
+     "27:18G",
+     "27:35H",
+     "28:37H",
+     "29:37G",
+     "30:36G",
+     "32:20G",
+     "32:41H",
+     "34:56G",
+     "35:13H",
+     "36:10H",
+     "37:30G",
+     "37:48H",
+     "38:05G",
+     "38:38G",
+     "40:30H",
+     "40:40G",
+     "41:20G",
+     "41:35H",
+     "42:10H",
+     "42:31G",
+     "43:09H",
+     "43:27G",
+     "44:21H",
+     "44:58G",
+     "45:22H",
+     "45:59H",
+     "46:12G",
+     "46:34G",
+     "46:48H",
+     "47:16G",
+     "47:51H",
+     "49:25H",
+     "49:48H",
+     "49:59G"
+    ],
+    "ereignisse": [
+     [
+      "10:26",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "23:36",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "35:49",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "36:45",
+      "2 Minuten",
+      "G"
+     ],
+     [
+      "42:37",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "45:59",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8278706
+   }
+  },
+  {
+   "nr": 6,
+   "datum": "2026-09-13",
+   "zeit": "16:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "21:18",
+   "meeting": 8278689
+  },
+  {
+   "nr": 7,
+   "datum": "2026-09-27",
+   "zeit": "10:00",
+   "halle": "808180",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "HSG Osnabrück",
+   "ergebnis": "38:24",
+   "meeting": 8278693
+  },
+  {
+   "nr": 8,
+   "datum": "2026-09-27",
+   "zeit": "10:15",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "23:22",
+   "meeting": 8278699,
+   "bericht": {
+    "tore": "23:22",
+    "halbzeit": "10:11",
+    "siebenm": [
+     [
+      2,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     11
+    ],
+    "verlauf": [
+     "02:04H",
+     "02:23G",
+     "03:36G",
+     "05:53H",
+     "06:12G",
+     "06:43H",
+     "07:03G",
+     "08:48H",
+     "09:02G",
+     "12:37H",
+     "14:25H",
+     "16:08G",
+     "16:25H",
+     "18:01G",
+     "18:16H",
+     "18:46H",
+     "20:20G",
+     "21:17H",
+     "22:35G",
+     "23:38G",
+     "24:52G",
+     "25:24G",
+     "26:43H",
+     "28:01H",
+     "28:50G",
+     "29:31H",
+     "31:13H",
+     "31:30G",
+     "34:07G",
+     "35:22H",
+     "36:09H",
+     "36:48H",
+     "37:03G",
+     "37:20H",
+     "38:01H",
+     "38:42H",
+     "40:58G",
+     "41:52H",
+     "42:25G",
+     "43:58G",
+     "47:05H",
+     "47:20G",
+     "48:11H",
+     "48:42G",
+     "49:30G"
+    ],
+    "ereignisse": [
+     [
+      "09:09",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "40:16",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "40:22",
+      "7m verworfen",
+      "H"
+     ]
+    ],
+    "meeting": 8278699
+   }
+  },
+  {
+   "nr": 9,
+   "datum": "2026-09-27",
+   "zeit": "11:00",
+   "halle": "808135",
+   "heim": "SG Teuto Handball II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "23:31",
+   "meeting": 8278700
+  },
+  {
+   "nr": 10,
+   "datum": "2026-10-31",
+   "zeit": "15:00",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "41:41",
+   "meeting": 8278714
+  },
+  {
+   "nr": 11,
+   "datum": "2026-11-01",
+   "zeit": "11:45",
+   "halle": "808183",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": "10:24",
+   "meeting": 8278698
+  },
+  {
+   "nr": 12,
+   "datum": "2026-11-01",
+   "zeit": "14:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": "35:20",
+   "meeting": 8278691
+  },
+  {
+   "nr": 13,
+   "datum": "2026-11-08",
+   "zeit": "11:30",
+   "halle": "808144",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "SSC Dodesheide",
+   "ergebnis": "22:43",
+   "meeting": 8278696
+  },
+  {
+   "nr": 14,
+   "datum": "2026-11-08",
+   "zeit": "11:45",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "HSG Osnabrück",
+   "ergebnis": "20:15",
+   "meeting": 8278690,
+   "bericht": {
+    "tore": "20:15",
+    "halbzeit": "13:10",
+    "siebenm": [
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "kader": [
+     10,
+     14
+    ],
+    "verlauf": [
+     "00:23G",
+     "01:01G",
+     "04:05H",
+     "04:39G",
+     "05:49G",
+     "07:54H",
+     "08:25H",
+     "08:57G",
+     "10:18H",
+     "10:57H",
+     "11:19G",
+     "12:37H",
+     "12:57G",
+     "14:42G",
+     "15:40H",
+     "17:05H",
+     "18:58H",
+     "20:53H",
+     "21:18G",
+     "22:26H",
+     "23:07H",
+     "23:30G",
+     "24:55H",
+     "26:15G",
+     "26:38H",
+     "32:34H",
+     "32:57G",
+     "33:09H",
+     "36:20G",
+     "39:32H",
+     "41:49H",
+     "42:32H",
+     "44:56H",
+     "45:16G",
+     "47:28G"
+    ],
+    "ereignisse": [
+     [
+      "06:13",
+      "Verwarnung",
+      "G"
+     ],
+     [
+      "11:01",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "15:23",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "17:09",
+      "7m verworfen",
+      "H"
+     ],
+     [
+      "31:23",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "34:49",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "41:42",
+      "7m verworfen",
+      "G"
+     ]
+    ],
+    "meeting": 8278690
+   }
+  },
+  {
+   "nr": 15,
+   "datum": "2026-11-08",
+   "zeit": "14:15",
+   "halle": "808132",
+   "heim": "TV Georgsmarienhütte",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": "40:16",
+   "meeting": 8278703
+  },
+  {
+   "nr": 16,
+   "datum": "2026-11-21",
+   "zeit": "16:30",
+   "halle": "808107",
+   "heim": "SSC Dodesheide",
+   "gast": "JSG Eicken-Buer-Oldendorf",
+   "ergebnis": "44:22",
+   "meeting": 8278710,
+   "bericht": {
+    "tore": "44:22",
+    "halbzeit": "21:11",
+    "siebenm": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      0
+     ]
+    ],
+    "kader": [
+     12,
+     12
+    ],
+    "verlauf": [
+     "01:09H",
+     "02:13H",
+     "03:28H",
+     "04:00G",
+     "04:15H",
+     "04:58H",
+     "05:23H",
+     "06:16H",
+     "07:38H",
+     "08:37G",
+     "08:51H",
+     "09:17G",
+     "09:34H",
+     "10:12G",
+     "10:37H",
+     "10:54G",
+     "11:30G",
+     "11:56G",
+     "14:41G",
+     "14:58H",
+     "16:39H",
+     "17:16H",
+     "17:31G",
+     "17:49H",
+     "18:15G",
+     "18:44H",
+     "18:55G",
+     "20:11H",
+     "21:07H",
+     "22:06H",
+     "24:20H",
+     "24:49H",
+     "25:17H",
+     "25:45H",
+     "26:41H",
+     "28:35H",
+     "29:43G",
+     "29:59H",
+     "30:18G",
+     "31:07G",
+     "31:24H",
+     "31:45G",
+     "32:24H",
+     "33:04H",
+     "33:49G",
+     "34:06H",
+     "34:50G",
+     "35:43H",
+     "38:07H",
+     "38:28G",
+     "38:43H",
+     "39:38H",
+     "40:01H",
+     "40:24G",
+     "41:55G",
+     "42:10H",
+     "42:43H",
+     "43:28H",
+     "43:52H",
+     "44:47H",
+     "45:05G",
+     "46:01H",
+     "47:02G",
+     "47:33H",
+     "48:40H",
+     "49:26H"
+    ],
+    "ereignisse": [
+     [
+      "07:25",
+      "7m verworfen",
+      "G"
+     ],
+     [
+      "16:26",
+      "Auszeit",
+      "H"
+     ],
+     [
+      "21:17",
+      "Auszeit",
+      "G"
+     ],
+     [
+      "36:22",
+      "Auszeit",
+      "G"
+     ]
+    ],
+    "meeting": 8278710
+   }
+  },
+  {
+   "nr": 17,
+   "datum": "2026-11-22",
+   "zeit": "11:30",
+   "halle": "808134",
+   "heim": "SG Teuto Handball II",
+   "gast": "TV Georgsmarienhütte",
+   "ergebnis": "39:36",
+   "meeting": 8278715
+  },
+  {
+   "nr": 18,
+   "datum": "2026-11-22",
+   "zeit": "11:45",
+   "halle": "808103",
+   "heim": "TSG 07 Burg Gretesch II",
+   "gast": "HSG Grönegau-Melle II",
+   "ergebnis": "24:33",
+   "meeting": 8278712
+  },
+  {
+   "nr": 19,
+   "datum": "2026-11-29",
+   "zeit": "11:30",
+   "halle": "808139",
+   "heim": "HSG Grönegau-Melle II",
+   "gast": "SG Teuto Handball II",
+   "ergebnis": ""
+  },
+  {
+   "nr": 20,
+   "datum": "2026-11-29",
+   "zeit": "12:00",
+   "halle": "808158",
+   "heim": "HSG Osnabrück",
+   "gast": "SSC Dodesheide",
+   "ergebnis": ""
+  },
+  {
+   "nr": 21,
+   "datum": "2026-11-29",
+   "zeit": "14:30",
+   "halle": "808146",
+   "heim": "JSG Eicken-Buer-Oldendorf",
+   "gast": "TSG 07 Burg Gretesch II",
+   "ergebnis": ""
+  }
+ ],
+ "hallen": {
+  "808103": {
+   "name": "KGS Osnabrück-Schinkel",
+   "adresse": "Windthorststraße 79-83, 49084 Osnabrück"
+  },
+  "808134": {
+   "name": "Sporthalle Gellenbeck",
+   "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W."
+  },
+  "808132": {
+   "name": "Schulzentrum Georgsmarienhütte",
+   "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte"
+  },
+  "808107": {
+   "name": "SZ Sonnenhügel",
+   "adresse": "Knollstraße 143, 49088 Osnabrück"
+  },
+  "808146": {
+   "name": "Sporthalle Eicken-Bruche",
+   "adresse": "Segelfliegerweg 11, 49324 Melle"
+  },
+  "808158": {
+   "name": "Ballsporthalle Große Schulstraße",
+   "adresse": "Große Schulstr. 83 A, 49078 Osnabrück"
+  },
+  "808180": {
+   "name": "Georgsmarienhütte, SH Oesede-Süd",
+   "adresse": "Südring 60, 49124 Georgsmarienhütte"
+  },
+  "808144": {
+   "name": "Melle, Sporthalle Schulzentrum Neuenkirchen (neu)",
+   "adresse": "Ottenheider Weg 18, 49326 Melle (OT Neuenkirchen)"
+  },
+  "808135": {
+   "name": "Sporthalle Alt Hasbergen",
+   "adresse": "Schulstraße, 49205 Hasbergen"
+  },
+  "808183": {
+   "name": "Sporthalle Lüstringen",
+   "adresse": "Am Hallenbad 5, 49086 Osnabrück"
+  },
+  "808139": {
+   "name": "Melle, Sporthalle Haferstraße",
+   "adresse": "Haferstr. 60, 49324 Melle (OT Mitte)"
+  }
+ }
 }
