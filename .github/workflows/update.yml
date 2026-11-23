@@ -75,7 +75,7 @@ jobs:
       - name: Seite zusammenstellen
         run: |
           mkdir _site
-          cp index.html herren.json wjc.json mje.json manifest.webmanifest apple-touch-icon.png icon-192.png icon-512.png esv-rund.png .nojekyll _site/
+          cp index.html herren.json wjc.json mje.json manifest.webmanifest apple-touch-icon.png icon-192.png icon-512.png esv-rund.png sw.js .nojekyll _site/
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

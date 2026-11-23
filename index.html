@@ -214,6 +214,37 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
 .rbtn.dark{background:var(--ink);color:#fff;box-shadow:none}
 .rbtn.ghost{box-shadow:none;color:var(--muted);font-weight:600}
 .rbtn.ok{background:var(--win);color:#fff;box-shadow:none}
+.rbtn svg{width:20px;height:20px;flex:none}
+/* Teilen-Menü und Anleitung zum Home-Bildschirm */
+#sdlg,#adlg{width:min(460px,calc(100% - 16px));margin:auto auto max(8px,env(safe-area-inset-bottom));background:var(--card)}
+#adlg.mid{margin:auto}
+@media(min-width:700px){#sdlg,#adlg{margin:auto}}
+.shd{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.shd img{width:44px;height:44px;border-radius:11px;flex:none}
+.shd b{display:block;font-size:16px}
+.shd small{display:block;color:var(--muted);font-size:13px}
+.steps{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:15px;line-height:1.4}
+.steps li>i{font-style:normal;width:28px;height:28px;border-radius:50%;background:var(--acc);color:var(--accInk);font-weight:800;display:grid;place-items:center;font-size:14px}
+.steps .k{display:inline-flex;align-items:center;justify-content:center;vertical-align:-5px;min-width:24px;height:24px;padding:0 4px;border-radius:6px;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);margin:0 2px}
+.steps .k svg{width:17px;height:17px}
+.steps small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.a2arrow{position:fixed;z-index:2;width:56px;height:56px;color:var(--acc);filter:drop-shadow(0 2px 3px rgba(0,0,0,.45));pointer-events:none;animation:a2b 1s ease-in-out infinite alternate}
+.a2arrow.br{right:12px;bottom:max(6px,env(safe-area-inset-bottom))}
+.a2arrow.tr{right:14px;top:max(6px,env(safe-area-inset-top));transform:rotate(180deg);animation-name:a2t}
+@keyframes a2b{from{translate:0 -8px}to{translate:0 4px}}
+@keyframes a2t{from{translate:0 8px}to{translate:0 -4px}}
+/* Hinweis-Streifen */
+.a2hs{position:fixed;left:50%;bottom:max(10px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:4;width:min(520px,calc(100% - 16px));display:flex;align-items:center;gap:10px;padding:10px 8px 10px 10px;border-radius:16px;background:var(--card);box-shadow:0 10px 30px rgba(0,0,0,.18),inset 0 0 0 1px var(--line)}
+.a2hs[hidden]{display:none}
+.a2hs img{width:40px;height:40px;border-radius:10px;flex:none}
+.a2hs .tx{flex:1;min-width:0;line-height:1.3}
+.a2hs .tx b{display:block;font-size:14px}
+.a2hs .tx small{display:block;font-size:12.5px;color:var(--muted)}
+.a2hs .go{all:unset;cursor:pointer;flex:none;min-height:40px;padding:0 14px;border-radius:10px;background:var(--acc);color:var(--accInk);font-weight:800;font-size:14px;display:inline-flex;align-items:center}
+.a2hs .no{all:unset;cursor:pointer;flex:none;width:36px;height:40px;display:grid;place-items:center;color:var(--muted);font-size:22px}
+body.has-a2hs main{padding-bottom:84px}
+body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 @media(max-width:420px){.nou th.u,.nou td.u,.wide th.d,.wide td.d{display:none}td,th{padding-inline:4px}.m{grid-template-columns:44px minmax(0,1fr) auto 24px;gap:2px 8px;padding-inline:10px}.vs .c b{font-size:26px}.dsc .big{font-size:34px}}
 @media(min-width:700px){
  .barin,.teamsin,main{max-width:1180px}
@@ -252,6 +283,9 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
  <symbol id="ic-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20h-6.5v-5.5h-5V20H3z" fill="currentColor"/></symbol>
  <symbol id="ic-away" viewBox="0 0 24 24"><path d="M4 12h14M12.5 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
  <symbol id="ic-share" viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 8 12 3.5 16.5 8M8 11H6.5A1.5 1.5 0 0 0 5 12.5v6A1.5 1.5 0 0 0 6.5 20h11a1.5 1.5 0 0 0 1.5-1.5v-6a1.5 1.5 0 0 0-1.5-1.5H16" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ <symbol id="ic-addhome" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+ <symbol id="ic-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></symbol>
+ <symbol id="ic-kebab" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></symbol>
  <symbol id="ic-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
  <symbol id="ic-route" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
 </svg>
@@ -261,7 +295,7 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
    <span class="crest l img"><img src="esv-rund.png" alt="Wappen der Eickener SpVg"></span>
    <div class="grow"><h1>Handball Eicken</h1><p>Eickener SpVg · JSG Eicken-Buer-Oldendorf · Saison 2026/27</p></div>
    <button class="icon-btn" id="infobtn" type="button" data-view="infos" aria-label="Infos und Links"><svg aria-hidden="true"><use href="#ic-info"/></svg></button>
-   <button class="icon-btn" id="share" type="button" aria-label="Seite teilen"><svg aria-hidden="true"><use href="#ic-share"/></svg></button>
+   <button class="icon-btn" id="share" type="button" aria-label="Teilen oder als App speichern"><svg aria-hidden="true"><use href="#ic-share"/></svg></button>
   </div>
  </div>
 </header>
@@ -298,12 +332,36 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
   <div class="card" style="padding:14px 16px">
    <div id="stand"></div>
    <p class="note" style="margin:8px 0 12px">Die Daten kommen automatisch von nuLiga: nach jedem Spiel alle 15 Minuten, bis Ergebnis und Spielbericht da sind, sonst einmal täglich am frühen Morgen. Die Seite holt neue Daten von selbst, sobald du sie öffnest, und alle 5 Minuten, solange sie offen ist.</p>
-   <button class="btn" id="share2" type="button">Seite teilen</button>
+   <button class="btn" id="share2" type="button">Teilen / als App speichern</button>
    <p class="note" style="margin:12px 0 0">Routen lassen sich in Apple Karten oder Google Maps öffnen; die Hallenadressen stammen von nuLiga, kurzfristige Änderungen sind möglich. Spielernamen werden hier bewusst nicht angezeigt. Verbindlich sind die Angaben auf nuLiga.</p>
   </div>
  </section>
 </main>
 <div class="toast" id="toast" role="status" hidden></div>
+<div class="a2hs" id="a2hs" hidden role="region" aria-label="Als App speichern">
+ <img src="apple-touch-icon.png" alt="">
+ <div class="tx"><b>Als App speichern</b><small>ESV-Symbol auf den Home-Bildschirm</small></div>
+ <button class="go" id="a2-go" type="button">Hinzufügen</button>
+ <button class="no" id="a2-no" type="button" aria-label="Hinweis ausblenden">×</button>
+</div>
+<dialog id="sdlg" aria-labelledby="s-title">
+ <div class="rs">
+  <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="s-title">Handball Eicken</b><small>Teilen oder als App speichern</small></div></div>
+  <div class="rbtns">
+   <button class="rbtn dark" id="s-share" type="button"><svg aria-hidden="true"><use href="#ic-share"/></svg>Link teilen</button>
+   <button class="rbtn dark" id="s-home" type="button"><svg aria-hidden="true"><use href="#ic-addhome"/></svg>Zum Home-Bildschirm hinzufügen</button>
+   <button class="rbtn ghost" id="s-x" type="button">Abbrechen</button>
+  </div>
+ </div>
+</dialog>
+<dialog id="adlg" aria-labelledby="a-title">
+ <div class="rs">
+  <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="a-title">Zum Home-Bildschirm hinzufügen</b><small id="a-sub"></small></div></div>
+  <ol class="steps" id="a-steps"></ol>
+  <div class="rbtns" id="a-btns"></div>
+ </div>
+ <svg class="a2arrow" id="a-arrow" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M12 3v15M5.5 12 12 19l6.5-7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</dialog>
 <dialog id="rdlg" aria-labelledby="r-title">
  <div class="rs">
   <h3 id="r-title">Route zur Halle</h3>
@@ -689,6 +747,81 @@ function toast(html, ms) {
   clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, ms || 3500);
 }
 const SHARE_URL = 'https://edgar-p-1983.github.io/handball-eicken/';
+// ---------- Als App speichern (Home-Bildschirm)
+const UA = navigator.userAgent;
+const IS_IOS = /iPad|iPhone|iPod/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_IPAD = /iPad/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_ANDROID = /Android/i.test(UA);
+const IN_APP = /FBAN|FBAV|FB_IAB|Instagram|LinkedInApp|Snapchat|Line\/|GSA\/|TikTok|musical_ly/i.test(UA);
+const standalone = () => { try { return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } };
+let installEvt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; });
+window.addEventListener('appinstalled', () => { installEvt = null; setPref('hb-a2hs', 'installiert'); hideStrip(); });
+function setPref(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function getPref(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function openDlg(id) { const d = $(id); try { d.showModal(); } catch (e) { d.setAttribute('open', ''); } }
+function closeDlgId(id) { const d = $(id); try { d.close(); } catch (e) { d.removeAttribute('open'); } }
+const K = (ic, t) => '<span class="k">' + (ic ? '<svg aria-hidden="true"><use href="#' + ic + '"/></svg>' : '') + (t ? esc(t) : '') + '</span>';
+function steps(list) { return list.map((x, i) => '<li><i>' + (i + 1) + '</i><span>' + x + '</span></li>').join(''); }
+async function addHome() {
+  closeDlgId('sdlg');
+  if (installEvt) {
+    const e = installEvt; installEvt = null;
+    try { e.prompt(); const r = await e.userChoice; if (r && r.outcome === 'accepted') { setPref('hb-a2hs', 'installiert'); hideStrip(); } } catch (err) {}
+    return;
+  }
+  showGuide();
+}
+function showGuide() {
+  let sub = '', st = [], btns = '', arrow = '';
+  const done = 'Fertig: Das ESV-Symbol liegt jetzt auf dem Home-Bildschirm und öffnet die Seite wie eine App.';
+  if (IS_IOS && IN_APP) {
+    sub = 'Das geht nur in Safari';
+    st = ['Tippe oben oder unten auf ' + K('ic-dots') + ' bzw. das Menü der App.', 'Wähle „In Safari öffnen“ (oder „Im Browser öffnen“).', 'In Safari dann auf ' + K('ic-share') + ' Teilen → ' + K('ic-addhome') + ' „Zum Home-Bildschirm“.'];
+    btns = '<button class="rbtn" id="a-copy" type="button">Link kopieren</button>';
+  } else if (IS_IOS && /CriOS|EdgiOS/.test(UA)) {
+    sub = 'In Chrome auf dem iPhone';
+    st = ['Tippe oben rechts in der Adressleiste auf ' + K('ic-share') + ' Teilen.', 'Wähle ' + K('ic-addhome') + ' „Zum Home-Bildschirm“ <small>Eventuell erst etwas nach unten wischen.</small>', 'Tippe oben rechts auf „Hinzufügen“.'];
+    arrow = 'tr';
+  } else if (IS_IOS && /FxiOS/.test(UA)) {
+    sub = 'In Firefox auf dem iPhone';
+    st = ['Tippe auf das Menü ☰ und dann auf ' + K('ic-share') + ' Teilen.', 'Wähle ' + K('ic-addhome') + ' „Zum Home-Bildschirm“.', 'Tippe oben rechts auf „Hinzufügen“.'];
+  } else if (IS_IPAD) {
+    sub = 'In Safari auf dem iPad';
+    st = ['Tippe oben rechts auf ' + K('ic-share') + ' Teilen <small>oder erst auf ' + K('ic-dots') + ', dann auf „Teilen“.</small>', 'Wähle ' + K('ic-addhome') + ' „Zum Home-Bildschirm“.', 'Tippe auf „Hinzufügen“.'];
+    arrow = 'tr';
+  } else if (IS_IOS) {
+    sub = 'In Safari auf dem iPhone';
+    st = ['Tippe unten rechts auf ' + K('ic-dots') + ' und dann auf ' + K('ic-share') + ' „Teilen“. <small>Bei älterem iOS direkt auf ' + K('ic-share') + ' in der Leiste unten.</small>', 'Etwas nach unten wischen und ' + K('ic-addhome') + ' „Zum Home-Bildschirm“ wählen.', 'Oben rechts auf „Hinzufügen“ tippen.'];
+    arrow = 'br';
+  } else if (IS_ANDROID && /SamsungBrowser/.test(UA)) {
+    sub = 'In Samsung Internet';
+    st = ['Tippe unten rechts auf das Menü ☰.', 'Wähle „Seite hinzufügen zu“ → „Startbildschirm“.', 'Mit „Hinzufügen“ bestätigen.'];
+  } else if (IS_ANDROID) {
+    sub = 'Auf dem Android-Handy';
+    st = ['Tippe oben rechts auf das Menü ' + K('ic-kebab') + '.', 'Wähle „App installieren“ oder „Zum Startbildschirm hinzufügen“.', 'Mit „Installieren“ bzw. „Hinzufügen“ bestätigen.'];
+    arrow = IN_APP ? '' : 'tr';
+    if (IN_APP) { sub = 'Bitte zuerst im Browser öffnen'; st.unshift('Öffne die Seite über das Menü ' + K('ic-kebab') + ' mit „Im Browser öffnen“ (z. B. Chrome).'); btns = '<button class="rbtn" id="a-copy" type="button">Link kopieren</button>'; }
+  } else {
+    sub = 'Am Computer';
+    st = ['Im Browser-Menü (Chrome, Edge) „App installieren“ wählen – oder die Seite als Lesezeichen speichern.'];
+  }
+  $('a-sub').textContent = sub;
+  $('a-steps').innerHTML = steps(st) + (st.length > 1 ? '<li><i>✓</i><span>' + done + '</span></li>' : '');
+  $('a-btns').innerHTML = btns + '<button class="rbtn dark" id="a-ok" type="button">Verstanden</button>';
+  const ar = $('a-arrow'); ar.setAttribute('class', 'a2arrow ' + arrow); ar.style.display = arrow ? 'block' : 'none';
+  $('adlg').classList.toggle('mid', arrow === 'br');
+  openDlg('adlg');
+}
+function hideStrip() { $('a2hs').hidden = true; document.body.classList.remove('has-a2hs'); }
+function maybeStrip() {
+  if (standalone() || !(IS_IOS || IS_ANDROID) || getPref('hb-a2hs')) return;
+  setTimeout(() => { if (standalone() || getPref('hb-a2hs')) return; $('a2hs').hidden = false; document.body.classList.add('has-a2hs'); }, 1500);
+}
+function shareMenu() {
+  if (standalone()) { share(); return; }
+  openDlg('sdlg');
+}
 async function share() {
   const data = {title: 'Handball Eicken', text: 'Spielplan, Ergebnisse und Tabellen der Eickener SpVg: 1. Herren, weibliche C-Jugend und männliche E-Jugend', url: SHARE_URL};
   if (navigator.share) {
@@ -724,8 +857,25 @@ $('dlg').addEventListener('click', e => { if (e.target === $('dlg')) closeDlg();
 $('dlg').addEventListener('close', () => { if (chartRO) { chartRO.disconnect(); chartRO = null; } });
 $('f-me').addEventListener('click', () => setFilter(true));
 $('f-all').addEventListener('click', () => setFilter(false));
-$('share').addEventListener('click', share);
-$('share2').addEventListener('click', share);
+$('share').addEventListener('click', shareMenu);
+$('share2').addEventListener('click', shareMenu);
+$('s-share').addEventListener('click', () => { closeDlgId('sdlg'); share(); });
+$('s-home').addEventListener('click', addHome);
+$('s-x').addEventListener('click', () => closeDlgId('sdlg'));
+$('a2-go').addEventListener('click', addHome);
+$('a2-no').addEventListener('click', () => { setPref('hb-a2hs', 'ausgeblendet'); hideStrip(); });
+$('adlg').addEventListener('click', async e => {
+  if (e.target.id === 'a-ok' || e.target === $('adlg')) { closeDlgId('adlg'); return; }
+  if (e.target.id === 'a-copy') {
+    try { await navigator.clipboard.writeText(SHARE_URL); e.target.textContent = IS_IOS ? '✓ Link kopiert – jetzt in Safari einfügen' : '✓ Link kopiert – jetzt im Browser einfügen'; e.target.classList.add('ok'); }
+    catch (err) { e.target.textContent = SHARE_URL; }
+  }
+});
+$('sdlg').addEventListener('click', e => { if (e.target === $('sdlg')) closeDlgId('sdlg'); });
+if ('serviceWorker' in navigator && location.protocol === 'https:' && /github\.io$/.test(location.hostname)) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+maybeStrip();
 $('toast').addEventListener('click', e => { if (e.target.closest('.trow')) $('toast').hidden = true; });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && Date.now() - lastLoad > 30e3) load(); });
 setInterval(() => { if (!document.hidden) load(); }, 5 * 60e3);
