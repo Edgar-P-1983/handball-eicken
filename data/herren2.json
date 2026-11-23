@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T20:18:00+01:00",
+ "stand": "2026-11-23T21:44:00+01:00",
  "saison": "2026/27",
  "team": "Eickener SpVg II",
  "kurz": "ESV",
@@ -1056,7 +1056,8 @@
    "halle": "808122",
    "heim": "SV Concordia Belm-Powe e.V. II",
    "gast": "SV 1916 Osnabrück",
-   "ergebnis": "",
+   "ergebnis": "23:47",
+   "meeting": 8261115,
    "verlegt": true
   },
   {
