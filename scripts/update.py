@@ -423,17 +423,22 @@ def needs_check(D, now):
 
 
 def infer_hz(D, default):
-    """Halbzeitdauer aus den Spielverläufen ableiten (falls länger gespielt wird als angenommen)."""
-    last = 0
+    """Halbzeitdauer aus den Spielberichten ableiten: Bei welcher Spielzeit passt der Spielstand
+    zum offiziellen Halbzeitstand? (Mehrheit über alle Berichte, sonst Altersklassen-Standard)"""
+    votes = {}
     for g in D.get('spiele', []):
         b = g.get('bericht')
-        if b and b.get('verlauf'):
-            m, s_ = b['verlauf'][-1][:5].split(':')
-            last = max(last, int(m) * 60 + int(s_))
-    hz = default
-    while hz < 30 and last > 2 * hz * 60:
-        hz += 5
-    return hz
+        if not b or not b.get('verlauf') or not b.get('halbzeit'):
+            continue
+        times = [(int(v[:2]) * 60 + int(v[3:5]), v[5]) for v in b['verlauf']]
+        for hz in (15, 20, 25, 30):
+            h = sum(1 for t, side in times if t <= hz * 60 and side == 'H')
+            a = sum(1 for t, side in times if t <= hz * 60 and side == 'G')
+            ok_end = all(t <= 2 * hz * 60 for t, _ in times)
+            if f'{h}:{a}' == b['halbzeit'] and ok_end:
+                votes[hz] = votes.get(hz, 0) + 1
+                break
+    return max(votes, key=lambda k: (votes[k], k)) if votes else default
 
 
 def update_team(c, D, now, pool):
