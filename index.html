@@ -445,7 +445,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261123200851';
+const BUILD = '20261123201739';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -578,27 +578,13 @@ function teamForm(n) {
     const home = g.heim === n, t = (g.bericht || !pts) ? tore(g) : null;
     return {g, home, o: outcome(g, n), f: t ? (home ? t[0] : t[1]) : null, a: t ? (home ? t[1] : t[0]) : null};
   });
-  const bil = list => { const c = {S: 0, U: 0, N: 0}; list.forEach(r => c[r.o]++); return list.length ? c.S + '–' + c.U + '–' + c.N : '–'; };
   const known = res.filter(r => r.f !== null), full = res.length > 0 && known.length === res.length;
   const sum = k => known.reduce((x, r) => x + r[k], 0);
   const row = (D.tabelle || []).find(r => r.team === n);
   let F = null, A = null, N = 0;
   if (row && row.tore) { [F, A] = row.tore.split(':').map(Number); N = row.spiele; } else if (full) { F = sum('f'); A = sum('a'); N = known.length; }
   const big = sign => known.filter(r => sign * (r.f - r.a) > 0).sort((x, y) => sign * ((y.f - y.a) - (x.f - x.a)))[0];
-  const rp = res.filter(r => r.g.bericht);
-  const R = rp.length ? (() => {
-    let h1 = 0, h2 = 0, lead = 0, m7 = 0, w7 = 0, two = 0;
-    for (const r of rp) {
-      const b = r.g.bericht, i = r.home ? 0 : 1, sd = r.home ? 'H' : 'G';
-      const ht = (b.halbzeit || '0:0').split(':').map(Number), ft = b.tore.split(':').map(Number);
-      h1 += ht[i]; h2 += ft[i] - ht[i]; if (ht[i] > ht[1 - i]) lead++;
-      const sm = (b.siebenm || [[0, 0], [0, 0]])[i] || [0, 0]; w7 += sm[0]; m7 += sm[1];
-      two += (b.ereignisse || []).filter(e => e[1] === '2 Minuten' && e[2] === sd).length;
-    }
-    return {n: rp.length, h1: h1 / rp.length, h2: h2 / rp.length, lead, m7, w7, two: two / rp.length};
-  })() : null;
-  return {n: res.length, heim: bil(res.filter(r => r.home)), ausw: bil(res.filter(r => !r.home)), last: res.slice(-3),
-    F, A, N, best: big(1), worst: big(-1), R};
+  return {n: res.length, last: res.slice(-3), F, A, N, best: big(1), worst: big(-1)};
 }
 const dez = x => x.toFixed(1).replace('.', ',');
 
@@ -661,22 +647,12 @@ function openGame(teamId, nr) {
     html = '<div class="card full"><div class="dsc">' + side(g.heim) + '<div class="big">' + esc(g.zeit || '–') + '<small>' + (g.datum ? 'Anwurf' : 'Termin offen') + '</small></div>' + side(g.gast) + '</div>' + where + '</div>' +
       '<div class="card full"><h3>Formcheck</h3><div class="cmp">' + hd +
       row('Tabellenplatz', pl(g.heim), pl(g.gast)) + row('Punkte', pk(g.heim), pk(g.gast)) + row('Siege–Unent.–Niederl.', sun(g.heim), sun(g.gast)) +
-      row('Heimspiele', L.heim, R.heim) + row('Auswärtsspiele', L.ausw, R.ausw) + row('Letzte 3 Spiele', last(L), last(R)) + '</div>' +
-      '<p class="note" style="margin:8px 0 0">Bilanzen als Siege–Unentschieden–Niederlagen; bei den letzten Spielen steht das neueste rechts.</p></div>' +
+      row('Letzte 3 Spiele', last(L), last(R)) + '</div>' +
+      '<p class="note" style="margin:8px 0 0">Bei den letzten Spielen steht das neueste rechts.</p></div>' +
       '<div class="card"><h3>Tore</h3><div class="cmp">' + hd +
       row('Tore gesamt', L.N ? L.F + ':' + L.A : '–', R.N ? R.F + ':' + R.A : '–') + row('Tordifferenz', diff(L), diff(R)) +
       row('Tore pro Spiel', per(L, 'F'), per(R, 'F')) + row('Gegentore pro Spiel', per(L, 'A'), per(R, 'A')) +
       row('Höchster Sieg', top(L.best), top(R.best)) + row('Höchste Niederlage', top(L.worst), top(R.worst)) + '</div></div>';
-    if (L.R || R.R) {
-      const rv = (f, fn) => f.R ? fn(f.R) : '–';
-      html += '<div class="card"><h3>Aus den Spielberichten</h3><div class="cmp">' + hd +
-        row('Ausgewertete Spiele', rv(L, r => r.n), rv(R, r => r.n)) +
-        row('Tore 1. Halbzeit (Ø)', rv(L, r => dez(r.h1)), rv(R, r => dez(r.h1))) + row('Tore 2. Halbzeit (Ø)', rv(L, r => dez(r.h2)), rv(R, r => dez(r.h2))) +
-        row('Zur Pause vorn', rv(L, r => r.lead + ' von ' + r.n), rv(R, r => r.lead + ' von ' + r.n)) +
-        row('7-Meter (Tore/Würfe)', rv(L, r => r.m7 + '/' + r.w7 + (r.w7 ? ' <small>' + Math.round(100 * r.m7 / r.w7) + ' %</small>' : '')), rv(R, r => r.m7 + '/' + r.w7 + (r.w7 ? ' <small>' + Math.round(100 * r.m7 / r.w7) + ' %</small>' : ''))) +
-        row('2-Minuten pro Spiel', rv(L, r => dez(r.two)), rv(R, r => dez(r.two))) + '</div>' +
-        '<p class="note" style="margin:8px 0 0">Nur aus Spielen, für die ein Spielbericht mit Verlauf vorliegt.</p></div>';
-    }
     const h2h = (D.spiele || []).filter(x => x !== g && has(x) && ((x.heim === g.heim && x.gast === g.gast) || (x.heim === g.gast && x.gast === g.heim)));
     html += '<div class="card full"><h3>Direkter Vergleich</h3>' + (h2h.length ? '<ul class="h2h">' + h2h.map(x => '<li><span>' + esc(new Date(when(x)).toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: '2-digit'})) + ' · ' + esc(short(x.heim)) + ' – ' + esc(short(x.gast)) + '</span><b>' + esc(x.bericht ? x.bericht.tore : x.ergebnis) + '</b></li>').join('') + '</ul>' : '<p class="note" style="margin:0">In dieser Saison noch kein Spiel gegeneinander.</p>') +
       '<p class="note" style="margin:10px 0 0">Ergebnis und Spielbericht erscheinen hier nach dem Spiel.</p></div>' + links;
