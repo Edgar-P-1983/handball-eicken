@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-23T21:44:00+01:00",
+ "stand": "2026-11-24T05:21:00+01:00",
  "saison": "2026/27",
  "team": "Eickener SpVg II",
  "kurz": "ESV",
@@ -37,6 +37,17 @@
  "tabelle": [
   {
    "platz": 1,
+   "team": "SV 1916 Osnabrück",
+   "spiele": 6,
+   "s": 5,
+   "u": 1,
+   "n": 0,
+   "tore": "205:152",
+   "diff": 53,
+   "punkte": "11:1"
+  },
+  {
+   "platz": 2,
    "team": "Eickener SpVg II",
    "spiele": 5,
    "s": 4,
@@ -44,17 +55,6 @@
    "n": 0,
    "tore": "157:112",
    "diff": 45,
-   "punkte": "9:1"
-  },
-  {
-   "platz": 2,
-   "team": "SV 1916 Osnabrück",
-   "spiele": 5,
-   "s": 4,
-   "u": 1,
-   "n": 0,
-   "tore": "158:129",
-   "diff": 29,
    "punkte": "9:1"
   },
   {
@@ -126,13 +126,13 @@
   {
    "platz": 9,
    "team": "SV Concordia Belm-Powe e.V. II",
-   "spiele": 5,
+   "spiele": 6,
    "s": 1,
    "u": 0,
-   "n": 4,
-   "tore": "109:170",
-   "diff": -61,
-   "punkte": "2:8"
+   "n": 5,
+   "tore": "132:217",
+   "diff": -85,
+   "punkte": "2:10"
   },
   {
    "platz": 10,
