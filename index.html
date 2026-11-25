@@ -263,6 +263,16 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
 /* Teilen-Menü und Anleitung zum Home-Bildschirm */
 #sdlg,#adlg{width:min(460px,calc(100% - 16px));margin:auto auto max(8px,env(safe-area-inset-bottom));background:var(--card)}
 #adlg.mid{margin:auto}
+#idlg{width:min(480px,calc(100% - 16px));max-height:calc(100dvh - 24px);overflow:auto;margin:auto;background:var(--card)}
+.feat{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}
+.feat li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:14.5px;line-height:1.4}
+.feat svg{width:22px;height:22px;margin:1px 0 0 3px;color:#f5b800}
+.ih{margin:4px 0 4px;font-size:16px}
+.okline{display:flex;gap:8px;align-items:center;margin:0 0 14px;padding:10px 12px;border-radius:12px;background:#e6f6ec;color:#155d33;font-weight:600;font-size:14px}
+.other{margin:0 0 14px;border-radius:12px;background:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
+.other summary{cursor:pointer;padding:11px 12px;font-weight:700;font-size:14px}
+.other summary:focus:not(:focus-visible){outline:none}
+.other .steps{margin:0;padding:0 12px 12px}
 @media(min-width:700px){#sdlg,#adlg{margin:auto}}
 .shd{display:flex;align-items:center;gap:12px;margin-bottom:14px}
 .shd img{width:44px;height:44px;border-radius:11px;flex:none}
@@ -390,6 +400,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
    <div id="stand"></div>
    <p class="note" style="margin:8px 0 12px">Die Daten kommen automatisch von nuLiga: nach jedem Spiel alle 15 Minuten, bis Ergebnis und Spielbericht da sind, sonst einmal täglich am frühen Morgen. Die Seite holt neue Daten von selbst, sobald du sie öffnest, und alle 5 Minuten, solange sie offen ist.</p>
    <button class="btn" id="share2" type="button">Teilen / als App speichern</button>
+   <button class="btn" id="intro2" type="button" style="margin-top:8px">Kurzanleitung anzeigen</button>
    <div class="sec">Datenschutz</div>
    <p class="note" style="margin:0 0 6px">Die App zählt anonym, wie oft sie geöffnet wird, ob im Browser oder vom Home-Bildschirm, und welche Mannschaften als Favorit gewählt werden. Dafür wird der Dienst Umami genutzt: ohne Cookies, ohne Werbung und ohne Daten, die auf dich als Person schließen lassen. Wer im Browser „Nicht verfolgen“ eingestellt hat, wird nicht gezählt.</p>
    <p class="note" style="margin:0">Deine Favoriten und Einstellungen bleiben nur auf deinem Gerät gespeichert.</p>
@@ -409,6 +420,18 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  <button class="go" id="a2-go" type="button">Hinzufügen</button>
  <button class="no" id="a2-no" type="button" aria-label="Hinweis ausblenden">×</button>
 </div>
+<dialog id="idlg" aria-labelledby="i-title">
+ <div class="rs" tabindex="-1" autofocus style="outline:none">
+  <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="i-title">Willkommen bei ESV Handball</b><small>Die Handball-App der Eickener SpVg und der JSG</small></div></div>
+  <ul class="feat">
+   <li><svg aria-hidden="true"><use href="#ic-star"/></svg><span><b>Alle Mannschaften</b> von den Herren bis zur F-Jugend – Lieblingsteams per Stern als Favorit, sie stehen dann oben in der Leiste.</span></li>
+   <li><svg aria-hidden="true"><use href="#ic-route"/></svg><span><b>Nächste Spiele</b> mit Anwurf, Halle und Route zur Halle.</span></li>
+   <li><svg aria-hidden="true"><use href="#ic-list"/></svg><span><b>Ergebnisse, Spielberichte und Tabellen</b> – nach jedem Spiel automatisch aktuell.</span></li>
+  </ul>
+  <div id="i-install"></div>
+  <div class="rbtns" id="i-btns"></div>
+ </div>
+</dialog>
 <dialog id="sdlg" aria-labelledby="s-title">
  <div class="rs">
   <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="s-title">ESV Handball</b><small>Teilen oder als App speichern</small></div></div>
@@ -449,7 +472,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261125130004';
+const BUILD = '20261125214306';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -928,7 +951,7 @@ const IS_ANDROID = /Android/i.test(UA);
 const IN_APP = /FBAN|FBAV|FB_IAB|Instagram|LinkedInApp|Snapchat|Line\/|GSA\/|TikTok|musical_ly/i.test(UA);
 const standalone = () => { try { return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } };
 let installEvt = null;
-window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; });
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; const d = document.getElementById('idlg'); if (d && d.open) { $('i-install').innerHTML = introHtml(); $('i-btns').innerHTML = introBtns(); } });
 window.addEventListener('appinstalled', () => { track('App installiert'); installEvt = null; setPref('hb-a2hs', 'installiert'); hideStrip(); });
 function setPref(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 function getPref(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
@@ -945,46 +968,83 @@ async function addHome() {
   }
   showGuide();
 }
-function showGuide() {
+// Schritte zum Speichern auf dem Home-Bildschirm; force = 'ios' | 'android' zeigt die Anleitung für das andere Gerät
+function guideData(force) {
+  const IOS = force ? force === 'ios' : IS_IOS, ANDROID = force ? force === 'android' : IS_ANDROID;
+  const ua = force ? '' : UA, inApp = force ? false : IN_APP, ipad = force ? false : IS_IPAD;
   let sub = '', st = [], btns = '', arrow = '';
-  const done = 'Fertig: Das ESV-Symbol liegt jetzt auf dem Home-Bildschirm und öffnet die Seite wie eine App.';
-  if (IS_IOS && IN_APP) {
+  if (IOS && inApp) {
     sub = 'Das geht nur in Safari';
     st = ['Tippe oben oder unten auf ' + K('ic-dots') + ' bzw. das Menü der App.', 'Wähle „In Safari öffnen“ (oder „Im Browser öffnen“).', 'In Safari dann auf ' + K('ic-share') + ' Teilen → ' + K('ic-addhome') + ' „Zum Home-Bildschirm“.'];
     btns = '<button class="rbtn" id="a-copy" type="button">Link kopieren</button>';
-  } else if (IS_IOS && /CriOS|EdgiOS/.test(UA)) {
+  } else if (IOS && /CriOS|EdgiOS/.test(ua)) {
     sub = 'In Chrome auf dem iPhone';
     st = ['Tippe oben rechts in der Adressleiste auf ' + K('ic-share') + ' Teilen.', 'Wähle ' + K('ic-addhome') + ' „Zum Home-Bildschirm“ <small>Eventuell erst etwas nach unten wischen.</small>', 'Tippe oben rechts auf „Hinzufügen“.'];
     arrow = 'tr';
-  } else if (IS_IOS && /FxiOS/.test(UA)) {
+  } else if (IOS && /FxiOS/.test(ua)) {
     sub = 'In Firefox auf dem iPhone';
     st = ['Tippe auf das Menü ☰ und dann auf ' + K('ic-share') + ' Teilen.', 'Wähle ' + K('ic-addhome') + ' „Zum Home-Bildschirm“.', 'Tippe oben rechts auf „Hinzufügen“.'];
-  } else if (IS_IPAD) {
+  } else if (ipad) {
     sub = 'In Safari auf dem iPad';
     st = ['Tippe oben rechts auf ' + K('ic-share') + ' Teilen <small>oder erst auf ' + K('ic-dots') + ', dann auf „Teilen“.</small>', 'Wähle ' + K('ic-addhome') + ' „Zum Home-Bildschirm“.', 'Tippe auf „Hinzufügen“.'];
     arrow = 'tr';
-  } else if (IS_IOS) {
+  } else if (IOS) {
     sub = 'In Safari auf dem iPhone';
     st = ['Tippe unten rechts auf ' + K('ic-dots') + ' und dann auf ' + K('ic-share') + ' „Teilen“. <small>Bei älterem iOS direkt auf ' + K('ic-share') + ' in der Leiste unten.</small>', 'Etwas nach unten wischen und ' + K('ic-addhome') + ' „Zum Home-Bildschirm“ wählen.', 'Oben rechts auf „Hinzufügen“ tippen.'];
     arrow = 'br';
-  } else if (IS_ANDROID && /SamsungBrowser/.test(UA)) {
+  } else if (ANDROID && /SamsungBrowser/.test(ua)) {
     sub = 'In Samsung Internet';
     st = ['Tippe unten rechts auf das Menü ☰.', 'Wähle „Seite hinzufügen zu“ → „Startbildschirm“.', 'Mit „Hinzufügen“ bestätigen.'];
-  } else if (IS_ANDROID) {
+  } else if (ANDROID) {
     sub = 'Auf dem Android-Handy';
     st = ['Tippe oben rechts auf das Menü ' + K('ic-kebab') + '.', 'Wähle „App installieren“ oder „Zum Startbildschirm hinzufügen“.', 'Mit „Installieren“ bzw. „Hinzufügen“ bestätigen.'];
-    arrow = IN_APP ? '' : 'tr';
-    if (IN_APP) { sub = 'Bitte zuerst im Browser öffnen'; st.unshift('Öffne die Seite über das Menü ' + K('ic-kebab') + ' mit „Im Browser öffnen“ (z. B. Chrome).'); btns = '<button class="rbtn" id="a-copy" type="button">Link kopieren</button>'; }
+    arrow = inApp ? '' : 'tr';
+    if (inApp) { sub = 'Bitte zuerst im Browser öffnen'; st.unshift('Öffne die Seite über das Menü ' + K('ic-kebab') + ' mit „Im Browser öffnen“ (z. B. Chrome).'); btns = '<button class="rbtn" id="a-copy" type="button">Link kopieren</button>'; }
   } else {
     sub = 'Am Computer';
     st = ['Im Browser-Menü (Chrome, Edge) „App installieren“ wählen – oder die Seite als Lesezeichen speichern.'];
   }
+  return {sub, st, btns, arrow};
+}
+const GUIDE_DONE = 'Fertig: Das ESV-Symbol liegt jetzt auf dem Home-Bildschirm und öffnet die Seite wie eine App.';
+function showGuide() {
+  const {sub, st, btns, arrow} = guideData();
+  const done = GUIDE_DONE;
   $('a-sub').textContent = sub;
   $('a-steps').innerHTML = steps(st) + (st.length > 1 ? '<li><i>✓</i><span>' + done + '</span></li>' : '');
   $('a-btns').innerHTML = btns + '<button class="rbtn dark" id="a-ok" type="button">Verstanden</button>';
   const ar = $('a-arrow'); ar.setAttribute('class', 'a2arrow ' + arrow); ar.style.display = arrow ? 'block' : 'none';
   $('adlg').classList.toggle('mid', arrow === 'br');
   openDlg('adlg');
+}
+function introHtml() {
+  if (standalone()) return '<p class="okline">✓ Du nutzt ESV Handball bereits als App vom Home-Bildschirm.</p>';
+  const g = guideData();
+  const list = d => '<ol class="steps">' + steps(d.st) + '</ol>';
+  let h = '<h3 class="ih">Als App speichern</h3><p class="note" style="margin:0 0 10px">Dann startet ESV Handball wie eine richtige App: mit eigenem Symbol auf dem Startbildschirm und im Vollbild ohne Browserleiste.</p>';
+  if (IS_ANDROID && installEvt) h += '<p class="note" style="margin:0 0 10px">Am schnellsten geht es mit dem Knopf „Jetzt installieren“ unten.</p>';
+  h += '<p style="margin:0 0 6px;font-weight:700;font-size:14px">' + esc(g.sub) + '</p>' + list(g);
+  if (IS_IOS) h += '<details class="other"><summary>So geht es auf Android</summary>' + list(guideData('android')) + '</details>';
+  else if (IS_ANDROID) h += '<details class="other"><summary>So geht es auf dem iPhone</summary>' + list(guideData('ios')) + '</details>';
+  else h += '<details class="other"><summary>So geht es auf dem iPhone</summary>' + list(guideData('ios')) + '</details><details class="other"><summary>So geht es auf Android</summary>' + list(guideData('android')) + '</details>';
+  return h;
+}
+function introBtns() {
+  return (!standalone() && installEvt ? '<button class="rbtn dark" id="i-inst" type="button"><svg aria-hidden="true"><use href="#ic-addhome"/></svg>Jetzt installieren</button>' : '') +
+    (!standalone() && IS_IOS && IN_APP ? '<button class="rbtn" id="a-copy2" type="button">Link kopieren</button>' : '') +
+    '<button class="rbtn' + (installEvt && !standalone() ? '' : ' dark') + '" id="i-ok" type="button">Los geht’s</button>';
+}
+function openIntro() {
+  $('i-install').innerHTML = introHtml();
+  $('i-btns').innerHTML = introBtns();
+  openDlg('idlg');
+  setPref('hb-intro1', 'gesehen');
+  track('Einführung gezeigt', {modus: standalone() ? 'Home-Bildschirm' : 'Browser'});
+}
+function maybeIntro() {
+  if (getPref('hb-intro1')) return false;
+  setTimeout(() => { if (!$('dlg').open && !$('rdlg').open) openIntro(); }, 700);
+  return true;
 }
 function hideStrip() { $('a2hs').hidden = true; document.body.classList.remove('has-a2hs'); }
 function maybeStrip() {
@@ -1063,10 +1123,17 @@ $('adlg').addEventListener('click', async e => {
   }
 });
 $('sdlg').addEventListener('click', e => { if (e.target === $('sdlg')) closeDlgId('sdlg'); });
+$('idlg').addEventListener('click', async e => {
+  if (e.target === $('idlg') || e.target.closest('#i-ok')) { closeDlgId('idlg'); return; }
+  if (e.target.closest('#i-inst')) { track('Einführung: installieren'); closeDlgId('idlg'); addHome(); return; }
+  const c = e.target.closest('#a-copy2');
+  if (c) { try { await navigator.clipboard.writeText(SHARE_URL); c.textContent = '✓ Link kopiert – jetzt in Safari einfügen'; c.classList.add('ok'); } catch (err) { c.textContent = SHARE_URL; } }
+});
+$('intro2').addEventListener('click', openIntro);
 if ('serviceWorker' in navigator && location.protocol === 'https:' && /github\.io$/.test(location.hostname)) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
-maybeStrip();
+if (!maybeIntro()) maybeStrip();
 trackOpen();
 $('toast').addEventListener('click', e => { if (e.target.closest('.trow')) $('toast').hidden = true; });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && Date.now() - lastLoad > 30e3) load(); });
