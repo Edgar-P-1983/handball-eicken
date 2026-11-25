@@ -21,6 +21,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="theme-color" content="#ffffff">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="69e2fbd4-4ee9-46af-8850-2bb3a8e236a5" data-domains="edgar-p-1983.github.io" data-do-not-track="true"></script>
 <meta name="apple-mobile-web-app-title" content="ESV Handball">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -389,6 +390,9 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
    <div id="stand"></div>
    <p class="note" style="margin:8px 0 12px">Die Daten kommen automatisch von nuLiga: nach jedem Spiel alle 15 Minuten, bis Ergebnis und Spielbericht da sind, sonst einmal täglich am frühen Morgen. Die Seite holt neue Daten von selbst, sobald du sie öffnest, und alle 5 Minuten, solange sie offen ist.</p>
    <button class="btn" id="share2" type="button">Teilen / als App speichern</button>
+   <div class="sec">Datenschutz</div>
+   <p class="note" style="margin:0 0 6px">Die App zählt anonym, wie oft sie geöffnet wird, ob im Browser oder vom Home-Bildschirm, und welche Mannschaften als Favorit gewählt werden. Dafür wird der Dienst Umami genutzt: ohne Cookies, ohne Werbung und ohne Daten, die auf dich als Person schließen lassen. Wer im Browser „Nicht verfolgen“ eingestellt hat, wird nicht gezählt.</p>
+   <p class="note" style="margin:0">Deine Favoriten und Einstellungen bleiben nur auf deinem Gerät gespeichert.</p>
    <p class="note" style="margin:12px 0 0">Routen lassen sich in Apple Karten oder Google Maps öffnen; die Hallenadressen stammen von nuLiga, kurzfristige Änderungen sind möglich. Spielernamen werden hier bewusst nicht angezeigt. Verbindlich sind die Angaben auf nuLiga.</p>
   </div>
  </section>
@@ -445,7 +449,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261123201739';
+const BUILD = '20261125130004';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -842,6 +846,7 @@ function setFav(id, on) {
   const t = TBY[id]; if (!t) return;
   FAV = FAV.filter(x => x !== id); if (on) FAV.push(id);
   try { localStorage.setItem('hb-fav', JSON.stringify(FAV)); } catch (e) {}
+  track(on ? 'Favorit hinzugefügt' : 'Favorit entfernt', {mannschaft: t.label});
   toast('<p style="margin:0">' + (on ? '★ ' + esc(t.label) + ' ist jetzt ein Favorit.' : esc(t.label) + ' aus den Favoriten entfernt.') + '</p>', 2200);
   if (on) ensure(id);
   render();
@@ -924,7 +929,7 @@ const IN_APP = /FBAN|FBAV|FB_IAB|Instagram|LinkedInApp|Snapchat|Line\/|GSA\/|Tik
 const standalone = () => { try { return matchMedia('(display-mode: standalone)').matches || navigator.standalone === true; } catch (e) { return false; } };
 let installEvt = null;
 window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; });
-window.addEventListener('appinstalled', () => { installEvt = null; setPref('hb-a2hs', 'installiert'); hideStrip(); });
+window.addEventListener('appinstalled', () => { track('App installiert'); installEvt = null; setPref('hb-a2hs', 'installiert'); hideStrip(); });
 function setPref(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 function getPref(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
 function openDlg(id) { const d = $(id); try { d.showModal(); } catch (e) { d.setAttribute('open', ''); } }
@@ -990,7 +995,17 @@ function shareMenu() {
   if (standalone()) { share(); return; }
   openDlg('sdlg');
 }
+// Anonyme Nutzungsstatistik (Umami Cloud, ohne Cookies)
+function track(name, data) { try { if (window.umami && typeof window.umami.track === 'function') window.umami.track(name, data); } catch (e) {} }
+function trackOpen() {
+  let n = 0;
+  const t = setInterval(() => {
+    if (window.umami) { clearInterval(t); track('App geöffnet', {modus: standalone() ? 'Home-Bildschirm' : 'Browser', favoriten: String(FAV.length)}); }
+    else if (++n > 30) clearInterval(t);
+  }, 500);
+}
 async function share() {
+  track('Teilen geöffnet');
   const data = {title: 'ESV Handball', text: 'Spielplan, Ergebnisse und Tabellen aller Handball-Mannschaften der Eickener SpVg und der JSG Eicken-Buer-Oldendorf', url: SHARE_URL};
   if (navigator.share) {
     try { await navigator.share(data); return; } catch (e) { if (e && e.name === 'AbortError') return; }
@@ -1052,6 +1067,7 @@ if ('serviceWorker' in navigator && location.protocol === 'https:' && /github\.i
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
 maybeStrip();
+trackOpen();
 $('toast').addEventListener('click', e => { if (e.target.closest('.trow')) $('toast').hidden = true; });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && Date.now() - lastLoad > 30e3) load(); });
 setInterval(() => { if (!document.hidden) load(); }, 5 * 60e3);
