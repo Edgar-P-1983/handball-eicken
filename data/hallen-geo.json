@@ -1,0 +1,242 @@
+{
+ "406131": {
+  "adresse": "Sportplatzweg, 31542 Bad Nenndorf",
+  "lat": 52.34419,
+  "lon": 9.4023,
+  "genau": true
+ },
+ "803117": {
+  "adresse": "Jahnstraße 1, 49733 Haren",
+  "lat": 52.78902,
+  "lon": 7.23995,
+  "genau": true
+ },
+ "803119": {
+  "adresse": "Bookhofer Straße, 49770 Herzlake",
+  "lat": 52.68169,
+  "lon": 7.59771,
+  "genau": true
+ },
+ "803137": {
+  "adresse": "Wilhelm-Raabe-Straße 15, 48527 Nordhorn",
+  "lat": 52.42812,
+  "lon": 7.05922,
+  "genau": true
+ },
+ "803138": {
+  "adresse": "Wilhelm-Raabe-Straße 15, 48527 Nordhorn",
+  "lat": 52.42812,
+  "lon": 7.05922,
+  "genau": true
+ },
+ "803150": {
+  "adresse": "Jahnstraße, 48465 Schüttorf",
+  "lat": 52.32046,
+  "lon": 7.2156,
+  "genau": true
+ },
+ "803159": {
+  "adresse": "Bruchweg, 48499 Salzbergen",
+  "lat": 52.31765,
+  "lon": 7.33992,
+  "genau": true
+ },
+ "803178": {
+  "adresse": "Schulstraße 6, 49828 Neuenhaus",
+  "lat": 52.49591,
+  "lon": 6.96539,
+  "genau": true
+ },
+ "808102": {
+  "adresse": "Arndtstraße 1, 49078 Osnabrück",
+  "lat": 52.27447,
+  "lon": 8.03777,
+  "genau": true
+ },
+ "808103": {
+  "adresse": "Windthorststraße 79-83, 49084 Osnabrück",
+  "lat": 52.28396,
+  "lon": 8.09631,
+  "genau": true
+ },
+ "808104": {
+  "adresse": "Hiärm-Grupe-Straße 8, 49080 Osnabrück",
+  "lat": 52.26766,
+  "lon": 8.02404,
+  "genau": true
+ },
+ "808107": {
+  "adresse": "Knollstraße 143, 49088 Osnabrück",
+  "lat": 52.29291,
+  "lon": 8.05889,
+  "genau": true
+ },
+ "808113": {
+  "adresse": "Iburger Straße 159, 49082 Osnabrück",
+  "lat": 52.25412,
+  "lon": 8.06091,
+  "genau": true
+ },
+ "808121": {
+  "adresse": "Werscher Straße 24, 49143 Bissendorf",
+  "lat": 52.2378,
+  "lon": 8.17659,
+  "genau": true
+ },
+ "808122": {
+  "adresse": "Heideweg 25, 49191 Belm",
+  "lat": 52.29945,
+  "lon": 8.13443,
+  "genau": true
+ },
+ "808125": {
+  "adresse": "Jahnstraße, 49163 Bohmte",
+  "lat": 52.37271,
+  "lon": 8.31241,
+  "genau": true
+ },
+ "808128": {
+  "adresse": "Malgartener Straße 58, 49565 Bramsche",
+  "lat": 52.41511,
+  "lon": 7.99639,
+  "genau": true
+ },
+ "808129": {
+  "adresse": "Bielefelder Str. 15, 49186 Bad Iburg",
+  "lat": 52.15255,
+  "lon": 8.0479,
+  "genau": true
+ },
+ "808130": {
+  "adresse": "Bielefelder Str. 15, 49186 Bad Iburg",
+  "lat": 52.15255,
+  "lon": 8.0479,
+  "genau": true
+ },
+ "808132": {
+  "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte",
+  "lat": 52.20282,
+  "lon": 8.05321,
+  "genau": true
+ },
+ "808134": {
+  "adresse": "Görsmannstraße 14, 49170 Hagen a.T.W.",
+  "lat": 52.20191,
+  "lon": 7.94135,
+  "genau": true
+ },
+ "808135": {
+  "adresse": "Schulstraße, 49205 Hasbergen",
+  "lat": 52.23189,
+  "lon": 7.94965,
+  "genau": true
+ },
+ "808136": {
+  "adresse": "Schulstraße, 49205 Hasbergen",
+  "lat": 52.23189,
+  "lon": 7.94965,
+  "genau": true
+ },
+ "808139": {
+  "adresse": "Haferstr. 60, 49324 Melle (OT Mitte)",
+  "lat": 52.19847,
+  "lon": 8.3399,
+  "genau": true
+ },
+ "808144": {
+  "adresse": "Ottenheider Weg 18, 49326 Melle (OT Neuenkirchen)",
+  "lat": 52.13833,
+  "lon": 8.38266,
+  "genau": true
+ },
+ "808146": {
+  "adresse": "Segelfliegerweg 11, 49324 Melle",
+  "lat": 52.21134,
+  "lon": 8.37491,
+  "genau": true
+ },
+ "808149": {
+  "adresse": "Uhlandstraße 28, 49326 Melle",
+  "lat": 52.16043,
+  "lon": 8.25811,
+  "genau": true
+ },
+ "808151": {
+  "adresse": "Maria-Montessori-Straße 3-6, 49134 Wallenhorst",
+  "lat": 52.34665,
+  "lon": 8.01516,
+  "genau": true
+ },
+ "808154": {
+  "adresse": "Am Kattenboll, 49577 Ankum",
+  "lat": 52.54554,
+  "lon": 7.88477,
+  "genau": true
+ },
+ "808158": {
+  "adresse": "Große Schulstr. 83 A, 49078 Osnabrück",
+  "lat": 52.26285,
+  "lon": 7.98485,
+  "genau": true
+ },
+ "808177": {
+  "adresse": "Osnabrücker Straße, 49492 Westerkappeln",
+  "lat": 52.31303,
+  "lon": 7.88234,
+  "genau": true
+ },
+ "808180": {
+  "adresse": "Südring 60, 49124 Georgsmarienhütte",
+  "lat": 52.19672,
+  "lon": 8.06316,
+  "genau": true
+ },
+ "808183": {
+  "adresse": "Am Hallenbad 5, 49086 Osnabrück",
+  "lat": 52.27291,
+  "lon": 8.13061,
+  "genau": true
+ },
+ "808186": {
+  "adresse": "zur Waldbühne 7, 49124 Georgsmarienhütte",
+  "lat": 52.20373,
+  "lon": 8.10927,
+  "genau": true
+ },
+ "809105": {
+  "adresse": "Schützenstraße 1, 49401 Damme",
+  "lat": 52.52307,
+  "lon": 8.18131,
+  "genau": true
+ },
+ "809118": {
+  "adresse": "Große Eschstraße, 49451 Holdorf",
+  "lat": 52.58003,
+  "lon": 8.13369,
+  "genau": true
+ },
+ "809133": {
+  "adresse": "Klünenberg 11, 49401 Damme (OT Osterfeine)",
+  "lat": 52.54949,
+  "lon": 8.27278,
+  "genau": true
+ },
+ "809137": {
+  "adresse": "Moorstraße 39, 49356 Diepholz",
+  "lat": 52.6011,
+  "lon": 8.35641,
+  "genau": true
+ },
+ "809140": {
+  "adresse": "Brüsseler Str. 37, 49377 Vechta",
+  "lat": 52.72796,
+  "lon": 8.26768,
+  "genau": true
+ },
+ "809143": {
+  "adresse": "Stettiner Str. 35, 49448 Lemförde",
+  "lat": 52.46594,
+  "lon": 8.37058,
+  "genau": true
+ }
+}
