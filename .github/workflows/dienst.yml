@@ -1,0 +1,81 @@
+name: Cloudflare-Dienst veröffentlichen
+
+# Veröffentlicht den kleinen Dienst aus dem Ordner worker/ bei Cloudflare, sobald sich dort etwas
+# ändert. Zugangsdaten kommen aus den GitHub-Secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+# und ORS_API_KEY (openrouteservice); sie stehen nirgends im Code.
+on:
+  push:
+    branches: [main]
+    paths: ['worker/**', '.github/workflows/dienst.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dienst
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      ORS_API_KEY: ${{ secrets.ORS_API_KEY }}
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Zugangsdaten prüfen
+        run: |
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || { echo "::error::Secret CLOUDFLARE_API_TOKEN fehlt"; exit 1; }
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || { echo "::error::Secret CLOUDFLARE_ACCOUNT_ID fehlt"; exit 1; }
+          echo "ORS-Schlüssel vorhanden: $([ -n "$ORS_API_KEY" ] && echo ja || echo nein)"
+          curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" https://api.cloudflare.com/client/v4/user/tokens/verify | jq -c '{success, status: .result.status, errors}'
+
+      # Ein neues Cloudflare-Konto hat noch keine workers.dev-Adresse: einmalig anlegen
+      - name: workers.dev-Adresse
+        run: |
+          API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain"
+          AUTH="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+          SUB=$(curl -s -H "$AUTH" "$API" | jq -r '.result.subdomain // empty')
+          if [ -z "$SUB" ]; then
+            for NAME in esv-handball esv-handball-eicken "esv-handball-$(date +%s | tail -c 5)"; do
+              R=$(curl -s -X PUT -H "$AUTH" -H "Content-Type: application/json" --data "{\"subdomain\":\"$NAME\"}" "$API")
+              if echo "$R" | jq -e '.success' >/dev/null; then SUB="$NAME"; echo "neu angelegt: $NAME"; break; fi
+              echo "$R" | jq -c '.errors'
+            done
+          fi
+          [ -n "$SUB" ] || { echo "::error::Keine workers.dev-Adresse"; exit 1; }
+          echo "DIENST_URL=https://esv-handball.$SUB.workers.dev" >> "$GITHUB_ENV"
+
+      - name: Veröffentlichen
+        working-directory: worker
+        run: npx --yes wrangler@4 deploy
+
+      - name: Schlüssel für die Fahrzeit hinterlegen
+        if: env.ORS_API_KEY != ''
+        working-directory: worker
+        run: printf '%s' "$ORS_API_KEY" | npx --yes wrangler@4 secret put ORS_API_KEY
+
+      - name: Test
+        run: |
+          echo "Adresse des Dienstes: $DIENST_URL"
+          echo "### Dienst: $DIENST_URL" >> "$GITHUB_STEP_SUMMARY"
+          O="Origin: https://edgar-p-1983.github.io"
+          for i in $(seq 1 12); do
+            H=$(curl -s -m 15 "$DIENST_URL/health" || true)
+            echo "$H" | jq -e '.ok' >/dev/null 2>&1 && break
+            sleep 10
+          done
+          echo "health: $H"
+          sleep 5
+          # Eicken (Sporthalle) → Osnabrück (Innenstadt), nur als Probe
+          echo "route:   $(curl -s -m 30 -H "$O" "$DIENST_URL/route?from=52.2165,8.3622&to=52.2726,8.0498")"
+          echo "geocode: $(curl -s -m 30 -H "$O" "$DIENST_URL/geocode?q=Eicken%2C%20Melle" | jq -c '.results[0:2] // .')"
+          echo "fremd:   $(curl -s -m 15 -o /dev/null -w '%{http_code}' -H 'Origin: https://example.com' "$DIENST_URL/route?from=52.2,8.3&to=52.3,8.1")"

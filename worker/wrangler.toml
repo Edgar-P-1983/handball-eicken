@@ -1,0 +1,11 @@
+# Cloudflare-Dienst der App ESV Handball (Fahrzeit zur Halle, später Push-Mitteilungen).
+# Wird automatisch über .github/workflows/dienst.yml veröffentlicht.
+name = "esv-handball"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+workers_dev = true
+preview_urls = false
+
+# keine Protokolle über Anfragen
+[observability]
+enabled = false
