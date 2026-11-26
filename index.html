@@ -260,6 +260,7 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
 .rbtn.ghost{box-shadow:none;color:var(--muted);font-weight:600}
 .rbtn.ok{background:var(--win);color:#fff;box-shadow:none}
 .rbtn svg{width:20px;height:20px;flex:none}
+.rbtn:disabled{opacity:.6;cursor:wait}
 /* Teilen-Menü und Anleitung zum Home-Bildschirm */
 #sdlg,#adlg{width:min(460px,calc(100% - 16px));margin:auto auto max(8px,env(safe-area-inset-bottom));background:var(--card)}
 #adlg.mid{margin:auto}
@@ -333,6 +334,48 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  .lists{display:block}
 }
 @media(prefers-reduced-motion:no-preference){.m{transition:background .15s}}
+/* Kopfzeile: drei Knöpfe dicht beieinander */
+.hbtns{display:flex;gap:2px;margin-right:-6px;flex:none}
+.hbtns .icon-btn{width:40px}
+@media(max-width:360px){.brand{gap:10px}.brand .crest.l{width:44px;height:44px}.hbtns .icon-btn{width:38px}}
+/* Fahrzeit im Spiel-Fenster */
+.trip{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px 8px;margin-top:10px;font-size:14px;line-height:1.35;text-align:center}
+.trip svg{width:20px;height:20px;flex:none}
+.trip b{font-weight:800}
+.trip small{flex-basis:100%;font-size:12px;color:var(--muted)}
+.trip .wait{color:var(--muted)}
+.trip:empty{display:none}
+.trip button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border-radius:10px;font-size:13px;font-weight:600;color:var(--ink);background:var(--soft);box-shadow:inset 0 0 0 1px var(--line)}
+.trip button svg{width:18px;height:18px}
+/* Einstellungen */
+.setc{padding:16px}
+.setc h3{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px;margin:0;font-size:17px}
+.setc h3 svg{width:22px;height:22px}
+.setc h3 small{font-weight:500;color:var(--muted);font-size:13px}
+.lbl{display:block;font-size:13px;font-weight:700;color:var(--muted);margin:16px 0 6px}
+.srow{display:flex;gap:8px}
+.srow input{flex:1;min-height:48px;border:0;border-radius:12px;padding:0 14px;font:inherit;font-size:16px;color:var(--ink);background:var(--soft);box-shadow:inset 0 0 0 1px var(--line);-webkit-appearance:none;appearance:none}
+.srow input:focus{outline:3px solid var(--acc);outline-offset:-1px;background:#fff}
+.srow .btn{min-height:48px}
+.srow .btn:disabled{opacity:.6;cursor:wait}
+.hres{display:grid;gap:6px;margin-top:8px}
+.hres:empty{display:none}
+.hres .opt{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-size:14px;line-height:1.35}
+.hres .opt svg{width:20px;height:20px;flex:none;color:var(--muted)}
+.hres .opt:hover{background:var(--soft)}
+.hres .msg{font-size:13px;color:var(--muted);padding:4px 2px}
+.hres .msg.err{color:#a1262b}
+.hcur{display:flex;align-items:center;gap:12px;margin-top:14px;padding:12px 12px 12px 14px;border-radius:12px;background:var(--accSoft);box-shadow:inset 0 0 0 1px var(--accLine)}
+.hcur>svg{width:22px;height:22px;flex:none}
+.hcur{flex-wrap:wrap}
+.hcur div{flex:1 1 170px}
+.hcur button{margin-left:auto}
+.hcur b{display:block;font-size:13px;color:#5c4800}
+.hcur span{display:block;font-weight:700;font-size:15px;word-break:break-word}
+.hcur button{all:unset;cursor:pointer;flex:none;font-weight:700;font-size:14px;min-height:40px;padding:0 12px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px var(--accLine)}
+.or{display:flex;align-items:center;gap:10px;margin:14px 0;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.tbtn:focus-visible,.hres .opt:focus-visible,.hcur button:focus-visible,.trip button:focus-visible,.rbtn:focus-visible,.btn:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -348,6 +391,9 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  <symbol id="ic-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></symbol>
  <symbol id="ic-kebab" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></symbol>
  <symbol id="ic-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+ <symbol id="ic-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></g></symbol>
+ <symbol id="ic-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H4a1 1 0 0 1-1-1v-3.2a1.5 1.5 0 0 1 .9-1.4L6 10.5l1.6-3.4A2 2 0 0 1 9.4 6h5.2a2 2 0 0 1 1.8 1.1l1.6 3.4 2.1.9a1.5 1.5 0 0 1 .9 1.4V16a1 1 0 0 1-1 1h-1M9 17h6M6.5 10.5h11"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></g></symbol>
+ <symbol id="ic-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></g></symbol>
  <symbol id="ic-route" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
 </svg>
 <header class="bar">
@@ -355,8 +401,11 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
   <div class="brand">
    <span class="crest l img"><img src="esv-rund.png" alt="Wappen der Eickener SpVg"></span>
    <div class="grow"><h1>ESV Handball</h1><p>Eickener SpVg · JSG Eicken-Buer-Oldendorf · Saison 2026/27</p></div>
-   <button class="icon-btn" id="infobtn" type="button" data-view="infos" aria-label="Infos und Links"><svg aria-hidden="true"><use href="#ic-info"/></svg></button>
-   <button class="icon-btn" id="share" type="button" aria-label="Teilen oder als App speichern"><svg aria-hidden="true"><use href="#ic-share"/></svg></button>
+   <div class="hbtns">
+    <button class="icon-btn" id="infobtn" type="button" data-view="infos" aria-label="Infos und Links"><svg aria-hidden="true"><use href="#ic-info"/></svg></button>
+    <button class="icon-btn" id="setbtn" type="button" data-view="einst" aria-label="Einstellungen"><svg aria-hidden="true"><use href="#ic-gear"/></svg></button>
+    <button class="icon-btn" id="share" type="button" aria-label="Teilen oder als App speichern"><svg aria-hidden="true"><use href="#ic-share"/></svg></button>
+   </div>
   </div>
  </div>
 </header>
@@ -403,8 +452,25 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
    <button class="btn" id="intro2" type="button" style="margin-top:8px">Kurzanleitung anzeigen</button>
    <div class="sec">Datenschutz</div>
    <p class="note" style="margin:0 0 6px">Die App zählt anonym, wie oft sie geöffnet wird, ob im Browser oder vom Home-Bildschirm, und welche Mannschaften als Favorit gewählt werden. Dafür wird der Dienst Umami genutzt: ohne Cookies, ohne Werbung und ohne Daten, die auf dich als Person schließen lassen. Wer im Browser „Nicht verfolgen“ eingestellt hat, wird nicht gezählt.</p>
-   <p class="note" style="margin:0">Deine Favoriten und Einstellungen bleiben nur auf deinem Gerät gespeichert.</p>
+   <p class="note" style="margin:0 0 6px">Deine Favoriten und Einstellungen bleiben nur auf deinem Gerät gespeichert.</p>
+   <p class="note" style="margin:0">Fahrzeit zur Halle: Hast du unter Einstellungen einen Wohnort hinterlegt, schickt die App nur dessen auf etwa 100 m gerundete Koordinaten zusammen mit der Halle an einen kleinen Dienst der App bei Cloudflare. Der lässt die Strecke von openrouteservice (HeiGIT, Heidelberg) berechnen. Bei der Adresssuche geht der eingegebene Text an diesen Dienst und an OpenStreetMap. Gespeichert oder protokolliert wird dabei nichts.</p>
    <p class="note" style="margin:12px 0 0">Routen lassen sich in Apple Karten oder Google Maps öffnen; die Hallenadressen stammen von nuLiga, kurzfristige Änderungen sind möglich. Spielernamen werden hier bewusst nicht angezeigt. Verbindlich sind die Angaben auf nuLiga.</p>
+  </div>
+ </section>
+ <section id="v-einst" hidden>
+  <div class="sec">Einstellungen</div>
+  <div class="card setc">
+   <h3><svg aria-hidden="true"><use href="#ic-car"/></svg>Wohnort <small>für Entfernung und Fahrzeit</small></h3>
+   <p class="note" style="margin:4px 0 0">Im Spiel-Fenster siehst du dann, wie weit es von zu Hause bis zur Halle ist und wie lange du ungefähr fährst.</p>
+   <div id="home-cur"></div>
+   <form id="home-form" autocomplete="off">
+    <label class="lbl" for="home-q" id="home-lbl">Adresse oder Ort suchen</label>
+    <div class="srow"><input id="home-q" type="search" enterkeyhint="search" maxlength="120" placeholder="z. B. Musterstraße 1, Melle"><button class="btn" type="submit" id="home-go">Suchen</button></div>
+   </form>
+   <div class="hres" id="home-res" aria-live="polite"></div>
+   <div class="or"><span>oder</span></div>
+   <button class="rbtn" id="home-gps" type="button"><svg aria-hidden="true"><use href="#ic-pin"/></svg>Aktuellen Standort verwenden</button>
+   <p class="note" style="margin:14px 0 0">Der Wohnort bleibt nur auf diesem Gerät gespeichert. Für die Fahrzeit werden nur gerundete Koordinaten (auf etwa 100 m) verschickt, ohne Namen. Die Fahrzeit ist ein Richtwert ohne aktuellen Verkehr.</p>
   </div>
  </section>
 </main>
@@ -472,7 +538,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261125214306';
+const BUILD = '20261126193642';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -637,7 +703,7 @@ function openGame(teamId, nr) {
   const vorl = g.vorlaeufig ? '<p class="note" style="margin:10px 0 0">Vorläufig: Der Spielbericht ist noch nicht vom Verband genehmigt.</p>' : '';
   const o = mine && has(g) ? outcome(g, D.team) : '';
   const tag = o ? '<span class="wl ' + o + '" style="display:inline-grid;width:auto;padding:0 8px;margin-bottom:8px">' + LANG[o] + '</span>' : '';
-  let html;
+  let html, tripHall = null;
   if (b) {
     html = '<div class="card full"><div class="dsc">' + side(g.heim) + '<div class="big">' + esc(b.tore) + '<small>Halbzeit ' + esc(b.halbzeit) + '</small></div>' + side(g.gast) + '</div>' + where + '</div>' +
       '<div class="card full">' + tag + '<p class="fazit">' + esc(fazit(g, A, P)) + '</p>' + vorl + '</div>' +
@@ -671,7 +737,8 @@ function openGame(teamId, nr) {
     const diff = f => f.N ? (f.F - f.A > 0 ? '+' : '') + (f.F - f.A) : '–';
     const top = r => r ? (r.f - r.a > 0 ? '+' : '') + (r.f - r.a) + ' <small>' + (r.home ? r.f + ':' + r.a : r.a + ':' + r.f) + '</small>' : '–';
     const hd = '<div class="v hd">' + esc(short(g.heim)) + '</div><div class="k hd"></div><div class="v r hd">' + esc(short(g.gast)) + '</div>';
-    html = '<div class="card full"><div class="dsc">' + side(g.heim) + '<div class="big">' + esc(g.zeit || '–') + '<small>' + (g.datum ? 'Anwurf' : 'Termin offen') + '</small></div>' + side(g.gast) + '</div>' + where + '</div>' +
+    tripHall = g.halle;
+    html = '<div class="card full"><div class="dsc">' + side(g.heim) + '<div class="big">' + esc(g.zeit || '–') + '<small>' + (g.datum ? 'Anwurf' : 'Termin offen') + '</small></div>' + side(g.gast) + '</div>' + where + '<div class="trip" id="trip" aria-live="polite"></div></div>' +
       '<div class="card full"><h3>Formcheck</h3><div class="cmp">' + hd +
       row('Tabellenplatz', pl(g.heim), pl(g.gast)) + row('Punkte', pk(g.heim), pk(g.gast)) + row('Siege–Unent.–Niederl.', sun(g.heim), sun(g.gast)) +
       row('Letzte 3 Spiele', last(L), last(R)) + '</div>' +
@@ -687,6 +754,7 @@ function openGame(teamId, nr) {
   $('dlg-body').innerHTML = html;
   const dl = $('dlg'); try { if (!dl.open) dl.showModal(); } catch (e) { dl.setAttribute('open', ''); }
   dl.scrollTop = 0;
+  if (tripHall) fillTrip(tripHall);
   if (A) { const svg = $('chart'), hzm = HZM(), draw = () => drawChart(svg, A, P, short(pn), short(on), hzm); if (chartRO) chartRO.disconnect(); chartRO = new ResizeObserver(draw); chartRO.observe(svg); draw(); }
 }
 function closeDlg() { const dl = $('dlg'); if (chartRO) { chartRO.disconnect(); chartRO = null; } try { dl.close(); } catch (e) { dl.removeAttribute('open'); } }
@@ -815,16 +883,18 @@ function renderBar() {
   const sel = $('teambar').querySelector('.tbtn[aria-selected=true]:not(.ic)');
   if (sel) { const bar = $('teambar'); const l = sel.offsetLeft - bar.offsetLeft, r = l + sel.offsetWidth; if (l < bar.scrollLeft || r > bar.scrollLeft + bar.clientWidth) bar.scrollLeft = l - 56; }
   $('infobtn').style.background = view === 'infos' ? 'var(--soft)' : '';
+  $('setbtn').style.background = view === 'einst' ? 'var(--soft)' : '';
 }
 
 function render() {
   const now = Date.now();
-  if (IDX && !['uebersicht', 'alle', 'infos'].includes(view) && !TBY[view]) view = 'uebersicht';
+  if (IDX && !['uebersicht', 'alle', 'infos', 'einst'].includes(view) && !TBY[view]) view = 'uebersicht';
   renderBar();
-  $('v-uebersicht').hidden = view !== 'uebersicht'; $('v-alle').hidden = view !== 'alle'; $('v-team').hidden = !TBY[view]; $('v-infos').hidden = view !== 'infos';
+  $('v-uebersicht').hidden = view !== 'uebersicht'; $('v-alle').hidden = view !== 'alle'; $('v-team').hidden = !TBY[view]; $('v-infos').hidden = view !== 'infos'; $('v-einst').hidden = view !== 'einst';
   if (view === 'uebersicht') renderOverview(now);
   else if (view === 'alle') renderAlle();
   else if (view === 'infos') renderInfos();
+  else if (view === 'einst') renderEinst();
   else if (TBY[view]) renderTeam(now);
 }
 
@@ -934,6 +1004,119 @@ async function copyAddr() {
   const c = $('r-copy');
   if (ok) { c.textContent = '✓ Adresse kopiert'; c.classList.add('ok'); setTimeout(() => { c.textContent = 'Adresse kopieren'; c.classList.remove('ok'); }, 2500); }
   else { c.textContent = 'Kopieren nicht möglich – Adresse oben antippen und halten'; }
+}
+// ---------- Wohnort, Entfernung und Fahrzeit zur Halle
+const API = 'https://esv-handball.esv-eicken.workers.dev';
+let HOME = null, HRES = [];
+try { HOME = JSON.parse(localStorage.getItem('hb-home') || 'null'); if (!HOME || !isFinite(HOME.lat) || !isFinite(HOME.lon)) HOME = null; } catch (e) { HOME = null; }
+let RT = {};
+try { RT = JSON.parse(localStorage.getItem('hb-rt') || '{}') || {}; } catch (e) { RT = {}; }
+let GEO = null, GEO_P = null;
+function loadGeo() {
+  if (GEO) return Promise.resolve(GEO);
+  if (!GEO_P) GEO_P = fetch('data/hallen-geo.json?v=' + encodeURIComponent((IDX && IDX.stand) || Date.now()), {cache: 'no-cache'})
+    .then(r => r.ok ? r.json() : null).catch(() => null).then(j => { GEO_P = null; if (j) GEO = j; return j || {}; });
+  return GEO_P;
+}
+function fetchT(url, ms) {
+  const c = typeof AbortController === 'function' ? new AbortController() : null;
+  const t = c ? setTimeout(() => c.abort(), ms) : 0;
+  return fetch(url, c ? {signal: c.signal} : {}).finally(() => clearTimeout(t));
+}
+const r3 = x => (Math.round(x * 1000) / 1000).toFixed(3);
+function luft(a, b) {
+  const R = 6371, t = Math.PI / 180, dLat = (b.lat - a.lat) * t, dLon = (b.lon - a.lon) * t;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * t) * Math.cos(b.lat * t) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
+}
+const kmTxt = km => (km < 10 ? dez(km) : String(Math.round(km))) + ' km';
+const minTxt = m => m < 60 ? 'ca. ' + m + ' Min.' : 'ca. ' + Math.floor(m / 60) + ' Std.' + (m % 60 ? ' ' + (m % 60) + ' Min.' : '');
+function rtSave() {
+  const cut = Date.now() - 90 * 864e5;
+  for (const k of Object.keys(RT)) if (!RT[k] || !(RT[k].t > cut)) delete RT[k];
+  const ks = Object.keys(RT);
+  if (ks.length > 300) ks.sort((a, b) => RT[a].t - RT[b].t).slice(0, ks.length - 300).forEach(k => delete RT[k]);
+  try { localStorage.setItem('hb-rt', JSON.stringify(RT)); } catch (e) {}
+}
+const RT_PENDING = {};
+const rtKey = pos => r3(HOME.lat) + ',' + r3(HOME.lon) + '>' + r3(pos.lat) + ',' + r3(pos.lon);
+function travel(pos) {
+  const key = rtKey(pos), [from, to] = key.split('>');
+  if (RT[key]) return Promise.resolve(RT[key]);
+  if (!RT_PENDING[key]) {
+    RT_PENDING[key] = fetchT(API + '/route?from=' + from + '&to=' + to, 20000)
+      .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+      .then(j => {
+        if (!isFinite(j.km) || !isFinite(j.min)) throw new Error('leer');
+        RT[key] = {km: +j.km, min: +j.min, t: Date.now()}; rtSave(); return RT[key];
+      })
+      .finally(() => { delete RT_PENDING[key]; });
+  }
+  return RT_PENDING[key];
+}
+async function fillTrip(hallId) {
+  const el = $('trip'); if (!el) return;
+  if (!HOME) { el.innerHTML = '<button type="button" data-goset>' + icon('car') + 'Fahrzeit ab Wohnort anzeigen</button>'; return; }
+  const geo = await loadGeo();
+  if ($('trip') !== el) return;
+  const pos = geo[hallId];
+  if (!pos || !isFinite(pos.lat) || !isFinite(pos.lon)) { el.innerHTML = ''; return; }
+  const lf = luft(HOME, pos), grob = pos.genau === false ? '<small>Ungefähr: Für diese Halle ist nur der Ort bekannt.</small>' : '';
+  const show = (b, x) => { if ($('trip') === el) el.innerHTML = icon('car') + '<span>' + b + ' ab Wohnort</span>' + x; };
+  if (!RT[rtKey(pos)]) show('<b>' + kmTxt(lf) + '</b> Luftlinie', '<small class="wait">Fahrzeit wird berechnet …</small>');
+  try {
+    const r = await travel(pos);
+    show('<b>' + kmTxt(r.km) + ' · ' + minTxt(r.min) + '</b>', '<small>Richtwert mit dem Auto, ohne aktuellen Verkehr</small>' + grob);
+  } catch (e) {
+    show('<b>ca. ' + kmTxt(lf) + '</b> Luftlinie', '<small>Die Fahrzeit ist gerade nicht abrufbar.</small>' + grob);
+  }
+}
+function renderEinst() {
+  $('home-cur').innerHTML = HOME ? '<div class="hcur"><svg aria-hidden="true"><use href="#ic-route"/></svg><div><b>Gespeicherter Wohnort</b><span>' + esc(HOME.label) + '</span></div><button type="button" id="home-del">Entfernen</button></div>' : '';
+  $('home-lbl').textContent = HOME ? 'Anderen Wohnort suchen' : 'Adresse oder Ort suchen';
+}
+function setHome(h, art) {
+  HOME = h ? {lat: +(+h.lat).toFixed(5), lon: +(+h.lon).toFixed(5), label: String(h.label || 'Wohnort').slice(0, 140), art} : null;
+  RT = {};
+  try { if (HOME) localStorage.setItem('hb-home', JSON.stringify(HOME)); else localStorage.removeItem('hb-home'); localStorage.removeItem('hb-rt'); } catch (e) {}
+  HRES = []; $('home-res').innerHTML = ''; $('home-q').value = '';
+  renderEinst();
+  if (HOME) { track('Wohnort gespeichert', {art}); loadGeo(); toast('<p style="margin:0">Wohnort gespeichert. Tippe auf ein kommendes Spiel, dann siehst du Entfernung und Fahrzeit.</p>', 5000); }
+  else toast('<p style="margin:0">Wohnort entfernt.</p>');
+}
+async function searchHome(ev) {
+  ev.preventDefault();
+  const q = $('home-q').value.trim(), out = $('home-res'), b = $('home-go');
+  if (q.length < 3) { out.innerHTML = '<p class="msg">Bitte mindestens 3 Zeichen eingeben, am besten Straße, Hausnummer und Ort.</p>'; return; }
+  $('home-q').blur();
+  b.disabled = true; out.innerHTML = '<p class="msg">Suche …</p>';
+  try {
+    const r = await fetchT(API + '/geocode?q=' + encodeURIComponent(q), 20000);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    HRES = (j.results || []).filter(x => isFinite(x.lat) && isFinite(x.lon));
+    out.innerHTML = HRES.length
+      ? '<p class="msg">Bitte den passenden Treffer antippen:</p>' + HRES.map((x, i) => '<button class="opt" type="button" data-hres="' + i + '">' + icon('route') + '<span>' + esc(x.label) + '</span></button>').join('')
+      : '<p class="msg">Nichts gefunden. Versuch es mit Straße, Hausnummer und Ort, z. B. „Musterstraße 1, Melle“.</p>';
+  } catch (e) {
+    out.innerHTML = '<p class="msg err">Die Suche ist gerade nicht erreichbar. Bitte später noch einmal versuchen oder den aktuellen Standort verwenden.</p>';
+  }
+  b.disabled = false;
+}
+function useGps() {
+  const out = $('home-res'), b = $('home-gps');
+  if (!navigator.geolocation) { out.innerHTML = '<p class="msg err">Dein Gerät gibt den Standort hier nicht frei. Bitte oben eine Adresse suchen.</p>'; return; }
+  const old = b.innerHTML;
+  b.disabled = true; b.innerHTML = icon('pin') + 'Standort wird ermittelt …'; out.innerHTML = '';
+  navigator.geolocation.getCurrentPosition(p => {
+    b.disabled = false; b.innerHTML = old;
+    setHome({lat: p.coords.latitude, lon: p.coords.longitude, label: 'Mein Standort vom ' + new Date().toLocaleDateString('de-DE')}, 'Standort');
+  }, err => {
+    b.disabled = false; b.innerHTML = old;
+    out.innerHTML = '<p class="msg err">' + (err && err.code === 1
+      ? 'Der Zugriff auf den Standort ist nicht erlaubt. Du kannst ihn in den Einstellungen deines Handys freigeben oder oben eine Adresse suchen.'
+      : 'Der Standort konnte gerade nicht ermittelt werden. Bitte noch einmal versuchen oder oben eine Adresse suchen.') + '</p>';
+  }, {enableHighAccuracy: false, timeout: 20000, maximumAge: 300000});
 }
 let toastTimer = null;
 function toast(html, ms) {
@@ -1080,6 +1263,10 @@ function setFilter(v) {
   render();
 }
 document.addEventListener('click', e => {
+  if (e.target.closest('[data-goset]')) { closeDlg(); go('einst'); return; }
+  const hr = e.target.closest('[data-hres]');
+  if (hr) { const x = HRES[+hr.dataset.hres]; if (x) setHome(x, 'Adresse'); return; }
+  if (e.target.closest('#home-del')) { setHome(null); return; }
   const rt = e.target.closest('[data-rhall]');
   if (rt) { openRoute(rt.dataset.rteam, rt.dataset.rhall); return; }
   if (e.target.closest('#pick-done')) { picking = false; render(); window.scrollTo(0, 0); return; }
@@ -1130,6 +1317,8 @@ $('idlg').addEventListener('click', async e => {
   if (c) { try { await navigator.clipboard.writeText(SHARE_URL); c.textContent = '✓ Link kopiert – jetzt in Safari einfügen'; c.classList.add('ok'); } catch (err) { c.textContent = SHARE_URL; } }
 });
 $('intro2').addEventListener('click', openIntro);
+$('home-form').addEventListener('submit', searchHome);
+$('home-gps').addEventListener('click', useGps);
 if ('serviceWorker' in navigator && location.protocol === 'https:' && /github\.io$/.test(location.hostname)) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }

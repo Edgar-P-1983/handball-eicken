@@ -63,17 +63,31 @@ function kurz(label) {
   return String(label || '').replace(/,\s*(Deutschland|Germany)$/i, '').trim();
 }
 
+// Kurze Anzeige aus den Adressteilen von Nominatim: „Name, Straße 1, 49328 Melle (Eicken-Bruche)“
+function nomLabel(x) {
+  const a = x.address || {};
+  const ort = a.city || a.town || a.village || a.municipality || '';
+  const teil = [a.suburb, a.city_district, a.quarter, a.hamlet, a.village].find(t => t && t !== ort) || '';
+  const str = [a.road || a.pedestrian || a.footway || a.path || '', a.house_number || ''].join(' ').trim();
+  const name = x.name && x.name !== str && x.name !== ort && x.name !== teil ? x.name : '';
+  const plzOrt = [a.postcode || '', ort].join(' ').trim();
+  const parts = [name, str, plzOrt].filter(Boolean);
+  if (!parts.length) return kurz(x.display_name);
+  if (!str && !name && teil) return teil + ', ' + plzOrt;
+  return parts.join(', ') + (teil ? ' (' + teil + ')' : '');
+}
+
 async function geocode(url, env) {
   const q = (url.searchParams.get('q') || '').trim().slice(0, 120);
   if (q.length < 3) throw new Fehler(400, 'zu-kurz');
   // OpenStreetMap (Nominatim) kennt Ortsteile wie Eicken-Bruche gut, Pelias (HeiGIT) ergänzt.
   // Beide parallel fragen, Nominatim-Treffer zuerst.
   const nominatim = async () => {
-    const u = NOMINATIM + '?' + new URLSearchParams({'q': q, 'format': 'jsonv2', 'countrycodes': 'de', 'limit': '4', 'accept-language': 'de'});
+    const u = NOMINATIM + '?' + new URLSearchParams({'q': q, 'format': 'jsonv2', 'addressdetails': '1', 'countrycodes': 'de', 'limit': '4', 'accept-language': 'de'});
     const r = await fetch(u, {headers: {'User-Agent': UA, 'Referer': ORIGINS[0] + '/handball-eicken/', 'Accept': 'application/json'}});
     if (!r.ok) throw new Fehler(502, 'nominatim-' + r.status);
     const j = await r.json();
-    return (Array.isArray(j) ? j : []).map(x => ({label: kurz(x.display_name), lat: +x.lat, lon: +x.lon}));
+    return (Array.isArray(j) ? j : []).map(x => ({label: nomLabel(x), lat: +x.lat, lon: +x.lon}));
   };
   const pelias = async () => {
     if (!env.ORS_API_KEY) return [];
