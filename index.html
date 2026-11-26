@@ -264,7 +264,7 @@ dialog::backdrop{background:rgba(20,24,28,.5)}
 /* Teilen-Menü und Anleitung zum Home-Bildschirm */
 #sdlg,#adlg{width:min(460px,calc(100% - 16px));margin:auto auto max(8px,env(safe-area-inset-bottom));background:var(--card)}
 #adlg.mid{margin:auto}
-#idlg{width:min(480px,calc(100% - 16px));max-height:calc(100dvh - 24px);overflow:auto;margin:auto;background:var(--card)}
+#idlg,#ndlg{width:min(480px,calc(100% - 16px));max-height:calc(100dvh - 24px);overflow:auto;margin:auto;background:var(--card)}
 .feat{list-style:none;margin:0 0 14px;padding:0;display:grid;gap:10px}
 .feat li{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:14.5px;line-height:1.4}
 .feat svg{width:22px;height:22px;margin:1px 0 0 3px;color:#f5b800}
@@ -493,9 +493,24 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
    <li><svg aria-hidden="true"><use href="#ic-star"/></svg><span><b>Alle Mannschaften</b> von den Herren bis zur F-Jugend – Lieblingsteams per Stern als Favorit, sie stehen dann oben in der Leiste.</span></li>
    <li><svg aria-hidden="true"><use href="#ic-route"/></svg><span><b>Nächste Spiele</b> mit Anwurf, Halle und Route zur Halle.</span></li>
    <li><svg aria-hidden="true"><use href="#ic-list"/></svg><span><b>Ergebnisse, Spielberichte und Tabellen</b> – nach jedem Spiel automatisch aktuell.</span></li>
+   <li><svg aria-hidden="true"><use href="#ic-car"/></svg><span><b>Fahrzeit zur Halle</b> – unter <svg class="i" aria-hidden="true" style="width:16px;height:16px;margin:0 1px;vertical-align:-3px;color:inherit"><use href="#ic-gear"/></svg> Einstellungen den Wohnort festlegen, dann siehst du bei jedem Spiel Entfernung und Fahrzeit.</span></li>
   </ul>
   <div id="i-install"></div>
   <div class="rbtns" id="i-btns"></div>
+ </div>
+</dialog>
+<dialog id="ndlg" aria-labelledby="n-title">
+ <div class="rs" tabindex="-1" autofocus style="outline:none">
+  <div class="shd"><img src="apple-touch-icon.png" alt=""><div><b id="n-title">Neu: Fahrzeit zur Halle</b><small>Wie weit ist es bis zum Spiel?</small></div></div>
+  <ul class="feat">
+   <li><svg aria-hidden="true"><use href="#ic-car"/></svg><span><b>Entfernung und Fahrzeit</b> von zu Hause bis zur Halle – direkt im Spiel-Fenster, zum Beispiel „23 km · ca. 25 Min.“</span></li>
+   <li><svg aria-hidden="true"><use href="#ic-pin"/></svg><span><b>Wohnort einmal festlegen:</b> unter <svg class="i" aria-hidden="true" style="width:16px;height:16px;margin:0 1px;vertical-align:-3px;color:inherit"><use href="#ic-gear"/></svg> Einstellungen eine Adresse suchen oder den aktuellen Standort nehmen.</span></li>
+   <li><svg aria-hidden="true"><use href="#ic-info"/></svg><span><b>Privat:</b> Dein Wohnort bleibt nur auf deinem Gerät gespeichert. Die Fahrzeit ist ein Richtwert ohne aktuellen Verkehr.</span></li>
+  </ul>
+  <div class="rbtns">
+   <button class="rbtn dark" id="n-set" type="button"><svg aria-hidden="true"><use href="#ic-gear"/></svg>Wohnort festlegen</button>
+   <button class="rbtn ghost" id="n-ok" type="button">Später</button>
+  </div>
  </div>
 </dialog>
 <dialog id="sdlg" aria-labelledby="s-title">
@@ -538,7 +553,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261126193642';
+const BUILD = '20261126200754';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -1226,8 +1241,20 @@ function openIntro() {
 }
 function maybeIntro() {
   if (getPref('hb-intro1')) return false;
+  setPref('hb-news-fahrzeit', 'gesehen');  // neue Nutzer lesen die Fahrzeit schon in der Einführung
   setTimeout(() => { if (!$('dlg').open && !$('rdlg').open) openIntro(); }, 700);
   return true;
+}
+// Einmaliger Hinweis auf die Fahrzeit-Funktion für alle, die die App schon kennen
+function maybeNews() {
+  if (getPref('hb-news-fahrzeit')) return;
+  if (HOME) { setPref('hb-news-fahrzeit', 'gesehen'); return; }  // Wohnort schon festgelegt: kennt die Funktion
+  setTimeout(() => {
+    if (getPref('hb-news-fahrzeit') || ['dlg', 'rdlg', 'idlg', 'sdlg', 'adlg'].some(id => $(id).open)) return;
+    setPref('hb-news-fahrzeit', 'gesehen');
+    openDlg('ndlg');
+    track('Neuigkeit Fahrzeit gezeigt');
+  }, 900);
 }
 function hideStrip() { $('a2hs').hidden = true; document.body.classList.remove('has-a2hs'); }
 function maybeStrip() {
@@ -1317,12 +1344,16 @@ $('idlg').addEventListener('click', async e => {
   if (c) { try { await navigator.clipboard.writeText(SHARE_URL); c.textContent = '✓ Link kopiert – jetzt in Safari einfügen'; c.classList.add('ok'); } catch (err) { c.textContent = SHARE_URL; } }
 });
 $('intro2').addEventListener('click', openIntro);
+$('ndlg').addEventListener('click', e => {
+  if (e.target.closest('#n-set')) { track('Neuigkeit Fahrzeit: Wohnort festlegen'); closeDlgId('ndlg'); go('einst'); return; }
+  if (e.target === $('ndlg') || e.target.closest('#n-ok')) closeDlgId('ndlg');
+});
 $('home-form').addEventListener('submit', searchHome);
 $('home-gps').addEventListener('click', useGps);
 if ('serviceWorker' in navigator && location.protocol === 'https:' && /github\.io$/.test(location.hostname)) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }
-if (!maybeIntro()) maybeStrip();
+if (!maybeIntro()) { maybeStrip(); maybeNews(); }
 trackOpen();
 $('toast').addEventListener('click', e => { if (e.target.closest('.trow')) $('toast').hidden = true; });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && Date.now() - lastLoad > 30e3) load(); });
