@@ -532,6 +532,93 @@ def write_json(path, data):
         f.write('\n')
 
 
+GEO = os.path.join(DATA, 'hallen-geo.json')
+GEO_UA = 'ESV-Handball-App/1.0 (+https://github.com/Edgar-P-1983/handball-eicken)'
+GEO_MAX = 80          # höchstens so viele neue Hallen pro Lauf
+GEO_RETRY_DAYS = 7    # nicht gefundene Adressen erst nach so vielen Tagen erneut versuchen
+
+
+def _geo_get(url):
+    req = urllib.request.Request(url, headers={'User-Agent': GEO_UA, 'Accept': 'application/json', 'Accept-Language': 'de'})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = json.loads(r.read().decode('utf-8', 'replace'))
+    time.sleep(1.2)  # Nominatim: höchstens eine Anfrage pro Sekunde
+    return data
+
+
+def geocode_hall(h):
+    """Koordinaten einer Halle: erst genau (Straße + PLZ + Ort), dann gröber. Liefert dict oder None."""
+    from urllib.parse import urlencode
+    adr = (h.get('adresse') or '').strip()
+    name = (h.get('name') or '').strip()
+    m = re.match(r'^(.*?),?\s*(\d{5})\s+(.+)$', adr)
+    street, plz, city = (m.group(1).strip(' ,'), m.group(2), m.group(3).strip()) if m else ('', '', '')
+    nom = 'https://nominatim.openstreetmap.org/search?'
+    tries = []
+    if street and plz:
+        tries.append(('nominatim', nom + urlencode({'street': street, 'postalcode': plz, 'city': city, 'country': 'de', 'format': 'jsonv2', 'limit': 1}), True))
+    if adr:
+        tries.append(('nominatim', nom + urlencode({'q': adr, 'countrycodes': 'de', 'format': 'jsonv2', 'limit': 1}), True))
+    if name and (city or adr):
+        tries.append(('nominatim', nom + urlencode({'q': name + ', ' + (city or adr), 'countrycodes': 'de', 'format': 'jsonv2', 'limit': 1}), True))
+    if adr:
+        tries.append(('photon', 'https://photon.komoot.io/api/?' + urlencode({'q': adr, 'limit': 1, 'lang': 'de'}), True))
+    if plz:
+        tries.append(('nominatim', nom + urlencode({'postalcode': plz, 'city': city, 'country': 'de', 'format': 'jsonv2', 'limit': 1}), False))
+    for quelle, url, genau in tries:
+        try:
+            j = _geo_get(url)
+        except Exception as e:  # noqa: BLE001
+            log(f'  Geocoder {quelle}: {e}')
+            continue
+        lat = lon = None
+        if quelle == 'photon':
+            f = (j.get('features') or [None])[0]
+            if f and f.get('geometry') and (f.get('properties') or {}).get('countrycode', 'DE') == 'DE':
+                lon, lat = f['geometry']['coordinates'][:2]
+        elif isinstance(j, list) and j:
+            lat, lon = j[0].get('lat'), j[0].get('lon')
+        if lat is not None and lon is not None:
+            return {'lat': round(float(lat), 5), 'lon': round(float(lon), 5), 'genau': genau}
+    return None
+
+
+def update_geo(cfgs, now):
+    """Hallen-Koordinaten für die Entfernungs-/Fahrzeitanzeige der App (data/hallen-geo.json)."""
+    geo = load_json(GEO, {})
+    hallen = {}
+    for c in cfgs:
+        hallen.update(load_json(os.path.join(DATA, c['id'] + '.json'), {}).get('hallen', {}))
+    today = now.date()
+    done = 0
+    changed = False
+    for hid, h in sorted(hallen.items()):
+        adr = h.get('adresse') or ''
+        old = geo.get(hid)
+        if old and old.get('adresse') == adr:
+            if 'lat' in old:
+                continue
+            try:
+                if (today - dt.date.fromisoformat(old.get('versuch', '2000-01-01'))).days < GEO_RETRY_DAYS:
+                    continue
+            except ValueError:
+                pass
+        if done >= GEO_MAX:
+            break
+        done += 1
+        pos = geocode_hall(h)
+        if pos:
+            geo[hid] = {'adresse': adr, **pos}
+            log(f'  Halle {hid} ({h.get("name")}): {pos["lat"]}, {pos["lon"]}' + ('' if pos['genau'] else ' (nur Ort)'))
+        else:
+            geo[hid] = {'adresse': adr, 'versuch': today.isoformat()}
+            log(f'  Halle {hid} ({h.get("name")}): keine Koordinaten gefunden')
+        changed = True
+    if changed:
+        write_json(GEO, dict(sorted(geo.items())))
+    return changed
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--mode', choices=['auto', 'daily', 'force'], default='auto')
@@ -595,6 +682,12 @@ def main():
             summary.append(f'{c["label"]}: Ergebnis {g["heim"]} – {g["gast"]} {g["ergebnis"]}')
         for g in neu_ber:
             summary.append(f'{c["label"]}: Spielbericht {g["heim"]} – {g["gast"]}')
+    if args.mode != 'auto':
+        try:
+            if update_geo(cfgs, now):
+                changed_files.append(GEO)
+        except Exception as e:  # noqa: BLE001
+            log(f'Hallen-Koordinaten: {e}')
     new_index = {'stand': index.get('stand', ''), 'teams': entries}
     if new_index['teams'] != index.get('teams') or changed_files:
         new_index['stand'] = stamp
