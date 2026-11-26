@@ -66,29 +66,36 @@ function kurz(label) {
 async function geocode(url, env) {
   const q = (url.searchParams.get('q') || '').trim().slice(0, 120);
   if (q.length < 3) throw new Fehler(400, 'zu-kurz');
-  let out = [];
-  if (env.ORS_API_KEY) {
-    try {
-      const u = PELIAS + '?' + new URLSearchParams({'text': q, 'boundary.country': 'DEU', 'size': '5', 'lang': 'de'});
-      const r = await fetch(u, {headers: {'Authorization': env.ORS_API_KEY, 'Accept': 'application/json'}});
-      if (r.ok) {
-        const j = await r.json();
-        out = (j.features || []).filter(f => f && f.geometry && f.geometry.coordinates).map(f => ({
-          label: kurz(f.properties && (f.properties.label || f.properties.name)),
-          lat: +f.geometry.coordinates[1], lon: +f.geometry.coordinates[0],
-        }));
-      }
-    } catch (e) {}
-  }
-  if (!out.length) {
-    const u = NOMINATIM + '?' + new URLSearchParams({'q': q, 'format': 'jsonv2', 'countrycodes': 'de', 'limit': '5', 'accept-language': 'de'});
+  // OpenStreetMap (Nominatim) kennt Ortsteile wie Eicken-Bruche gut, Pelias (HeiGIT) ergänzt.
+  // Beide parallel fragen, Nominatim-Treffer zuerst.
+  const nominatim = async () => {
+    const u = NOMINATIM + '?' + new URLSearchParams({'q': q, 'format': 'jsonv2', 'countrycodes': 'de', 'limit': '4', 'accept-language': 'de'});
     const r = await fetch(u, {headers: {'User-Agent': UA, 'Referer': ORIGINS[0] + '/handball-eicken/', 'Accept': 'application/json'}});
-    if (!r.ok) throw new Fehler(502, 'geocoder-' + r.status);
+    if (!r.ok) throw new Fehler(502, 'nominatim-' + r.status);
     const j = await r.json();
-    out = (Array.isArray(j) ? j : []).map(x => ({label: kurz(x.display_name), lat: +x.lat, lon: +x.lon}));
+    return (Array.isArray(j) ? j : []).map(x => ({label: kurz(x.display_name), lat: +x.lat, lon: +x.lon}));
+  };
+  const pelias = async () => {
+    if (!env.ORS_API_KEY) return [];
+    const u = PELIAS + '?' + new URLSearchParams({'text': q, 'boundary.country': 'DEU', 'size': '4', 'lang': 'de'});
+    const r = await fetch(u, {headers: {'Authorization': env.ORS_API_KEY, 'Accept': 'application/json'}});
+    if (!r.ok) throw new Fehler(502, 'pelias-' + r.status);
+    const j = await r.json();
+    return (j.features || []).filter(f => f && f.geometry && f.geometry.coordinates).map(f => ({
+      label: kurz(f.properties && (f.properties.label || f.properties.name)),
+      lat: +f.geometry.coordinates[1], lon: +f.geometry.coordinates[0],
+    }));
+  };
+  const [a, b] = await Promise.allSettled([nominatim(), pelias()]);
+  if (a.status === 'rejected' && b.status === 'rejected') throw new Fehler(502, 'geocoder');
+  const all = [...(a.status === 'fulfilled' ? a.value : []), ...(b.status === 'fulfilled' ? b.value : [])];
+  const seen = new Set(), near = (x, y) => Math.abs(x.lat - y.lat) < 0.002 && Math.abs(x.lon - y.lon) < 0.003;
+  const out = [];
+  for (const x of all) {
+    if (!isFinite(x.lat) || !isFinite(x.lon) || !x.label || seen.has(x.label) || out.some(y => near(x, y))) continue;
+    seen.add(x.label); out.push(x);
+    if (out.length >= 5) break;
   }
-  const seen = new Set();
-  out = out.filter(x => isFinite(x.lat) && isFinite(x.lon) && x.label && !seen.has(x.label) && seen.add(x.label)).slice(0, 5);
   return {results: out};
 }
 

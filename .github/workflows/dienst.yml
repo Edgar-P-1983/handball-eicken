@@ -48,7 +48,13 @@ jobs:
           SUB=$(curl -s -H "$AUTH" "$API" | jq -r '.result.subdomain // empty')
           echo "bisher: ${SUB:-keine}"
           if [ "$SUB" != "$WANT" ] && [ "$SUB" != "esv-handball-eicken" ]; then
-            for NAME in "$WANT" esv-handball-eicken; do
+            OLD="$SUB"
+            # Eine bestehende Adresse lässt sich nicht umbenennen, nur löschen und neu anlegen
+            if [ -n "$OLD" ]; then
+              echo "alte Adresse löschen: $(curl -s -X DELETE -H "$AUTH" "$API" | jq -c '{success, errors}')"
+            fi
+            SUB=""
+            for NAME in "$WANT" esv-handball-eicken $OLD; do
               R=$(curl -s -X PUT -H "$AUTH" -H "Content-Type: application/json" --data "{\"subdomain\":\"$NAME\"}" "$API")
               if echo "$R" | jq -e '.success' >/dev/null; then SUB="$NAME"; echo "neu: $NAME"; break; fi
               echo "$NAME nicht möglich: $(echo "$R" | jq -c '.errors')"
@@ -80,5 +86,5 @@ jobs:
           sleep 5
           # Eicken (Sporthalle) → Osnabrück (Innenstadt), nur als Probe
           echo "route:   $(curl -s -m 30 -H "$O" "$DIENST_URL/route?from=52.2165,8.3622&to=52.2726,8.0498")"
-          echo "geocode: $(curl -s -m 30 -H "$O" "$DIENST_URL/geocode?q=Eicken%2C%20Melle" | jq -c '.results[0:2] // .')"
+          echo "geocode: $(curl -s -m 30 -H "$O" "$DIENST_URL/geocode?q=Hauptstra%C3%9Fe%201%2C%20Melle" | jq -c '.results[0:2] // .')"
           echo "fremd:   $(curl -s -m 15 -o /dev/null -w '%{http_code}' -H 'Origin: https://example.com' "$DIENST_URL/route?from=52.2,8.3&to=52.3,8.1")"
