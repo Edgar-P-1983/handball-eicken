@@ -38,17 +38,20 @@ jobs:
           echo "ORS-Schlüssel vorhanden: $([ -n "$ORS_API_KEY" ] && echo ja || echo nein)"
           curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" https://api.cloudflare.com/client/v4/user/tokens/verify | jq -c '{success, status: .result.status, errors}'
 
-      # Ein neues Cloudflare-Konto hat noch keine workers.dev-Adresse: einmalig anlegen
+      # workers.dev-Adresse des Kontos: neutral, ohne Personennamen (esv-eicken)
       - name: workers.dev-Adresse
+        env:
+          WANT: esv-eicken
         run: |
           API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain"
           AUTH="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
           SUB=$(curl -s -H "$AUTH" "$API" | jq -r '.result.subdomain // empty')
-          if [ -z "$SUB" ]; then
-            for NAME in esv-handball esv-handball-eicken "esv-handball-$(date +%s | tail -c 5)"; do
+          echo "bisher: ${SUB:-keine}"
+          if [ "$SUB" != "$WANT" ] && [ "$SUB" != "esv-handball-eicken" ]; then
+            for NAME in "$WANT" esv-handball-eicken; do
               R=$(curl -s -X PUT -H "$AUTH" -H "Content-Type: application/json" --data "{\"subdomain\":\"$NAME\"}" "$API")
-              if echo "$R" | jq -e '.success' >/dev/null; then SUB="$NAME"; echo "neu angelegt: $NAME"; break; fi
-              echo "$R" | jq -c '.errors'
+              if echo "$R" | jq -e '.success' >/dev/null; then SUB="$NAME"; echo "neu: $NAME"; break; fi
+              echo "$NAME nicht möglich: $(echo "$R" | jq -c '.errors')"
             done
           fi
           [ -n "$SUB" ] || { echo "::error::Keine workers.dev-Adresse"; exit 1; }
@@ -68,7 +71,7 @@ jobs:
           echo "Adresse des Dienstes: $DIENST_URL"
           echo "### Dienst: $DIENST_URL" >> "$GITHUB_STEP_SUMMARY"
           O="Origin: https://edgar-p-1983.github.io"
-          for i in $(seq 1 12); do
+          for i in $(seq 1 30); do
             H=$(curl -s -m 15 "$DIENST_URL/health" || true)
             echo "$H" | jq -e '.ok' >/dev/null 2>&1 && break
             sleep 10
