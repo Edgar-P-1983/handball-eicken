@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-27T05:27:00+01:00",
+ "stand": "2026-11-27T14:00:00+01:00",
  "saison": "2026/27",
  "team": "Eickener SpVg III",
  "kurz": "ESV",
@@ -1206,13 +1206,12 @@
   },
   {
    "nr": 13,
-   "datum": "2026-12-05",
-   "zeit": "16:30",
+   "datum": "",
+   "zeit": "",
    "halle": "808186",
    "heim": "TV Georgsmarienhütte IV",
    "gast": "Eickener SpVg II",
-   "ergebnis": "",
-   "verlegt": true
+   "ergebnis": ""
   },
   {
    "nr": 34,
