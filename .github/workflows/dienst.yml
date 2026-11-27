@@ -3,6 +3,9 @@ name: Cloudflare-Dienst veröffentlichen
 # Veröffentlicht den kleinen Dienst aus dem Ordner worker/ bei Cloudflare, sobald sich dort etwas
 # ändert. Zugangsdaten kommen aus den GitHub-Secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
 # und ORS_API_KEY (openrouteservice); sie stehen nirgends im Code.
+# Für die Mitteilungen richtet der Ablauf selbst ein: den Speicher „esv-handball-push“, einmalig
+# ein VAPID-Schlüsselpaar (bleibt danach unverändert, sonst müssten sich alle neu anmelden) und
+# den Zugang NOTIFY_KEY für die Daten-Automatik (aus dem Cloudflare-Token abgeleitet).
 on:
   push:
     branches: [main]
@@ -63,14 +66,47 @@ jobs:
           [ -n "$SUB" ] || { echo "::error::Keine workers.dev-Adresse"; exit 1; }
           echo "DIENST_URL=https://esv-handball.$SUB.workers.dev" >> "$GITHUB_ENV"
 
+      - name: Speicher für Mitteilungen
+        run: |
+          API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/storage/kv/namespaces"
+          AUTH="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+          ID=$(curl -s -H "$AUTH" "$API?per_page=100" | jq -r '.result[]? | select(.title=="esv-handball-push") | .id' | head -1)
+          if [ -z "$ID" ]; then
+            R=$(curl -s -X POST -H "$AUTH" -H "Content-Type: application/json" --data '{"title":"esv-handball-push"}' "$API")
+            ID=$(echo "$R" | jq -r '.result.id // empty')
+            [ -n "$ID" ] && echo "neu angelegt" || { echo "::error::Speicher nicht anlegbar: $(echo "$R" | jq -c '.errors')"; exit 1; }
+          fi
+          echo "Speicher: $ID"
+          sed -i "s/KV_ID_PLATZHALTER/$ID/" worker/wrangler.toml
+
       - name: Veröffentlichen
         working-directory: worker
         run: npx --yes wrangler@4 deploy
 
-      - name: Schlüssel für die Fahrzeit hinterlegen
-        if: env.ORS_API_KEY != ''
+      - name: Schlüssel hinterlegen
         working-directory: worker
-        run: printf '%s' "$ORS_API_KEY" | npx --yes wrangler@4 secret put ORS_API_KEY
+        run: |
+          umask 077
+          F="$RUNNER_TEMP/secrets.json"
+          # Liste muss sicher lesbar sein: sonst würde ein neuer VAPID-Schlüssel alle Anmeldungen ungültig machen
+          LIST=$(npx --yes wrangler@4 secret list --format json 2>/dev/null | sed -n '/^\[/,$p' || true)
+          echo "$LIST" | jq -e 'type == "array"' >/dev/null 2>&1 || { echo "::error::Liste der Secrets nicht lesbar – Abbruch"; exit 1; }
+          VORHANDEN=$(echo "$LIST" | jq -r '.[].name')
+          echo "vorhanden: $(echo $VORHANDEN)"
+          NOTIFY_KEY=$(printf 'esv-notify:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -c1-64)
+          echo "::add-mask::$NOTIFY_KEY"
+          if echo "$VORHANDEN" | grep -qx VAPID_JWK; then
+            VAPID=""
+            echo "VAPID-Schlüssel bleibt unverändert"
+          else
+            VAPID=$(node -e "const c=require('crypto');const k=c.generateKeyPairSync('ec',{namedCurve:'P-256'});process.stdout.write(JSON.stringify(k.privateKey.export({format:'jwk'})))")
+            echo "VAPID-Schlüssel neu erzeugt"
+          fi
+          jq -n --arg ors "$ORS_API_KEY" --arg nk "$NOTIFY_KEY" --arg vp "$VAPID" \
+            '{NOTIFY_KEY: $nk} + (if $ors != "" then {ORS_API_KEY: $ors} else {} end) + (if $vp != "" then {VAPID_JWK: $vp} else {} end)' > "$F"
+          echo "setze: $(jq -r 'keys | join(", ")' "$F")"
+          npx --yes wrangler@4 secret bulk "$F" 2>&1 | tail -3
+          rm -f "$F"
 
       - name: Test
         run: |
@@ -88,3 +124,8 @@ jobs:
           echo "route:   $(curl -s -m 30 -H "$O" "$DIENST_URL/route?from=52.2165,8.3622&to=52.2726,8.0498")"
           echo "geocode: $(curl -s -m 30 -H "$O" "$DIENST_URL/geocode?q=Hauptstra%C3%9Fe%201%2C%20Melle" | jq -c '.results[0:2] // .')"
           echo "fremd:   $(curl -s -m 15 -o /dev/null -w '%{http_code}' -H 'Origin: https://example.com' "$DIENST_URL/route?from=52.2,8.3&to=52.3,8.1")"
+          echo "pushkey: $(curl -s -m 15 -H "$O" "$DIENST_URL/push/key" | jq -c '{laenge: (.key // "" | length), error}')"
+          NOTIFY_KEY=$(printf 'esv-notify:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -c1-64)
+          echo "::add-mask::$NOTIFY_KEY"
+          echo "notify:  $(curl -s -m 30 -X POST -H "Authorization: Bearer $NOTIFY_KEY" -H 'Content-Type: application/json' --data '{"events":[]}' "$DIENST_URL/notify")"
+          echo "notify ohne Zugang: $(curl -s -m 15 -o /dev/null -w '%{http_code}' -X POST --data '{}' "$DIENST_URL/notify")"

@@ -3,10 +3,19 @@
 //   GET /health                          → {ok, ors}
 //   GET /route?from=lat,lon&to=lat,lon   → {km, min}        Fahrstrecke und Fahrzeit mit dem Auto
 //   GET /geocode?q=Text                  → {results:[{label, lat, lon}]}
+//   GET  /push/key                       → {key}            öffentlicher Schlüssel für Mitteilungen
+//   POST /push/subscribe {sub, teams}    → Mitteilungen für diese Mannschaften (leere Liste = abmelden)
+//   POST /push/unsubscribe {endpoint}    → abmelden
+//   POST /push/test {endpoint}           → Test-Mitteilung an genau dieses Gerät
+//   POST /notify {events, after}         → nur für die GitHub-Automatik (Bearer NOTIFY_KEY)
 //
 // Die Fahrzeit kommt von openrouteservice (HeiGIT, Heidelberg). Der Schlüssel dafür liegt nur hier
 // als Secret und ist in der App nicht sichtbar. Antworten gibt es nur für die App selbst (Origin).
-// Es wird nichts gespeichert und nichts protokolliert.
+// Für die Fahrzeit wird nichts gespeichert und nichts protokolliert. Für Mitteilungen speichert der
+// Dienst je Gerät nur die anonyme Empfangsadresse des Push-Dienstes (Apple, Google, Mozilla …),
+// deren Schlüssel und die gewählten Mannschaften – beim Abschalten wird alles gelöscht.
+
+import {vapid, sendPush} from './push.js';
 
 const ORIGINS = ['https://edgar-p-1983.github.io'];
 const ORS = 'https://api.heigit.org/openrouteservice/v2/directions/driving-car/json';
@@ -113,6 +122,182 @@ async function geocode(url, env) {
   return {results: out};
 }
 
+// ---------- Mitteilungen (Web Push)
+const APP = 'https://edgar-p-1983.github.io/handball-eicken/';
+const SUBJECT = APP;  // Kontakt-Angabe für die Push-Dienste (VAPID „sub“)
+const PUSH_HOSTS = /(^|\.)(fcm\.googleapis\.com|push\.services\.mozilla\.com|push\.apple\.com|notify\.windows\.com)$/;
+const BATCH = 6;      // Geräte pro Aufruf (Cloudflare Free: 50 Unteranfragen, 10 ms Rechenzeit)
+
+async function readJson(req, max) {
+  const n = +(req.headers.get('Content-Length') || 0);
+  if (n > max) throw new Fehler(413, 'zu-gross');
+  const t = await req.text();
+  if (t.length > max) throw new Fehler(413, 'zu-gross');
+  try { return JSON.parse(t || '{}') || {}; } catch (e) { throw new Fehler(400, 'json'); }
+}
+
+function b64ok(s, len) {
+  if (typeof s !== 'string' || !/^[A-Za-z0-9_-]+=*$/.test(s)) return false;
+  return Math.floor(s.replace(/=+$/, '').length * 3 / 4) === len;
+}
+
+function cleanSub(sub) {
+  if (!sub || typeof sub.endpoint !== 'string' || sub.endpoint.length > 600) return null;
+  let u;
+  try { u = new URL(sub.endpoint); } catch (e) { return null; }
+  if (u.protocol !== 'https:' || !PUSH_HOSTS.test(u.hostname)) return null;
+  const k = sub.keys || {};
+  if (!b64ok(k.p256dh, 65) || !b64ok(k.auth, 16)) return null;
+  return {e: sub.endpoint, p: k.p256dh, a: k.auth};
+}
+
+function cleanTeams(t) {
+  if (!Array.isArray(t)) return [];
+  return [...new Set(t.filter(x => typeof x === 'string' && /^[A-Za-z0-9]{1,16}$/.test(x)))].slice(0, 30);
+}
+
+async function subKey(endpoint) {
+  const h = new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint)));
+  return 's:' + [...h.slice(0, 16)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function needKv(env) { if (!env.PUSH) throw new Fehler(503, 'kein-speicher'); }
+
+async function pushKey(env) {
+  const v = await vapid(env);
+  if (!v) throw new Fehler(503, 'kein-vapid');
+  return {key: v.pub};
+}
+
+async function subscribe(req, env) {
+  needKv(env);
+  const b = await readJson(req, 4000);
+  const s = cleanSub(b.sub);
+  if (!s) throw new Fehler(400, 'abo');
+  const k = await subKey(s.e);
+  let teams = cleanTeams(b.teams);
+  if (typeof b.old === 'string' && b.old && b.old !== s.e) {
+    const ok = await subKey(b.old);
+    if (!Array.isArray(b.teams)) { const o = await env.PUSH.get(ok, 'json'); teams = cleanTeams(o && o.t); }
+    await env.PUSH.delete(ok);
+  }
+  if (!teams.length) { await env.PUSH.delete(k); return {ok: true, teams: []}; }
+  const rec = {e: s.e, p: s.p, a: s.a, t: teams, d: new Date().toISOString().slice(0, 10)};
+  const js = JSON.stringify(rec);
+  await env.PUSH.put(k, js, {metadata: js.length <= 1000 ? rec : {gross: 1}});
+  return {ok: true, teams};
+}
+
+async function unsubscribe(req, env) {
+  needKv(env);
+  const b = await readJson(req, 2000);
+  if (typeof b.endpoint !== 'string' || !b.endpoint) throw new Fehler(400, 'abo');
+  await env.PUSH.delete(await subKey(b.endpoint));
+  return {ok: true};
+}
+
+const LAST_TEST = new Map();
+async function testPush(req, env) {
+  needKv(env);
+  const b = await readJson(req, 2000);
+  if (typeof b.endpoint !== 'string' || !b.endpoint) throw new Fehler(400, 'abo');
+  const k = await subKey(b.endpoint);
+  const now = Date.now();
+  if (now - (LAST_TEST.get(k) || 0) < 15000) throw new Fehler(429, 'zu-oft');
+  LAST_TEST.set(k, now);
+  const rec = await env.PUSH.get(k, 'json');
+  if (!rec) throw new Fehler(404, 'nicht-angemeldet');
+  const st = await sendPush(env, rec, {
+    title: 'ESV Handball', body: 'Test geklappt ✓ So kommen Mitteilungen zu neuen Ergebnissen an.', tag: 'test', url: APP,
+  }, SUBJECT, {ttl: 600, urgency: 'high'});
+  if (st === 404 || st === 410) { await env.PUSH.delete(k); throw new Fehler(410, 'abgelaufen'); }
+  if (st < 200 || st >= 300) throw new Fehler(502, 'push-' + st);
+  return {ok: true};
+}
+
+function cleanEvent(e) {
+  if (!e || typeof e !== 'object') return null;
+  const team = String(e.team || ''), nr = String(e.nr || '');
+  if (!/^[A-Za-z0-9]{1,16}$/.test(team) || !/^[A-Za-z0-9-]{1,24}$/.test(nr)) return null;
+  const url = typeof e.url === 'string' && e.url.startsWith(APP) ? e.url.slice(0, 300) : APP;
+  return {
+    id: team + ':' + nr, team, nr,
+    title: String(e.title || 'ESV Handball').slice(0, 90),
+    body: String(e.body || '').slice(0, 240),
+    tag: String(e.tag || ('erg-' + team + '-' + nr)).slice(0, 64),
+    url,
+  };
+}
+
+async function listSubs(env) {
+  const out = [];
+  let cursor;
+  for (let i = 0; i < 20; i++) {
+    const r = await env.PUSH.list({prefix: 's:', cursor});
+    for (const k of r.keys) {
+      let m = k.metadata;
+      if (!m || !m.e) m = await env.PUSH.get(k.name, 'json');
+      if (m && m.e && Array.isArray(m.t)) out.push({k: k.name, e: m.e, p: m.p, a: m.a, t: m.t});
+    }
+    if (r.list_complete) break;
+    cursor = r.cursor;
+  }
+  return out.sort((x, y) => (x.k < y.k ? -1 : 1));
+}
+
+function gleich(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let d = 0;
+  for (let i = 0; i < a.length; i++) d |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return d === 0;
+}
+
+async function notify(req, env) {
+  if (!env.NOTIFY_KEY || !gleich(req.headers.get('Authorization') || '', 'Bearer ' + env.NOTIFY_KEY)) throw new Fehler(401, 'zugang');
+  needKv(env);
+  const b = await readJson(req, 30000);
+  let events = (Array.isArray(b.events) ? b.events : []).map(cleanEvent).filter(Boolean).slice(0, 40);
+  // Weitergeblättert wird über den Namen des letzten Geräts, nicht über eine Position:
+  // so verschiebt das Löschen abgelaufener Abos nichts.
+  const after = typeof b.after === 'string' ? b.after : '';
+  // Beim ersten Aufruf: schon gemeldete Ergebnisse aussortieren (nie doppelt melden)
+  if (!after) {
+    const recent = (await env.PUSH.get('n:recent', 'json')) || [];
+    const seen = new Set(recent);
+    events = events.filter(e => !seen.has(e.id) && seen.add(e.id));
+    if (events.length) await env.PUSH.put('n:recent', JSON.stringify(recent.concat(events.map(e => e.id)).slice(-1000)));
+  }
+  if (!events.length) return {events: [], total: 0, sent: 0, failed: 0, removed: 0, next: null};
+  const teams = new Set(events.map(e => e.team));
+  const subs = (await listSubs(env)).filter(s => s.t.some(t => teams.has(t)) && s.k > after);
+  const page = subs.slice(0, BATCH);
+  const res = {sent: 0, failed: 0, removed: 0, codes: {}};
+  for (let i = 0; i < page.length; i += 6) {
+    await Promise.all(page.slice(i, i + 6).map(async s => {
+      const mine = events.filter(e => s.t.includes(e.team));
+      const payload = mine.length === 1
+        ? {title: mine[0].title, body: mine[0].body, tag: mine[0].tag, url: mine[0].url}
+        : {title: mine.length + ' neue Ergebnisse', body: mine.map(e => e.title + ': ' + e.body).join('\n'), tag: 'erg-mehrere', url: APP};
+      let st = 0;
+      try { st = await sendPush(env, s, payload, SUBJECT); } catch (e) { st = 0; }
+      res.codes[st] = (res.codes[st] || 0) + 1;
+      if (st >= 200 && st < 300) res.sent++;
+      else {
+        res.failed++;
+        if (st === 404 || st === 410) { try { await env.PUSH.delete(s.k); res.removed++; } catch (e) {} }
+      }
+    }));
+  }
+  return {events, rest: subs.length, ...res, next: subs.length > BATCH ? page[page.length - 1].k : null};
+}
+
+const PUSH_ROUTES = {
+  'GET /push/key': (req, env) => pushKey(env),
+  'POST /push/subscribe': subscribe,
+  'POST /push/unsubscribe': unsubscribe,
+  'POST /push/test': testPush,
+};
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -121,10 +306,18 @@ export default {
     const allowed = ORIGINS.includes(origin) || extra.includes(origin);
     const cors = allowed ? {'Access-Control-Allow-Origin': origin, 'Vary': 'Origin'} : {'Vary': 'Origin'};
     if (req.method === 'OPTIONS') {
-      return new Response(null, {status: allowed ? 204 : 403, headers: {...cors, 'Access-Control-Allow-Methods': 'GET', 'Access-Control-Max-Age': '86400'}});
+      return new Response(null, {status: allowed ? 204 : 403, headers: {...cors, 'Access-Control-Allow-Methods': 'GET, POST', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Max-Age': '86400'}});
+    }
+    if (req.method === 'POST' && url.pathname === '/notify') {
+      try { return json(await notify(req, env), 200, {}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, {}); }
+    }
+    const pr = PUSH_ROUTES[req.method + ' ' + url.pathname];
+    if (pr) {
+      if (!allowed) return json({error: 'nur-fuer-die-app'}, 403, cors);
+      try { return json(await pr(req, env), 200, {...cors, 'Cache-Control': 'no-store'}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, cors); }
     }
     if (req.method !== 'GET') return json({error: 'methode'}, 405, cors);
-    if (url.pathname === '/' || url.pathname === '/health') return json({ok: true, ors: !!env.ORS_API_KEY}, 200, cors);
+    if (url.pathname === '/' || url.pathname === '/health') return json({ok: true, ors: !!env.ORS_API_KEY, push: !!(env.VAPID_JWK && env.PUSH), notify: !!env.NOTIFY_KEY}, 200, cors);
     if (url.pathname !== '/route' && url.pathname !== '/geocode') return json({error: 'unbekannt'}, 404, cors);
     if (!allowed) return json({error: 'nur-fuer-die-app'}, 403, cors);
     try {

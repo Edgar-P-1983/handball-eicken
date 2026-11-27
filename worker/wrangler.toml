@@ -9,3 +9,9 @@ preview_urls = false
 # keine Protokolle über Anfragen
 [observability]
 enabled = false
+
+# Speicher für die Mitteilungs-Abos. Die ID setzt .github/workflows/dienst.yml beim Veröffentlichen
+# ein (Speicher „esv-handball-push“ wird dort bei Bedarf angelegt).
+[[kv_namespaces]]
+binding = "PUSH"
+id = "KV_ID_PLATZHALTER"

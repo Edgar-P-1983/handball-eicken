@@ -619,6 +619,33 @@ def update_geo(cfgs, now):
     return changed
 
 
+APP_URL = 'https://edgar-p-1983.github.io/handball-eicken/'
+PUSH_MAX_AGE_DAYS = 7  # ältere Ergebnisse (z. B. spät nachgetragen) nicht mehr per Push melden
+
+
+def push_event(c, N, g, now):
+    """Mitteilung für ein neues Ergebnis der eigenen Mannschaft, sonst None."""
+    me = N.get('team')
+    if not me or me not in (g.get('heim'), g.get('gast')):
+        return None
+    m = re.match(r'^\s*(\d+)\s*:\s*(\d+)', g.get('ergebnis') or '')
+    if not m:
+        return None
+    try:
+        day = dt.date.fromisoformat(g.get('datum') or '')
+    except ValueError:
+        return None
+    if (now.date() - day).days > PUSH_MAX_AGE_DAYS or day > now.date() + dt.timedelta(days=1):
+        return None
+    h, a = int(m.group(1)), int(m.group(2))
+    mine, other = (h, a) if g['heim'] == me else (a, h)
+    erg = 'Sieg' if mine > other else 'Niederlage' if mine < other else 'Unentschieden'
+    points_only = not any('tore' in r for r in N.get('tabelle', []))
+    body = f'{g["heim"]} – {g["gast"]} {g["ergebnis"]}' + (' (Punkte)' if points_only else '')
+    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{c["label"]}: {erg}', 'body': body,
+            'tag': f'erg-{c["id"]}-{g["nr"]}', 'url': f'{APP_URL}?t={c["id"]}&g={g["nr"]}'}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--mode', choices=['auto', 'daily', 'force'], default='auto')
@@ -644,7 +671,7 @@ def main():
     pool = {}
     for c in cfgs:
         pool.update(load_json(os.path.join(DATA, c['id'] + '.json'), {}).get('hallen', {}))
-    changed_files, summary, errors, entries = [], [], [], []
+    changed_files, summary, errors, entries, push = [], [], [], [], []
     for c in cfgs:
         path = os.path.join(DATA, c['id'] + '.json')
         D = load_json(path)
@@ -680,6 +707,9 @@ def main():
         entries.append(index_entry(c, N))
         for g in neu_erg:
             summary.append(f'{c["label"]}: Ergebnis {g["heim"]} – {g["gast"]} {g["ergebnis"]}')
+            ev = push_event(c, N, g, now)
+            if ev:
+                push.append(ev)
         for g in neu_ber:
             summary.append(f'{c["label"]}: Spielbericht {g["heim"]} – {g["gast"]}')
     if args.mode != 'auto':
@@ -702,6 +732,9 @@ def main():
             f.write(f'changed={"true" if changed_files else "false"}\n')
             f.write(f'message={msg}\n')
             f.write('details<<ENDE\n' + '\n'.join(summary + errors) + '\nENDE\n')
+            f.write('push=' + json.dumps(push[:30], ensure_ascii=False, separators=(',', ':')) + '\n')
+    if push:
+        log('Mitteilungen: ' + '; '.join(e['title'] + ' – ' + e['body'] for e in push))
     if errors and args.mode != 'auto':
         sys.exit(1)
 
