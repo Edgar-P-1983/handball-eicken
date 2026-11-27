@@ -375,7 +375,27 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 .hcur button{all:unset;cursor:pointer;flex:none;font-weight:700;font-size:14px;min-height:40px;padding:0 12px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px var(--accLine)}
 .or{display:flex;align-items:center;gap:10px;margin:14px 0;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
-.tbtn:focus-visible,.hres .opt:focus-visible,.hcur button:focus-visible,.trip button:focus-visible,.rbtn:focus-visible,.btn:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.prows{display:grid;gap:8px;margin-top:14px}
+.prow{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 12px 8px 14px;border-radius:12px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.prow.all{background:var(--soft)}
+.prow .pl{flex:1;min-width:0}
+.prow .pl b{display:block;font-size:15px;line-height:1.25}
+.prow .pl small{display:block;font-size:12.5px;color:var(--muted);line-height:1.3;margin-top:1px}
+.prow .dot{width:12px;height:12px;box-shadow:none}
+.prow[aria-disabled=true]{opacity:.55;cursor:wait}
+.sw{position:relative;flex:none;width:50px;height:30px;border-radius:15px;background:#c9ced6;transition:background .15s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:transform .15s}
+.prow[aria-checked=true] .sw{background:#1f9d55}
+.prow[aria-checked=true] .sw::after{transform:translateX(20px)}
+.prow.part .sw{background:#8fcfaa}
+.prow.part .sw::after{transform:translateX(10px)}
+.pdiv{height:1px;background:var(--line);margin:4px 2px}
+.pmsg{margin:12px 0 0;padding:12px 14px;border-radius:12px;font-size:14px;line-height:1.45;background:var(--soft)}
+.pmsg.warn{background:#fff4e5;box-shadow:inset 0 0 0 1px #f3d19c}
+.pmsg.err{background:#fdecec;box-shadow:inset 0 0 0 1px #f1b7b9;color:#7a1d21}
+.pmsg .btn{margin-top:10px}
+.ptest{margin-top:12px}
+.tbtn:focus-visible,.hres .opt:focus-visible,.prow:focus-visible,.hcur button:focus-visible,.trip button:focus-visible,.rbtn:focus-visible,.btn:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -390,6 +410,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
  <symbol id="ic-addhome" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
  <symbol id="ic-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></symbol>
  <symbol id="ic-kebab" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="19" r="2" fill="currentColor"/></symbol>
+ <symbol id="ic-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></g></symbol>
  <symbol id="ic-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
  <symbol id="ic-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></g></symbol>
  <symbol id="ic-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H4a1 1 0 0 1-1-1v-3.2a1.5 1.5 0 0 1 .9-1.4L6 10.5l1.6-3.4A2 2 0 0 1 9.4 6h5.2a2 2 0 0 1 1.8 1.1l1.6 3.4 2.1.9a1.5 1.5 0 0 1 .9 1.4V16a1 1 0 0 1-1 1h-1M9 17h6M6.5 10.5h11"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></g></symbol>
@@ -454,6 +475,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
    <p class="note" style="margin:0 0 6px">Die App zählt anonym, wie oft sie geöffnet wird, ob im Browser oder vom Home-Bildschirm, und welche Mannschaften als Favorit gewählt werden. Dafür wird der Dienst Umami genutzt: ohne Cookies, ohne Werbung und ohne Daten, die auf dich als Person schließen lassen. Wer im Browser „Nicht verfolgen“ eingestellt hat, wird nicht gezählt.</p>
    <p class="note" style="margin:0 0 6px">Deine Favoriten und Einstellungen bleiben nur auf deinem Gerät gespeichert.</p>
    <p class="note" style="margin:0">Fahrzeit zur Halle: Hast du unter Einstellungen einen Wohnort hinterlegt, schickt die App nur dessen auf etwa 100 m gerundete Koordinaten zusammen mit der Halle an einen kleinen Dienst der App bei Cloudflare. Der lässt die Strecke von openrouteservice (HeiGIT, Heidelberg) berechnen. Bei der Adresssuche geht der eingegebene Text an diesen Dienst und an OpenStreetMap. Gespeichert oder protokolliert wird dabei nichts.</p>
+   <p class="note" style="margin:6px 0 0">Mitteilungen: Schaltest du sie ein, speichert derselbe Dienst die anonyme Empfangsadresse, die dein Gerät vom Push-Dienst seines Herstellers (Apple, Google oder Mozilla) bekommt, und die Mannschaften, für die du Mitteilungen willst – keinen Namen und keinen Wohnort. Schaltest du alle Mitteilungen aus, wird beides gelöscht.</p>
    <p class="note" style="margin:12px 0 0">Routen lassen sich in Apple Karten oder Google Maps öffnen; die Hallenadressen stammen von nuLiga, kurzfristige Änderungen sind möglich. Spielernamen werden hier bewusst nicht angezeigt. Verbindlich sind die Angaben auf nuLiga.</p>
   </div>
  </section>
@@ -471,6 +493,11 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
    <div class="or"><span>oder</span></div>
    <button class="rbtn" id="home-gps" type="button"><svg aria-hidden="true"><use href="#ic-pin"/></svg>Aktuellen Standort verwenden</button>
    <p class="note" style="margin:14px 0 0">Der Wohnort bleibt nur auf diesem Gerät gespeichert. Für die Fahrzeit werden nur gerundete Koordinaten (auf etwa 100 m) verschickt, ohne Namen. Die Fahrzeit ist ein Richtwert ohne aktuellen Verkehr.</p>
+  </div>
+  <div class="card setc" id="push-card" style="margin-top:14px">
+   <h3><svg aria-hidden="true"><use href="#ic-bell"/></svg>Mitteilungen <small>bei neuen Ergebnissen</small></h3>
+   <p class="note" style="margin:4px 0 0">Sobald ein Ergebnis deiner Favoriten feststeht, meldet sich dein Handy – meist 15 bis 30 Minuten nach Spielende. Ein Tipp auf die Mitteilung öffnet das Spiel.</p>
+   <div id="push-box" aria-live="polite"></div>
   </div>
  </section>
 </main>
@@ -553,7 +580,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261126200754';
+const BUILD = '20261127140216';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -952,7 +979,9 @@ async function load() {
 }
 function setFav(id, on) {
   const t = TBY[id]; if (!t) return;
+  const before = FAV.slice();
   FAV = FAV.filter(x => x !== id); if (on) FAV.push(id);
+  pushFavChanged(id, on, before);
   try { localStorage.setItem('hb-fav', JSON.stringify(FAV)); } catch (e) {}
   track(on ? 'Favorit hinzugefügt' : 'Favorit entfernt', {mannschaft: t.label});
   toast('<p style="margin:0">' + (on ? '★ ' + esc(t.label) + ' ist jetzt ein Favorit.' : esc(t.label) + ' aus den Favoriten entfernt.') + '</p>', 2200);
@@ -1087,6 +1116,7 @@ async function fillTrip(hallId) {
   }
 }
 function renderEinst() {
+  renderPush();
   $('home-cur').innerHTML = HOME ? '<div class="hcur"><svg aria-hidden="true"><use href="#ic-route"/></svg><div><b>Gespeicherter Wohnort</b><span>' + esc(HOME.label) + '</span></div><button type="button" id="home-del">Entfernen</button></div>' : '';
   $('home-lbl').textContent = HOME ? 'Anderen Wohnort suchen' : 'Adresse oder Ort suchen';
 }
@@ -1132,6 +1162,154 @@ function useGps() {
       ? 'Der Zugriff auf den Standort ist nicht erlaubt. Du kannst ihn in den Einstellungen deines Handys freigeben oder oben eine Adresse suchen.'
       : 'Der Standort konnte gerade nicht ermittelt werden. Bitte noch einmal versuchen oder oben eine Adresse suchen.') + '</p>';
   }, {enableHighAccuracy: false, timeout: 20000, maximumAge: 300000});
+}
+// ---------- Mitteilungen (Push) bei neuen Ergebnissen
+const PUSH_OK = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window && location.protocol === 'https:';
+let PUSHT = [];
+try { PUSHT = JSON.parse(localStorage.getItem('hb-push') || '[]') || []; if (!Array.isArray(PUSHT)) PUSHT = []; } catch (e) { PUSHT = []; }
+let pushBusy = false, pushNote = null;
+const perm = () => (PUSH_OK ? Notification.permission : 'unsupported');
+const pushOn = () => perm() === 'granted' ? FAV.filter(id => PUSHT.includes(id)) : [];
+function savePushT(t) { PUSHT = t; try { localStorage.setItem('hb-push', JSON.stringify(t)); } catch (e) {} }
+const b64uToBytes = s => { s = s.replace(/-/g, '+').replace(/_/g, '/'); while (s.length % 4) s += '='; const b = atob(s); return Uint8Array.from(b, c => c.charCodeAt(0)); };
+const bytesToB64u = buf => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+function within(p, ms) { return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('zeit')), ms))]); }
+async function postJ(path, body) {
+  const r = await within(fetch(API + path, {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(body)}), 20000);
+  let j = {}; try { j = await r.json(); } catch (e) {}
+  if (!r.ok) { const e = new Error(j.error || 'HTTP ' + r.status); e.code = j.error || String(r.status); throw e; }
+  return j;
+}
+async function vapidKey() {
+  const c = getPref('hb-vapid'); if (c) return c;
+  const r = await within(fetch(API + '/push/key'), 15000);
+  const j = await r.json();
+  if (!r.ok || !j.key) throw new Error(j.error || 'kein Schlüssel');
+  setPref('hb-vapid', j.key); return j.key;
+}
+// Abo beim Dienst auf den gewünschten Stand bringen (leere Liste = abmelden)
+async function syncPush(teams, force) {
+  const reg = await within(navigator.serviceWorker.ready, 15000);
+  let sub = await reg.pushManager.getSubscription();
+  const prev = getPref('hb-push-ep') || '';
+  if (!teams.length) {
+    const ep = sub ? sub.endpoint : prev;
+    if (ep) await postJ('/push/unsubscribe', {endpoint: ep}).catch(() => {});
+    if (sub) await sub.unsubscribe().catch(() => {});
+    setPref('hb-push-sync', ''); setPref('hb-push-ep', '');
+    return null;
+  }
+  const key = await vapidKey();
+  const has = sub && sub.options && sub.options.applicationServerKey;
+  if (sub && has && bytesToB64u(sub.options.applicationServerKey) !== key) { await sub.unsubscribe().catch(() => {}); sub = null; }
+  if (!sub) sub = await reg.pushManager.subscribe({userVisibleOnly: true, applicationServerKey: b64uToBytes(key)});
+  const sig = sub.endpoint + '|' + teams.slice().sort().join(',') + '|' + new Date().toISOString().slice(0, 7);
+  if (!force && getPref('hb-push-sync') === sig) return sub;
+  await postJ('/push/subscribe', {sub: sub.toJSON(), teams, old: prev && prev !== sub.endpoint ? prev : undefined});
+  setPref('hb-push-sync', sig); setPref('hb-push-ep', sub.endpoint);
+  return sub;
+}
+function pushErr(e) {
+  const c = e && (e.code || e.message) || '';
+  if (/zeit|Failed to fetch|NetworkError|Load failed/i.test(c)) return 'Keine Verbindung zum Mitteilungs-Dienst. Bitte später noch einmal versuchen.';
+  if (/NotAllowed|denied/i.test(e && e.name || c)) return 'Mitteilungen wurden nicht erlaubt.';
+  return 'Das hat gerade nicht geklappt (' + esc(String(c).slice(0, 40)) + '). Bitte später noch einmal versuchen.';
+}
+async function setPush(ids, on) {
+  if (pushBusy || !PUSH_OK) return;
+  // Erlaubnis zuerst und direkt im Tipp abfragen (iPhone verlangt das)
+  if (on && Notification.permission !== 'granted') {
+    let p = 'default';
+    try { p = await Notification.requestPermission(); } catch (e) { p = Notification.permission; }
+    if (p !== 'granted') { pushNote = null; track('Mitteilungen abgelehnt'); renderPush(); return; }
+  }
+  const want = new Set(pushOn());
+  ids.forEach(id => (on ? want.add(id) : want.delete(id)));
+  const teams = FAV.filter(id => want.has(id));
+  pushBusy = true; pushNote = {cls: '', html: 'Wird gespeichert …'}; renderPush();
+  try {
+    await syncPush(teams, true);
+    savePushT(teams);
+    pushNote = null;
+    track(on ? 'Mitteilungen eingeschaltet' : 'Mitteilungen ausgeschaltet', {mannschaften: teams.length});
+    if (on) toast('<p style="margin:0">🔔 Mitteilungen ' + (ids.length === 1 && TBY[ids[0]] ? 'für ' + esc(TBY[ids[0]].label) + ' ' : '') + 'eingeschaltet.</p>', 2600);
+  } catch (e) {
+    pushNote = {cls: 'err', html: pushErr(e)};
+  }
+  pushBusy = false; renderPush();
+}
+async function testPush() {
+  if (pushBusy) return;
+  pushBusy = true; pushNote = {cls: '', html: 'Test-Mitteilung wird verschickt …'}; renderPush();
+  try {
+    let sub = await syncPush(pushOn(), false);
+    try { await postJ('/push/test', {endpoint: sub.endpoint}); }
+    catch (e) {
+      if (e.code !== 'abgelaufen' && e.code !== 'nicht-angemeldet') throw e;
+      sub = await syncPush(pushOn(), true);
+      await postJ('/push/test', {endpoint: sub.endpoint});
+    }
+    pushNote = {cls: '', html: '✓ Test-Mitteilung verschickt. Sie sollte in wenigen Sekunden erscheinen' + (standalone() ? '' : ' (eventuell erst, wenn du die App verlässt)') + '.'};
+    track('Test-Mitteilung');
+  } catch (e) {
+    pushNote = {cls: 'err', html: e.code === 'zu-oft' ? 'Bitte einen Moment warten und dann noch einmal versuchen.' : pushErr(e)};
+  }
+  pushBusy = false; renderPush();
+}
+function renderPush() {
+  const box = $('push-box'); if (!box) return;
+  const msg = (cls, html) => '<div class="pmsg ' + cls + '">' + html + '</div>';
+  if (!PUSH_OK) {
+    box.innerHTML = IS_IOS && !standalone()
+      ? msg('warn', '<b>Auf dem iPhone und iPad</b> gehen Mitteilungen nur, wenn ESV Handball als App auf dem Home-Bildschirm liegt (ab iOS 16.4). Öffne die App dann über das Symbol und schalte die Mitteilungen hier ein.<br><button class="btn" type="button" data-guide>So legst du die App auf den Home-Bildschirm</button>')
+      : msg('warn', 'Dieser Browser unterstützt leider keine Mitteilungen. ' + (IS_IOS ? 'Bitte iOS auf Version 16.4 oder neuer aktualisieren.' : 'Probier es mit Chrome, Edge, Firefox oder Safari.'));
+    return;
+  }
+  if (perm() === 'denied') {
+    box.innerHTML = msg('warn', '<b>Mitteilungen sind blockiert.</b> Du kannst sie in den Einstellungen deines Geräts wieder erlauben' + (IS_IOS ? ' (Einstellungen → Mitteilungen → ESV Handball)' : IS_ANDROID ? ' (lange auf das App-Symbol tippen → App-Info → Benachrichtigungen)' : ' (Schloss-Symbol neben der Adresse → Benachrichtigungen)') + '. Danach diese Seite neu öffnen.');
+    return;
+  }
+  const favs = FAV.filter(id => TBY[id]);
+  if (!favs.length) {
+    box.innerHTML = msg('', 'Lege zuerst deine <b>Favoriten</b> fest: Tippe bei einer Mannschaft auf den Stern ★. Danach kannst du hier die Mitteilungen einschalten.<br><button class="btn" type="button" data-goalle>Mannschaften anzeigen</button>');
+    return;
+  }
+  const on = pushOn(), n = favs.filter(id => on.includes(id)).length;
+  const dis = pushBusy ? ' aria-disabled="true"' : '';
+  const all = '<button type="button" class="prow all' + (n && n < favs.length ? ' part' : '') + '" role="switch" aria-checked="' + (n === favs.length) + '" data-pushall' + dis + '><span class="pl"><b>Alle Favoriten</b><small>' + (n === 0 ? 'Aus' : n === favs.length ? 'Für alle ' + favs.length + ' Favoriten an' : n + ' von ' + favs.length + ' an') + '</small></span><span class="sw" aria-hidden="true"></span></button>';
+  const rows = favs.map(id => { const t = TBY[id]; return '<button type="button" class="prow" role="switch" aria-checked="' + on.includes(id) + '" data-push="' + id + '"' + dis + '><span class="dot" style="background:' + t.dot + '"></span><span class="pl"><b>' + esc(t.label) + '</b><small>' + esc(t.liga || '') + '</small></span><span class="sw" aria-hidden="true"></span></button>'; }).join('');
+  box.innerHTML = '<div class="prows">' + all + '<div class="pdiv"></div>' + rows + '</div>' +
+    (pushNote ? msg(pushNote.cls, pushNote.html) : '') +
+    (n ? '<button class="rbtn ptest" type="button" data-pushtest' + (pushBusy ? ' disabled' : '') + '><svg aria-hidden="true"><use href="#ic-bell"/></svg>Test-Mitteilung senden</button>' : '') +
+    (IS_IOS && n ? '<p class="note" style="margin:10px 0 0">Tipp: Erscheint nichts, unter Einstellungen → Mitteilungen → ESV Handball prüfen, ob „Mitteilungen erlauben“ an ist und der Fokus-Modus sie nicht ausblendet.</p>' : '');
+}
+// Favoriten geändert: Mitteilungen mitziehen (neuer Favorit bekommt sie, wenn bisher alle an waren)
+function pushFavChanged(id, on, before) {
+  if (!PUSH_OK || perm() !== 'granted' || !PUSHT.length) return;
+  const cur = PUSHT.filter(x => before.includes(x));
+  let t;
+  if (on) t = before.length && before.every(x => cur.includes(x)) ? cur.concat(id) : cur;
+  else t = cur.filter(x => x !== id);
+  t = FAV.filter(x => t.includes(x));
+  if (t.join() === PUSHT.join()) return;
+  savePushT(t);
+  syncPush(t, false).catch(() => {});
+}
+// Beim Start still abgleichen (abgelaufene Abos erneuern, einmal im Monat bestätigen)
+function pushStartup() {
+  if (!PUSH_OK || !PUSHT.length || perm() !== 'granted') return;
+  setTimeout(() => syncPush(pushOn(), false).catch(() => {}), 2500);
+}
+// Spiel aus einer Mitteilung öffnen (?t=Mannschaft&g=Spielnummer)
+async function openLink(t, g) {
+  if (!t || !/^[A-Za-z0-9]{1,16}$/.test(t)) return;
+  const wait = async cond => { for (let i = 0; i < 60 && !cond(); i++) await new Promise(r => setTimeout(r, 250)); return cond(); };
+  if (!(await wait(() => TBY[t]))) return;
+  if (view !== t) go(t); else ensure(t);
+  if (!g || !(await wait(() => TD[t]))) return;
+  ['idlg', 'ndlg', 'sdlg', 'adlg', 'rdlg'].forEach(id => { if ($(id).open) closeDlgId(id); });
+  if ($('dlg').open) closeDlg();
+  openGame(t, g);
 }
 let toastTimer = null;
 function toast(html, ms) {
@@ -1291,6 +1469,16 @@ function setFilter(v) {
 }
 document.addEventListener('click', e => {
   if (e.target.closest('[data-goset]')) { closeDlg(); go('einst'); return; }
+  const pr = e.target.closest('[data-push],[data-pushall]');
+  if (pr) {
+    if (pr.getAttribute('aria-disabled') === 'true') return;
+    const on = pr.getAttribute('aria-checked') !== 'true';
+    setPush(pr.hasAttribute('data-pushall') ? FAV.filter(id => TBY[id]) : [pr.dataset.push], on);
+    return;
+  }
+  if (e.target.closest('[data-pushtest]')) { testPush(); return; }
+  if (e.target.closest('[data-goalle]')) { go('alle'); return; }
+  if (e.target.closest('#push-box [data-guide]')) { showGuide(); return; }
   const hr = e.target.closest('[data-hres]');
   if (hr) { const x = HRES[+hr.dataset.hres]; if (x) setHome(x, 'Adresse'); return; }
   if (e.target.closest('#home-del')) { setHome(null); return; }
@@ -1352,8 +1540,17 @@ $('home-form').addEventListener('submit', searchHome);
 $('home-gps').addEventListener('click', useGps);
 if ('serviceWorker' in navigator && location.protocol === 'https:' && /github\.io$/.test(location.hostname)) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.addEventListener('message', e => {
+    const d = e.data || {};
+    if (d.type !== 'oeffne') return;
+    try { const u = new URL(d.url); track('Mitteilung geöffnet'); openLink(u.searchParams.get('t'), u.searchParams.get('g')); } catch (x) {}
+  });
 }
-if (!maybeIntro()) { maybeStrip(); maybeNews(); }
+const LINK = (() => { try { const q = new URLSearchParams(location.search); return q.get('t') ? {t: q.get('t'), g: q.get('g')} : null; } catch (e) { return null; } })();
+if (LINK) { try { history.replaceState(null, '', location.pathname); } catch (e) {} track('Mitteilung geöffnet'); }
+pushStartup();
+if (LINK) { setPref('hb-intro1', getPref('hb-intro1') || 'gesehen'); setPref('hb-news-fahrzeit', 'gesehen'); openLink(LINK.t, LINK.g); }
+else if (!maybeIntro()) { maybeStrip(); maybeNews(); }
 trackOpen();
 $('toast').addEventListener('click', e => { if (e.target.closest('.trow')) $('toast').hidden = true; });
 document.addEventListener('visibilitychange', () => { if (!document.hidden && Date.now() - lastLoad > 30e3) load(); });
