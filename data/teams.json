@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-27T05:27:00+01:00",
+ "stand": "2026-11-27T06:33:00+01:00",
  "teams": [
   {
    "id": "herren1",
@@ -146,10 +146,10 @@
    "file": "data/wE.json",
    "dot": "#f06595",
    "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 1,
+   "von": 7,
+   "punkte": "10:0"
   },
   {
    "id": "mB",
@@ -196,10 +196,10 @@
    "file": "data/mC.json",
    "dot": "#1098ad",
    "hz": 25,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 4,
+   "von": 7,
+   "punkte": "4:6"
   },
   {
    "id": "mD",
