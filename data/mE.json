@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T16:56:00+01:00",
+ "stand": "2026-11-28T17:02:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "liga": "Regionsliga MJE VR-4 (OS)",
@@ -1585,7 +1585,7 @@
  "halbzeitMin": 20,
  "letzteMeldung": {
   "title": "😔 Niederlage 9:30",
-  "body": "ESV m. E-Jugend bei SV Eversburg",
+  "body": "ESV m. E-Jugend\nvs\nSV Eversburg",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mE&g=18",
   "tag": "erg-mE-18"
  }
