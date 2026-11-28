@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T05:19:00+01:00",
+ "stand": "2026-11-28T14:43:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -70,6 +70,17 @@
   },
   {
    "platz": 4,
+   "team": "TV Georgsmarienhütte II",
+   "spiele": 6,
+   "s": 3,
+   "u": 0,
+   "n": 3,
+   "tore": "146:162",
+   "diff": -16,
+   "punkte": "6:6"
+  },
+  {
+   "platz": 5,
    "team": "JSG Eicken-Buer-Oldendorf",
    "spiele": 5,
    "s": 2,
@@ -80,29 +91,7 @@
    "punkte": "4:6"
   },
   {
-   "platz": 5,
-   "team": "TV Georgsmarienhütte II",
-   "spiele": 5,
-   "s": 2,
-   "u": 0,
-   "n": 3,
-   "tore": "112:132",
-   "diff": -20,
-   "punkte": "4:6"
-  },
-  {
    "platz": 6,
-   "team": "VfL Bad Iburg",
-   "spiele": 5,
-   "s": 1,
-   "u": 0,
-   "n": 4,
-   "tore": "123:177",
-   "diff": -54,
-   "punkte": "2:8"
-  },
-  {
-   "platz": 7,
    "team": "THC Westerkappeln",
    "spiele": 6,
    "s": 1,
@@ -110,6 +99,17 @@
    "n": 5,
    "tore": "126:124",
    "diff": 2,
+   "punkte": "2:10"
+  },
+  {
+   "platz": 7,
+   "team": "VfL Bad Iburg",
+   "spiele": 6,
+   "s": 1,
+   "u": 0,
+   "n": 5,
+   "tore": "153:211",
+   "diff": -58,
    "punkte": "2:10"
   }
  ],

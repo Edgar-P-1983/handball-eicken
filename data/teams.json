@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T05:19:00+01:00",
+ "stand": "2026-11-28T14:43:00+01:00",
  "teams": [
   {
    "id": "herren1",
@@ -134,9 +134,9 @@
    "gruppe": "Weibliche Jugend",
    "kurz": "JSG",
    "verein": "JSG Eicken-Buer-Oldendorf",
-   "liga": "Regionsklasse WJE VR-4 (VEC,DH,OS)",
+   "liga": "Weibliche E-Jugend Regionsliga Süd",
    "ch": "HRWN+26%2F27",
-   "group": "489946",
+   "group": "489233",
    "club": "32655",
    "klasse": "Weibliche E-Jugend",
    "alter": "E",
@@ -146,10 +146,10 @@
    "file": "data/wE.json",
    "dot": "#f06595",
    "hz": 20,
-   "team": "JSG Eicken-Buer-Oldendorf",
-   "platz": 1,
-   "von": 7,
-   "punkte": "10:0"
+   "team": "",
+   "platz": null,
+   "von": 0,
+   "punkte": ""
   },
   {
    "id": "mB",
@@ -197,7 +197,7 @@
    "dot": "#1098ad",
    "hz": 25,
    "team": "JSG Eicken-Buer-Oldendorf",
-   "platz": 4,
+   "platz": 5,
    "von": 7,
    "punkte": "4:6"
   },
@@ -209,9 +209,9 @@
    "gruppe": "Männliche Jugend",
    "kurz": "JSG",
    "verein": "JSG Eicken-Buer-Oldendorf",
-   "liga": "Regionsliga MJD VR-4 (OS)",
+   "liga": "Männliche D-Jugend Regionsliga Süd",
    "ch": "HRWN+26%2F27",
-   "group": "505343",
+   "group": "489825",
    "club": "32655",
    "klasse": "Männliche D-Jugend",
    "alter": "D",
@@ -220,11 +220,11 @@
    "saison": "2026/27",
    "file": "data/mD.json",
    "dot": "#7048e8",
-   "hz": 25,
-   "team": "JSG Eicken-Buer-Oldendorf",
-   "platz": 6,
-   "von": 7,
-   "punkte": "2:8"
+   "hz": 20,
+   "team": "",
+   "platz": null,
+   "von": 0,
+   "punkte": ""
   },
   {
    "id": "mE",
@@ -234,9 +234,9 @@
    "gruppe": "Männliche Jugend",
    "kurz": "JSG",
    "verein": "JSG Eicken-Buer-Oldendorf",
-   "liga": "Regionsliga MJE VR-4 (OS)",
+   "liga": "Regionsklasse mJE Süd",
    "ch": "HRWN+26%2F27",
-   "group": "506735",
+   "group": "528815",
    "club": "32655",
    "klasse": "Männliche E-Jugend",
    "alter": "E",
@@ -246,10 +246,10 @@
    "file": "data/mE.json",
    "dot": "#6741d9",
    "hz": 20,
-   "team": "JSG Eicken-Buer-Oldendorf",
-   "platz": 6,
-   "von": 7,
-   "punkte": "2:8"
+   "team": "",
+   "platz": null,
+   "von": 0,
+   "punkte": ""
   },
   {
    "id": "mF",
