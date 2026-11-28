@@ -496,7 +496,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
   </div>
   <div class="card setc" id="push-card" style="margin-top:14px">
    <h3><svg aria-hidden="true"><use href="#ic-bell"/></svg>Mitteilungen <small>bei neuen Ergebnissen</small></h3>
-   <p class="note" style="margin:4px 0 0">Sobald ein Ergebnis deiner Favoriten feststeht, meldet sich dein Handy – meist 15 bis 30 Minuten nach Spielende. Ein Tipp auf die Mitteilung öffnet das Spiel.</p>
+   <p class="note" style="margin:4px 0 0">Sobald ein Ergebnis deiner Favoriten feststeht, meldet sich dein Handy – meist 10 bis 20 Minuten nach Spielende, mit Ergebnis, Sieg oder Niederlage und Tabellenplatz. Ein Tipp auf die Mitteilung öffnet das Spiel. Die Test-Mitteilung zeigt dir das letzte Ergebnis als Beispiel.</p>
    <div id="push-box" aria-live="polite"></div>
   </div>
  </section>
@@ -580,7 +580,7 @@ body.has-a2hs .toast{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 76px)}
 {
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const BUILD = '20261127140216';
+const BUILD = '20261128151210';
 let TEAMS = [], TBY = {}, IDX = null;
 let FAV = [];
 try { FAV = JSON.parse(localStorage.getItem('hb-fav') || '[]'); if (!Array.isArray(FAV)) FAV = []; } catch (e) { FAV = []; }
@@ -1238,16 +1238,26 @@ async function setPush(ids, on) {
   }
   pushBusy = false; renderPush();
 }
+// Beispiel für die Test-Mitteilung: das letzte Ergebnis eines Favoriten mit Mitteilungen
+async function beispiel() {
+  for (const id of pushOn()) {
+    if (!TD[id]) { ensure(id); if (PENDING[id]) await within(PENDING[id], 8000).catch(() => {}); }
+    const lm = TD[id] && TD[id].letzteMeldung;
+    if (lm && lm.title) return {title: lm.title, body: lm.body, url: lm.url};
+  }
+  return {};
+}
 async function testPush() {
   if (pushBusy) return;
   pushBusy = true; pushNote = {cls: '', html: 'Test-Mitteilung wird verschickt …'}; renderPush();
   try {
     let sub = await syncPush(pushOn(), false);
-    try { await postJ('/push/test', {endpoint: sub.endpoint}); }
+    const bsp = await beispiel();
+    try { await postJ('/push/test', {endpoint: sub.endpoint, ...bsp}); }
     catch (e) {
       if (e.code !== 'abgelaufen' && e.code !== 'nicht-angemeldet') throw e;
       sub = await syncPush(pushOn(), true);
-      await postJ('/push/test', {endpoint: sub.endpoint});
+      await postJ('/push/test', {endpoint: sub.endpoint, ...bsp});
     }
     pushNote = {cls: '', html: '✓ Test-Mitteilung verschickt. Sie sollte in wenigen Sekunden erscheinen' + (standalone() ? '' : ' (eventuell erst, wenn du die App verlässt)') + '.'};
     track('Test-Mitteilung');

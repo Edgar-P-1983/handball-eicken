@@ -15,3 +15,7 @@ enabled = false
 [[kv_namespaces]]
 binding = "PUSH"
 id = "KV_ID_PLATZHALTER"
+
+# Alle 5 Minuten: Automatik anstoßen, wenn gerade ein Spiel der eigenen Mannschaften vorbei ist
+[triggers]
+crons = ["*/5 * * * *"]

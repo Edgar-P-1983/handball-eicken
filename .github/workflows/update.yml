@@ -1,6 +1,9 @@
 name: Daten aktualisieren und Seite veröffentlichen
 
 # Automatik:
+#  - Cloudflare-Dienst: alle 5 Minuten Blick in data/fenster.json; ist gerade ein Spiel der eigenen
+#    Mannschaften vorbei, startet er diesen Workflow (workflow_dispatch, Modus auto). GitHub selbst
+#    startet die 15-Minuten-Zeitpläne oft nur etwa stündlich.
 #  - alle 15 Minuten: kurzer Blick, ob ein Spiel gerade vorbei ist und Ergebnis oder Spielbericht
 #    noch fehlen (nur dann wird nuLiga abgefragt, höchstens 6 Stunden nach Spielende)
 #  - täglich früh morgens: Komplettabgleich
@@ -15,6 +18,13 @@ on:
     - cron: '23 3 * * *'
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Modus'
+        type: choice
+        options: [auto, daily, force]
+        default: auto
 
 permissions:
   contents: write
@@ -45,8 +55,10 @@ jobs:
         env:
           EVENT: ${{ github.event_name }}
           SCHEDULE: ${{ github.event.schedule }}
+          INPUT_MODE: ${{ inputs.mode }}
         run: |
-          if [ "$EVENT" = "push" ]; then MODE=force
+          if [ "$EVENT" = "workflow_dispatch" ] && echo "$INPUT_MODE" | grep -qx 'auto\|daily\|force'; then MODE=$INPUT_MODE
+          elif [ "$EVENT" = "push" ]; then MODE=force
           elif [ "$SCHEDULE" = "23 3 * * *" ]; then MODE=daily
           else MODE=auto; fi
           echo "Modus: $MODE"

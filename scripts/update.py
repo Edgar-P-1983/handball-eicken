@@ -667,8 +667,10 @@ APP_URL = 'https://edgar-p-1983.github.io/handball-eicken/'
 PUSH_MAX_AGE_DAYS = 7  # ältere Ergebnisse (z. B. spät nachgetragen) nicht mehr per Push melden
 
 
-def push_event(c, N, g, now):
-    """Mitteilung für ein neues Ergebnis der eigenen Mannschaft, sonst None."""
+def push_event(c, N, g, now, alter_pruefen=True):
+    """Mitteilung für ein Ergebnis der eigenen Mannschaft, sonst None.
+    Titel: Gewonnen/Verloren/Unentschieden mit Emoji und Mannschaft.
+    Text: Ergebnis (bei Punkte-Ligen die Tore aus dem Spielbericht), Heim/Auswärts, Halbzeit, Tabellenplatz."""
     me = N.get('team')
     if not me or me not in (g.get('heim'), g.get('gast')):
         return None
@@ -679,15 +681,73 @@ def push_event(c, N, g, now):
         day = dt.date.fromisoformat(g.get('datum') or '')
     except ValueError:
         return None
-    if (now.date() - day).days > PUSH_MAX_AGE_DAYS or day > now.date() + dt.timedelta(days=1):
+    if alter_pruefen and ((now.date() - day).days > PUSH_MAX_AGE_DAYS or day > now.date() + dt.timedelta(days=1)):
         return None
     h, a = int(m.group(1)), int(m.group(2))
-    mine, other = (h, a) if g['heim'] == me else (a, h)
-    erg = 'Sieg' if mine > other else 'Niederlage' if mine < other else 'Unentschieden'
+    heim = g['heim'] == me
+    mine, other = (h, a) if heim else (a, h)
+    erg = 'S' if mine > other else 'N' if mine < other else 'U'
     points_only = not any('tore' in r for r in N.get('tabelle', []))
-    body = f'{g["heim"]} – {g["gast"]} {g["ergebnis"]}' + (' (Punkte)' if points_only else '')
-    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{c["label"]}: {erg}', 'body': body,
+    b = g.get('bericht') or {}
+    tore = b.get('tore') if re.fullmatch(r'\d+:\d+', b.get('tore') or '') else ''
+    if not points_only:
+        tore = g['ergebnis']
+    if tore:
+        zeile1 = f'🤾 {g["heim"]} {tore} {g["gast"]}'
+    else:
+        zeile1 = f'🤾 {g["heim"]} {g["ergebnis"]} {g["gast"]} (Punkte)'
+    art = {('S', True): '🏠 Heimsieg', ('S', False): '🚌 Auswärtssieg',
+           ('N', True): '🏠 Heimniederlage', ('N', False): '🚌 Auswärtsniederlage',
+           ('U', True): '🏠 Unentschieden daheim', ('U', False): '🚌 Unentschieden auswärts'}[(erg, heim)]
+    teile = [art]
+    if tore and re.fullmatch(r'\d+:\d+', b.get('halbzeit') or ''):
+        teile.append(f'Halbzeit {b["halbzeit"]}')
+    row = next((r for r in N.get('tabelle', []) if r.get('team') == me), None)
+    if row and row.get('platz'):
+        teile.append(f'📊 Platz {row["platz"]} von {len(N["tabelle"])}')
+    kopf = {'S': '🏆 Gewonnen!', 'N': '😔 Verloren', 'U': '🤝 Unentschieden'}[erg]
+    emo = {'S': '🏆', 'N': '😔', 'U': '🤝'}[erg]
+    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{kopf} · {c["label"]}',
+            'body': zeile1 + '\n' + ' · '.join(teile),
+            'kurz': f'{emo} {c["label"]}: {zeile1[2:]}',
             'tag': f'erg-{c["id"]}-{g["nr"]}', 'url': f'{APP_URL}?t={c["id"]}&g={g["nr"]}'}
+
+
+def letzte_meldung(c, N, now):
+    """Mitteilung zum letzten Ergebnis der Mannschaft – für die Test-Mitteilung in der App."""
+    me = N.get('team')
+    own = [g for g in N.get('spiele', []) if g.get('ergebnis') and me in (g.get('heim'), g.get('gast'))]
+    own.sort(key=lambda g: (g.get('datum') or '', g.get('zeit') or ''))
+    for g in reversed(own):
+        ev = push_event(c, N, g, now, alter_pruefen=False)
+        if ev:
+            return {k: ev[k] for k in ('title', 'body', 'url', 'tag')}
+    return None
+
+
+FENSTER = os.path.join(DATA, 'fenster.json')
+
+
+def fenster(cfgs, now):
+    """Zeitfenster nach Spielende der eigenen Mannschaften, solange Ergebnis oder Spielbericht fehlen.
+    Der Cloudflare-Dienst liest die Datei alle 5 Minuten und stößt in diesen Fenstern die Automatik an."""
+    out = []
+    for c in cfgs:
+        D = load_json(os.path.join(DATA, c['id'] + '.json'), {}) or {}
+        hz, me = D.get('halbzeitMin', 30), D.get('team')
+        for g in D.get('spiele', []):
+            if not me or me not in (g.get('heim'), g.get('gast')) or (g.get('ergebnis') and g.get('bericht')):
+                continue
+            k = kickoff(g)
+            if not k:
+                continue
+            von = k + dt.timedelta(minutes=2 * hz + 10)
+            bis = von + dt.timedelta(hours=WINDOW_H)
+            if bis < now or k > now + dt.timedelta(days=8):
+                continue
+            out.append({'spiel': f'{c["id"]}:{g["nr"]}', 'von': von.isoformat(), 'bis': bis.isoformat()})
+    out.sort(key=lambda w: (w['von'], w['spiel']))
+    return {'fenster': out}
 
 
 def main():
@@ -754,6 +814,11 @@ def main():
                 changed_files.append(path)
             entries.append(index_entry(c, D))
             continue
+        lm = letzte_meldung(c, N, now)
+        if lm:
+            N['letzteMeldung'] = lm
+        else:
+            N.pop('letzteMeldung', None)
         strip = lambda x: {k: v for k, v in x.items() if k != 'stand'}
         if strip(N) != strip(D) or args.mode != 'auto':
             N['stand'] = stamp
@@ -773,6 +838,10 @@ def main():
                 changed_files.append(GEO)
         except Exception as e:  # noqa: BLE001
             log(f'Hallen-Koordinaten: {e}')
+    fw = fenster(cfgs, now)
+    if fw != load_json(FENSTER, None):
+        write_json(FENSTER, fw)
+        changed_files.append(FENSTER)
     new_index = {'stand': index.get('stand', ''), 'teams': entries}
     if new_index['teams'] != index.get('teams') or changed_files:
         new_index['stand'] = stamp

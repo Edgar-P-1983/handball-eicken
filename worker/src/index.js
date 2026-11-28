@@ -6,8 +6,11 @@
 //   GET  /push/key                       → {key}            öffentlicher Schlüssel für Mitteilungen
 //   POST /push/subscribe {sub, teams}    → Mitteilungen für diese Mannschaften (leere Liste = abmelden)
 //   POST /push/unsubscribe {endpoint}    → abmelden
-//   POST /push/test {endpoint}           → Test-Mitteilung an genau dieses Gerät
+//   POST /push/test {endpoint, title?, body?, url?} → Test-Mitteilung an genau dieses Gerät
+//                                          (die App schickt das letzte Ergebnis als Beispiel mit)
 //   POST /notify {events, after}         → nur für die GitHub-Automatik (Bearer NOTIFY_KEY)
+//   Zeitplan alle 5 Minuten              → stößt die GitHub-Automatik an, wenn gerade ein Spiel der
+//                                          eigenen Mannschaften zu Ende ist (data/fenster.json)
 //
 // Die Fahrzeit kommt von openrouteservice (HeiGIT, Heidelberg). Der Schlüssel dafür liegt nur hier
 // als Secret und ist in der App nicht sichtbar. Antworten gibt es nur für die App selbst (Origin).
@@ -207,8 +210,12 @@ async function testPush(req, env) {
   LAST_TEST.set(k, now);
   const rec = await env.PUSH.get(k, 'json');
   if (!rec) throw new Fehler(404, 'nicht-angemeldet');
-  const st = await sendPush(env, rec, {
-    title: 'ESV Handball', body: 'Test geklappt ✓ So kommen Mitteilungen zu neuen Ergebnissen an.', tag: 'test', url: APP,
+  const eigen = typeof b.title === 'string' && b.title.trim() && typeof b.body === 'string';
+  const st = await sendPush(env, rec, eigen ? {
+    title: b.title.slice(0, 90), body: b.body.slice(0, 240), tag: 'test',
+    url: typeof b.url === 'string' && b.url.startsWith(APP) ? b.url.slice(0, 300) : APP,
+  } : {
+    title: '🔔 Test geklappt!', body: 'So kommen Mitteilungen zu neuen Ergebnissen an.', tag: 'test', url: APP,
   }, SUBJECT, {ttl: 600, urgency: 'high'});
   if (st === 404 || st === 410) { await env.PUSH.delete(k); throw new Fehler(410, 'abgelaufen'); }
   if (st < 200 || st >= 300) throw new Fehler(502, 'push-' + st);
@@ -224,6 +231,7 @@ function cleanEvent(e) {
     id: team + ':' + nr, team, nr,
     title: String(e.title || 'ESV Handball').slice(0, 90),
     body: String(e.body || '').slice(0, 240),
+    kurz: String(e.kurz || e.title || '').slice(0, 160),
     tag: String(e.tag || ('erg-' + team + '-' + nr)).slice(0, 64),
     url,
   };
@@ -277,7 +285,7 @@ async function notify(req, env) {
       const mine = events.filter(e => s.t.includes(e.team));
       const payload = mine.length === 1
         ? {title: mine[0].title, body: mine[0].body, tag: mine[0].tag, url: mine[0].url}
-        : {title: mine.length + ' neue Ergebnisse', body: mine.map(e => e.title + ': ' + e.body).join('\n'), tag: 'erg-mehrere', url: APP};
+        : {title: '🤾 ' + mine.length + ' neue Ergebnisse', body: mine.map(e => e.kurz).join('\n'), tag: 'erg-mehrere', url: APP};
       let st = 0;
       try { st = await sendPush(env, s, payload, SUBJECT); } catch (e) { st = 0; }
       res.codes[st] = (res.codes[st] || 0) + 1;
@@ -291,6 +299,44 @@ async function notify(req, env) {
   return {events, rest: subs.length, ...res, next: subs.length > BATCH ? page[page.length - 1].k : null};
 }
 
+// ---------- Anstoß der GitHub-Automatik (GitHub startet Zeitpläne oft nur stündlich)
+const GH_DISPATCH = 'https://api.github.com/repos/Edgar-P-1983/handball-eicken/actions/workflows/update.yml/dispatches';
+
+async function anstoss(env, now = Date.now()) {
+  if (!env.GH_DISPATCH_TOKEN || !env.PUSH) return {aktiv: false, grund: 'nicht-eingerichtet'};
+  const r = await fetch(APP + 'data/fenster.json?t=' + Math.floor(now / 60000), {headers: {'Accept': 'application/json'}});
+  if (!r.ok) return {aktiv: false, grund: 'fenster-' + r.status};
+  const f = await r.json();
+  const offen = (Array.isArray(f.fenster) ? f.fenster : [])
+    .map(w => ({von: Date.parse(w.von), bis: Date.parse(w.bis), spiel: String(w.spiel || '')}))
+    .filter(w => now >= w.von && now <= w.bis);
+  if (!offen.length) return {aktiv: false, grund: 'kein-spiel'};
+  // In den ersten 90 Minuten nach Spielende alle 10 Minuten, danach alle 30 Minuten
+  const seit = Math.min(...offen.map(w => now - w.von));
+  const abstand = seit < 90 * 60000 ? 9 * 60000 : 29 * 60000;
+  const last = +((await env.PUSH.get('a:last')) || 0);
+  if (now - last < abstand) return {aktiv: true, grund: 'gewartet', spiele: offen.map(w => w.spiel)};
+  const d = await fetch(GH_DISPATCH, {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer ' + env.GH_DISPATCH_TOKEN, 'Accept': 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'esv-handball-dienst', 'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ref: 'main', inputs: {mode: 'auto'}}),
+  });
+  const status = {zeit: new Date(now).toISOString(), status: d.status, spiele: offen.map(w => w.spiel)};
+  if (d.status !== 204) { try { status.antwort = (await d.text()).slice(0, 200); } catch (e) {} }
+  await env.PUSH.put('a:last', String(now), {expirationTtl: 2 * 86400});
+  await env.PUSH.put('a:status', JSON.stringify(status), {expirationTtl: 14 * 86400});
+  return {aktiv: true, grund: 'angestossen', ...status};
+}
+
+async function anstossStatus(req, env) {
+  if (!env.NOTIFY_KEY || !gleich(req.headers.get('Authorization') || '', 'Bearer ' + env.NOTIFY_KEY)) throw new Fehler(401, 'zugang');
+  needKv(env);
+  return {eingerichtet: !!env.GH_DISPATCH_TOKEN, letzter: await env.PUSH.get('a:status', 'json')};
+}
+
 const PUSH_ROUTES = {
   'GET /push/key': (req, env) => pushKey(env),
   'POST /push/subscribe': subscribe,
@@ -299,6 +345,10 @@ const PUSH_ROUTES = {
 };
 
 export default {
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(anstoss(env, event && event.scheduledTime ? event.scheduledTime : Date.now()).catch(() => {}));
+  },
+
   async fetch(req, env) {
     const url = new URL(req.url);
     const origin = req.headers.get('Origin') || '';
@@ -307,6 +357,9 @@ export default {
     const cors = allowed ? {'Access-Control-Allow-Origin': origin, 'Vary': 'Origin'} : {'Vary': 'Origin'};
     if (req.method === 'OPTIONS') {
       return new Response(null, {status: allowed ? 204 : 403, headers: {...cors, 'Access-Control-Allow-Methods': 'GET, POST', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Max-Age': '86400'}});
+    }
+    if (req.method === 'GET' && url.pathname === '/anstoss') {
+      try { return json(await anstossStatus(req, env), 200, {}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, {}); }
     }
     if (req.method === 'POST' && url.pathname === '/notify') {
       try { return json(await notify(req, env), 200, {}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, {}); }
@@ -317,7 +370,7 @@ export default {
       try { return json(await pr(req, env), 200, {...cors, 'Cache-Control': 'no-store'}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, cors); }
     }
     if (req.method !== 'GET') return json({error: 'methode'}, 405, cors);
-    if (url.pathname === '/' || url.pathname === '/health') return json({ok: true, ors: !!env.ORS_API_KEY, push: !!(env.VAPID_JWK && env.PUSH), notify: !!env.NOTIFY_KEY}, 200, cors);
+    if (url.pathname === '/' || url.pathname === '/health') return json({ok: true, ors: !!env.ORS_API_KEY, push: !!(env.VAPID_JWK && env.PUSH), notify: !!env.NOTIFY_KEY, anstoss: !!env.GH_DISPATCH_TOKEN}, 200, cors);
     if (url.pathname !== '/route' && url.pathname !== '/geocode') return json({error: 'unbekannt'}, 404, cors);
     if (!allowed) return json({error: 'nur-fuer-die-app'}, 403, cors);
     try {
