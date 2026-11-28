@@ -680,7 +680,7 @@ def push_event(c, N, g, now, alter_pruefen=True):
     """Mitteilung für ein Ergebnis der eigenen Mannschaft, sonst None.
     Kurz, damit im iPhone-Banner nichts abgeschnitten wird (Ergebnis aus unserer Sicht):
       🏆 Sieg 24:9
-      w. E-Jugend bei HSG Grönegau-Melle"""
+      ESV w. E-Jugend bei HSG Grönegau-Melle"""
     me = N.get('team')
     if not me or me not in (g.get('heim'), g.get('gast')):
         return None
@@ -708,7 +708,7 @@ def push_event(c, N, g, now, alter_pruefen=True):
     gegner = re.sub(r'\s+e\.\s?V\.', '', g['gast'] if heim else g['heim']).strip()
     kurz = kurzname(c)
     # Nur zwei Zeilen: Titel mit Sieg/Niederlage und Ergebnis, darunter Mannschaft und Gegner
-    zeile = f'{kurz} {"gegen" if heim else "bei"} {gegner}'
+    zeile = f'ESV {kurz} {"gegen" if heim else "bei"} {gegner}'
     return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{emo} {stand}', 'body': zeile,
             'kurz': f'{emo} {stand} · {zeile}',
             'tag': f'erg-{c["id"]}-{g["nr"]}', 'url': f'{APP_URL}?t={c["id"]}&g={g["nr"]}'}
