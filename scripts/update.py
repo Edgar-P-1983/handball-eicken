@@ -344,15 +344,59 @@ def discover():
                 if not m:
                     continue
                 liga = txt(a)
-                if info['id'] in found and 'pokal' in liga.lower():
+                st = {'liga': liga, 'ch': m.group(1), 'group': m.group(2)}
+                if info['id'] in found:
+                    # mehrere Staffeln (z. B. Vorrunde und folgende Runde): alle merken, Auswahl in main()
+                    if 'pokal' not in liga.lower():
+                        f = found[info['id']]
+                        f['alts'] = f.get('alts', []) + [st]
+                        if 'pokal' in f['liga'].lower():
+                            f.update(st)
                     continue
-                if info['id'] in found and 'pokal' not in found[info['id']]['liga'].lower():
-                    continue
-                found[info['id']] = dict(info, club=club['club'], verein=club['name'], kurz=club['kurz'], liga=liga,
-                                         region=region, saison=saison, ch=m.group(1), group=m.group(2))
+                found[info['id']] = dict(info, club=club['club'], verein=club['name'], kurz=club['kurz'],
+                                         region=region, saison=saison, **st)
+                found[info['id']]['alts'] = [st] if 'pokal' not in liga.lower() else []
     if not found:
         raise ValueError('keine Mannschaften gefunden')
     return sorted(found.values(), key=lambda c: c['sort'])
+
+
+def staffel_info(st, now):
+    """Spielplan einer Staffel kurz auswerten: nächstes offenes Spiel, letztes gespieltes."""
+    try:
+        games = parse_meetings(fetch(f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&championship={st["ch"]}&group={st["group"]}'))
+    except Exception:  # noqa: BLE001  (z. B. noch kein Spielplan veröffentlicht)
+        return None
+    today = now.date()
+    nxt, last = [], []
+    for g in games:
+        try:
+            d = dt.date.fromisoformat(g.get('datum') or '')
+        except ValueError:
+            d = None
+        if g.get('ergebnis'):
+            if d:
+                last.append(d)
+        elif d is None:
+            nxt.append(dt.date.max)          # Termin offen
+        elif d >= today - dt.timedelta(days=3):
+            nxt.append(d)
+    return {'spiele': len(games), 'next': min(nxt) if nxt else None, 'last': max(last) if last else None}
+
+
+def choose_staffel(alts, known_group, now):
+    """Bei mehreren Staffeln die nehmen, in der gerade gespielt wird: die mit dem frühesten
+    offenen Spiel; ist überall fertig, die zuletzt bespielte. Staffeln ohne Spielplan zählen nicht."""
+    infos = [(st, staffel_info(st, now)) for st in alts]
+    for st, i in infos:
+        log(f'    {st["liga"]}: ' + ('kein Spielplan' if not i else f'{i["spiele"]} Spiele, nächstes {i["next"]}, letztes {i["last"]}'))
+    ok = [(st, i) for st, i in infos if i and i['spiele']]
+    if not ok:
+        return next((st for st in alts if st['group'] == known_group), alts[0])
+    active = [(st, i) for st, i in ok if i['next']]
+    if active:
+        return min(active, key=lambda x: (x[1]['next'], x[0]['group'] != known_group))[0]
+    return max(ok, key=lambda x: (x[1]['last'] or dt.date.min, x[0]['group'] == known_group))[0]
 
 
 def team_links(c):
@@ -660,6 +704,11 @@ def main():
             found = discover()
             known = {c['id']: c for c in cfgs}
             for c in found:
+                alts = c.pop('alts', [])
+                if len(alts) > 1:
+                    log(f'{c["id"]}: {len(alts)} Staffeln')
+                    c.update(choose_staffel(alts, (known.get(c['id']) or {}).get('group'), now))
+            for c in found:
                 k = known.get(c['id'])
                 if k and (k['group'] != c['group']):
                     log(f'{c["id"]}: neue Staffel {c["liga"]} (bisher {k["liga"]})')
@@ -672,9 +721,11 @@ def main():
     for c in cfgs:
         pool.update(load_json(os.path.join(DATA, c['id'] + '.json'), {}).get('hallen', {}))
     changed_files, summary, errors, entries, push = [], [], [], [], []
+    known_cfg = {k['id']: k for k in index['teams']}
     for c in cfgs:
         path = os.path.join(DATA, c['id'] + '.json')
         D = load_json(path)
+        D_old = D
         if D is None or D.get('links', [{}])[0].get('url', '').find(c['group']) < 0 and args.mode != 'auto':
             fresh = skeleton(c)
             if D is not None:  # neue Staffel: Hallen behalten
@@ -693,6 +744,10 @@ def main():
         except Exception as e:  # noqa: BLE001
             errors.append(f'{c["id"]}: {e}')
             log(f'  FEHLER: {e}')
+            if D_old is not None and D is not D_old and c['id'] in known_cfg:
+                log('  Staffelwechsel nicht möglich, alte Daten bleiben')
+                entries.append(index_entry(known_cfg[c['id']], D_old))
+                continue
             if not os.path.exists(path):  # neue Mannschaft: leere Datei, damit die App sie anzeigen kann
                 D['stand'] = stamp
                 write_json(path, D)
@@ -735,7 +790,10 @@ def main():
             f.write('push=' + json.dumps(push[:30], ensure_ascii=False, separators=(',', ':')) + '\n')
     if push:
         log('Mitteilungen: ' + '; '.join(e['title'] + ' – ' + e['body'] for e in push))
-    if errors and args.mode != 'auto':
+    for e in errors:
+        print(f'::warning::{e}')
+    # Nur abbrechen, wenn gar nichts ging – sonst werden die übrigen Mannschaften gespeichert
+    if errors and args.mode != 'auto' and len(errors) >= len(cfgs):
         sys.exit(1)
 
 
