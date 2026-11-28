@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-27T14:04:00+01:00",
+ "stand": "2026-11-28T05:19:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -1004,11 +1004,12 @@
   {
    "nr": 33,
    "datum": "2026-12-06",
-   "zeit": "15:30",
+   "zeit": "17:00",
    "halle": "808146",
    "heim": "JSG Eicken-Buer-Oldendorf",
    "gast": "SSC Dodesheide",
-   "ergebnis": ""
+   "ergebnis": "",
+   "verlegt": true
   },
   {
    "nr": 35,
