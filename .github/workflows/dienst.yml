@@ -11,6 +11,11 @@ on:
     branches: [main]
     paths: ['worker/**', '.github/workflows/dienst.yml']
   workflow_dispatch:
+    inputs:
+      anstoss_testen:
+        description: 'Anstoß der Daten-Automatik einmal sofort testen'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -135,5 +140,8 @@ jobs:
             echo "GitHub-Schlüssel: $(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: Bearer $GH_DISPATCH_TOKEN" -H 'Accept: application/vnd.github+json' https://api.github.com/repos/Edgar-P-1983/handball-eicken/actions/workflows/update.yml)"
           else
             echo "GitHub-Schlüssel: noch nicht hinterlegt"
+          fi
+          if [ "${{ inputs.anstoss_testen }}" = "true" ]; then
+            echo "Anstoß-Test: $(curl -s -m 30 -X POST -H "Authorization: Bearer $NOTIFY_KEY" "$DIENST_URL/anstoss/jetzt")"
           fi
           echo "notify ohne Zugang: $(curl -s -m 15 -o /dev/null -w '%{http_code}' -X POST --data '{}' "$DIENST_URL/notify")"

@@ -302,20 +302,23 @@ async function notify(req, env) {
 // ---------- Anstoß der GitHub-Automatik (GitHub startet Zeitpläne oft nur stündlich)
 const GH_DISPATCH = 'https://api.github.com/repos/Edgar-P-1983/handball-eicken/actions/workflows/update.yml/dispatches';
 
-async function anstoss(env, now = Date.now()) {
+async function anstoss(env, now = Date.now(), sofort = false) {
   if (!env.GH_DISPATCH_TOKEN || !env.PUSH) return {aktiv: false, grund: 'nicht-eingerichtet'};
-  const r = await fetch(APP + 'data/fenster.json?t=' + Math.floor(now / 60000), {headers: {'Accept': 'application/json'}});
-  if (!r.ok) return {aktiv: false, grund: 'fenster-' + r.status};
-  const f = await r.json();
-  const offen = (Array.isArray(f.fenster) ? f.fenster : [])
-    .map(w => ({von: Date.parse(w.von), bis: Date.parse(w.bis), spiel: String(w.spiel || '')}))
-    .filter(w => now >= w.von && now <= w.bis);
-  if (!offen.length) return {aktiv: false, grund: 'kein-spiel'};
-  // In den ersten 90 Minuten nach Spielende alle 10 Minuten, danach alle 30 Minuten
-  const seit = Math.min(...offen.map(w => now - w.von));
-  const abstand = seit < 90 * 60000 ? 9 * 60000 : 29 * 60000;
-  const last = +((await env.PUSH.get('a:last')) || 0);
-  if (now - last < abstand) return {aktiv: true, grund: 'gewartet', spiele: offen.map(w => w.spiel)};
+  let offen = [{spiel: 'test'}];
+  if (!sofort) {
+    const r = await fetch(APP + 'data/fenster.json?t=' + Math.floor(now / 60000), {headers: {'Accept': 'application/json'}});
+    if (!r.ok) return {aktiv: false, grund: 'fenster-' + r.status};
+    const f = await r.json();
+    offen = (Array.isArray(f.fenster) ? f.fenster : [])
+      .map(w => ({von: Date.parse(w.von), bis: Date.parse(w.bis), spiel: String(w.spiel || '')}))
+      .filter(w => now >= w.von && now <= w.bis);
+    if (!offen.length) return {aktiv: false, grund: 'kein-spiel'};
+    // In den ersten 90 Minuten nach Spielende alle 10 Minuten, danach alle 30 Minuten
+    const seit = Math.min(...offen.map(w => now - w.von));
+    const abstand = seit < 90 * 60000 ? 9 * 60000 : 29 * 60000;
+    const last = +((await env.PUSH.get('a:last')) || 0);
+    if (now - last < abstand) return {aktiv: true, grund: 'gewartet', spiele: offen.map(w => w.spiel)};
+  }
   const d = await fetch(GH_DISPATCH, {
     method: 'POST',
     headers: {
@@ -329,6 +332,11 @@ async function anstoss(env, now = Date.now()) {
   await env.PUSH.put('a:last', String(now), {expirationTtl: 2 * 86400});
   await env.PUSH.put('a:status', JSON.stringify(status), {expirationTtl: 14 * 86400});
   return {aktiv: true, grund: 'angestossen', ...status};
+}
+
+async function anstossJetzt(req, env) {
+  if (!env.NOTIFY_KEY || !gleich(req.headers.get('Authorization') || '', 'Bearer ' + env.NOTIFY_KEY)) throw new Fehler(401, 'zugang');
+  return anstoss(env, Date.now(), true);
 }
 
 async function anstossStatus(req, env) {
@@ -360,6 +368,9 @@ export default {
     }
     if (req.method === 'GET' && url.pathname === '/anstoss') {
       try { return json(await anstossStatus(req, env), 200, {}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, {}); }
+    }
+    if (req.method === 'POST' && url.pathname === '/anstoss/jetzt') {
+      try { return json(await anstossJetzt(req, env), 200, {}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, {}); }
     }
     if (req.method === 'POST' && url.pathname === '/notify') {
       try { return json(await notify(req, env), 200, {}); } catch (e) { return json({error: e.code || 'fehler'}, e.status || 500, {}); }
