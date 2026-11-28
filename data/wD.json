@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:47:00+01:00",
+ "stand": "2026-11-28T15:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -793,5 +793,11 @@
    "name": "Damme, HS",
    "adresse": "Schützenstraße 1, 49401 Damme"
   }
+ },
+ "letzteMeldung": {
+  "title": "😔 Verloren · Weibliche D-Jugend",
+  "body": "🤾 SV SW Osterfeine 27:17 JSG Eicken-Buer-Oldendorf\n🚌 Auswärtsniederlage · Halbzeit 12:9 · 📊 Platz 6 von 7",
+  "url": "https://edgar-p-1983.github.io/handball-eicken/?t=wD&g=17",
+  "tag": "erg-wD-17"
  }
 }

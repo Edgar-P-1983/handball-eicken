@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:47:00+01:00",
+ "stand": "2026-11-28T15:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "altersklasse": "Weibliche C-Jugend",
@@ -2520,5 +2520,11 @@
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
  "kurz": "JSG",
  "mannschaft": "Weibliche C-Jugend",
- "verein": "JSG Eicken-Buer-Oldendorf"
+ "verein": "JSG Eicken-Buer-Oldendorf",
+ "letzteMeldung": {
+  "title": "🏆 Gewonnen! · Weibliche C-Jugend",
+  "body": "🤾 JSG Eicken-Buer-Oldendorf 23:21 VfL Bad Iburg\n🏠 Heimsieg · Halbzeit 13:9 · 📊 Platz 7 von 8",
+  "url": "https://edgar-p-1983.github.io/handball-eicken/?t=wC&g=19",
+  "tag": "erg-wC-19"
+ }
 }

@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:47:00+01:00",
+ "stand": "2026-11-28T15:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -769,5 +769,11 @@
    "name": "Sporthalle Alt Hasbergen",
    "adresse": "Schulstraße, 49205 Hasbergen"
   }
+ },
+ "letzteMeldung": {
+  "title": "😔 Verloren · Männliche F-Jugend",
+  "body": "🤾 JSG Eicken-Buer-Oldendorf 5:7 HSG Grönegau-Melle\n🏠 Heimniederlage · Halbzeit 2:4 · 📊 Platz 4 von 9",
+  "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mF&g=23",
+  "tag": "erg-mF-23"
  }
 }

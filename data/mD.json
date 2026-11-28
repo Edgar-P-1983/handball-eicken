@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:47:00+01:00",
+ "stand": "2026-11-28T15:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -860,5 +860,11 @@
    "name": "Melle, Sporthalle Haferstraße",
    "adresse": "Haferstr. 60, 49324 Melle (OT Mitte)"
   }
+ },
+ "letzteMeldung": {
+  "title": "😔 Verloren · Männliche D-Jugend",
+  "body": "🤾 SSC Dodesheide 44:22 JSG Eicken-Buer-Oldendorf\n🚌 Auswärtsniederlage · Halbzeit 21:11 · 📊 Platz 6 von 7",
+  "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mD&g=16",
+  "tag": "erg-mD-16"
  }
 }

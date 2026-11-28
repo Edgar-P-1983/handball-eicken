@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:47:00+01:00",
+ "stand": "2026-11-28T15:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -976,5 +976,11 @@
    "name": "Schulzentrum Georgsmarienhütte",
    "adresse": "Carl-Stahmer-Weg 16, 49124 Georgsmarienhütte"
   }
+ },
+ "letzteMeldung": {
+  "title": "😔 Verloren · Männliche C-Jugend",
+  "body": "🤾 VfL Bad Iburg 32:27 JSG Eicken-Buer-Oldendorf\n🚌 Auswärtsniederlage · Halbzeit 15:9 · 📊 Platz 5 von 7",
+  "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mC&g=18",
+  "tag": "erg-mC-18"
  }
 }

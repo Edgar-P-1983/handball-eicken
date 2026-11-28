@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:47:00+01:00",
+ "stand": "2026-11-28T15:13:00+01:00",
  "saison": "2026/27",
  "team": "Eickener SpVg II",
  "kurz": "ESV",
@@ -1673,5 +1673,11 @@
    "name": "Sportzentrum Wellingholzhausen",
    "adresse": "Uhlandstraße 28, 49326 Melle"
   }
+ },
+ "letzteMeldung": {
+  "title": "🏆 Gewonnen! · 2. Herren",
+  "body": "🤾 Eickener SpVg II 37:20 SV Alemannia Salzbergen\n🏠 Heimsieg · Halbzeit 19:6 · 📊 Platz 2 von 10",
+  "url": "https://edgar-p-1983.github.io/handball-eicken/?t=herren2&g=25",
+  "tag": "erg-herren2-25"
  }
 }
