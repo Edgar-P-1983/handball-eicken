@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T15:59:00+01:00",
+ "stand": "2026-11-28T16:56:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -59,14 +59,14 @@
   },
   {
    "platz": 3,
-   "team": "TV Bissendorf-Holte III",
-   "spiele": 5,
-   "s": 3,
+   "team": "THC Westerkappeln",
+   "spiele": 7,
+   "s": 4,
    "u": 0,
-   "n": 2,
-   "tore": "175:156",
-   "diff": 19,
-   "punkte": "6:4"
+   "n": 3,
+   "tore": "211:195",
+   "diff": 16,
+   "punkte": "8:6"
   },
   {
    "platz": 4,
@@ -81,13 +81,13 @@
   },
   {
    "platz": 5,
-   "team": "THC Westerkappeln",
+   "team": "TV Bissendorf-Holte III",
    "spiele": 6,
    "s": 3,
    "u": 0,
    "n": 3,
-   "tore": "185:170",
-   "diff": 15,
+   "tore": "200:182",
+   "diff": 18,
    "punkte": "6:6"
   },
   {
@@ -981,7 +981,7 @@
    "halle": "808177",
    "heim": "THC Westerkappeln",
    "gast": "TV Bissendorf-Holte III",
-   "ergebnis": "9:6",
+   "ergebnis": "26:25",
    "meeting": 8283896
   },
   {
@@ -1329,7 +1329,7 @@
  },
  "letzteMeldung": {
   "title": "😔 Niederlage 18:49",
-  "body": "m. B-Jugend bei TuS Haren II",
+  "body": "ESV m. B-Jugend bei TuS Haren II",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mB&g=5",
   "tag": "erg-mB-5"
  }
