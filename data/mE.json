@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T17:07:00+01:00",
+ "stand": "2026-11-28T17:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "liga": "Regionsliga MJE VR-4 (OS)",
@@ -9,11 +9,11 @@
   {
    "platz": 1,
    "team": "SV Eversburg",
-   "spiele": 5,
-   "s": 5,
+   "spiele": 6,
+   "s": 6,
    "u": 0,
    "n": 0,
-   "punkte": "10:0"
+   "punkte": "12:0"
   },
   {
    "platz": 2,
@@ -44,7 +44,7 @@
   },
   {
    "platz": 5,
-   "team": "TSG 07 Burg Gretesch",
+   "team": "JSG Eicken-Buer-Oldendorf",
    "spiele": 5,
    "s": 1,
    "u": 0,
@@ -53,12 +53,12 @@
   },
   {
    "platz": 6,
-   "team": "JSG Eicken-Buer-Oldendorf",
-   "spiele": 5,
+   "team": "TSG 07 Burg Gretesch",
+   "spiele": 6,
    "s": 1,
    "u": 0,
-   "n": 4,
-   "punkte": "2:8"
+   "n": 5,
+   "punkte": "2:10"
   },
   {
    "platz": 7,
@@ -1494,7 +1494,8 @@
    "halle": "808103",
    "heim": "TSG 07 Burg Gretesch",
    "gast": "SV Eversburg",
-   "ergebnis": ""
+   "ergebnis": "0:2",
+   "meeting": 8266123
   },
   {
    "nr": 20,
@@ -1585,7 +1586,7 @@
  "halbzeitMin": 20,
  "letzteMeldung": {
   "title": "😔 Niederlage 9:30",
-  "body": "ESV m. E-Jugend\nvs\nSV Eversburg",
+  "body": "ESV m. E-Jugend vs\nSV Eversburg",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mE&g=18",
   "tag": "erg-mE-18"
  }

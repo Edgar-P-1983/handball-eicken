@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T17:07:00+01:00",
+ "stand": "2026-11-28T17:13:00+01:00",
  "teams": [
   {
    "id": "herren1",
@@ -247,7 +247,7 @@
    "dot": "#6741d9",
    "hz": 20,
    "team": "JSG Eicken-Buer-Oldendorf",
-   "platz": 6,
+   "platz": 5,
    "von": 7,
    "punkte": "2:8"
   },

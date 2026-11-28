@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T17:07:00+01:00",
+ "stand": "2026-11-28T17:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -979,7 +979,7 @@
  },
  "letzteMeldung": {
   "title": "😔 Niederlage 27:32",
-  "body": "ESV m. C-Jugend\nvs\nVfL Bad Iburg",
+  "body": "ESV m. C-Jugend vs\nVfL Bad Iburg",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mC&g=18",
   "tag": "erg-mC-18"
  }

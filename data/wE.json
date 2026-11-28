@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T17:07:00+01:00",
+ "stand": "2026-11-28T17:13:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -735,7 +735,7 @@
  },
  "letzteMeldung": {
   "title": "🏆 Sieg 24:9",
-  "body": "ESV w. E-Jugend\nvs\nHSG Grönegau-Melle",
+  "body": "ESV w. E-Jugend vs\nHSG Grönegau-Melle",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=wE&g=19",
   "tag": "erg-wE-19"
  }
