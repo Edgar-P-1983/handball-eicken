@@ -678,9 +678,9 @@ def kurzname(c):
 
 def push_event(c, N, g, now, alter_pruefen=True):
     """Mitteilung für ein Ergebnis der eigenen Mannschaft, sonst None.
-    Das iPhone zeigt im Banner nur den Titel und etwa zwei Zeilen Text, deshalb steht das
-    Wichtigste im Titel: „🏆 Sieg 24:9 · w. E-Jugend“ (Ergebnis aus unserer Sicht).
-    Text: Gegner mit Heim/Auswärts, dann Halbzeit und Tabellenplatz."""
+    Kurz, damit im iPhone-Banner nichts abgeschnitten wird (Ergebnis aus unserer Sicht):
+      🏆 Sieg 24:9
+      w. E-Jugend bei HSG Grönegau-Melle"""
     me = N.get('team')
     if not me or me not in (g.get('heim'), g.get('gast')):
         return None
@@ -703,22 +703,14 @@ def push_event(c, N, g, now, alter_pruefen=True):
     tore = b.get('tore') if re.fullmatch(r'\d+:\d+', b.get('tore') or '') else ''
     if not points_only:
         tore = f'{h}:{a}'
-    emo, wort = {'S': ('🏆', 'Sieg'), 'N': ('😔', 'Niederlage'), 'U': ('🤝', 'Remis')}[erg]
+    emo, wort = {'S': ('🏆', 'Sieg'), 'N': ('😔', 'Niederlage'), 'U': ('🤝', 'Unentschieden')}[erg]
     stand = f'{wort} {eigen(tore)}' if tore else wort
-    gegner = g['gast'] if heim else g['heim']
-    zeile1 = ('🏠 gegen ' if heim else '🚌 bei ') + gegner
-    teile = []
-    if tore and re.fullmatch(r'\d+:\d+', b.get('halbzeit') or ''):
-        teile.append(f'Halbzeit {eigen(b["halbzeit"])}')
-    elif not tore:
-        teile.append('Tore folgen mit dem Spielbericht')
-    row = next((r for r in N.get('tabelle', []) if r.get('team') == me), None)
-    if row and row.get('platz'):
-        teile.append(f'📊 Platz {row["platz"]} von {len(N["tabelle"])}')
+    gegner = re.sub(r'\s+e\.\s?V\.', '', g['gast'] if heim else g['heim']).strip()
     kurz = kurzname(c)
-    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{emo} {stand} · {kurz}',
-            'body': zeile1 + ('\n' + ' · '.join(teile) if teile else ''),
-            'kurz': f'{emo} {kurz}: {stand} {"gegen" if heim else "bei"} {gegner}',
+    # Nur zwei Zeilen: Titel mit Sieg/Niederlage und Ergebnis, darunter Mannschaft und Gegner
+    zeile = f'{kurz} {"gegen" if heim else "bei"} {gegner}'
+    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{emo} {stand}', 'body': zeile,
+            'kurz': f'{emo} {stand} · {zeile}',
             'tag': f'erg-{c["id"]}-{g["nr"]}', 'url': f'{APP_URL}?t={c["id"]}&g={g["nr"]}'}
 
 
