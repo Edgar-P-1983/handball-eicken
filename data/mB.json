@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T15:24:00+01:00",
+ "stand": "2026-11-28T15:30:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -1327,8 +1327,8 @@
   }
  },
  "letzteMeldung": {
-  "title": "😔 Verloren · Männliche B-Jugend",
-  "body": "🤾 TuS Haren II 49:18 JSG Eicken-Buer-Oldendorf\n🚌 Auswärtsniederlage · Halbzeit 22:6 · 📊 Platz 7 von 8",
+  "title": "😔 Niederlage 18:49 · m. B-Jugend",
+  "body": "🚌 bei TuS Haren II\nHalbzeit 6:22 · 📊 Platz 7 von 8",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mB&g=5",
   "tag": "erg-mB-5"
  }

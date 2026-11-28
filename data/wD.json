@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T15:24:00+01:00",
+ "stand": "2026-11-28T15:30:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -795,8 +795,8 @@
   }
  },
  "letzteMeldung": {
-  "title": "😔 Verloren · Weibliche D-Jugend",
-  "body": "🤾 SV SW Osterfeine 27:17 JSG Eicken-Buer-Oldendorf\n🚌 Auswärtsniederlage · Halbzeit 12:9 · 📊 Platz 6 von 7",
+  "title": "😔 Niederlage 17:27 · w. D-Jugend",
+  "body": "🚌 bei SV SW Osterfeine\nHalbzeit 9:12 · 📊 Platz 6 von 7",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=wD&g=17",
   "tag": "erg-wD-17"
  }
