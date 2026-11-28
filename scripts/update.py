@@ -84,6 +84,19 @@ def _fetch(url):
     raise RuntimeError(f'Abruf fehlgeschlagen: {url}: {last!r}')
 
 
+def meetings(url, versuche=3):
+    """Spielplan holen; liefert nuLiga zwischendurch eine Seite ohne Tabelle (z. B. bei vielen
+    Abrufen kurz hintereinander), nach einer Pause erneut versuchen."""
+    for i in range(versuche):
+        try:
+            return parse_meetings(fetch(url))
+        except ValueError:
+            if i == versuche - 1:
+                raise
+            _CACHE.pop(url, None)
+            time.sleep(10 + 10 * i)
+
+
 def txt(el):
     return re.sub(r'\s+', ' ', el.get_text(' ', strip=True)).strip() if el is not None else ''
 
@@ -361,10 +374,10 @@ def discover():
     return sorted(found.values(), key=lambda c: c['sort'])
 
 
-def staffel_info(st, now):
+def staffel_info(st, now, versuche=1):
     """Spielplan einer Staffel kurz auswerten: nächstes offenes Spiel, letztes gespieltes."""
     try:
-        games = parse_meetings(fetch(f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&championship={st["ch"]}&group={st["group"]}'))
+        games = meetings(f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&championship={st["ch"]}&group={st["group"]}', versuche)
     except Exception:  # noqa: BLE001  (z. B. noch kein Spielplan veröffentlicht)
         return None
     today = now.date()
@@ -387,9 +400,14 @@ def staffel_info(st, now):
 def choose_staffel(alts, known_group, now):
     """Bei mehreren Staffeln die nehmen, in der gerade gespielt wird: die mit dem frühesten
     offenen Spiel; ist überall fertig, die zuletzt bespielte. Staffeln ohne Spielplan zählen nicht."""
-    infos = [(st, staffel_info(st, now)) for st in alts]
+    # Die bisherige Staffel hatte einen Spielplan: hier bei Aussetzern mehrmals versuchen
+    infos = [(st, staffel_info(st, now, 3 if st['group'] == known_group else 1)) for st in alts]
     for st, i in infos:
         log(f'    {st["liga"]}: ' + ('kein Spielplan' if not i else f'{i["spiele"]} Spiele, nächstes {i["next"]}, letztes {i["last"]}'))
+    known = next((st for st in alts if st['group'] == known_group), None)
+    if known and not next(i for st, i in infos if st is known):
+        log('    bisherige Staffel gerade nicht lesbar – kein Wechsel')
+        return known
     ok = [(st, i) for st, i in infos if i and i['spiele']]
     if not ok:
         return next((st for st in alts if st['group'] == known_group), alts[0])
@@ -487,7 +505,7 @@ def infer_hz(D, default):
 
 def update_team(c, D, now, pool):
     url_q = f'championship={c["ch"]}&group={c["group"]}'
-    games = parse_meetings(fetch(f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&{url_q}'))
+    games = meetings(f'{BASE}groupPage?displayTyp=vorrunde&displayDetail=meetings&{url_q}')
     tabelle = parse_table(fetch(f'{BASE}groupPage?{url_q}'))
     old = {str(g['nr']): g for g in D.get('spiele', [])}
     if old and len(games) < 0.8 * len(old):
