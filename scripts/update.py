@@ -667,10 +667,20 @@ APP_URL = 'https://edgar-p-1983.github.io/handball-eicken/'
 PUSH_MAX_AGE_DAYS = 7  # ältere Ergebnisse (z. B. spät nachgetragen) nicht mehr per Push melden
 
 
+def kurzname(c):
+    """„w. E-Jugend“, „m. C-Jugend“, „1. Herren“ – passt in die Titelzeile einer Mitteilung."""
+    sub = (c.get('barSub') or '').strip()
+    for g in ('weiblich', 'männlich'):
+        if sub.lower().startswith(g) and c.get('bar'):
+            return f'{g[0]}. {c["bar"]}{sub[len(g):]}'
+    return c.get('label') or c.get('id', '')
+
+
 def push_event(c, N, g, now, alter_pruefen=True):
     """Mitteilung für ein Ergebnis der eigenen Mannschaft, sonst None.
-    Titel: Gewonnen/Verloren/Unentschieden mit Emoji und Mannschaft.
-    Text: Ergebnis (bei Punkte-Ligen die Tore aus dem Spielbericht), Heim/Auswärts, Halbzeit, Tabellenplatz."""
+    Das iPhone zeigt im Banner nur den Titel und etwa zwei Zeilen Text, deshalb steht das
+    Wichtigste im Titel: „🏆 Sieg 24:9 · w. E-Jugend“ (Ergebnis aus unserer Sicht).
+    Text: Gegner mit Heim/Auswärts, dann Halbzeit und Tabellenplatz."""
     me = N.get('team')
     if not me or me not in (g.get('heim'), g.get('gast')):
         return None
@@ -683,33 +693,32 @@ def push_event(c, N, g, now, alter_pruefen=True):
         return None
     if alter_pruefen and ((now.date() - day).days > PUSH_MAX_AGE_DAYS or day > now.date() + dt.timedelta(days=1)):
         return None
-    h, a = int(m.group(1)), int(m.group(2))
     heim = g['heim'] == me
+    eigen = lambda sc: ':'.join(sc.split(':') if heim else sc.split(':')[::-1])
+    h, a = int(m.group(1)), int(m.group(2))
     mine, other = (h, a) if heim else (a, h)
     erg = 'S' if mine > other else 'N' if mine < other else 'U'
     points_only = not any('tore' in r for r in N.get('tabelle', []))
     b = g.get('bericht') or {}
     tore = b.get('tore') if re.fullmatch(r'\d+:\d+', b.get('tore') or '') else ''
     if not points_only:
-        tore = g['ergebnis']
-    if tore:
-        zeile1 = f'🤾 {g["heim"]} {tore} {g["gast"]}'
-    else:
-        zeile1 = f'🤾 {g["heim"]} {g["ergebnis"]} {g["gast"]} (Punkte)'
-    art = {('S', True): '🏠 Heimsieg', ('S', False): '🚌 Auswärtssieg',
-           ('N', True): '🏠 Heimniederlage', ('N', False): '🚌 Auswärtsniederlage',
-           ('U', True): '🏠 Unentschieden daheim', ('U', False): '🚌 Unentschieden auswärts'}[(erg, heim)]
-    teile = [art]
+        tore = f'{h}:{a}'
+    emo, wort = {'S': ('🏆', 'Sieg'), 'N': ('😔', 'Niederlage'), 'U': ('🤝', 'Remis')}[erg]
+    stand = f'{wort} {eigen(tore)}' if tore else wort
+    gegner = g['gast'] if heim else g['heim']
+    zeile1 = ('🏠 gegen ' if heim else '🚌 bei ') + gegner
+    teile = []
     if tore and re.fullmatch(r'\d+:\d+', b.get('halbzeit') or ''):
-        teile.append(f'Halbzeit {b["halbzeit"]}')
+        teile.append(f'Halbzeit {eigen(b["halbzeit"])}')
+    elif not tore:
+        teile.append('Tore folgen mit dem Spielbericht')
     row = next((r for r in N.get('tabelle', []) if r.get('team') == me), None)
     if row and row.get('platz'):
         teile.append(f'📊 Platz {row["platz"]} von {len(N["tabelle"])}')
-    kopf = {'S': '🏆 Gewonnen!', 'N': '😔 Verloren', 'U': '🤝 Unentschieden'}[erg]
-    emo = {'S': '🏆', 'N': '😔', 'U': '🤝'}[erg]
-    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{kopf} · {c["label"]}',
-            'body': zeile1 + '\n' + ' · '.join(teile),
-            'kurz': f'{emo} {c["label"]}: {zeile1[2:]}',
+    kurz = kurzname(c)
+    return {'team': c['id'], 'nr': str(g['nr']), 'title': f'{emo} {stand} · {kurz}',
+            'body': zeile1 + ('\n' + ' · '.join(teile) if teile else ''),
+            'kurz': f'{emo} {kurz}: {stand} {"gegen" if heim else "bei"} {gegner}',
             'tag': f'erg-{c["id"]}-{g["nr"]}', 'url': f'{APP_URL}?t={c["id"]}&g={g["nr"]}'}
 
 
