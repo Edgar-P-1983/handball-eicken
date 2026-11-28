@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:43:00+01:00",
+ "stand": "2026-11-28T14:47:00+01:00",
  "teams": [
   {
    "id": "herren1",
@@ -134,9 +134,9 @@
    "gruppe": "Weibliche Jugend",
    "kurz": "JSG",
    "verein": "JSG Eicken-Buer-Oldendorf",
-   "liga": "Weibliche E-Jugend Regionsliga Süd",
+   "liga": "Regionsklasse WJE VR-4 (VEC,DH,OS)",
    "ch": "HRWN+26%2F27",
-   "group": "489233",
+   "group": "489946",
    "club": "32655",
    "klasse": "Weibliche E-Jugend",
    "alter": "E",
@@ -146,10 +146,10 @@
    "file": "data/wE.json",
    "dot": "#f06595",
    "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 1,
+   "von": 7,
+   "punkte": "12:0"
   },
   {
    "id": "mB",
@@ -209,9 +209,9 @@
    "gruppe": "Männliche Jugend",
    "kurz": "JSG",
    "verein": "JSG Eicken-Buer-Oldendorf",
-   "liga": "Männliche D-Jugend Regionsliga Süd",
+   "liga": "Regionsliga MJD VR-4 (OS)",
    "ch": "HRWN+26%2F27",
-   "group": "489825",
+   "group": "505343",
    "club": "32655",
    "klasse": "Männliche D-Jugend",
    "alter": "D",
@@ -220,11 +220,11 @@
    "saison": "2026/27",
    "file": "data/mD.json",
    "dot": "#7048e8",
-   "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "hz": 25,
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 6,
+   "von": 7,
+   "punkte": "2:8"
   },
   {
    "id": "mE",
@@ -234,9 +234,9 @@
    "gruppe": "Männliche Jugend",
    "kurz": "JSG",
    "verein": "JSG Eicken-Buer-Oldendorf",
-   "liga": "Regionsklasse mJE Süd",
+   "liga": "Regionsliga MJE VR-4 (OS)",
    "ch": "HRWN+26%2F27",
-   "group": "528815",
+   "group": "506735",
    "club": "32655",
    "klasse": "Männliche E-Jugend",
    "alter": "E",
@@ -246,10 +246,10 @@
    "file": "data/mE.json",
    "dot": "#6741d9",
    "hz": 20,
-   "team": "",
-   "platz": null,
-   "von": 0,
-   "punkte": ""
+   "team": "JSG Eicken-Buer-Oldendorf",
+   "platz": 6,
+   "von": 7,
+   "punkte": "2:8"
   },
   {
    "id": "mF",

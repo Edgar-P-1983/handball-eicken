@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T14:43:00+01:00",
+ "stand": "2026-11-28T14:47:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -917,7 +917,8 @@
    "halle": "808132",
    "heim": "TV Georgsmarienhütte II",
    "gast": "VfL Bad Iburg",
-   "ergebnis": ""
+   "ergebnis": "34:30",
+   "meeting": 8265854
   },
   {
    "nr": 20,

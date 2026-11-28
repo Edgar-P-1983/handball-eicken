@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T05:19:00+01:00",
+ "stand": "2026-11-28T14:47:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -38,15 +38,15 @@
   {
    "platz": 1,
    "team": "JSG Eicken-Buer-Oldendorf",
-   "spiele": 5,
-   "s": 5,
+   "spiele": 6,
+   "s": 6,
    "u": 0,
    "n": 0,
-   "punkte": "10:0"
+   "punkte": "12:0"
   },
   {
    "platz": 2,
-   "team": "HSG Grönegau-Melle",
+   "team": "SV SW Osterfeine II",
    "spiele": 5,
    "s": 3,
    "u": 0,
@@ -55,12 +55,12 @@
   },
   {
    "platz": 3,
-   "team": "SV SW Osterfeine II",
-   "spiele": 5,
+   "team": "HSG Grönegau-Melle",
+   "spiele": 6,
    "s": 3,
    "u": 0,
-   "n": 2,
-   "punkte": "6:4"
+   "n": 3,
+   "punkte": "6:6"
   },
   {
    "platz": 4,
@@ -616,7 +616,69 @@
    "halle": "808144",
    "heim": "HSG Grönegau-Melle",
    "gast": "JSG Eicken-Buer-Oldendorf",
-   "ergebnis": ""
+   "ergebnis": "0:2",
+   "meeting": 8270992,
+   "bericht": {
+    "tore": "9:24",
+    "halbzeit": "4:10",
+    "siebenm": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "kader": [
+     9,
+     16
+    ],
+    "verlauf": [
+     "00:28G",
+     "04:04G",
+     "05:04G",
+     "08:09H",
+     "08:17G",
+     "10:31H",
+     "11:49G",
+     "13:19G",
+     "15:47H",
+     "16:30G",
+     "17:12G",
+     "17:45G",
+     "18:45G",
+     "19:46H",
+     "20:37H",
+     "22:30G",
+     "23:34G",
+     "24:06G",
+     "26:24G",
+     "27:01G",
+     "27:41G",
+     "29:42G",
+     "30:05H",
+     "30:33G",
+     "30:33H",
+     "32:09G",
+     "32:28H",
+     "35:08G",
+     "36:41H",
+     "36:59G",
+     "37:43G",
+     "38:10G",
+     "38:56G"
+    ],
+    "ereignisse": [
+     [
+      "30:33",
+      "Auszeit",
+      "H"
+     ]
+    ],
+    "meeting": 8270992
+   }
   },
   {
    "nr": 20,
