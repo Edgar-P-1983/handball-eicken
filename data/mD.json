@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T15:30:00+01:00",
+ "stand": "2026-11-28T15:56:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -862,8 +862,8 @@
   }
  },
  "letzteMeldung": {
-  "title": "😔 Niederlage 22:44 · m. D-Jugend",
-  "body": "🚌 bei SSC Dodesheide\nHalbzeit 11:21 · 📊 Platz 6 von 7",
+  "title": "😔 Niederlage 22:44",
+  "body": "m. D-Jugend bei SSC Dodesheide",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mD&g=16",
   "tag": "erg-mD-16"
  }

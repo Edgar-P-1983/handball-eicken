@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T15:30:00+01:00",
+ "stand": "2026-11-28T15:56:00+01:00",
  "saison": "2026/27",
  "team": "Eickener SpVg",
  "kurz": "ESV",
@@ -2441,8 +2441,8 @@
  "berichtUrl": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupMeetingReport?championship=HVNB+26%2F27&group=489364&meeting=",
  "berichtPdf": "https://hvnb-handball.liga.nu/cgi-bin/WebObjects/nuLigaDokumentHBDE.woa/wa/nuDokument?dokument=meetingReportHB&meeting=",
  "letzteMeldung": {
-  "title": "😔 Niederlage 34:35 · 1. Herren",
-  "body": "🏠 gegen HSG Nordhorn e.V. II\nHalbzeit 16:21 · 📊 Platz 2 von 11",
+  "title": "😔 Niederlage 34:35",
+  "body": "1. Herren gegen HSG Nordhorn II",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=herren1&g=105050",
   "tag": "erg-herren1-105050"
  }

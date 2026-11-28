@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-28T15:30:00+01:00",
+ "stand": "2026-11-28T15:56:00+01:00",
  "saison": "2026/27",
  "team": "JSG Eicken-Buer-Oldendorf",
  "kurz": "JSG",
@@ -771,8 +771,8 @@
   }
  },
  "letzteMeldung": {
-  "title": "😔 Niederlage 5:7 · m. F-Jugend",
-  "body": "🏠 gegen HSG Grönegau-Melle\nHalbzeit 2:4 · 📊 Platz 4 von 9",
+  "title": "😔 Niederlage 5:7",
+  "body": "m. F-Jugend gegen HSG Grönegau-Melle",
   "url": "https://edgar-p-1983.github.io/handball-eicken/?t=mF&g=23",
   "tag": "erg-mF-23"
  }
